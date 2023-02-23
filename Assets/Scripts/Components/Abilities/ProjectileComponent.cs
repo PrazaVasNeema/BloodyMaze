@@ -7,7 +7,7 @@ namespace BloodyMaze.Components
 
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
-    public class ProjectileComponent : MonoBehaviour, ISpawnableComponent
+    public class ProjectileComponent : SpawnableComponentAbstract
     {
         private Rigidbody m_body;
         private float m_damage = 0f;
@@ -17,7 +17,7 @@ namespace BloodyMaze.Components
             m_body = GetComponent<Rigidbody>();
         }
 
-        public void Activate(float damage, float force)
+        public override void Activate(float damage, float force)
         {
             m_damage = damage;
             m_body.AddForce(transform.forward * force, ForceMode.Impulse);

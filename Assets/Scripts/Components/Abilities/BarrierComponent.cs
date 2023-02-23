@@ -6,12 +6,23 @@ namespace BloodyMaze.Components
 {
 
     [RequireComponent(typeof(Collider))]
-    public class BarrierComponent : MonoBehaviour, ISpawnableComponent
+    public class BarrierComponent : SpawnableComponentAbstract
     {
         private float m_damage = 0f;
-        public void Activate(float damage, float force)
+        private float m_lifeTime = 2f;
+
+        public override void Activate(float damage, float lifeTime)
         {
             m_damage = damage;
+        }
+
+        private void Update()
+        {
+            m_lifeTime -= Time.deltaTime;
+            if (m_lifeTime <= 0f)
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void OnCollisionEnter(Collision other)

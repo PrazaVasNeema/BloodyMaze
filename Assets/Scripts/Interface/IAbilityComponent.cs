@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace BloodyMaze
 {
-    public interface ISpawnableComponent
+
+    public interface IAbilityComponent
     {
-        public void Activate(float damage, float force);
+        public void UseAbility(float optionalParameter);
     }
+
 }
