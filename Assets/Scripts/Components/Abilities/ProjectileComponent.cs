@@ -10,7 +10,9 @@ namespace BloodyMaze.Components
     public class ProjectileComponent : SpawnableComponentAbstract
     {
         private Rigidbody m_body;
-        private float m_damage = 0f;
+        private float m_damage = 1f;
+        private float m_force = 5f;
+
 
         private void Awake()
         {
@@ -20,7 +22,8 @@ namespace BloodyMaze.Components
         public override void Activate(float damage, float force)
         {
             m_damage = damage;
-            m_body.AddForce(transform.forward * force, ForceMode.Impulse);
+            m_force = force == -1 ? m_force : force;
+            m_body.AddForce(transform.forward * m_force, ForceMode.Impulse);
         }
 
         private void OnCollisionEnter(Collision other)

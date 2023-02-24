@@ -14,6 +14,7 @@ namespace BloodyMaze.Components
         public override void Activate(float damage, float lifeTime)
         {
             m_damage = damage;
+            m_lifeTime = lifeTime == -1 ? m_lifeTime : lifeTime;
         }
 
         private void Update()

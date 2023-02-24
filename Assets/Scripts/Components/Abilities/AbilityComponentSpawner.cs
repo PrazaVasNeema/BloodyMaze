@@ -16,7 +16,9 @@ namespace BloodyMaze.Components
         public void UseAbility(float optionalParameter)
         {
             m_spawnableComponentInstance = m_spawnableShouldBeLinked ? Instantiate(m_spawnableComponentPrefab, transform) : Instantiate(m_spawnableComponentPrefab, transform.position, transform.rotation);
+            m_spawnableComponentInstance.Activate(m_damage, optionalParameter);
         }
+
     }
 
 }
