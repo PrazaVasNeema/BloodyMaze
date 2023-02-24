@@ -72,6 +72,11 @@ namespace BloodyMaze.Components
             }
         }
 
+        public void UseAbility()
+        {
+            m_currentAbility.UseAbility();
+        }
+
     }
 
 }

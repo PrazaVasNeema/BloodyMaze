@@ -25,7 +25,7 @@ namespace BloodyMaze.Components
 
         }
 
-        public void Attack(Transform target)
+        public void UseAbility()
         {
             if (m_useAbilityComponentModule != null)
             {
