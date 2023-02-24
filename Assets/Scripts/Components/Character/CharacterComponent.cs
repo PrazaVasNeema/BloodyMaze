@@ -12,8 +12,9 @@ namespace BloodyMaze.Components
         [HideInInspector] public MovementComponentCharacter movementComponentCharacter;
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot1;
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot2;
+        [HideInInspector] public AmmunitionComponent ammunitionComponent;
 
-        private void Start()
+        private void Awake()
         {
             TryGetComponent(out healthComponent);
             TryGetComponent(out manaComponent);
@@ -22,6 +23,7 @@ namespace BloodyMaze.Components
             abilitiesManagers = GetComponents<AbilitiesManager>();
             abilitiesManagerSlot1 = abilitiesManagers[0];
             abilitiesManagerSlot2 = abilitiesManagers[1];
+            TryGetComponent(out ammunitionComponent);
         }
     }
 }

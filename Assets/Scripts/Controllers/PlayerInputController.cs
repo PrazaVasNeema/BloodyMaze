@@ -12,6 +12,7 @@ namespace BloodyMaze.Controllers
     {
         [SerializeField] private InputActionAsset m_inputAsset;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
+        [SerializeField] private UIPlayerHUDController m_playerHUDController;
 
 
         private CharacterComponent m_characterComponent;
@@ -21,6 +22,7 @@ namespace BloodyMaze.Controllers
         private InputAction m_swapWeaponAction;
         private InputAction m_useAbilityAction;
         private InputAction m_useAction;
+        private InputAction m_reloadAction;
 
         private void Awake()
         {
@@ -29,6 +31,7 @@ namespace BloodyMaze.Controllers
             m_swapWeaponAction = m_inputAsset.FindAction("SwapWeapon");
             m_useAbilityAction = m_inputAsset.FindAction("UseAbility");
             m_useAction = m_inputAsset.FindAction("Use");
+            m_reloadAction = m_inputAsset.FindAction("Reload");
         }
 
         private void OnEnable()
@@ -39,13 +42,17 @@ namespace BloodyMaze.Controllers
         private void OnDisable()
         {
             m_inputAsset.FindActionMap("Player").Disable();
+            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
         }
 
         public void Init(CharacterComponent characterComponent)
         {
             m_characterComponent = characterComponent;
             // m_virtualCamera.Follow = character.transform;
+            m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
         }
+
+
 
         private void Update()
         {
@@ -70,6 +77,27 @@ namespace BloodyMaze.Controllers
                 {
                     m_characterComponent.abilitiesManagerSlot2.UseAbility();
                 }
+                if (m_reloadAction.WasPerformedThisFrame())
+                {
+                    m_characterComponent.ammunitionComponent.Reload("holy");
+                }
+
+                if (Time.frameCount % 10 == 0)
+                    m_playerHUDController.RefreshHPAndMana(m_characterComponent.healthComponent.percent,
+                    m_characterComponent.manaComponent.percent);
+            }
+        }
+
+        private void RefreshAmmoCount(string ammoTypeName, AmmoType ammoType)
+        {
+            switch (ammoTypeName)
+            {
+                case "holy":
+                    m_playerHUDController.RefreshAmmoHoly(ammoType);
+                    break;
+                case "silver":
+                    m_playerHUDController.RefreshAmmoSilver(ammoType);
+                    break;
             }
         }
     }
