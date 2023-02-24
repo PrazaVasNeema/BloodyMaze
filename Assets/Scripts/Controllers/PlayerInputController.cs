@@ -41,6 +41,12 @@ namespace BloodyMaze.Controllers
             m_inputAsset.FindActionMap("Player").Disable();
         }
 
+        public void Init(CharacterComponent characterComponent)
+        {
+            m_characterComponent = characterComponent;
+            // m_virtualCamera.Follow = character.transform;
+        }
+
         private void Update()
         {
             if (m_characterComponent)
