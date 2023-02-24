@@ -60,11 +60,15 @@ namespace BloodyMaze.Controllers
                 }
                 if (m_attackAction.WasPressedThisFrame())
                 {
-                    m_characterComponent.abilitiesManager.UseAbility();
+                    m_characterComponent.abilitiesManagerSlot1.UseAbility();
                 }
                 if (m_swapWeaponAction.WasPerformedThisFrame())
                 {
-                    m_characterComponent.abilitiesManager.NextAbility();
+                    m_characterComponent.abilitiesManagerSlot1.NextAbility();
+                }
+                if (m_useAbilityAction.WasPerformedThisFrame())
+                {
+                    m_characterComponent.abilitiesManagerSlot2.UseAbility();
                 }
             }
         }

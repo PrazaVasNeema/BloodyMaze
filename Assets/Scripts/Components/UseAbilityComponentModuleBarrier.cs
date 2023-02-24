@@ -16,7 +16,7 @@ namespace BloodyMaze.Components
 
         private void Awake()
         {
-            m_manaComponent = transform.parent.GetComponent<ManaComponent>();
+            m_manaComponent = transform.parent.transform.parent.GetComponent<ManaComponent>();
             m_abilityComponent = GetComponent<IAbilityComponent>();
         }
 
