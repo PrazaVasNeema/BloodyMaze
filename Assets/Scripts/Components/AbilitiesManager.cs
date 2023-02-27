@@ -10,8 +10,10 @@ namespace BloodyMaze.Components
         [SerializeField] private Transform m_abilitiesSlot;
         private List<UseAbilityComponent> m_useAbilitityComponents = new();
         private UseAbilityComponent m_currentAbility;
-        private int m_currentAbilityIndex;
+        private int m_currentAbilityIndex = 0;
         public int currentAbilityIndex => m_currentAbilityIndex;
+
+        public System.Action<int> onAbilityChange;
 
         private void Awake()
         {
@@ -21,7 +23,6 @@ namespace BloodyMaze.Components
             }
             m_abilitiesSlot.GetComponentsInChildren(true, m_useAbilitityComponents);
             m_useAbilitityComponents.ForEach(x => x.SetActive(false));
-            m_currentAbilityIndex = 0;
         }
 
         private void Start()
@@ -51,11 +52,14 @@ namespace BloodyMaze.Components
 
                 m_currentAbility = m_useAbilitityComponents[m_currentAbilityIndex];
                 m_currentAbility.SetActive(true);
+                onAbilityChange?.Invoke(m_currentAbilityIndex);
+
             }
         }
 
         public void UseAbility()
         {
+
             m_currentAbility.UseAbility();
         }
 

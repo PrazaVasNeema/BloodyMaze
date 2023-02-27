@@ -50,9 +50,13 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
             // m_virtualCamera.Follow = character.transform;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
+            m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
         }
 
-
+        private void OnDestroy()
+        {
+            m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
+        }
 
         private void Update()
         {
@@ -107,6 +111,11 @@ namespace BloodyMaze.Controllers
                     m_playerHUDController.RefreshAmmoSilver(ammoType);
                     break;
             }
+        }
+
+        private void ChangeRevolverStatsFocus(int currentRevolverIndex)
+        {
+            m_playerHUDController.ChangeRevolverStatsFocus(currentRevolverIndex);
         }
     }
 
