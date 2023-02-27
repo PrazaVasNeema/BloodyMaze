@@ -27,15 +27,18 @@ namespace BloodyMaze.Components
 
         public void UseAbility()
         {
-            if (m_useAbilityComponentModule != null)
+            if (m_timer <= 0f)
             {
-                if (m_useAbilityComponentModule.Check())
+                if (m_useAbilityComponentModule != null)
+                {
+                    if (m_useAbilityComponentModule.Check())
+                        m_timer = m_cooldownTime;
+                }
+                else
+                {
+                    m_abilityComponent.UseAbility(-1);
                     m_timer = m_cooldownTime;
-            }
-            else
-            {
-                m_abilityComponent.UseAbility(-1);
-                m_timer = m_cooldownTime;
+                }
             }
         }
 

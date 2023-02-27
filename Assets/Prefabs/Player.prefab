@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6713269016660691084}
   - component: {fileID: 6713269016660691083}
   - component: {fileID: 6713269016660691082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 6713269016876499776}
   - component: {fileID: 6713269016876499791}
   - component: {fileID: 6713269016876499790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6713269017073680619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AbilitiesSlot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6713269017524582966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AbilitiesSlot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 6713269017934583999}
   - component: {fileID: 6713269017934583998}
   - component: {fileID: 6713269017934583997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 285140826860438206, guid: 5b4476789213c9749b7328d054dbc76f, type: 3}
       propertyPath: m_Name
       value: AbilityRevolverHoly
+      objectReference: {fileID: 0}
+    - target: {fileID: 285140826860438206, guid: 5b4476789213c9749b7328d054dbc76f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 285140826860438207, guid: 5b4476789213c9749b7328d054dbc76f, type: 3}
       propertyPath: m_RootOrder
@@ -540,6 +544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilityBarrier
       objectReference: {fileID: 0}
+    - target: {fileID: 9200806069933616619, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
 --- !u!4 &8430948290037871837 stripped
@@ -601,6 +609,10 @@ PrefabInstance:
     - target: {fileID: 6687603651452795477, guid: a39b69269968c9d46b90bbae64f8b571, type: 3}
       propertyPath: m_Name
       value: AbilityRevolverSilver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687603651452795477, guid: a39b69269968c9d46b90bbae64f8b571, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a39b69269968c9d46b90bbae64f8b571, type: 3}

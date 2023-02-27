@@ -11,7 +11,7 @@ namespace BloodyMaze.Components
     {
         private Rigidbody m_body;
         private float m_damage = 1f;
-        private float m_force = 5f;
+        private float m_force = 10f;
 
 
         private void Awake()
