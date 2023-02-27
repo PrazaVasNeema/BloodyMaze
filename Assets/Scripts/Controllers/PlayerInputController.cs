@@ -79,7 +79,15 @@ namespace BloodyMaze.Controllers
                 }
                 if (m_reloadAction.WasPerformedThisFrame())
                 {
-                    m_characterComponent.ammunitionComponent.Reload("holy");
+                    switch (m_characterComponent.abilitiesManagerSlot1.currentAbilityIndex)
+                    {
+                        case 0:
+                            m_characterComponent.ammunitionComponent.Reload("holy");
+                            break;
+                        case 1:
+                            m_characterComponent.ammunitionComponent.Reload("silver");
+                            break;
+                    }
                 }
 
                 if (Time.frameCount % 10 == 0)
