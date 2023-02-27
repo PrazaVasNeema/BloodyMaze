@@ -42,7 +42,6 @@ namespace BloodyMaze.Controllers
         private void OnDisable()
         {
             m_inputAsset.FindActionMap("Player").Disable();
-            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
         }
 
         public void Init(CharacterComponent characterComponent)
@@ -51,10 +50,13 @@ namespace BloodyMaze.Controllers
             // m_virtualCamera.Follow = character.transform;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
+            m_characterComponent.ammunitionComponent.Reload("holy");
+            m_characterComponent.ammunitionComponent.Reload("silver");
         }
 
         private void OnDestroy()
         {
+            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
         }
 
