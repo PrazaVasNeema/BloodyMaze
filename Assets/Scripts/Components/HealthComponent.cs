@@ -18,9 +18,10 @@ namespace BloodyMaze.Components
 
         public UnityEvent onDead;
 
-        public void Init(float healthMax)
+        public void Init(float currentHealth, float maxHealth)
         {
-            m_currentHealth = m_maxHealth = healthMax;
+            m_currentHealth = currentHealth;
+            m_maxHealth = maxHealth;
         }
 
         public void TakeDamage(float damage)

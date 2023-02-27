@@ -21,27 +21,6 @@ namespace BloodyMaze.Components
             m_useAbilitityComponents.ForEach(x => x.SetActive(false));
         }
 
-        public void Init(AbilityData[] abilitiesData, float baseDamage)
-        {
-            if (abilitiesData.Length == 0)
-            {
-                return;
-            }
-
-            m_useAbilitityComponents.ForEach(x => Destroy(x));
-            m_useAbilitityComponents.Clear();
-
-            foreach (AbilityData abilityData in abilitiesData)
-            {
-                var ability = Instantiate(abilityData.prefab, m_abilitiesSlot, false);
-                // skill.Init(skillData.mana, skillData.cooldownTime, skillData.attackDistance, skillData.damage + baseDamage, skillData.flightSpeed, skillData.flightDistance);
-                ability.SetActive(false);
-                m_useAbilitityComponents.Add(ability);
-            }
-
-            SelectAbility(0);
-        }
-
         private void Start()
         {
             SelectAbility(0);

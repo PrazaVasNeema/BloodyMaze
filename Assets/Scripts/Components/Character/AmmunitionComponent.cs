@@ -12,15 +12,16 @@ namespace BloodyMaze.Components
 
         public System.Action<string, AmmoType> onAmmoCountChange;
 
-        private void Awake()
+        public void Init(int currentAmmoAmountHoly, int currentAmmoAmountSilver)
         {
-            Init();
-        }
+            m_ammoType.Add("holy", new AmmoType(42, currentAmmoAmountHoly, 6, 0));
+            m_ammoType.Add("silver", new AmmoType(42, currentAmmoAmountSilver, 6, 0));
+            m_ammoType["holy"].Reload();
+            m_ammoType["silver"].Reload();
+            // onAmmoCountChange.Invoke("holy", m_ammoType["holy"]);
 
-        public void Init()
-        {
-            m_ammoType.Add("holy", new AmmoType(36, 36, 6, 6));
-            m_ammoType.Add("silver", new AmmoType(36, 36, 6, 6));
+            // onAmmoCountChange.Invoke("silver", m_ammoType["silver"]);
+
         }
 
         public bool ShootAmmo(string ammoTypeName)

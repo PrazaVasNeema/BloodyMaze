@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444d02aa73214624bbd29c93c394b21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_data: {fileID: 11400000, guid: b7f08e91e0414a0488b096cd90828c80, type: 2}
   healthComponent: {fileID: 0}
   manaComponent: {fileID: 0}
   movementComponentCharacter: {fileID: 0}
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_current: 100
   m_maxValue: 100
-  m_speedAllRestore: 10
+  m_restoringRate: 30
 --- !u!114 &6713269016660691082
 MonoBehaviour:
   m_ObjectHideFlags: 0
