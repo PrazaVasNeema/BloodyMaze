@@ -35,7 +35,7 @@ namespace BloodyMaze.Components
             //     health.TakeDamage(m_damage);
             // }
 
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 

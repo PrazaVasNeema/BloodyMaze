@@ -9,6 +9,7 @@ namespace BloodyMaze.Components
     [RequireComponent(typeof(Collider))]
     public class ProjectileComponent : SpawnableComponentAbstract
     {
+        [SerializeField] private LayerMask m_shouldBeBlockedBy;
         private Rigidbody m_body;
         private float m_damage = 1f;
         private float m_force = 10f;
@@ -28,12 +29,11 @@ namespace BloodyMaze.Components
 
         private void OnCollisionEnter(Collision other)
         {
-            // TODO работа с коллизией
-            // var health = other.gameObject.GetComponentInParent<HealthComponent>();
-            // if (health)
-            // {
-            //     health.TakeDamage(m_damage);
-            // }
+            var health = other.gameObject.GetComponentInParent<HealthComponent>();
+            if (health && !(m_shouldBeBlockedBy.value == 1 << other.gameObject.layer))
+            {
+                health.TakeDamage(m_damage);
+            }
 
             Destroy(gameObject);
         }
