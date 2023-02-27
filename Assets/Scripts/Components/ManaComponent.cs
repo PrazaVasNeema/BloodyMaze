@@ -14,7 +14,7 @@ namespace BloodyMaze.Components
         public float percent => m_current / m_maxValue;
 
         private bool m_manaIsBeingDrained;
-        private float m_drainingTime;
+        private float m_drainingRate;
 
         public void Init(float currentMana, float maxValue, float manaRestoringRate)
         {
@@ -28,16 +28,16 @@ namespace BloodyMaze.Components
             m_current -= value;
         }
 
-        public void DrainAllOverTime(float drainingTime)
+        public void DrainAllOverTime(float drainingDuration)
         {
             m_manaIsBeingDrained = true;
-            m_drainingTime = drainingTime;
+            m_drainingRate = m_maxValue / drainingDuration;
         }
 
         private void Update()
         {
 
-            var offset = m_manaIsBeingDrained ? -m_restoringRate * Time.deltaTime :
+            var offset = m_manaIsBeingDrained ? -m_drainingRate * Time.deltaTime :
              m_restoringRate * Time.deltaTime;
             m_current = Mathf.Clamp(m_current + offset, 0, m_maxValue);
             if (m_current == 0)
