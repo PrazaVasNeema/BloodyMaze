@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BloodyMaze
 {
+    [System.Serializable]
     public class AmmoType
     {
         public int maxAmmo;

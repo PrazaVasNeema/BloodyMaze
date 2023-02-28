@@ -35,7 +35,7 @@ namespace BloodyMaze.Components
 
             if (TryGetComponent(out ammunitionComponent))
             {
-                ammunitionComponent.Init(m_data.currentAmmoAmountHoly, m_data.currentAmmoAmountSilver);
+                ammunitionComponent.Init(m_data.holyAmmoType, m_data.silverAmmoType);
             }
 
             TryGetComponent(out interactComponent);

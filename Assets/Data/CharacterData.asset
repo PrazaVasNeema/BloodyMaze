@@ -18,5 +18,13 @@ MonoBehaviour:
   maxMana: 100
   manaRestoringRate: 30
   moveSpeed: 5
-  currentAmmoAmountHoly: 13
-  currentAmmoAmountSilver: 12
+  holyAmmoType:
+    maxAmmo: 42
+    currentAmmo: 0
+    roundSize: 6
+    currentRoundAmmo: 5
+  silverAmmoType:
+    maxAmmo: 42
+    currentAmmo: -1
+    roundSize: 6
+    currentRoundAmmo: 6

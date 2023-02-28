@@ -12,7 +12,8 @@ namespace BloodyMaze
         public float maxMana = 100f;
         public float manaRestoringRate = 10f;
         public float moveSpeed = 100f;
-        public int currentAmmoAmountHoly = 42;
-        public int currentAmmoAmountSilver = 42;
+
+        public AmmoType holyAmmoType;
+        public AmmoType silverAmmoType;
     }
 }

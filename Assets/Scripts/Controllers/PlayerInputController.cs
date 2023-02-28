@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using BloodyMaze.Components;
-using Cinemachine;
 
 namespace BloodyMaze.Controllers
 {
@@ -11,7 +10,6 @@ namespace BloodyMaze.Controllers
     public class PlayerInputController : MonoBehaviour
     {
         [SerializeField] private InputActionAsset m_inputAsset;
-        [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
 
         private CharacterComponent m_characterComponent;
 
@@ -45,7 +43,6 @@ namespace BloodyMaze.Controllers
         public void Init(CharacterComponent characterComponent)
         {
             m_characterComponent = characterComponent;
-            // m_virtualCamera.Follow = character.transform;
         }
 
         private void Update()

@@ -37,8 +37,11 @@ namespace BloodyMaze
             switch (m_state)
             {
                 case UIGMessagesState.NONE:
-                    m_state = UIGMessagesState.MESSAGE;
-                    ShowMessage(text);
+                    if (text != null)
+                    {
+                        m_state = UIGMessagesState.MESSAGE;
+                        ShowMessage(text);
+                    }
                     break;
                 case UIGMessagesState.MESSAGE:
                     if (text != null)
