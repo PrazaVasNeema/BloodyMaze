@@ -25,8 +25,8 @@ namespace BloodyMaze.Components
             if (interactComponent)
             {
                 interactComponent.OnInteract += Activate;
+                GameEvents.OnUIGMessagesChangeState?.Invoke(m_messageToShow);
             }
-            GameEvents.OnUIGMessagesChangeState?.Invoke(m_messageToShow);
         }
 
         private void OnTriggerExit(Collider other)
@@ -35,8 +35,8 @@ namespace BloodyMaze.Components
             if (interactComponent)
             {
                 interactComponent.OnInteract -= Activate;
+                GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             }
-            GameEvents.OnUIGMessagesChangeState?.Invoke(null);
         }
 
         private void Activate()

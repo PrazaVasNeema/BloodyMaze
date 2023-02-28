@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.Components;
+using Cinemachine;
 
 namespace BloodyMaze.Controllers
 {
@@ -14,6 +15,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private UIPlayerHUDControllerPStats m_playerHUDControllerPStats;
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
+        [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
 
         private void Awake()
         {
@@ -30,6 +32,7 @@ namespace BloodyMaze.Controllers
             var player = SpawnPlayer();
             m_playerInputController.Init(player);
             m_playerHUDControllerPStats.Init(player);
+            m_virtualCamera.Follow = player.transform;
         }
 
         private CharacterComponent SpawnPlayer()
