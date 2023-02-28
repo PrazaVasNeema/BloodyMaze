@@ -445,6 +445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6713269017524582966}
     m_Modifications:
+    - target: {fileID: 285140826860437825, guid: 5b4476789213c9749b7328d054dbc76f, type: 3}
+      propertyPath: m_shootForce
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 285140826860438206, guid: 5b4476789213c9749b7328d054dbc76f, type: 3}
       propertyPath: m_Name
       value: AbilityRevolverHoly

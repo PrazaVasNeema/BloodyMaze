@@ -7,10 +7,28 @@ namespace BloodyMaze
     [System.Serializable]
     public class AmmoType
     {
-        public int maxAmmo;
-        public int currentAmmo;
-        public int roundSize;
-        public int currentRoundAmmo;
+        public int maxAmmo = 0;
+        public int currentAmmo = 0;
+        public int roundSize = 0;
+        public int currentRoundAmmo = 0;
+
+
+        // public AmmoType(int maxAmmo, int currentAmmo, int roundSize, int currentRoundAmmo)
+        // {
+        //     this.maxAmmo = maxAmmo;
+        //     this.currentAmmo = currentAmmo;
+        //     this.roundSize = roundSize;
+        //     this.currentRoundAmmo = currentRoundAmmo;
+        // }
+
+        public AmmoType Clone() => new AmmoType
+        {
+
+            maxAmmo = this.maxAmmo,
+            currentAmmo = this.currentAmmo,
+            roundSize = this.roundSize,
+            currentRoundAmmo = this.currentRoundAmmo
+        };
 
         public bool ShootAmmo()
         {
@@ -33,12 +51,20 @@ namespace BloodyMaze
             return false;
         }
 
-        public AmmoType(int maxAmmo, int currentAmmo, int roundSize, int currentRoundAmmo)
+
+    }
+
+    public class Level
+    {
+        public string level_name = "";
+        public int ID = 0;
+        public int IDd = 0;
+
+
+        public Level Clone() => new Level
         {
-            this.maxAmmo = maxAmmo;
-            this.currentAmmo = currentAmmo;
-            this.roundSize = roundSize;
-            this.currentRoundAmmo = currentRoundAmmo;
-        }
+            level_name = this.level_name,
+            ID = this.ID
+        };
     }
 }

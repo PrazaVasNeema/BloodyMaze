@@ -14,8 +14,8 @@ namespace BloodyMaze.Components
 
         public void Init(AmmoType holyAmmoType, AmmoType silverAmmoType)
         {
-            m_ammoType.Add("holy", holyAmmoType);
-            m_ammoType.Add("silver", silverAmmoType);
+            m_ammoType.Add("holy", holyAmmoType.Clone());
+            m_ammoType.Add("silver", silverAmmoType.Clone());
             // m_ammoType["holy"].Reload();
             // m_ammoType["silver"].Reload();
             // onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
@@ -28,7 +28,7 @@ namespace BloodyMaze.Components
         {
             if (m_ammoType[ammoTypeName].ShootAmmo())
             {
-                onAmmoCountChange.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
+                onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
                 return true;
             }
             return false;
@@ -38,6 +38,7 @@ namespace BloodyMaze.Components
         {
             if (m_ammoType[ammoTypeName].Reload())
             {
+                Debug.Log("Reload");
                 onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
                 return true;
             }
