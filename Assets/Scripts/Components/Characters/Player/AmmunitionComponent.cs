@@ -38,7 +38,7 @@ namespace BloodyMaze.Components
         {
             if (m_ammoType[ammoTypeName].Reload())
             {
-                onAmmoCountChange.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
+                onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
                 return true;
             }
             return false;

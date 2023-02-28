@@ -12,8 +12,6 @@ namespace BloodyMaze.Controllers
     {
         [SerializeField] private InputActionAsset m_inputAsset;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
-        [SerializeField] private UIPlayerHUDController m_playerHUDController;
-
 
         private CharacterComponent m_characterComponent;
 
@@ -48,16 +46,8 @@ namespace BloodyMaze.Controllers
         {
             m_characterComponent = characterComponent;
             // m_virtualCamera.Follow = character.transform;
-            m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
-            m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
-        }
-
-        private void OnDestroy()
-        {
-            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
-            m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
         }
 
         private void Update()
@@ -100,29 +90,7 @@ namespace BloodyMaze.Controllers
                 {
                     m_characterComponent.interactComponent.Interact();
                 }
-
-                if (Time.frameCount % 10 == 0)
-                    m_playerHUDController.RefreshHPAndMana(m_characterComponent.healthComponent.percent,
-                    m_characterComponent.manaComponent.percent);
             }
-        }
-
-        private void RefreshAmmoCount(string ammoTypeName, AmmoType ammoType)
-        {
-            switch (ammoTypeName)
-            {
-                case "holy":
-                    m_playerHUDController.RefreshAmmoHoly(ammoType);
-                    break;
-                case "silver":
-                    m_playerHUDController.RefreshAmmoSilver(ammoType);
-                    break;
-            }
-        }
-
-        private void ChangeRevolverStatsFocus(int currentRevolverIndex)
-        {
-            m_playerHUDController.ChangeRevolverStatsFocus(currentRevolverIndex);
         }
     }
 
