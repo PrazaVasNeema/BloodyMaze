@@ -46,8 +46,6 @@ namespace BloodyMaze.Controllers
         {
             m_characterComponent = characterComponent;
             // m_virtualCamera.Follow = character.transform;
-            m_characterComponent.ammunitionComponent.Reload("holy");
-            m_characterComponent.ammunitionComponent.Reload("silver");
         }
 
         private void Update()
@@ -86,7 +84,7 @@ namespace BloodyMaze.Controllers
                     }
                 }
 
-                if (m_interactAction.WasPerformedThisFrame())
+                if (m_interactAction.WasPressedThisFrame())
                 {
                     m_characterComponent.interactComponent.Interact();
                 }

@@ -7,7 +7,7 @@ using TMPro;
 
 namespace BloodyMaze.Controllers
 {
-    public class UIPlayerHudControllerPStats : MonoBehaviour
+    public class UIPlayerHUDControllerPStats : MonoBehaviour
     {
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;
@@ -21,6 +21,8 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
+            m_characterComponent.ammunitionComponent.Reload("holy");
+            m_characterComponent.ammunitionComponent.Reload("silver");
         }
 
         private void OnDestroy()

@@ -40,7 +40,6 @@ namespace BloodyMaze.Components
 
             TryGetComponent(out interactComponent);
 
-            Debug.Log("Test");
 
             AbilitiesManager[] abilitiesManagers;
             abilitiesManagers = GetComponents<AbilitiesManager>();

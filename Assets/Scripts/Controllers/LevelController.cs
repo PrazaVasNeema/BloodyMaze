@@ -11,7 +11,7 @@ namespace BloodyMaze.Controllers
         public static LevelController current { private set; get; }
 
         [SerializeField] private PlayerInputController m_playerInputController;
-        [SerializeField] private UIPlayerHudControllerPStats m_playerHudControllerPStats;
+        [SerializeField] private UIPlayerHUDControllerPStats m_playerHUDControllerPStats;
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
 
@@ -29,7 +29,7 @@ namespace BloodyMaze.Controllers
         {
             var player = SpawnPlayer();
             m_playerInputController.Init(player);
-            m_playerHudControllerPStats.Init(player);
+            m_playerHUDControllerPStats.Init(player);
         }
 
         private CharacterComponent SpawnPlayer()
