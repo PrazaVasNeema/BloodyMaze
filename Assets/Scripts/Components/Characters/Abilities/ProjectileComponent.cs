@@ -29,7 +29,7 @@ namespace BloodyMaze.Components
 
         private void OnCollisionEnter(Collision other)
         {
-            var health = other.gameObject.GetComponentInParent<HealthComponent>();
+            HealthComponent health = other.gameObject.GetComponentInParent<HealthComponent>();
             if (health && !(m_shouldBeBlockedBy.value == 1 << other.gameObject.layer))
             {
                 health.TakeDamage(m_damage);

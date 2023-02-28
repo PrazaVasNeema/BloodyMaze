@@ -21,7 +21,7 @@ namespace BloodyMaze.Controllers
         private InputAction m_attackAction;
         private InputAction m_swapWeaponAction;
         private InputAction m_useAbilityAction;
-        private InputAction m_useAction;
+        private InputAction m_interactAction;
         private InputAction m_reloadAction;
 
         private void Awake()
@@ -30,7 +30,7 @@ namespace BloodyMaze.Controllers
             m_attackAction = m_inputAsset.FindAction("Fire");
             m_swapWeaponAction = m_inputAsset.FindAction("SwapWeapon");
             m_useAbilityAction = m_inputAsset.FindAction("UseAbility");
-            m_useAction = m_inputAsset.FindAction("Use");
+            m_interactAction = m_inputAsset.FindAction("Interact");
             m_reloadAction = m_inputAsset.FindAction("Reload");
         }
 
@@ -94,6 +94,11 @@ namespace BloodyMaze.Controllers
                             m_characterComponent.ammunitionComponent.Reload("silver");
                             break;
                     }
+                }
+
+                if (m_interactAction.WasPerformedThisFrame())
+                {
+                    m_characterComponent.interactComponent.Interact();
                 }
 
                 if (Time.frameCount % 10 == 0)

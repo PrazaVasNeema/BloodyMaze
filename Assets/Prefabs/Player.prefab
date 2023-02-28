@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6713269016660691084}
   - component: {fileID: 6713269016660691083}
   - component: {fileID: 6713269016660691082}
+  - component: {fileID: -1945774595170365375}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   abilitiesManagerSlot1: {fileID: 0}
   abilitiesManagerSlot2: {fileID: 0}
   ammunitionComponent: {fileID: 0}
+  interactComponent: {fileID: 0}
 --- !u!143 &6713269016660691072
 CharacterController:
   m_ObjectHideFlags: 0
@@ -162,6 +164,18 @@ MonoBehaviour:
   onDead:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-1945774595170365375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713269016660691081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb4d019e01b2724a95fb1c8d42d123c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6713269016876499788
 GameObject:
   m_ObjectHideFlags: 0

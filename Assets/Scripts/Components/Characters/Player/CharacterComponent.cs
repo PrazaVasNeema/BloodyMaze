@@ -13,6 +13,7 @@ namespace BloodyMaze.Components
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot1;
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot2;
         [HideInInspector] public AmmunitionComponent ammunitionComponent;
+        [HideInInspector] public InteractComponent interactComponent;
 
         private void Awake()
         {
@@ -36,6 +37,10 @@ namespace BloodyMaze.Components
             {
                 ammunitionComponent.Init(m_data.currentAmmoAmountHoly, m_data.currentAmmoAmountSilver);
             }
+
+            TryGetComponent(out interactComponent);
+
+            Debug.Log("Test");
 
             AbilitiesManager[] abilitiesManagers;
             abilitiesManagers = GetComponents<AbilitiesManager>();
