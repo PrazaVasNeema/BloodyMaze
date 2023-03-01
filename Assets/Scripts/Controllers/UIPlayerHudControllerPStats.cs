@@ -13,9 +13,18 @@ namespace BloodyMaze.Controllers
         [SerializeField] private Image m_manaImage;
         [SerializeField] private TMP_Text m_ammoHoly;
         [SerializeField] private TMP_Text m_ammoSilver;
+        [SerializeField] private GameObject m_showcaseStartingPoint;
 
         private GameObject m_UIPanel;
         private CharacterComponent m_characterComponent;
+        private GameObject m_refImage;
+        private List<GameObject> m_inventoryItems = new List<GameObject>();
+
+        private void Awake()
+        {
+            m_refImage = m_showcaseStartingPoint.GetComponentInChildren<Image>().gameObject;
+            m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
+        }
 
         public void Init(CharacterComponent characterComponent)
         {
@@ -23,9 +32,9 @@ namespace BloodyMaze.Controllers
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
             GameEvents.OnSetInteractState += ChangeHUDVisibilityState;
+            GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
-            m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
         }
 
         private void OnDestroy()
@@ -33,6 +42,7 @@ namespace BloodyMaze.Controllers
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
             GameEvents.OnSetInteractState -= ChangeHUDVisibilityState;
+            GameInventory.current.onInventoryChange -= ReorganizeShowcase;
         }
 
         private void Update()
@@ -42,6 +52,10 @@ namespace BloodyMaze.Controllers
                 RefreshHPAndMana(m_characterComponent.healthComponent.percent,
                                     m_characterComponent.manaComponent.percent);
             }
+        }
+
+        private void ReorganizeShowcase(string name, PickableItem item)
+        {
         }
 
         public void RefreshHPAndMana(float healthPr, float manaPr)
