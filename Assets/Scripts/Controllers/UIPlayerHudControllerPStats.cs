@@ -14,6 +14,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private TMP_Text m_ammoHoly;
         [SerializeField] private TMP_Text m_ammoSilver;
 
+        private GameObject m_UIPanel;
         private CharacterComponent m_characterComponent;
 
         public void Init(CharacterComponent characterComponent)
@@ -21,14 +22,17 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
+            GameEvents.OnSetInteractState += ChangeHUDVisibilityState;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
+            m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
         }
 
         private void OnDestroy()
         {
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
+            GameEvents.OnSetInteractState -= ChangeHUDVisibilityState;
         }
 
         private void Update()
@@ -76,6 +80,11 @@ namespace BloodyMaze.Controllers
                     ammoSilverTransform.localScale = scaleTwo;
                     break;
             }
+        }
+
+        private void ChangeHUDVisibilityState()
+        {
+            m_UIPanel.SetActive(!m_UIPanel.activeSelf);
         }
     }
 }

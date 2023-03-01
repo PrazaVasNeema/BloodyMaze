@@ -49,39 +49,41 @@ namespace BloodyMaze.Controllers
         {
             if (m_characterComponent)
             {
-                var move = m_moveAction.ReadValue<Vector2>();
-                Vector3 offset = new(move.x, 0f, move.y);
-                m_characterComponent.movementComponentCharacter.Move(offset);
-                if (move.x != 0f || move.y != 0f)
+                if (GameState.current.state != GameStates.INTERACTING)
                 {
-                    m_characterComponent.movementComponentCharacter.Look(offset);
-                }
-                if (m_attackAction.WasPressedThisFrame())
-                {
-                    m_characterComponent.abilitiesManagerSlot1.UseAbility();
-                }
-                if (m_swapWeaponAction.WasPerformedThisFrame())
-                {
-                    m_characterComponent.abilitiesManagerSlot1.NextAbility();
-                }
-                if (m_useAbilityAction.WasPerformedThisFrame())
-                {
-                    m_characterComponent.abilitiesManagerSlot2.UseAbility();
-                }
-                if (m_reloadAction.WasPerformedThisFrame())
-                {
-                    switch (m_characterComponent.abilitiesManagerSlot1.currentAbilityIndex)
+                    var move = m_moveAction.ReadValue<Vector2>();
+                    Vector3 offset = new(move.x, 0f, move.y);
+                    m_characterComponent.movementComponentCharacter.Move(offset);
+                    if (move.x != 0f || move.y != 0f)
                     {
-                        case 0:
-                            m_characterComponent.ammunitionComponent.Reload("holy");
-                            break;
-                        case 1:
-                            m_characterComponent.ammunitionComponent.Reload("silver");
-                            break;
+                        m_characterComponent.movementComponentCharacter.Look(offset);
+                    }
+                    if (m_attackAction.WasPressedThisFrame())
+                    {
+                        m_characterComponent.abilitiesManagerSlot1.UseAbility();
+                    }
+                    if (m_swapWeaponAction.WasPerformedThisFrame())
+                    {
+                        m_characterComponent.abilitiesManagerSlot1.NextAbility();
+                    }
+                    if (m_useAbilityAction.WasPerformedThisFrame())
+                    {
+                        m_characterComponent.abilitiesManagerSlot2.UseAbility();
+                    }
+                    if (m_reloadAction.WasPerformedThisFrame())
+                    {
+                        switch (m_characterComponent.abilitiesManagerSlot1.currentAbilityIndex)
+                        {
+                            case 0:
+                                m_characterComponent.ammunitionComponent.Reload("holy");
+                                break;
+                            case 1:
+                                m_characterComponent.ammunitionComponent.Reload("silver");
+                                break;
+                        }
                     }
                 }
-
-                if (m_interactAction.WasPressedThisFrame())
+                if (m_interactAction.WasPressedThisFrame() && GameState.current.state != GameStates.BATTLE)
                 {
                     m_characterComponent.interactComponent.Interact();
                 }

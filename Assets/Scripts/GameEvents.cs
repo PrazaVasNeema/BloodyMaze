@@ -10,7 +10,7 @@ namespace BloodyMaze
         public static System.Action OnHideMessage;
         public static System.Action<string> OnShowNote;
         public static System.Action OnHideNote;
-
         public static System.Action<string> OnUIGMessagesChangeState;
+        public static System.Action OnSetInteractState;
     }
 }

@@ -22,7 +22,7 @@ namespace BloodyMaze.Components
         private void OnTriggerEnter(Collider other)
         {
             InteractComponent interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
-            if (interactComponent)
+            if (interactComponent && GameState.current.state == GameStates.EXPLORING)
             {
                 interactComponent.OnInteract += Activate;
                 GameEvents.OnUIGMessagesChangeState?.Invoke(m_messageToShow);
@@ -32,7 +32,7 @@ namespace BloodyMaze.Components
         private void OnTriggerExit(Collider other)
         {
             InteractComponent interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
-            if (interactComponent)
+            if (interactComponent && GameState.current.state == GameStates.EXPLORING)
             {
                 interactComponent.OnInteract -= Activate;
                 GameEvents.OnUIGMessagesChangeState?.Invoke(null);
@@ -41,8 +41,9 @@ namespace BloodyMaze.Components
 
         private void Activate()
         {
-            if (m_interactableComponentModule)
+            if (m_interactableComponentModule && GameState.current.state != GameStates.BATTLE)
             {
+                GameState.current.ChangeState();
                 m_interactableComponentModule.Activate();
             }
             Debug.Log("Activate");

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BloodyMaze.Controllers;
 
-namespace BloodyMaze
+namespace BloodyMaze.Components
 {
     public class DialogueStarterComponent : MonoBehaviour
     {

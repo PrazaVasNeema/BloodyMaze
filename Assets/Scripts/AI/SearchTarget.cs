@@ -10,6 +10,7 @@ namespace BloodyMaze.AI
     {
         public LayerMask mask;
         public float radius = 5;
+        private bool m_targetIsFound;
 
         protected override void OnStart()
         {
@@ -35,9 +36,20 @@ namespace BloodyMaze.AI
             var result = Physics.OverlapSphere(position, radius, mask, QueryTriggerInteraction.Ignore);
             if (result.Length > 0)
             {
+                if (m_targetIsFound == false)
+                {
+                    m_targetIsFound = true;
+                    GameState.current.ChangeEnemiesTriggeredCount(1);
+                    GameState.current.ChangeState();
+                }
                 return result[0].transform;
             }
-
+            if (m_targetIsFound == true)
+            {
+                m_targetIsFound = false;
+                GameState.current.ChangeEnemiesTriggeredCount(-1);
+                GameState.current.ChangeState();
+            }
             return null;
         }
 

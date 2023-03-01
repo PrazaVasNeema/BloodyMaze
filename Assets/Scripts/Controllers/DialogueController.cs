@@ -68,7 +68,7 @@ namespace BloodyMaze
         void EndDialogue()
         {
             Debug.Log("End of conversation");
-
+            GameState.current.ChangeState();
             animator.SetBool("IsOpen", false);
         }
     }
