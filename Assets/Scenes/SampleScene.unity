@@ -307,6 +307,7 @@ MonoBehaviour:
   nameText: {fileID: 213696827}
   dialogueText: {fileID: 1218048202}
   animator: {fileID: 539247643}
+  typingSpeed: 0.1
 --- !u!4 &160051830
 Transform:
   m_ObjectHideFlags: 0
@@ -2382,7 +2383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8826729162387298939
 MonoBehaviour:
   m_ObjectHideFlags: 0

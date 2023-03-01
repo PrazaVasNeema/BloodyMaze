@@ -12,6 +12,10 @@ namespace BloodyMaze
 
         public Animator animator;
 
+        public float typingSpeed = 0.1f;
+
+        private string sentence;
+
         // Queue - FIFO: First In First Out
         private Queue<string> sentences;
 
@@ -36,21 +40,28 @@ namespace BloodyMaze
                 sentences.Enqueue(sentence);
             }
 
+            sentence = sentences.Dequeue();
             DisplayNextSentence();
         }
 
         public void DisplayNextSentence()
         {
-            if (sentences.Count == 0)
+            if (dialogueText.text.Length == sentence.Length)
             {
-                EndDialogue();
-                return;
+                if (sentences.Count == 0)
+                {
+                    EndDialogue();
+                    return;
+                }
+                sentence = sentences.Dequeue();
+                Debug.Log(sentence);
+                StartCoroutine(TypeSentence(sentence));
             }
-
-            string sentence = sentences.Dequeue();
-            Debug.Log(sentence);
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));
+            else
+            {
+                dialogueText.text = sentence;
+                StopAllCoroutines();
+            }
         }
 
         IEnumerator TypeSentence(string sentence)
@@ -60,7 +71,7 @@ namespace BloodyMaze
             {
                 dialogueText.text += letter;
                 //yield return null;
-                yield return new WaitForSeconds(.1f);
+                yield return new WaitForSeconds(typingSpeed);
             }
             Debug.Log("this");
         }
@@ -73,3 +84,4 @@ namespace BloodyMaze
         }
     }
 }
+
