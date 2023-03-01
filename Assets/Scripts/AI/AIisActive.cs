@@ -17,8 +17,6 @@ public class AIisActive : DecoratorNode
 
     protected override State OnUpdate()
     {
-        if (GameState.current.state != GameStates.INTERACTING)
-            return State.Success;
-        return State.Failure;
+        return GameState.current.state == GameStates.INTERACTING ? State.Running : child.Update();
     }
 }

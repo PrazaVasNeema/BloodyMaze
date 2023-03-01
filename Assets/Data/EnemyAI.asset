@@ -39,12 +39,14 @@ MonoBehaviour:
   - rid: 8670659163155857429
   - rid: 8670659163155857430
   - rid: 7064258886690930688
+  - rid: 7064258886690930689
+  - rid: 7064258886690930691
   treeState: 0
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 660, y: 258, z: 0}
-  viewScale: {x: 0.375937, y: 0.375937, z: 1}
+  viewPosition: {x: 202, y: 265, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -56,7 +58,34 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: f6bfb0fccdd5a00458de0dfc0c674b4e
-        position: {x: -1306.9731, y: 171.00008}
+        position: {x: -109.99985, y: -137.00003}
+        blackboard:
+          target: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 8670659163155857410
+    - rid: 7064258886690930689
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 9d5f3ba2dd11d8e4f9fbef870944879a
+        position: {x: -485.08948, y: -201.81711}
+        blackboard:
+          target: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        children: []
+    - rid: 7064258886690930691
+      type: {class: Repeat, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 661b9b024cfed5849a9f824bbe1b8c01
+        position: {x: -334.9999, y: -180.99994}
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -64,13 +93,15 @@ MonoBehaviour:
         drawGizmos: 0
         child:
           rid: -2
+        restartOnSuccess: 1
+        restartOnFailure: 0
     - rid: 8670659163155857408
       type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: adc9c7d4-8207-4527-8fd3-46c0a882ca71
-        position: {x: -34.695885, y: -235.83977}
+        position: {x: -140.00002, y: -416.41876}
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -84,14 +115,14 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 3671b14fd3bf6ef47a3be5e2ae079581
-        position: {x: -35.000008, y: -85.33102}
+        position: {x: -140.00002, y: -265.41873}
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
-          rid: 8670659163155857410
+          rid: 7064258886690930688
         restartOnSuccess: 1
         restartOnFailure: 0
     - rid: 8670659163155857410
@@ -108,7 +139,6 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 8670659163155857411
-        - rid: 7064258886690930688
         - rid: 8670659163155857416
         - rid: 8670659163155857427
     - rid: 8670659163155857411

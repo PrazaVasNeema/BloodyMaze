@@ -58,7 +58,8 @@ namespace BloodyMaze
                     break;
                 case UIGMessagesState.NOTE:
                     HideNote();
-                    m_state = UIGMessagesState.NONE;
+                    m_messageTMPTextParent.SetActive(true);
+                    m_state = UIGMessagesState.MESSAGE;
                     break;
             }
         }
