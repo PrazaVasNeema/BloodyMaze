@@ -38,15 +38,32 @@ MonoBehaviour:
   - rid: 8670659163155857428
   - rid: 8670659163155857429
   - rid: 8670659163155857430
+  - rid: 7064258886690930688
   treeState: 0
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 471, y: -221, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+  viewPosition: {x: 660, y: 258, z: 0}
+  viewScale: {x: 0.375937, y: 0.375937, z: 1}
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7064258886690930688
+      type: {class: AIisActive, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: f6bfb0fccdd5a00458de0dfc0c674b4e
+        position: {x: -1306.9731, y: 171.00008}
+        blackboard:
+          target: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: -2
     - rid: 8670659163155857408
       type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
@@ -91,6 +108,7 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 8670659163155857411
+        - rid: 7064258886690930688
         - rid: 8670659163155857416
         - rid: 8670659163155857427
     - rid: 8670659163155857411
