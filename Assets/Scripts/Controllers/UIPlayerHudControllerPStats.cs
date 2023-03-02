@@ -13,16 +13,17 @@ namespace BloodyMaze.Controllers
         [SerializeField] private Image m_manaImage;
         [SerializeField] private TMP_Text m_ammoHoly;
         [SerializeField] private TMP_Text m_ammoSilver;
-        [SerializeField] private GameObject m_showcaseStartingPoint;
+        [SerializeField] private GameObject m_showcase;
 
         private GameObject m_UIPanel;
         private CharacterComponent m_characterComponent;
         private GameObject m_refImage;
-        private List<GameObject> m_inventoryItems = new List<GameObject>();
+        private List<GameObject> m_inventoryItemsInShowcase = new List<GameObject>();
+        private float m_itemImageOffset = 30f;
 
         private void Awake()
         {
-            m_refImage = m_showcaseStartingPoint.GetComponentInChildren<Image>().gameObject;
+            m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
         }
 
@@ -56,6 +57,15 @@ namespace BloodyMaze.Controllers
 
         private void ReorganizeShowcase(string name, PickableItem item)
         {
+            if (item != null)
+            {
+                GameObject tempItem = Instantiate(m_refImage, m_showcase.transform);
+                PickableItemComponent tempComponent = tempItem.AddComponent<PickableItemComponent>();
+                tempComponent.SetItem(item);
+                tempItem.transform.position = m_inventoryItemsInShowcase[m_inventoryItemsInShowcase.Count - 1].transform.position;
+                tempItem.transform.position = new Vector2(tempItem.transform.position.x, tempItem.transform.position.x + m_itemImageOffset);
+
+            }
         }
 
         public void RefreshHPAndMana(float healthPr, float manaPr)

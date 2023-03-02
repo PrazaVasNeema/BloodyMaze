@@ -8,5 +8,10 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private PickableItem m_item;
         public PickableItem item => m_item;
+
+        public void SetItem(PickableItem item)
+        {
+            m_item = item;
+        }
     }
 }
