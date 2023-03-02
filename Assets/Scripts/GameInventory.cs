@@ -24,7 +24,7 @@ namespace BloodyMaze
         public void AddItem(PickableItem item)
         {
             m_inventory.Add(item.name, item);
-            // onInventoryChange?.Invoke(item.name, item);
+            onInventoryChange?.Invoke(item.name, item);
             Debug.Log(m_inventory[item.name].name);
         }
 
