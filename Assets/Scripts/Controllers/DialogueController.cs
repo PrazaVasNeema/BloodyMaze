@@ -80,6 +80,8 @@ namespace BloodyMaze
         {
             Debug.Log("End of conversation");
             GameState.current.ChangeState();
+            GameEvents.OnSetInteractState?.Invoke();
+
             animator.SetBool("IsOpen", false);
         }
     }
