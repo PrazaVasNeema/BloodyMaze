@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
     public class InteractableComponentModuleActivateAnother : InteractableComponentModuleAbstract
     {
         [SerializeField] private string m_requiredItemName;
-        [SerializeField] private AffectObjectOnActivation[] m_objectsToAffect;
+        [SerializeField] private UnityEvent onSuccesfullActivate;
+
         public override bool Activate()
         {
-            GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             if (m_requiredItemName != "")
             {
@@ -22,10 +22,7 @@ namespace BloodyMaze.Components
                 }
                 GameInventory.current.RemoveItem(m_requiredItemName);
             }
-            foreach (AffectObjectOnActivation oneObject in m_objectsToAffect)
-            {
-                oneObject.Move();
-            }
+            onSuccesfullActivate?.Invoke();
             Debug.Log("Activated succesfully");
             return true;
         }

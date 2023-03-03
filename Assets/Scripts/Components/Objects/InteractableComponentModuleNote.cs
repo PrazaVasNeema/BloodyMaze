@@ -11,6 +11,8 @@ namespace BloodyMaze
 
         public override bool Activate()
         {
+            GameState.current.ChangeState();
+            GameEvents.OnSetInteractState?.Invoke();
             GameEvents.OnUIGMessagesChangeState?.Invoke(m_noteText);
             return true;
         }

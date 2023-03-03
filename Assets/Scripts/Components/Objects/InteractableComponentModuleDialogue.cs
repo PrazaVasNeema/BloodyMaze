@@ -16,6 +16,8 @@ namespace BloodyMaze.Components
 
         public override bool Activate()
         {
+            GameState.current.ChangeState();
+            GameEvents.OnSetInteractState?.Invoke();
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             m_dialogueStarterComponent.StartDialogue(0);
             return true;

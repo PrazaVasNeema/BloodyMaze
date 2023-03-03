@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -8,6 +9,8 @@ namespace BloodyMaze.Components
     public class InteractableComponent : MonoBehaviour
     {
         [SerializeField] private string m_messageToShow = "Взаимодействовать";
+        [SerializeField] private UnityEvent onActivate;
+
 
         private InteractableComponentModuleAbstract m_interactableComponentModule;
 
@@ -43,10 +46,9 @@ namespace BloodyMaze.Components
         {
             if (m_interactableComponentModule && GameState.current.state != GameStates.BATTLE)
             {
-                GameState.current.ChangeState();
-                GameEvents.OnSetInteractState?.Invoke();
                 m_interactableComponentModule.Activate();
             }
+            onActivate?.Invoke();
             Debug.Log("Activate");
         }
     }

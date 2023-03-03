@@ -19,8 +19,6 @@ namespace BloodyMaze.Components
         {
             GameInventory.current.AddItem(m_objectModel.item);
             Destroy(gameObject);
-            GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             return true;
         }
