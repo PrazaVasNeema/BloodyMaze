@@ -46,7 +46,7 @@ namespace BloodyMaze.Components
         {
             if (m_interactableComponentModule && GameState.current.state != GameStates.BATTLE)
             {
-                m_interactableComponentModule.Activate();
+                m_interactableComponentModule.ActivateModule();
             }
             onActivate?.Invoke();
             Debug.Log("Activate");

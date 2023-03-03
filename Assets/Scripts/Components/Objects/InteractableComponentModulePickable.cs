@@ -15,12 +15,11 @@ namespace BloodyMaze.Components
                 Destroy(this);
         }
 
-        public override bool Activate()
+        public override void ActivateModule()
         {
             GameInventory.current.AddItem(m_objectModel.item);
             Destroy(gameObject);
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
-            return true;
         }
     }
 }

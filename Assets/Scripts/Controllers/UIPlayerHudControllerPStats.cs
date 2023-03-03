@@ -45,7 +45,7 @@ namespace BloodyMaze.Controllers
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
             GameEvents.OnSetInteractState -= ChangeHUDVisibilityState;
-            GameInventory.current.onInventoryChange -= ReorganizeShowcase;
+            // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
         }
 
         private void Update()

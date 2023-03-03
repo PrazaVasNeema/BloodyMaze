@@ -10,7 +10,7 @@ namespace BloodyMaze.Components
         [SerializeField] private string m_requiredItemName;
         [SerializeField] private UnityEvent onSuccesfullActivate;
 
-        public override bool Activate()
+        public override void ActivateModule()
         {
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             if (m_requiredItemName != "")
@@ -18,13 +18,11 @@ namespace BloodyMaze.Components
                 if (!GameInventory.current.InventoryContains(m_requiredItemName))
                 {
                     Debug.Log("Activation failed");
-                    return false;
                 }
                 GameInventory.current.RemoveItem(m_requiredItemName);
             }
             onSuccesfullActivate?.Invoke();
             Debug.Log("Activated succesfully");
-            return true;
         }
     }
 }

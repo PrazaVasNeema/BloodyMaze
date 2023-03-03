@@ -9,6 +9,6 @@ namespace BloodyMaze
         [SerializeField] private string m_messageToShow;
         public string messageToShow => m_messageToShow;
 
-        public abstract bool Activate();
+        public abstract void ActivateModule();
     }
 }
