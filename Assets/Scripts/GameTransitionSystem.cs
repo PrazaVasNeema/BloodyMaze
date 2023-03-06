@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BloodyMaze.Components;
 
-namespace BloodyMaze
+namespace BloodyMaze.Controllers
 {
     public class GameTransitionSystem : MonoBehaviour
     {
@@ -10,6 +11,7 @@ namespace BloodyMaze
         [SerializeField] private float m_fadeInDuration;
         [SerializeField] private float m_fadeOutDuration;
         [SerializeField] private Animator m_animator;
+        [SerializeField] private CharacterComponent m_characterComponent;
 
         private void Awake()
         {
@@ -21,12 +23,17 @@ namespace BloodyMaze
             current = null;
         }
 
-        public void TransitCharacter(Transform whereTo)
+        public void Init(CharacterComponent characterComponent)
         {
-            StartCoroutine(InCoroutine());
+            m_characterComponent = characterComponent;
         }
 
-        private IEnumerator InCoroutine()
+        public void TransitCharacter(Transform whereTo)
+        {
+            StartCoroutine(InCoroutine(whereTo));
+        }
+
+        private IEnumerator InCoroutine(Transform whereTo)
         {
             GameState.current.ChangeState();
             GameEvents.OnSetInteractState?.Invoke();
@@ -37,11 +44,12 @@ namespace BloodyMaze
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeInDuration);
             }
-            StartCoroutine(OutCoroutine());
+            StartCoroutine(OutCoroutine(whereTo));
         }
 
-        private IEnumerator OutCoroutine()
+        private IEnumerator OutCoroutine(Transform whereTo)
         {
+            m_characterComponent.transform.position = whereTo.transform.position;
             m_animator.SetTrigger("End");
             bool doOnce = true;
             while (doOnce)

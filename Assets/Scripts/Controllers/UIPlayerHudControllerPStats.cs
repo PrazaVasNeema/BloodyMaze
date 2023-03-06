@@ -7,7 +7,7 @@ using TMPro;
 
 namespace BloodyMaze.Controllers
 {
-    public class UIPlayerHUDControllerPStats : MonoBehaviour
+    public class UIPlayerHudControllerPStats : MonoBehaviour
     {
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;

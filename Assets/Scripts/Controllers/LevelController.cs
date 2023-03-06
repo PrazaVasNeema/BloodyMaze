@@ -12,10 +12,11 @@ namespace BloodyMaze.Controllers
         public static LevelController current { private set; get; }
 
         [SerializeField] private PlayerInputController m_playerInputController;
-        [SerializeField] private UIPlayerHUDControllerPStats m_playerHUDControllerPStats;
+        [SerializeField] private UIPlayerHudControllerPStats m_playerHUDControllerPStats;
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
+        [SerializeField] private GameTransitionSystem m_transitSystem;
 
         private void Awake()
         {
@@ -32,6 +33,7 @@ namespace BloodyMaze.Controllers
             var player = SpawnPlayer();
             m_playerInputController.Init(player);
             m_playerHUDControllerPStats.Init(player);
+            m_transitSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
         }
 
