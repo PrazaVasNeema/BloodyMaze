@@ -7,13 +7,14 @@ namespace BloodyMaze.Components
 {
     public class InteractableComponentModuleChangeRoom : InteractableComponentModuleAbstract
     {
-        [SerializeField] private float m_nextRoomID;
+        [SerializeField] private RoomComponent m_prevRoom;
+        [SerializeField] private RoomComponent m_nextRoom;
         [SerializeField] private Transform m_transitPoint;
 
         public override void ActivateModule()
         {
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
-            GameTransitionSystem.current.TransitCharacter(m_transitPoint);
+            GameTransitionSystem.current.TransitCharacter(m_transitPoint, m_prevRoom, m_nextRoom);
         }
     }
 }

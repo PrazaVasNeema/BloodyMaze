@@ -17,6 +17,8 @@ namespace BloodyMaze.Controllers
         [SerializeField] private Transform m_spawnPoint;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         [SerializeField] private GameTransitionSystem m_transitSystem;
+        [SerializeField] private RoomComponent[] m_rooms;
+        [SerializeField] private int m_activeRoom;
 
         private void Awake()
         {
@@ -30,6 +32,13 @@ namespace BloodyMaze.Controllers
 
         private void Start()
         {
+            foreach (RoomComponent rc in m_rooms)
+            {
+                if (rc.roomID == m_activeRoom)
+                    rc.gameObject.SetActive(true);
+                else
+                    rc.gameObject.SetActive(false);
+            }
             var player = SpawnPlayer();
             m_playerInputController.Init(player);
             m_playerHUDControllerPStats.Init(player);

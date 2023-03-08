@@ -13,6 +13,10 @@ namespace BloodyMaze.Controllers
         [SerializeField] private Animator m_animator;
         [SerializeField] private CharacterComponent m_characterComponent;
 
+        private RoomComponent m_prevRoom;
+        private RoomComponent m_nextRoom;
+        private Transform m_whereTo;
+
         private void Awake()
         {
             current = this;
@@ -28,12 +32,21 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
         }
 
-        public void TransitCharacter(Transform whereTo)
+        public void TransitCharacter(Transform whereTo, RoomComponent prevRoom, RoomComponent nextRoom)
         {
-            StartCoroutine(InCoroutine(whereTo));
+            m_prevRoom = prevRoom;
+            m_nextRoom = nextRoom;
+            m_whereTo = whereTo;
+
+            m_nextRoom.gameObject.SetActive(true);
+            m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
+            m_prevRoom.gameObject.SetActive(false);
+
+            // StopAllCoroutines();
+            // StartCoroutine(InCoroutine());
         }
 
-        private IEnumerator InCoroutine(Transform whereTo)
+        private IEnumerator InCoroutine()
         {
             GameState.current.ChangeState();
             GameEvents.OnSetInteractState?.Invoke();
@@ -44,12 +57,12 @@ namespace BloodyMaze.Controllers
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeInDuration);
             }
-            StartCoroutine(OutCoroutine(whereTo));
+            StartCoroutine(OutCoroutine());
         }
 
-        private IEnumerator OutCoroutine(Transform whereTo)
+        private IEnumerator OutCoroutine()
         {
-            m_characterComponent.transform.position = whereTo.transform.position;
+
             m_animator.SetTrigger("End");
             bool doOnce = true;
             while (doOnce)
