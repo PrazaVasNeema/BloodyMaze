@@ -50,6 +50,19 @@ namespace BloodyMaze.Controllers
         {
             return Instantiate(m_playerPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
         }
+
+        public void SetControlls(bool state)
+        {
+            m_playerInputController.enabled = state;
+        }
+
+        public void ChangeMenusState(bool state)
+        {
+            if (state)
+                UIMenusController.current.CloseMenus();
+            else
+                UIMenusController.current.OpenMenus();
+        }
     }
 
 }

@@ -37,13 +37,7 @@ namespace BloodyMaze.Controllers
             m_prevRoom = prevRoom;
             m_nextRoom = nextRoom;
             m_whereTo = whereTo;
-
-            m_nextRoom.gameObject.SetActive(true);
-            m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
-            m_prevRoom.gameObject.SetActive(false);
-
-            // StopAllCoroutines();
-            // StartCoroutine(InCoroutine());
+            StartCoroutine(InCoroutine());
         }
 
         private IEnumerator InCoroutine()
@@ -62,7 +56,9 @@ namespace BloodyMaze.Controllers
 
         private IEnumerator OutCoroutine()
         {
-
+            m_nextRoom.gameObject.SetActive(true);
+            m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
+            m_prevRoom.gameObject.SetActive(false);
             m_animator.SetTrigger("End");
             bool doOnce = true;
             while (doOnce)
