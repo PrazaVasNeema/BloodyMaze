@@ -26,6 +26,7 @@ namespace BloodyMaze
 
         public void ChangeState()
         {
+            // Debug.Log("ChangeState");
             switch (m_state)
             {
                 case GameStates.EXPLORING:

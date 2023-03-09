@@ -59,8 +59,8 @@ namespace BloodyMaze.Controllers
                     {
                         var move = m_moveAction.ReadValue<Vector2>();
                         Vector3 offset = new(move.x, 0f, move.y);
-                        if (offset.x != 0 || offset.y != 0 || offset.z != 0)
-                            m_characterComponent.movementComponentCharacter.Move(offset);
+                        // if (offset.x != 0 || offset.y != 0 || offset.z != 0)
+                        m_characterComponent.movementComponentCharacter.Move(offset);
                         if (move.x != 0f || move.y != 0f)
                         {
                             m_characterComponent.movementComponentCharacter.Look(offset);

@@ -51,16 +51,11 @@ namespace BloodyMaze.Controllers
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeInDuration);
             }
-            StartCoroutine(OutCoroutine());
-        }
-
-        private IEnumerator OutCoroutine()
-        {
             m_nextRoom.gameObject.SetActive(true);
             m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
             m_prevRoom.gameObject.SetActive(false);
             m_animator.SetTrigger("End");
-            bool doOnce = true;
+            doOnce = true;
             while (doOnce)
             {
                 doOnce = false;
@@ -69,5 +64,6 @@ namespace BloodyMaze.Controllers
             GameState.current.ChangeState();
             GameEvents.OnSetInteractState?.Invoke();
         }
+
     }
 }

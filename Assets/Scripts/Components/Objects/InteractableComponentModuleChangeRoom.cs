@@ -15,6 +15,8 @@ namespace BloodyMaze.Components
         {
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             GameTransitionSystem.current.TransitCharacter(m_transitPoint, m_prevRoom, m_nextRoom);
+            var InteractableComponent = GetComponent<InteractableComponent>();
+            InteractableComponent.interactComponent.OnInteract -= InteractableComponent.Activate;
         }
     }
 }

@@ -593,6 +593,10 @@ PrefabInstance:
       propertyPath: m_transitPoint
       value: 
       objectReference: {fileID: 1425333419}
+    - target: {fileID: 244227304171181363, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
+      propertyPath: m_messageToShow
+      value: "\u0414\u0432\u043E\u0440"
+      objectReference: {fileID: 0}
     - target: {fileID: 244227304171181364, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3436,7 +3440,7 @@ PrefabInstance:
       objectReference: {fileID: 1773185317}
     - target: {fileID: 244227304171181363, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
       propertyPath: m_messageToShow
-      value: "\u0412\u043E\u0439\u0442\u0438"
+      value: "\u0425\u043E\u043B\u043B"
       objectReference: {fileID: 0}
     - target: {fileID: 244227304171181364, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
       propertyPath: m_Enabled
@@ -4438,7 +4442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750391669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.95, y: -3.06, z: -171}
+  m_LocalPosition: {x: -36.95, y: -3.06, z: -156.42}
   m_LocalScale: {x: 4.186821, y: 2.5083916, z: 2.1154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5575,6 +5579,10 @@ PrefabInstance:
       propertyPath: m_transitPoint
       value: 
       objectReference: {fileID: 731167427}
+    - target: {fileID: 244227304171181363, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
+      propertyPath: m_messageToShow
+      value: "\u0411\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u0430\u044F \u0437\u043E\u043D\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 244227304171181364, guid: ef13dff2a7b105240afdbddf645df474, type: 3}
       propertyPath: m_Enabled
       value: 0
