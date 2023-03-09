@@ -12,5 +12,6 @@ namespace BloodyMaze
         public static System.Action OnHideNote;
         public static System.Action<string> OnUIGMessagesChangeState;
         public static System.Action OnSetInteractState;
+        public static System.Action OnSaveData;
     }
 }

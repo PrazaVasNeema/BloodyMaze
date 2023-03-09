@@ -30,8 +30,9 @@ namespace BloodyMaze.Controllers
             current = null;
         }
 
-        private void Start()
+        public void Init()
         {
+            PlayerProfileSO playerProfileSO = GameController.instance.playerProfile;
             foreach (RoomComponent rc in m_rooms)
             {
                 if (rc.roomID == m_activeRoom)
@@ -40,6 +41,7 @@ namespace BloodyMaze.Controllers
                     rc.gameObject.SetActive(false);
             }
             var player = SpawnPlayer();
+            player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);
             m_playerHUDControllerPStats.Init(player);
             m_transitSystem.Init(player);

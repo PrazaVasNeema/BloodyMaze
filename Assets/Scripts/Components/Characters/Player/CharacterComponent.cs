@@ -6,7 +6,7 @@ namespace BloodyMaze.Components
 {
     public class CharacterComponent : MonoBehaviour
     {
-        [SerializeField] private CharacterData m_data;
+        [SerializeField] private CharacterSaveData m_characterSaveData;
         [HideInInspector] public HealthComponent healthComponent;
         [HideInInspector] public ManaComponent manaComponent;
         [HideInInspector] public MovementComponentCharacter movementComponentCharacter;
@@ -15,27 +15,28 @@ namespace BloodyMaze.Components
         [HideInInspector] public AmmunitionComponent ammunitionComponent;
         [HideInInspector] public InteractComponent interactComponent;
 
-        private void Awake()
+        public void Init(CharacterSaveData characterSaveData)
         {
+            m_characterSaveData = characterSaveData;
 
             if (TryGetComponent(out healthComponent))
             {
-                healthComponent.Init(m_data.currentHealth, m_data.maxHealth);
+                healthComponent.Init(m_characterSaveData.currentHealth, m_characterSaveData.maxHealth);
             }
 
             if (TryGetComponent(out manaComponent))
             {
-                manaComponent.Init(m_data.currentMana, m_data.maxMana, m_data.manaRestoringRate);
+                manaComponent.Init(m_characterSaveData.currentMana, m_characterSaveData.maxMana, m_characterSaveData.manaRestoringRate);
             }
 
             if (TryGetComponent(out movementComponentCharacter))
             {
-                movementComponentCharacter.Init(m_data.moveSpeed);
+                movementComponentCharacter.Init(m_characterSaveData.moveSpeed);
             }
 
             if (TryGetComponent(out ammunitionComponent))
             {
-                ammunitionComponent.Init(m_data.holyAmmoType, m_data.silverAmmoType);
+                ammunitionComponent.Init(m_characterSaveData.holyAmmoType, m_characterSaveData.silverAmmoType);
             }
 
             TryGetComponent(out interactComponent);
@@ -46,6 +47,22 @@ namespace BloodyMaze.Components
             abilitiesManagerSlot1 = abilitiesManagers[0];
             abilitiesManagerSlot2 = abilitiesManagers[1];
             TryGetComponent(out ammunitionComponent);
+
+            GameEvents.OnSaveData += SaveData;
+        }
+
+        private void OnDestroy()
+        {
+            GameEvents.OnSaveData -= SaveData;
+        }
+
+        private void SaveData()
+        {
+            m_characterSaveData.currentHealth = healthComponent.currentHealth;
+            m_characterSaveData.holyAmmoType.currentAmmo = ammunitionComponent.m_ammoType["holy"].currentAmmo
+            + ammunitionComponent.m_ammoType["holy"].currentRoundAmmo;
+            m_characterSaveData.silverAmmoType.currentAmmo = ammunitionComponent.m_ammoType["silver"].currentAmmo
+            + ammunitionComponent.m_ammoType["silver"].currentRoundAmmo;
         }
     }
 }

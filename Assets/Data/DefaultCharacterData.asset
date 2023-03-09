@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9aa10bd3c8a1b4ba5925242d05f7da, type: 3}
+  m_Name: DefaultCharacterData
+  m_EditorClassIdentifier: 
+  characterSaveData:
+    currentHealth: 100
+    maxHealth: 100
+    currentMana: 100
+    maxMana: 100
+    manaRestoringRate: 30
+    moveSpeed: 5
+    holyAmmoType:
+      maxAmmo: 42
+      currentAmmo: 40
+      roundSize: 6
+      currentRoundAmmo: 0
+    silverAmmoType:
+      maxAmmo: 42
+      currentAmmo: 42
+      roundSize: 6
+      currentRoundAmmo: 0
