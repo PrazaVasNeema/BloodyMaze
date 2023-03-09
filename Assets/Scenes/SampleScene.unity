@@ -1058,7 +1058,7 @@ MonoBehaviour:
   playerProfile: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
   characterDataDefault: {fileID: 11400000, guid: b7f08e91e0414a0488b096cd90828c80, type: 2}
   globalEventsDefault: {fileID: 11400000, guid: ce361acc43725cd4ea59a1e42ccff23d, type: 2}
-  shouldInitNewData: 1
+  shouldInitNewData: 0
   levelController: {fileID: 1379924499}
 --- !u!4 &573476632
 Transform:

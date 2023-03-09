@@ -12,6 +12,13 @@ namespace BloodyMaze
         private GlobalEventsData m_globalEvents = new();
         public GlobalEventsData globalEvents => m_globalEvents;
 
+        public List<StringLoc> text;
+
+        public string GetText(string key)
+        {
+
+        }
+
         public CharacterSaveData GetCharacterSaveData()
         {
             return m_character;
@@ -45,8 +52,16 @@ namespace BloodyMaze
         {
             PlayerProfileData data = new PlayerProfileData();
             data.character = m_character;
+            data.globalEvents = m_globalEvents;
 
             return JsonUtility.ToJson(data);
         }
+    }
+
+    [System.Serializable]
+    public class StringLoc
+    {
+        public string key;
+        public string text;
     }
 }
