@@ -8,6 +8,7 @@ namespace BloodyMaze
     public class PlayerProfileData
     {
         public CharacterSaveData character = new();
+        public GlobalEventsData globalEvents = new();
     }
 
     [System.Serializable]
@@ -22,5 +23,11 @@ namespace BloodyMaze
 
         public AmmoType holyAmmoType;
         public AmmoType silverAmmoType;
+    }
+
+    [System.Serializable]
+    public class GlobalEventsData
+    {
+        public List<bool> globalEvents = new();
     }
 }

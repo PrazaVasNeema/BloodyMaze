@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
@@ -18,6 +19,7 @@ namespace BloodyMaze.Components
         public override void ActivateModule()
         {
             GameInventory.current.AddItem(m_objectModel.item);
+            GameController.instance.playerProfile.globalEvents.globalEvents[m_objectModel.correspondingFlag] = true;
             Destroy(gameObject);
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
         }

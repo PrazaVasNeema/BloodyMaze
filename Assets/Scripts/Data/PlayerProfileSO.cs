@@ -9,6 +9,8 @@ namespace BloodyMaze
     public class PlayerProfileSO : ScriptableObject
     {
         private CharacterSaveData m_character = new();
+        private GlobalEventsData m_globalEvents = new();
+        public GlobalEventsData globalEvents => m_globalEvents;
 
         public CharacterSaveData GetCharacterSaveData()
         {
@@ -19,7 +21,11 @@ namespace BloodyMaze
         {
             if (shouldInitNewData)
             {
-                m_character = GameController.instance.characterData.characterSaveData;
+                var characterDataDefault = Instantiate(GameController.instance.characterDataDefault);
+                var globalEventsDefault = Instantiate(GameController.instance.globalEventsDefault);
+
+                m_character = characterDataDefault.characterSaveData;
+                m_globalEvents = globalEventsDefault.globalEventsData;
             }
             else
             {
@@ -29,6 +35,7 @@ namespace BloodyMaze
                     if (data != null)
                     {
                         m_character = data.character;
+                        m_globalEvents = data.globalEvents;
                     }
                 }
             }

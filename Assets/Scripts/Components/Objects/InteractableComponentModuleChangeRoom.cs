@@ -7,8 +7,8 @@ namespace BloodyMaze.Components
 {
     public class InteractableComponentModuleChangeRoom : InteractableComponentModuleAbstract
     {
-        [SerializeField] private RoomComponent m_prevRoom;
-        [SerializeField] private RoomComponent m_nextRoom;
+        [SerializeField] private RoomController m_prevRoom;
+        [SerializeField] private RoomController m_nextRoom;
         [SerializeField] private Transform m_transitPoint;
 
         public override void ActivateModule()

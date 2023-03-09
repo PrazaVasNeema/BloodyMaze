@@ -21,7 +21,7 @@ MonoBehaviour:
     moveSpeed: 5
     holyAmmoType:
       maxAmmo: 42
-      currentAmmo: 40
+      currentAmmo: 42
       roundSize: 6
       currentRoundAmmo: 0
     silverAmmoType:

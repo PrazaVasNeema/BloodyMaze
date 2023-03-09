@@ -10,7 +10,8 @@ namespace BloodyMaze.Controllers
         public static GameController instance { get; private set; }
 
         public PlayerProfileSO playerProfile;
-        public CharacterData characterData;
+        public CharacterData characterDataDefault;
+        public GlobalEventsSO globalEventsDefault;
         public bool shouldInitNewData;
         public LevelController levelController;
 

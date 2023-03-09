@@ -13,8 +13,8 @@ namespace BloodyMaze.Controllers
         [SerializeField] private Animator m_animator;
         [SerializeField] private CharacterComponent m_characterComponent;
 
-        private RoomComponent m_prevRoom;
-        private RoomComponent m_nextRoom;
+        private RoomController m_prevRoom;
+        private RoomController m_nextRoom;
         private Transform m_whereTo;
 
         private void Awake()
@@ -32,7 +32,7 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
         }
 
-        public void TransitCharacter(Transform whereTo, RoomComponent prevRoom, RoomComponent nextRoom)
+        public void TransitCharacter(Transform whereTo, RoomController prevRoom, RoomController nextRoom)
         {
             m_prevRoom = prevRoom;
             m_nextRoom = nextRoom;
