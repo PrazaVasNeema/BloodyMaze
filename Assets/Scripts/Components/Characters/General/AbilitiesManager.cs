@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -14,6 +15,7 @@ namespace BloodyMaze.Components
         public int currentAbilityIndex => m_currentAbilityIndex;
 
         public System.Action<int> onAbilityChange;
+        public UnityEvent onUseAbility;
 
         private void Awake()
         {
@@ -59,8 +61,10 @@ namespace BloodyMaze.Components
 
         public void UseAbility()
         {
-
-            m_currentAbility.UseAbility();
+            if (m_currentAbility.UseAbility())
+            {
+                onUseAbility?.Invoke();
+            }
         }
 
     }

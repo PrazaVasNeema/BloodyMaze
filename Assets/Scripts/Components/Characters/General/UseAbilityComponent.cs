@@ -25,7 +25,7 @@ namespace BloodyMaze.Components
 
         }
 
-        public void UseAbility()
+        public bool UseAbility()
         {
             if (m_timer <= 0f)
             {
@@ -39,7 +39,9 @@ namespace BloodyMaze.Components
                     m_abilityComponent.UseAbility(-1);
                     m_timer = m_cooldownTime;
                 }
+                return true;
             }
+            return false;
         }
 
         private void Update()

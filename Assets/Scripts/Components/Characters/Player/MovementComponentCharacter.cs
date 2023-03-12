@@ -7,8 +7,11 @@ namespace BloodyMaze.Components
     [RequireComponent(typeof(CharacterController))]
     public class MovementComponentCharacter : MovementComponentAbstract
     {
-        private CharacterController m_characterController;
         [SerializeField] private float m_speed = 5f;
+        public float speed => m_speed;
+        public float velocity => m_characterController.velocity.magnitude;
+
+        private CharacterController m_characterController;
 
         private void Awake()
         {
