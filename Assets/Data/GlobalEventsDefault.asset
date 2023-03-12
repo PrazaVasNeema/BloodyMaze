@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GlobalEventsDefault
   m_EditorClassIdentifier: 
   globalEventsData:
-    globalEvents: 000000000000000000000000
+    globalEvents: 000000000000010000000000
