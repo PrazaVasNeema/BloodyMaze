@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using BloodyMaze.Controllers;
 
-namespace BloodyMaze.Controllers
+namespace BloodyMaze
 {
 
     public class GameController : MonoBehaviour
     {
         public static GameController instance { get; private set; }
+
+        [SerializeField] private GameObject m_loader;
 
         public PlayerProfileSO playerProfile;
         public CharacterData characterDataDefault;
@@ -25,9 +29,19 @@ namespace BloodyMaze.Controllers
 
             instance = this;
             DontDestroyOnLoad(gameObject);
+            m_loader.SetActive(false);
         }
 
         private void Start()
+        {
+            //LoadPlayerProfile();
+        }
+
+        private void OnApplicationQuit()
+        {
+        }
+
+        private void LoadPlayerProfile()
         {
             var json = "";
             if (!shouldInitNewData)
@@ -39,10 +53,6 @@ namespace BloodyMaze.Controllers
             levelController.Init();
             // playerProfile.audioOptions.fxVolume;
             // playerProfile.audioOptions.musicVolume;
-        }
-
-        private void OnApplicationQuit()
-        {
         }
 
         public void SaveData()
@@ -62,6 +72,25 @@ namespace BloodyMaze.Controllers
             var json = playerProfile.ToJson();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString("PlayerProfile", json);
+        }
+
+        public static void LoadScene(string sceneName)
+        {
+            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
+        }
+
+        private IEnumerator LoadSceneAsync(string sceneName)
+        {
+            m_loader.SetActive(true);
+
+            yield return SceneManager.LoadSceneAsync("Empty");
+
+            System.GC.Collect();
+            Resources.UnloadUnusedAssets();
+
+            yield return SceneManager.LoadSceneAsync(sceneName);
+
+            m_loader.SetActive(false);
         }
     }
 
