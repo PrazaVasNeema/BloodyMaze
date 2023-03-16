@@ -50,7 +50,6 @@ namespace BloodyMaze.Components
                 m_interactableComponentModule.ActivateModule();
             }
             onActivate?.Invoke();
-            // Debug.Log("Activate");
         }
     }
 }

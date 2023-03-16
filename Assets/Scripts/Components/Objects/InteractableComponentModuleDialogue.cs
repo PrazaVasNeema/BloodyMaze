@@ -16,10 +16,14 @@ namespace BloodyMaze.Components
 
         public override void ActivateModule()
         {
+            m_flag = false;
             GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
-            GameEvents.OnUIGMessagesChangeState?.Invoke(null);
+            GameEvents.OnChangeGameplayState?.Invoke(2);
+            while (!m_flag)
+            {
+            }
             m_dialogueStarterComponent.StartDialogue(0);
+            m_flag = false;
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BloodyMaze.States;
 
 namespace BloodyMaze
 {
@@ -17,12 +18,12 @@ namespace BloodyMaze
         private string sentence;
 
         // Queue - FIFO: First In First Out
-        private Queue<string> sentences;
+        private Queue<string> sentences = new Queue<string>();
 
         // Start is called before the first frame update
         void Start()
         {
-            sentences = new Queue<string>();
+            // sentences = new Queue<string>();
         }
 
         public void StartDialogue(Dialogue dialogue)
@@ -37,6 +38,7 @@ namespace BloodyMaze
 
             foreach (string sentence in dialogue.sentences)
             {
+                Debug.Log(sentence);
                 sentences.Enqueue(sentence);
             }
 
@@ -50,11 +52,10 @@ namespace BloodyMaze
             {
                 if (sentences.Count == 0)
                 {
-                    EndDialogue();
+                    StartCoroutine(EndDialogueCo());
                     return;
                 }
                 sentence = sentences.Dequeue();
-                Debug.Log(sentence);
                 StartCoroutine(TypeSentence(sentence));
             }
             else
@@ -76,13 +77,20 @@ namespace BloodyMaze
             Debug.Log("this");
         }
 
-        void EndDialogue()
+        IEnumerator EndDialogueCo()
         {
             Debug.Log("End of conversation");
-            GameState.current.ChangeState();
             GameEvents.OnSetInteractState?.Invoke();
 
             animator.SetBool("IsOpen", false);
+
+            bool doOnce = false;
+            if (doOnce)
+            {
+                doOnce = true;
+                yield return new WaitForSecondsRealtime(1f);
+            }
+            FindObjectOfType<GameplayGameMode>().GotoGameplay();
         }
     }
 }

@@ -7,12 +7,47 @@ namespace BloodyMaze.States
 {
     public class GameplayGameMode : GameModeBehavior
     {
+        private void OnEnable()
+        {
+            GameEvents.OnChangeGameplayState += CallGoto;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnChangeGameplayState -= CallGoto;
+        }
+
+        private void CallGoto(int stateIndex)
+        {
+            switch (stateIndex)
+            {
+                case 0:
+                    GotoGameplay();
+                    break;
+                case 1:
+                    GotoNote();
+                    break;
+                case 2:
+                    GotoDialogue();
+                    break;
+            }
+        }
+
         public void GotoGameplay()
         {
             ChangeState<GameplayState>();
         }
 
-        public void GotoPasuse()
+        public void GotoNote()
+        {
+            ChangeState<NoteState>();
+        }
+        public void GotoDialogue()
+        {
+            ChangeState<DialogueState>();
+        }
+
+        public void GotoJournal()
         {
             ChangeState<JournalState>();
         }

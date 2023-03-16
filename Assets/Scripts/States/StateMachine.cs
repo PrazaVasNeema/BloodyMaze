@@ -40,6 +40,7 @@ namespace BloodyMaze.States
                     view.SetActive(true);
                 }
                 m_currentState = nextState;
+                GameEvents.OnGameplayStateChanged?.Invoke();
             }
         }
     }

@@ -9,11 +9,20 @@ namespace BloodyMaze
         [TextArea(3, 10)]
         [SerializeField] private string m_noteText;
 
+
+
         public override void ActivateModule()
         {
+            m_flag = false;
             GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
-            GameEvents.OnUIGMessagesChangeState?.Invoke(m_noteText);
+            GameEvents.OnChangeGameplayState?.Invoke(1);
+            while (!m_flag)
+            {
+            }
+            GameEvents.OnShowNote?.Invoke(m_noteText);
+            m_flag = false;
         }
+
+
     }
 }
