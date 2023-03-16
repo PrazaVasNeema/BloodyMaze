@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.Components;
 using Cinemachine;
+using BloodyMaze.UI;
 
 namespace BloodyMaze.Controllers
 {
@@ -12,7 +13,7 @@ namespace BloodyMaze.Controllers
         public static LevelController current { private set; get; }
 
         [SerializeField] private PlayerInputController m_playerInputController;
-        [SerializeField] private UIPlayerHudControllerPStats m_playerHUDControllerPStats;
+        [SerializeField] private UIPlayerHud m_playerHud;
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
@@ -43,7 +44,7 @@ namespace BloodyMaze.Controllers
             var player = SpawnPlayer();
             player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);
-            m_playerHUDControllerPStats.Init(player);
+            m_playerHud.Init(player);
             m_transitSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
         }

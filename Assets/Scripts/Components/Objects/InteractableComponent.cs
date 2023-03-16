@@ -29,7 +29,7 @@ namespace BloodyMaze.Components
             if (m_interactComponent && GameState.current.state == GameStates.EXPLORING)
             {
                 m_interactComponent.OnInteract += Activate;
-                GameEvents.OnUIGMessagesChangeState?.Invoke(m_messageToShow);
+                GameEvents.OnShowMessage?.Invoke(m_messageToShow);
             }
         }
 
@@ -39,7 +39,7 @@ namespace BloodyMaze.Components
             if (m_interactComponent && GameState.current.state == GameStates.EXPLORING)
             {
                 m_interactComponent.OnInteract -= Activate;
-                GameEvents.OnUIGMessagesChangeState?.Invoke(null);
+                GameEvents.OnHideMessage?.Invoke();
             }
         }
 

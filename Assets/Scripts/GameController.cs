@@ -35,6 +35,9 @@ namespace BloodyMaze
         private void Start()
         {
             //LoadPlayerProfile();
+            LoadPlayerProfile();
+            levelController = FindObjectOfType<LevelController>();
+            InitLevel();
         }
 
         private void OnApplicationQuit()
