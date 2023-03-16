@@ -41,6 +41,11 @@ namespace BloodyMaze
         {
         }
 
+        private void InitLevel()
+        {
+            levelController.Init();
+        }
+
         private void LoadPlayerProfile()
         {
             var json = "";
@@ -50,7 +55,6 @@ namespace BloodyMaze
                 Debug.Log($">>> load {json}");
             }
             playerProfile.LoadFromJson(json, shouldInitNewData);
-            levelController.Init();
             // playerProfile.audioOptions.fxVolume;
             // playerProfile.audioOptions.musicVolume;
         }
@@ -81,16 +85,23 @@ namespace BloodyMaze
 
         private IEnumerator LoadSceneAsync(string sceneName)
         {
+            float timer = Time.unscaledTime;
             m_loader.SetActive(true);
 
             yield return SceneManager.LoadSceneAsync("Empty");
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
-
+            LoadPlayerProfile();
+            var dif = Time.unscaledTime - timer;
+            if (dif < 1)
+            {
+                yield return new WaitForSecondsRealtime(1 - dif);
+            }
             yield return SceneManager.LoadSceneAsync(sceneName);
-
+            levelController = FindObjectOfType<LevelController>();
             m_loader.SetActive(false);
+            InitLevel();
         }
     }
 
