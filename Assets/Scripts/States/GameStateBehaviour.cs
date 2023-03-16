@@ -5,7 +5,7 @@ namespace BloodyMaze.States
 {
     public abstract class GameStateBehavior : MonoBehaviour, IGameState
     {
-        [SerializeField] private List<GameObject> m_views;
+        [SerializeField] protected List<GameObject> m_views;
         protected StateMachine stateMachine { private set; get; }
 
         void IGameState.Init(StateMachine stateMachine)
