@@ -53,7 +53,9 @@ MonoBehaviour:
   optionsData:
     language: 0
   roomsData:
-  - agentsToSpawnIDs: []
+  - agentsToSpawnIDs:
+    - agentID: 0
+      shouldntSpawn: 0
     itemsToSpawnIDs: []
   - agentsToSpawnIDs: []
     itemsToSpawnIDs: []

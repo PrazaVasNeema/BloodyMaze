@@ -14,7 +14,6 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            Debug.Log(m_roomItems.Length);
             var globalEvents = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
             var temp = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID];
             List<AgentRoomStatus> agentsToSpawnIDs = new();
@@ -23,16 +22,17 @@ namespace BloodyMaze.Controllers
             for (int i = 0; i < m_roomItems.Length; i++)
             {
                 var item = m_roomItems[i].gameObject.GetComponentInChildren<PickableItemComponent>();
-                Debug.Log(globalEvents.Find((x) => x.eventKey == m_roomItems[i].item.correspondingEventKey));
                 var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].item.correspondingEventKey);
                 if (globalEventsEvent != null && globalEventsEvent.flag)
                 {
                     m_roomItems[i].gameObject.SetActive(false);
                 }
             }
+
             for (int i = 0; i < agentsToSpawnIDs.Count; i++)
             {
-                if (agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID).shouldntSpawn)
+                var temp2 = agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID);
+                if (temp2 != null && temp2.shouldntSpawn)
                 {
                     m_roomAgents[i].gameObject.SetActive(false);
                 }
