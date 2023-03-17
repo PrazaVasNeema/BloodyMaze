@@ -6,13 +6,7 @@ namespace BloodyMaze.Components
 {
     public class InteractableComponentModuleDialogue : InteractableComponentModuleAbstract
     {
-        [SerializeField] private Dialogue dialogue;
-        private DialogueStarterComponent m_dialogueStarterComponent;
-
-        private void Awake()
-        {
-            TryGetComponent(out m_dialogueStarterComponent);
-        }
+        [SerializeField] private string m_dialogueKey;
 
         public override void ActivateModule()
         {
@@ -22,7 +16,7 @@ namespace BloodyMaze.Components
             while (!m_flag)
             {
             }
-            m_dialogueStarterComponent.StartDialogue(0);
+            GameEvents.OnStartDialogue?.Invoke(m_dialogueKey);
             m_flag = false;
         }
     }

@@ -30,6 +30,9 @@ namespace BloodyMaze.States
                 case 2:
                     GotoDialogue();
                     break;
+                case 3:
+                    GotoDialogue();
+                    break;
             }
         }
 

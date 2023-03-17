@@ -9,7 +9,7 @@ namespace BloodyMaze
     public class LocDataSO : ScriptableObject
     {
         public List<LocNotesText> locNotesTexts;
-        public List<LocDialogueText> locDialogueTexts;
+        public List<LocDialogueData> locDialogueTexts;
         public List<LocInterfaceText> locInterfaceTexts;
 
         public string GetNoteText(string key)
@@ -20,7 +20,11 @@ namespace BloodyMaze
             // return locNotesTexts[0].text[0];
         }
 
+        public Dialogue GetDialogue(string key)
+        {
+            return locDialogueTexts.Find((x) => x.key == key).dialogue[GameController.instance.playerProfileSO.playerProfileData.optionsData.language];
 
+        }
     }
 
 
@@ -32,10 +36,10 @@ namespace BloodyMaze
     }
 
     [System.Serializable]
-    public class LocDialogueText
+    public class LocDialogueData
     {
         public string key;
-        public Dialogue[] text;
+        public Dialogue[] dialogue;
     }
 
     [System.Serializable]

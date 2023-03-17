@@ -11,7 +11,7 @@ namespace BloodyMaze.Components
 
         public void StartDialogue(int dialogueIndex)
         {
-            FindObjectOfType<DialogueController>().StartDialogue(m_dialogues[dialogueIndex]);
+            // FindObjectOfType<DialogueController>().StartDialogue(m_dialogues[dialogueIndex]);
         }
     }
 }

@@ -26,8 +26,19 @@ namespace BloodyMaze
             // sentences = new Queue<string>();
         }
 
-        public void StartDialogue(Dialogue dialogue)
+        private void OnEnable()
         {
+            GameEvents.OnStartDialogue += StartDialogue;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnStartDialogue -= StartDialogue;
+        }
+
+        public void StartDialogue(string key)
+        {
+            Dialogue dialogue = GameController.instance.locData.GetDialogue(key);
             Debug.Log("Starting conversation with " + dialogue.npcName);
 
             animator.SetBool("IsOpen", true);
