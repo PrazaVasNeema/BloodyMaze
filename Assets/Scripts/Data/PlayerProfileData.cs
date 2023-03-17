@@ -31,7 +31,7 @@ namespace BloodyMaze
     [System.Serializable]
     public class GlobalEventsData
     {
-        public string desc;
+        public string eventKey;
         public bool flag;
     }
 

@@ -36,6 +36,7 @@ namespace BloodyMaze.Controllers
             PlayerProfileSO playerProfileSO = GameController.instance.playerProfileSO;
             foreach (RoomController rc in m_rooms)
             {
+                rc.Init();
                 if (rc.roomID == m_activeRoom)
                     rc.gameObject.SetActive(true);
                 else

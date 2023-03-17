@@ -12,6 +12,7 @@ namespace BloodyMaze
         public void Activate()
         {
             m_objectToActivate.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }

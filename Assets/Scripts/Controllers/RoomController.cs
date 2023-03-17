@@ -14,12 +14,18 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
+            Debug.Log(m_roomItems.Length);
             var globalEvents = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
-            List<AgentRoomStatus> agentsToSpawnIDs = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID].agentsToSpawnIDs;
+            var temp = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID];
+            List<AgentRoomStatus> agentsToSpawnIDs = new();
+            if (temp != null)
+                agentsToSpawnIDs = temp.agentsToSpawnIDs;
             for (int i = 0; i < m_roomItems.Length; i++)
             {
                 var item = m_roomItems[i].gameObject.GetComponentInChildren<PickableItemComponent>();
-                if (globalEvents[item.correspondingFlag].flag)
+                Debug.Log(globalEvents.Find((x) => x.eventKey == m_roomItems[i].item.correspondingEventKey));
+                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].item.correspondingEventKey);
+                if (globalEventsEvent != null && globalEventsEvent.flag)
                 {
                     m_roomItems[i].gameObject.SetActive(false);
                 }

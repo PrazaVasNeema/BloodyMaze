@@ -30,26 +30,70 @@ MonoBehaviour:
       roundSize: 6
       currentRoundAmmo: 0
   globalEventsData:
-  - desc: red
-    flag: 0
-  - desc: cian
+  - eventKey: heart_key
     flag: 1
-  - desc: purple
+  - eventKey: 
     flag: 1
-  - desc: 
+  - eventKey: 
+    flag: 1
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
-  - desc: 
+  - eventKey: 
     flag: 0
   optionsData:
     language: 0
-  roomsData: []
+  roomsData:
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
+  - agentsToSpawnIDs: []
+    itemsToSpawnIDs: []
