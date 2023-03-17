@@ -16,6 +16,7 @@ namespace BloodyMaze.Controllers
         private RoomController m_prevRoom;
         private RoomController m_nextRoom;
         private Transform m_whereTo;
+        private bool m_shouldChangeRoom;
 
         private void Awake()
         {
@@ -32,18 +33,18 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
         }
 
-        public void TransitCharacter(Transform whereTo, RoomController prevRoom, RoomController nextRoom)
+        public void TransitCharacter(Transform whereTo, RoomController prevRoom, RoomController nextRoom, bool shouldChangeRoom)
         {
             m_prevRoom = prevRoom;
             m_nextRoom = nextRoom;
+            m_shouldChangeRoom = shouldChangeRoom;
             m_whereTo = whereTo;
             StartCoroutine(InCoroutine());
         }
 
         private IEnumerator InCoroutine()
         {
-            GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
+            Debug.Log("Start");
             m_animator.SetTrigger("Start");
             bool doOnce = true;
             while (doOnce)
@@ -51,9 +52,14 @@ namespace BloodyMaze.Controllers
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeInDuration);
             }
-            m_nextRoom.gameObject.SetActive(true);
+            if (m_shouldChangeRoom)
+                m_nextRoom.gameObject.SetActive(true);
+            Debug.Log("Continue");
             m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
-            m_prevRoom.gameObject.SetActive(false);
+            GameEvents.OnTransition?.Invoke();
+
+            if (m_shouldChangeRoom)
+                m_prevRoom.gameObject.SetActive(false);
             m_animator.SetTrigger("End");
             doOnce = true;
             while (doOnce)
@@ -61,8 +67,9 @@ namespace BloodyMaze.Controllers
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeOutDuration);
             }
-            GameState.current.ChangeState();
-            GameEvents.OnSetInteractState?.Invoke();
+            Debug.Log("End");
+            GameEvents.OnChangeGameplayState?.Invoke(0);
+            GameEvents.OnHideMessage?.Invoke();
         }
 
     }

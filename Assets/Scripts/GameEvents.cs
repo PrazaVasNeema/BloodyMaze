@@ -15,5 +15,6 @@ namespace BloodyMaze
         public static System.Action OnSetInteractState;
         public static System.Action<int> OnChangeGameplayState;
         public static System.Action OnGameplayStateChanged;
+        public static System.Action OnTransition;
     }
 }

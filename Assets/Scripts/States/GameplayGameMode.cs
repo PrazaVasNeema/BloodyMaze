@@ -31,7 +31,10 @@ namespace BloodyMaze.States
                     GotoDialogue();
                     break;
                 case 3:
-                    GotoDialogue();
+                    GotoJournal();
+                    break;
+                case 4:
+                    GotoNone();
                     break;
             }
         }
@@ -53,6 +56,11 @@ namespace BloodyMaze.States
         public void GotoJournal()
         {
             ChangeState<JournalState>();
+        }
+
+        public void GotoNone()
+        {
+            ChangeState<NoneState>();
         }
 
         public void GotoMainMenu()

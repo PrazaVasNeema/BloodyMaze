@@ -44,7 +44,21 @@ namespace BloodyMaze
     [System.Serializable]
     public class RoomsData
     {
-        public List<int> enemiesToSpawnIDs = new();
-        public List<int> itemsToSpawnIDs = new();
+        public List<AgentRoomStatus> agentsToSpawnIDs = new();
+        public List<ItemRoomStatus> itemsToSpawnIDs = new();
+    }
+
+    [System.Serializable]
+    public class AgentRoomStatus
+    {
+        public int agentID;
+        public bool shouldntSpawn;
+    }
+
+    [System.Serializable]
+    public class ItemRoomStatus
+    {
+        public int itemID;
+        public bool shouldntSpawn;
     }
 }
