@@ -7,8 +7,11 @@ namespace BloodyMaze
     [System.Serializable]
     public class PlayerProfileData
     {
-        public CharacterSaveData character = new();
-        public GlobalEventsData globalEvents = new();
+        public CharacterSaveData characterSaveData = new();
+        public List<GlobalEventsData> globalEventsData = new();
+        public OptionsData optionsData = new();
+        public List<RoomsData> roomsData = new();
+
     }
 
     [System.Serializable]
@@ -28,6 +31,20 @@ namespace BloodyMaze
     [System.Serializable]
     public class GlobalEventsData
     {
-        public List<bool> globalEvents = new();
+        public string desc;
+        public bool flag;
+    }
+
+    [System.Serializable]
+    public class OptionsData
+    {
+        public int language;
+    }
+
+    [System.Serializable]
+    public class RoomsData
+    {
+        public List<int> enemiesToSpawnIDs = new();
+        public List<int> itemsToSpawnIDs = new();
     }
 }

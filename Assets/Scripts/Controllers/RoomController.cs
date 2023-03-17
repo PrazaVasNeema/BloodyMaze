@@ -13,11 +13,11 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            var globalEvents = GameController.instance.playerProfile.globalEvents;
+            var globalEvents = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
             for (int i = 0; i < m_roomItems.Length; i++)
             {
                 var item = m_roomItems[i].gameObject.GetComponentInChildren<PickableItemComponent>();
-                if (globalEvents.globalEvents[item.correspondingFlag])
+                if (globalEvents[item.correspondingFlag].flag)
                 {
                     m_roomItems[i].gameObject.SetActive(false);
                 }

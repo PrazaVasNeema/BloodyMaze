@@ -21,9 +21,9 @@ namespace BloodyMaze.UI
             GameEvents.OnShowNote -= FillNote;
         }
 
-        private void FillNote(string text)
+        private void FillNote(string key)
         {
-            m_noteText.text = text;
+            m_noteText.text = GameController.instance.locData.GetNoteText(key);
         }
 
     }

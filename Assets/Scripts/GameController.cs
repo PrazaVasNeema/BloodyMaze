@@ -12,12 +12,14 @@ namespace BloodyMaze
         public static GameController instance { get; private set; }
 
         [SerializeField] private GameObject m_loader;
+        [SerializeField] private bool m_shouldInitNewData;
+        [SerializeField] private LocDataSO m_locData;
+        public LocDataSO locData => m_locData;
 
-        public PlayerProfileSO playerProfile;
-        public CharacterData characterDataDefault;
-        public GlobalEventsSO globalEventsDefault;
-        public bool shouldInitNewData;
-        public LevelController levelController;
+        public PlayerProfileSO playerProfileSO;
+        public DataDefault dataDefault;
+
+        private LevelController m_levelController;
 
         private void Awake()
         {
@@ -35,8 +37,8 @@ namespace BloodyMaze
         private void Start()
         {
             //LoadPlayerProfile();
-            LoadPlayerProfile();
-            levelController = FindObjectOfType<LevelController>();
+            LoadPlayerProfileGameplayData();
+            m_levelController = FindObjectOfType<LevelController>();
             InitLevel();
         }
 
@@ -46,18 +48,31 @@ namespace BloodyMaze
 
         private void InitLevel()
         {
-            levelController.Init();
+            m_levelController.Init();
         }
 
-        private void LoadPlayerProfile()
+        private void LoadPlayerProfileGameplayData()
         {
             var json = "";
-            if (!shouldInitNewData)
+            if (!m_shouldInitNewData)
             {
                 json = PlayerPrefs.GetString("PlayerProfile");
                 Debug.Log($">>> load {json}");
             }
-            playerProfile.LoadFromJson(json, shouldInitNewData);
+            playerProfileSO.LoadFromJsonGameplay(json, m_shouldInitNewData);
+            // playerProfile.audioOptions.fxVolume;
+            // playerProfile.audioOptions.musicVolume;
+        }
+
+        private void LoadPlayerProfileOptionsData()
+        {
+            var json = "";
+            if (!m_shouldInitNewData)
+            {
+                json = PlayerPrefs.GetString("PlayerProfile");
+                Debug.Log($">>> load {json}");
+            }
+            playerProfileSO.LoadFromJsonOptions(json);
             // playerProfile.audioOptions.fxVolume;
             // playerProfile.audioOptions.musicVolume;
         }
@@ -76,7 +91,7 @@ namespace BloodyMaze
                 doOnce = false;
                 yield return new WaitForSeconds(2f);
             }
-            var json = playerProfile.ToJson();
+            var json = playerProfileSO.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString("PlayerProfile", json);
         }
@@ -95,14 +110,14 @@ namespace BloodyMaze
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
-            LoadPlayerProfile();
+            LoadPlayerProfileGameplayData();
             var dif = Time.unscaledTime - timer;
             if (dif < 1)
             {
                 yield return new WaitForSecondsRealtime(1 - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
-            levelController = FindObjectOfType<LevelController>();
+            m_levelController = FindObjectOfType<LevelController>();
             m_loader.SetActive(false);
             InitLevel();
         }

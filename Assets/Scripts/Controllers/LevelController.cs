@@ -33,7 +33,7 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            PlayerProfileSO playerProfileSO = GameController.instance.playerProfile;
+            PlayerProfileSO playerProfileSO = GameController.instance.playerProfileSO;
             foreach (RoomController rc in m_rooms)
             {
                 if (rc.roomID == m_activeRoom)

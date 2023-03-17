@@ -12,3 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e90b06f85ce895418dac30d7e96ff9c, type: 3}
   m_Name: PlayerProfileSO
   m_EditorClassIdentifier: 
+  playerProfileData:
+    characterSaveData:
+      currentHealth: 100
+      maxHealth: 100
+      currentMana: 100
+      maxMana: 100
+      manaRestoringRate: 10
+      moveSpeed: 5
+      holyAmmoType:
+        maxAmmo: 42
+        currentAmmo: 42
+        roundSize: 6
+        currentRoundAmmo: 0
+      silverAmmoType:
+        maxAmmo: 42
+        currentAmmo: 42
+        roundSize: 6
+        currentRoundAmmo: 0
+    globalEventsData:
+    - desc: red
+      flag: 0
+    - desc: cian
+      flag: 1
+    - desc: purple
+      flag: 1
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    - desc: 
+      flag: 0
+    optionsData:
+      language: 1
+    roomsData: []

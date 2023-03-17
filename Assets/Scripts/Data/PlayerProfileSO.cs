@@ -8,24 +8,21 @@ namespace BloodyMaze
     [CreateAssetMenu(fileName = "PlayerProfileSO", menuName = "PlayerProfileSO")]
     public class PlayerProfileSO : ScriptableObject
     {
-        private CharacterSaveData m_character = new();
-        private GlobalEventsData m_globalEvents = new();
-        public GlobalEventsData globalEvents => m_globalEvents;
+        public PlayerProfileData playerProfileData = new();
 
         public CharacterSaveData GetCharacterSaveData()
         {
-            return m_character;
+            return playerProfileData.characterSaveData;
         }
 
-        public void LoadFromJson(string json, bool shouldInitNewData)
+        public void LoadFromJsonGameplay(string json, bool shouldInitNewData)
         {
             if (shouldInitNewData)
             {
-                var characterDataDefault = Instantiate(GameController.instance.characterDataDefault);
-                var globalEventsDefault = Instantiate(GameController.instance.globalEventsDefault);
-
-                m_character = characterDataDefault.characterSaveData;
-                m_globalEvents = globalEventsDefault.globalEventsData;
+                var dataDefault = Instantiate(GameController.instance.dataDefault);
+                playerProfileData.characterSaveData = dataDefault.characterSaveData;
+                playerProfileData.globalEventsData = dataDefault.globalEventsData;
+                playerProfileData.roomsData = dataDefault.roomsData;
             }
             else
             {
@@ -34,19 +31,39 @@ namespace BloodyMaze
                     var data = JsonUtility.FromJson<PlayerProfileData>(json);
                     if (data != null)
                     {
-                        m_character = data.character;
-                        m_globalEvents = data.globalEvents;
+                        playerProfileData.characterSaveData = data.characterSaveData;
+                        playerProfileData.globalEventsData = data.globalEventsData;
+                        playerProfileData.roomsData = data.roomsData;
                     }
                 }
             }
         }
 
-        public string ToJson()
+        public string ToJsonGameplay()
         {
-            PlayerProfileData data = new PlayerProfileData();
-            data.character = m_character;
+            PlayerProfileData currentData = new PlayerProfileData();
+            currentData.characterSaveData = playerProfileData.characterSaveData;
+            currentData.globalEventsData = playerProfileData.globalEventsData;
+            currentData.roomsData = playerProfileData.roomsData;
 
-            return JsonUtility.ToJson(data);
+            return JsonUtility.ToJson(currentData);
+        }
+
+        public void LoadFromJsonOptions(string json)
+        {
+            if (!string.IsNullOrEmpty(json))
+            {
+                var data = JsonUtility.FromJson<PlayerProfileData>(json);
+                if (data != null)
+                {
+                    playerProfileData.optionsData = data.optionsData;
+                }
+            }
+            else
+            {
+                var dataDefault = Instantiate(GameController.instance.dataDefault);
+                playerProfileData.optionsData = dataDefault.optionsData;
+            }
         }
     }
 }

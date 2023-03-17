@@ -6,8 +6,7 @@ namespace BloodyMaze
 {
     public class InteractableComponentModuleNote : InteractableComponentModuleAbstract
     {
-        [TextArea(3, 10)]
-        [SerializeField] private string m_noteText;
+        [SerializeField] private string m_noteTextKey;
 
 
 
@@ -19,7 +18,7 @@ namespace BloodyMaze
             while (!m_flag)
             {
             }
-            GameEvents.OnShowNote?.Invoke(m_noteText);
+            GameEvents.OnShowNote?.Invoke(m_noteTextKey);
             m_flag = false;
         }
 

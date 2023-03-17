@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86a14ee92f6272459f55e6126dd1aa8, type: 3}
+  m_Name: LocDataSO
+  m_EditorClassIdentifier: 
+  locNotesTexts:
+  - key: 0
+    text:
+    - "\u041D\u0443, \u043F\u0440\u0438\u0432\u0435\u0442!"
+    - Hello there!
+  locDialogueTexts:
+  - key: 0
+    text:
+    - npcName: "\u0413\u0435\u043D\u0435\u0440\u0430\u043B \u0413\u0440\u0438\u0432\u0443\u0441"
+      sentences:
+      - "\u0413\u0435\u043D\u0435\u0440\u0430\u043B \u041A\u0435\u043D\u043E\u0431\u0438"
+      - . . .
+    - npcName: General Grievous
+      sentences:
+      - General Kenobi
+      - . . .
+  locInterfaceTexts: []

@@ -47,11 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_loader: {fileID: 2494103161065296157}
-  playerProfile: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
-  characterDataDefault: {fileID: 11400000, guid: b7f08e91e0414a0488b096cd90828c80, type: 2}
-  globalEventsDefault: {fileID: 11400000, guid: ce361acc43725cd4ea59a1e42ccff23d, type: 2}
-  shouldInitNewData: 1
-  levelController: {fileID: 0}
+  m_shouldInitNewData: 1
+  m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
+  playerProfileSO: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
+  dataDefault: {fileID: 11400000, guid: 6b14b38e8b24f1541a950e4089b2a6ec, type: 2}
 --- !u!1 &2494103160080002552
 GameObject:
   m_ObjectHideFlags: 0

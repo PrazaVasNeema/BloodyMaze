@@ -19,7 +19,7 @@ namespace BloodyMaze.Components
         public override void ActivateModule()
         {
             GameInventory.current.AddItem(m_objectModel.item);
-            GameController.instance.playerProfile.globalEvents.globalEvents[m_objectModel.correspondingFlag] = true;
+            GameController.instance.playerProfileSO.playerProfileData.globalEventsData[m_objectModel.correspondingFlag].flag = true;
             Destroy(gameObject);
             GameEvents.OnUIGMessagesChangeState?.Invoke(null);
         }
