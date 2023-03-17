@@ -6,7 +6,7 @@ using BloodyMaze.States;
 
 namespace BloodyMaze
 {
-    public class DialogueController : MonoBehaviour
+    public class UIDialogue : MonoBehaviour
     {
         public Text nameText;
         public Text dialogueText;

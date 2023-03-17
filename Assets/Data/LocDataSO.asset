@@ -19,13 +19,23 @@ MonoBehaviour:
     - Hello there!
   locDialogueTexts:
   - key: 0
-    text:
-    - npcName: "\u0413\u0435\u043D\u0435\u0440\u0430\u043B \u0413\u0440\u0438\u0432\u0443\u0441"
+    dialogue:
+    - npcName: "\u0430\u043F\u0440\u0440\u043F\u0430"
       sentences:
-      - "\u0413\u0435\u043D\u0435\u0440\u0430\u043B \u041A\u0435\u043D\u043E\u0431\u0438"
-      - . . .
-    - npcName: General Grievous
+      - "\u0430\u043F\u0440\u0430\u043F\u0440"
+      - "\u043F\u0430\u0440\u0430\u043F\u0440\u0440\u043F\u0430"
+    - npcName: fghfhg
       sentences:
-      - General Kenobi
-      - . . .
+      - fghhgf
+      - kgkghghj
   locInterfaceTexts: []
+  locMessagesText:
+  - key: interact
+    text:
+    - "\u0412\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C"
+    - Interact
+  - key: activate
+    text:
+    - "\u0410\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
+    - Activate
+  locJournalNotesText: []

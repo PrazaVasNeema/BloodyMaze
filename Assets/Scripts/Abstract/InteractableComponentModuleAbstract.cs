@@ -6,8 +6,6 @@ namespace BloodyMaze
 {
     public abstract class InteractableComponentModuleAbstract : MonoBehaviour
     {
-        [SerializeField] private string m_messageToShow;
-        public string messageToShow => m_messageToShow;
         protected bool m_flag;
 
         private void OnEnable()

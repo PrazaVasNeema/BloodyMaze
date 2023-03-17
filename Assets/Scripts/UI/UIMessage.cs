@@ -29,11 +29,12 @@ namespace BloodyMaze.UI
             GameEvents.OnHideMessage -= HideMessage;
         }
 
-        private void ShowMessage(string messageText)
+        private void ShowMessage(string key)
         {
             Debug.Log("ShowMessage");
             m_subLevel.SetActive(true);
-            m_messageTMPText.SetText(messageText);
+
+            m_messageTMPText.SetText(GameController.instance.locData.GetMessage(key));
         }
 
         private void HideMessage()

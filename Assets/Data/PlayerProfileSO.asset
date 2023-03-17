@@ -52,5 +52,5 @@ MonoBehaviour:
     - desc: 
       flag: 0
     optionsData:
-      language: 1
+      language: 0
     roomsData: []

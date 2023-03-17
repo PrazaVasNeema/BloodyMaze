@@ -11,6 +11,9 @@ namespace BloodyMaze
         public List<LocNotesText> locNotesTexts;
         public List<LocDialogueData> locDialogueTexts;
         public List<LocInterfaceText> locInterfaceTexts;
+        public List<LocMessagesText> locMessagesText;
+        public List<LocJournalNotesText> locJournalNotesText;
+
 
         public string GetNoteText(string key)
         {
@@ -23,6 +26,14 @@ namespace BloodyMaze
         public Dialogue GetDialogue(string key)
         {
             return locDialogueTexts.Find((x) => x.key == key).dialogue[GameController.instance.playerProfileSO.playerProfileData.optionsData.language];
+
+        }
+
+        // . . .
+
+        public string GetMessage(string key)
+        {
+            return locMessagesText.Find((x) => x.key == key).text[GameController.instance.playerProfileSO.playerProfileData.optionsData.language];
 
         }
     }
@@ -44,6 +55,20 @@ namespace BloodyMaze
 
     [System.Serializable]
     public class LocInterfaceText
+    {
+        public string key;
+        public string[] text;
+    }
+
+    [System.Serializable]
+    public class LocMessagesText
+    {
+        public string key;
+        public string[] text;
+    }
+
+    [System.Serializable]
+    public class LocJournalNotesText
     {
         public string key;
         public string[] text;
