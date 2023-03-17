@@ -21,7 +21,7 @@ namespace BloodyMaze.Components
             GameInventory.current.AddItem(m_objectModel.item);
             GameController.instance.playerProfileSO.playerProfileData.globalEventsData[m_objectModel.correspondingFlag].flag = true;
             Destroy(gameObject);
-            GameEvents.OnUIGMessagesChangeState?.Invoke(null);
+            GameEvents.OnHideMessage?.Invoke();
         }
     }
 }
