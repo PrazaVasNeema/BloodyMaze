@@ -31,7 +31,8 @@ namespace BloodyMaze.Components
             if (m_currentHealth == 0)
             {
                 onDead.Invoke();
-                GameEvents.OnPCDeath?.Invoke();
+                if (GetComponent<CharacterComponent>())
+                    GameEvents.OnPCDeath?.Invoke();
                 // Destroy(gameObject);
             }
         }

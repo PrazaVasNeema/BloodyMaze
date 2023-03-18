@@ -28,14 +28,11 @@ namespace BloodyMaze.Components
 
         private void OnCollisionEnter(Collision other)
         {
-            // TODO работа с коллизией - урон и отбрасывание
-            // var health = other.gameObject.GetComponentInParent<HealthComponent>();
-            // if (health)
-            // {
-            //     health.TakeDamage(m_damage);
-            // }
-
-            // Destroy(gameObject);
+            var health = other.gameObject.GetComponentInParent<HealthComponent>();
+            if (health)
+            {
+                health.TakeDamage(m_damage);
+            }
         }
     }
 
