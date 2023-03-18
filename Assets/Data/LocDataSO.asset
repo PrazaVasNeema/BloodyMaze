@@ -38,4 +38,33 @@ MonoBehaviour:
     text:
     - "\u0410\u043A\u0442\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
     - Activate
+  - key: talk
+    text:
+    - "\u0413\u043E\u0432\u043E\u0440\u0438\u0442\u044C"
+    - Talk
+  - key: read_note
+    text:
+    - "\u0417\u0430\u043F\u0438\u0441\u043A\u0430"
+    - Read note
+  - key: pick_up_item
+    text:
+    - "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C"
+    - Pick up
+  - key: open
+    text:
+    - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
+    - Open
+  - key: enter
+    text:
+    - "\u0412\u043E\u0439\u0442\u0438"
+    - Enter
+  locMiniMessagesText:
+  - key: closed
+    text:
+    - "\u0417\u0430\u043F\u0435\u0440\u0442\u043E"
+    - Closed
+  - key: key_needed
+    text:
+    - "\u041D\u0443\u0436\u0435\u043D \u043A\u043B\u044E\u0447"
+    - Key is required
   locJournalNotesText: []

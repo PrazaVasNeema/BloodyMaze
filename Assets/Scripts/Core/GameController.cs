@@ -15,10 +15,11 @@ namespace BloodyMaze
         [SerializeField] private GameObject m_loader;
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
-        public LocDataSO locData => m_locData;
+        public static LocDataSO locData => instance.m_locData;
         [SerializeField] private TMP_Text m_TMP_Text;
+        [SerializeField] private PlayerProfileSO m_playerProfile;
+        public static PlayerProfileSO playerProfile => instance.m_playerProfile;
 
-        public PlayerProfileSO playerProfileSO;
 
         private LevelController m_levelController;
 
@@ -58,7 +59,7 @@ namespace BloodyMaze
 
         private static void CheckEvent(string eventKey)
         {
-            instance.playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
+            instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
         }
 
         private static void InitLevel()
@@ -74,7 +75,7 @@ namespace BloodyMaze
                 json = PlayerPrefs.GetString("PlayerProfile");
                 Debug.Log($">>> load {json}");
             }
-            instance.playerProfileSO.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+            instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
         }
 
         private static void LoadPlayerProfileOptionsData()
@@ -85,7 +86,7 @@ namespace BloodyMaze
                 json = PlayerPrefs.GetString("PlayerProfile");
                 Debug.Log($">>> load {json}");
             }
-            instance.playerProfileSO.LoadFromJsonOptions(json);
+            instance.m_playerProfile.LoadFromJsonOptions(json);
         }
 
         public static void SaveData()
@@ -102,7 +103,7 @@ namespace BloodyMaze
                 doOnce = false;
                 yield return new WaitForSeconds(2f);
             }
-            var json = playerProfileSO.ToJsonGameplay();
+            var json = m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString("PlayerProfile", json);
         }

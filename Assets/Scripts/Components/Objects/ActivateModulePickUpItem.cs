@@ -22,7 +22,7 @@ namespace BloodyMaze.Components
             GameInventory.current.AddItem(m_item.item);
             GameEvents.OnHideMessage?.Invoke();
             if (!string.IsNullOrEmpty(m_eventFlagToCheck))
-                GameController.instance.playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
+                GameController.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
             Destroy(gameObject);
         }
     }

@@ -32,7 +32,7 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            PlayerProfileSO playerProfileSO = GameController.instance.playerProfileSO;
+            PlayerProfileSO playerProfileSO = GameController.playerProfile;
             foreach (RoomController rc in m_rooms)
             {
                 rc.Init();

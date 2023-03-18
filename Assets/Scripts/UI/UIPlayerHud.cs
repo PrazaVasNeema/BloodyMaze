@@ -140,9 +140,9 @@ namespace BloodyMaze.UI
             }
         }
 
-        private void ShowMiniMessage(string messageText)
+        private void ShowMiniMessage(string miniMessageKey)
         {
-            m_miniMessage.text = messageText;
+            m_miniMessage.text = GameController.locData.GetMiniMessage(miniMessageKey);
             m_animator.SetBool("MiniMessageShouldBeShown", true);
             StopCoroutine(HideMiniMessage());
             StartCoroutine(HideMiniMessage());

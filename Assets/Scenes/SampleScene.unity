@@ -1216,7 +1216,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2398
+  m_Name: pb_Mesh-155212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
-  m_requiredItemName: ghgf
+  m_requiredItemName: fdh
   onSuccesfullActivate:
     m_PersistentCalls:
       m_Calls:
@@ -5526,7 +5526,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  activationFailedMessage: "\u0417\u0430\u043A\u0440\u044B\u0442\u043E"
+  activationFailedMiniMessageKey: key_needed
 --- !u!114 &2044643447
 MonoBehaviour:
   m_ObjectHideFlags: 0

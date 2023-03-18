@@ -51,8 +51,7 @@ MonoBehaviour:
   m_shouldInitNewData: 1
   m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
   m_TMP_Text: {fileID: 2494103161525922202}
-  playerProfileSO: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
-  dataDefault: {fileID: 11400000, guid: 6b14b38e8b24f1541a950e4089b2a6ec, type: 2}
+  m_playerProfile: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
 --- !u!1 &2494103160080002552
 GameObject:
   m_ObjectHideFlags: 0

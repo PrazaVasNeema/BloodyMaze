@@ -9,13 +9,13 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private string m_requiredItemName;
         [SerializeField] private UnityEvent onSuccesfullActivate;
-        [SerializeField] private string activationFailedMessage;
+        [SerializeField] private string activationFailedMiniMessageKey;
 
         public override void ActivateModule()
         {
-            if (!GameInventory.current.InventoryContains(m_requiredItemName) && !string.IsNullOrEmpty(activationFailedMessage))
+            if (!GameInventory.current.InventoryContains(m_requiredItemName) && !string.IsNullOrEmpty(activationFailedMiniMessageKey))
             {
-                GameEvents.OnShowMiniMessage?.Invoke(activationFailedMessage);
+                GameEvents.OnShowMiniMessage?.Invoke(activationFailedMiniMessageKey);
                 return;
             }
             GameInventory.current.RemoveItem(m_requiredItemName);
