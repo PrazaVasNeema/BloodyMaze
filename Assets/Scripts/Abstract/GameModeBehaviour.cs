@@ -44,7 +44,7 @@ namespace BloodyMaze.States
         private static void InitGameController()
         {
 #if UNITY_EDITOR
-            if (GameController.current == null)
+            if (GameController.instance == null)
             {
                 var assets = UnityEditor.AssetDatabase.FindAssets("GameController");
                 foreach (var guid in assets)

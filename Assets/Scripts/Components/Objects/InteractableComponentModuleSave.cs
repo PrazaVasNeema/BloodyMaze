@@ -9,7 +9,7 @@ namespace BloodyMaze.Components
     {
         public override void ActivateModule()
         {
-            GameController.current.SaveData();
+            GameController.instance.SaveData();
         }
     }
 }
