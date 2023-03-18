@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a376ed8c229dc7b43bcdcd2053a78a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_messageTextKey: interact
+  m_messageTextKey: talk
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -1926,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a376ed8c229dc7b43bcdcd2053a78a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_messageTextKey: interact
+  m_messageTextKey: read_note
   onActivate:
     m_PersistentCalls:
       m_Calls:
