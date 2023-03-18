@@ -13,7 +13,7 @@ namespace BloodyMaze.Components
         {
             m_flag = false;
             ActionStatesManager.current.ChangeState();
-            GameEvents.OnChangeGameplayState?.Invoke(2);
+            GameEvents.OnCallGotoFunction?.Invoke(2);
             while (!m_flag)
             {
             }

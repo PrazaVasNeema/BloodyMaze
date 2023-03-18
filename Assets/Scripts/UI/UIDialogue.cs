@@ -74,10 +74,7 @@ namespace BloodyMaze
 
         IEnumerator EndDialogueCo()
         {
-            GameEvents.OnSetInteractState?.Invoke();
-
             animator.SetBool("IsOpen", false);
-
             bool doOnce = false;
             if (doOnce)
             {
@@ -86,7 +83,7 @@ namespace BloodyMaze
             }
             if (!string.IsNullOrEmpty(m_flagToCheck))
                 GameEvents.OnEventFlagChecked?.Invoke(m_flagToCheck);
-            FindObjectOfType<GameplayGameMode>().GotoGameplay();
+            GameEvents.OnCallGotoFunction("dialogue");
         }
     }
 }

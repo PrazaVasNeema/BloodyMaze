@@ -23,7 +23,7 @@ namespace BloodyMaze.UI
 
         private void FillNote(string key)
         {
-            m_noteText.text = GameController.instance.locData.GetNoteText(key);
+            m_noteText.text = GameController.current.locData.GetNoteText(key);
         }
 
     }

@@ -18,7 +18,7 @@ namespace BloodyMaze.Components
             var interactableComponent = GetComponent<InteractableComponent>();
             if (interactableComponent)
                 interactableComponent.interactComponent.OnInteract -= interactableComponent.Activate;
-            GameEvents.OnChangeGameplayState?.Invoke(4);
+            GameEvents.OnCallGotoFunction?.Invoke(4);
         }
     }
 }

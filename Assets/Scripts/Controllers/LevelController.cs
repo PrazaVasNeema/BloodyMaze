@@ -17,7 +17,6 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
-        [SerializeField] private GameTransitionSystem m_transitSystem;
         [SerializeField] private RoomController[] m_rooms;
         [SerializeField] private int m_activeRoom;
 
@@ -33,7 +32,6 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-
             PlayerProfileSO playerProfileSO = GameController.instance.playerProfileSO;
             foreach (RoomController rc in m_rooms)
             {
@@ -49,7 +47,7 @@ namespace BloodyMaze.Controllers
             player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);
             m_playerHud.Init(player);
-            m_transitSystem.Init(player);
+            GameTransitionSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
         }
 
@@ -61,14 +59,6 @@ namespace BloodyMaze.Controllers
         public void SetControlls(bool state)
         {
             m_playerInputController.enabled = state;
-        }
-
-        public void ChangeMenusState(bool state)
-        {
-            if (state)
-                UIMenusController.current.CloseMenus();
-            else
-                UIMenusController.current.OpenMenus();
         }
     }
 

@@ -38,6 +38,7 @@ namespace BloodyMaze.UI
 
         IEnumerator OpenCo()
         {
+            ActionStatesManager.SetState(ActionStates.INTERACTING);
             foreach (GameObject page in m_pages)
                 page.SetActive(false);
             m_animator.SetTrigger("Open");
@@ -53,7 +54,6 @@ namespace BloodyMaze.UI
 
         IEnumerator ChangePageCo(bool shouldBeNext)
         {
-            GameEvents.OnSetInteractState?.Invoke();
             m_pages[m_currentPageIndex].SetActive(false);
             m_animator.SetTrigger(shouldBeNext ? "NextPage" : "PrevPage");
 
@@ -65,23 +65,20 @@ namespace BloodyMaze.UI
             }
             m_currentPageIndex += shouldBeNext ? 1 : -1;
             m_pages[m_currentPageIndex].SetActive(true);
-
         }
 
         IEnumerator CloseCo()
         {
+            ActionStatesManager.ChangeState();
             m_pages[m_currentPageIndex].SetActive(false);
             m_animator.SetTrigger("Close");
-
             bool doOnce = true;
             if (doOnce)
             {
                 doOnce = false;
                 yield return new WaitForSecondsRealtime(1f);
             }
-            GameEvents.OnSetInteractState?.Invoke();
-
-            FindObjectOfType<GameplayGameMode>().GotoGameplay();
+            GameEvents.OnCallGotoFunction("gameplay");
         }
     }
 }

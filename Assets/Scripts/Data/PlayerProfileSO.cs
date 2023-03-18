@@ -5,10 +5,12 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze
 {
-    [CreateAssetMenu(fileName = "PlayerProfileSO", menuName = "PlayerProfileSO")]
+    [CreateAssetMenu(fileName = "PlayerProfileSO", menuName = "BloodyMaze/PlayerProfileSO")]
     public class PlayerProfileSO : ScriptableObject
     {
-        public PlayerProfileData playerProfileData = new();
+        [SerializeField] private PlayerProfileData m_default;
+
+        public PlayerProfileData playerProfileData { private set; get; } = new();
 
         public CharacterSaveData GetCharacterSaveData()
         {
@@ -24,10 +26,9 @@ namespace BloodyMaze
         {
             if (shouldInitNewData)
             {
-                var dataDefault = Instantiate(GameController.instance.dataDefault);
-                playerProfileData.characterSaveData = dataDefault.characterSaveData;
-                playerProfileData.globalEventsData = dataDefault.globalEventsData;
-                playerProfileData.roomsData = dataDefault.roomsData;
+                playerProfileData.characterSaveData = m_default.characterSaveData;
+                playerProfileData.globalEventsData = m_default.globalEventsData;
+                playerProfileData.roomsData = m_default.roomsData;
             }
             else
             {
@@ -66,8 +67,7 @@ namespace BloodyMaze
             }
             else
             {
-                var dataDefault = Instantiate(GameController.instance.dataDefault);
-                playerProfileData.optionsData = dataDefault.optionsData;
+                playerProfileData.optionsData = m_default.optionsData;
             }
         }
     }

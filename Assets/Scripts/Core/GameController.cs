@@ -19,7 +19,6 @@ namespace BloodyMaze
         [SerializeField] private TMP_Text m_TMP_Text;
 
         public PlayerProfileSO playerProfileSO;
-        public DataDefault dataDefault;
 
         private LevelController m_levelController;
 
@@ -30,7 +29,6 @@ namespace BloodyMaze
                 Debug.LogWarning("instance not null");
                 Destroy(gameObject);
             }
-
             instance = this;
             DontDestroyOnLoad(gameObject);
             m_loader.SetActive(false);
@@ -58,45 +56,41 @@ namespace BloodyMaze
         {
         }
 
-        private void CheckEvent(string eventKey)
+        private static void CheckEvent(string eventKey)
         {
-            playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
+            instance.playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
         }
 
-        private void InitLevel()
+        private static void InitLevel()
         {
-            m_levelController.Init();
+            instance.m_levelController.Init();
         }
 
-        private void LoadPlayerProfileGameplayData()
+        private static void LoadPlayerProfileGameplayData()
         {
             var json = "";
-            if (!m_shouldInitNewData)
+            if (!instance.m_shouldInitNewData)
             {
                 json = PlayerPrefs.GetString("PlayerProfile");
                 Debug.Log($">>> load {json}");
             }
-            playerProfileSO.LoadFromJsonGameplay(json, m_shouldInitNewData);
-            // playerProfile.audioOptions.fxVolume;
-            // playerProfile.audioOptions.musicVolume;
+            instance.playerProfileSO.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
         }
 
-        private void LoadPlayerProfileOptionsData()
+        private static void LoadPlayerProfileOptionsData()
         {
             var json = "";
-            if (!m_shouldInitNewData)
+            if (!instance.m_shouldInitNewData)
             {
                 json = PlayerPrefs.GetString("PlayerProfile");
                 Debug.Log($">>> load {json}");
             }
-            playerProfileSO.LoadFromJsonOptions(json);
-            // playerProfile.audioOptions.fxVolume;
-            // playerProfile.audioOptions.musicVolume;
+            instance.playerProfileSO.LoadFromJsonOptions(json);
         }
 
-        public void SaveData()
+        public static void SaveData()
         {
-            StartCoroutine(SaveDataCo());
+            instance.StartCoroutine(instance.SaveDataCo());
         }
 
         private IEnumerator SaveDataCo()
@@ -139,9 +133,9 @@ namespace BloodyMaze
             InitLevel();
         }
 
-        public void SetLoaderText(string text)
+        public static void SetLoaderText(string text)
         {
-            m_TMP_Text.text = text;
+            instance.m_TMP_Text.text = text;
         }
     }
 

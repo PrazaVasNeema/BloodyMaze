@@ -23,16 +23,16 @@ namespace BloodyMaze
 
         IEnumerator DeathLogicsCo()
         {
-            GameEvents.OnChangeGameplayState?.Invoke(4);
-            ActionStatesManager.current.SetState(ActionStates.INTERACTING);
-            GameController.instance.SetLoaderText("Прошли сутки");
+            GameEvents.OnCallGotoFunction?.Invoke("none");
+            ActionStatesManager.SetState(ActionStates.INTERACTING);
+            GameController.SetLoaderText("Прошли сутки");
             bool doOnce = true;
             while (doOnce)
             {
                 doOnce = false;
                 yield return new WaitForSecondsRealtime(2);
             }
-            GameEvents.OnChangeGameplayState?.Invoke(5);
+            GameEvents.OnCallGotoFunction?.Invoke("reload_level");
         }
     }
 }

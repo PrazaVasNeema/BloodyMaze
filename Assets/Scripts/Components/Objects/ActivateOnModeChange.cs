@@ -25,7 +25,7 @@ namespace BloodyMaze.Components
         {
             if (m_requiredModeName == modeName)
             {
-                List<GlobalEventsData> eventsData = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
+                List<GlobalEventsData> eventsData = GameController.current.playerProfileSO.playerProfileData.globalEventsData;
                 bool requirementsSatisfied = true;
                 foreach (string flagKey in m_keysOfFlagsThatShouldBeChecked)
                 {

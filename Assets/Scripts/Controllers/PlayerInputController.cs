@@ -97,7 +97,7 @@ namespace BloodyMaze.Controllers
                 }
                 if (m_escAction.WasPressedThisFrame())
                 {
-                    LevelController.current.ChangeMenusState(m_menusAreOpen);
+
                 }
             }
         }

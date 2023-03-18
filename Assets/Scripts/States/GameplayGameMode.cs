@@ -9,34 +9,43 @@ namespace BloodyMaze.States
     {
         private void OnEnable()
         {
-            GameEvents.OnChangeGameplayState += CallGoto;
+            GameEvents.OnCallGotoFunction += CallGoto;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnChangeGameplayState -= CallGoto;
+            GameEvents.OnCallGotoFunction -= CallGoto;
         }
 
-        private void CallGoto(int stateIndex)
+        /// <summary>
+        /// States: gameplay, note, dialogue
+        /// journal, none, reload_level
+        /// main_menu
+        /// </summary>
+        /// <param name="stateName"></param>
+        private void CallGoto(string stateName)
         {
-            switch (stateIndex)
+            switch (stateName)
             {
-                case 0:
+                case "gameplay":
                     GotoGameplay();
                     break;
-                case 1:
+                case "note":
                     GotoNote();
                     break;
-                case 2:
+                case "dialogue":
                     GotoDialogue();
                     break;
-                case 3:
+                case "journal":
                     GotoJournal();
                     break;
-                case 4:
+                case "none":
                     GotoNone();
                     break;
-                case 5:
+                case "reload_level":
+                    ReloadLevel();
+                    break;
+                case "main_menu":
                     ReloadLevel();
                     break;
             }

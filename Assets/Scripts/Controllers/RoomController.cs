@@ -14,7 +14,7 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            var globalEvents = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
+            var globalEvents = GameController.current.playerProfileSO.playerProfileData.globalEventsData;
 
             for (int i = 0; i < m_roomItems.Length; i++)
             {
@@ -31,7 +31,7 @@ namespace BloodyMaze.Controllers
 
         public void InitAgents()
         {
-            var temp = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID];
+            var temp = GameController.current.playerProfileSO.playerProfileData.roomsData[m_roomID];
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;

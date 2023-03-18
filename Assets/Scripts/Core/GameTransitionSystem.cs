@@ -29,9 +29,9 @@ namespace BloodyMaze.Controllers
             current = null;
         }
 
-        public void Init(CharacterComponent characterComponent)
+        public static void Init(CharacterComponent characterComponent)
         {
-            m_characterComponent = characterComponent;
+            current.m_characterComponent = characterComponent;
         }
 
         public static void ScreenFade()
@@ -75,7 +75,7 @@ namespace BloodyMaze.Controllers
                 yield return new WaitForSeconds(m_fadeOutDuration);
             }
             Debug.Log("End");
-            GameEvents.OnChangeGameplayState?.Invoke(0);
+            GameEvents.OnCallGotoFunction?.Invoke("gameplay");
             GameEvents.OnHideMessage?.Invoke();
         }
     }

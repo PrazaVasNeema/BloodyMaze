@@ -13,7 +13,7 @@ namespace BloodyMaze.States
         {
             Time.timeScale = 1f;
             if (ActionStatesManager.current.state == ActionStates.INTERACTING)
-                ActionStatesManager.current.ChangeState();
+                ActionStatesManager.ChangeState();
         }
     }
 }
