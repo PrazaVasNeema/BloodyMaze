@@ -30,7 +30,10 @@ namespace BloodyMaze
             {
                 case ActionStates.EXPLORING:
                     if (current.m_enemiesTriggered > 0)
+                    {
                         current.m_state = ActionStates.BATTLE;
+                        GameEvents.OnHideMessage?.Invoke();
+                    }
                     else
                         current.m_state = ActionStates.INTERACTING;
                     break;

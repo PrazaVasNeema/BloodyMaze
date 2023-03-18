@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModuleDialogue : InteractableComponentModuleAbstract
+    public class InteractableComponentModuleDialogue : ActivateModuleAbstract
     {
         [SerializeField] private string m_dialogueKey;
         [SerializeField] private string m_flagToCheck;

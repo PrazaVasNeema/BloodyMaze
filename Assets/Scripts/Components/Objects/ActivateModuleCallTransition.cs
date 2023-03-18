@@ -5,7 +5,7 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModuleChangeRoom : InteractableComponentModuleAbstract
+    public class ActivateModuleCallTransition : ActivateModuleAbstract
     {
         [SerializeField] private RoomController m_prevRoom;
         [SerializeField] private RoomController m_nextRoom;
@@ -14,10 +14,10 @@ namespace BloodyMaze.Components
 
         public override void ActivateModule()
         {
-            GameEvents.OnUIGMessagesChangeState?.Invoke(null);
             GameTransitionSystem.current.TransitCharacter(m_transitPoint, m_prevRoom, m_nextRoom, m_shouldChangeRoom);
-            var InteractableComponent = GetComponent<InteractableComponent>();
-            InteractableComponent.interactComponent.OnInteract -= InteractableComponent.Activate;
+            var activateOnInteract = GetComponent<ActivateOnInteract>();
+            if (activateOnInteract)
+                activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
         }
     }
 }

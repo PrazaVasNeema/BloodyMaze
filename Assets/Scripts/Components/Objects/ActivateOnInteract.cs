@@ -6,9 +6,9 @@ using UnityEngine.Events;
 namespace BloodyMaze.Components
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class InteractableComponent : MonoBehaviour
+    public class ActivateOnInteract : MonoBehaviour
     {
-        [SerializeField] private string m_messageTextKey = "0";
+        [SerializeField] private string m_messageTextKey = "interact";
         [SerializeField] private UnityEvent onActivate;
 
         private InteractComponent m_interactComponent;
@@ -27,7 +27,7 @@ namespace BloodyMaze.Components
         private void OnTriggerExit(Collider other)
         {
             m_interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
-            if (m_interactComponent && ActionStatesManager.current.state == ActionStates.EXPLORING)
+            if (m_interactComponent)
             {
                 m_interactComponent.OnInteract -= Activate;
                 GameEvents.OnHideMessage?.Invoke();

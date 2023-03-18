@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BloodyMaze
 {
-    public class InteractableComponentModuleNote : InteractableComponentModuleAbstract
+    public class InteractableComponentModuleNote : ActivateModuleAbstract
     {
         [SerializeField] private string m_noteTextKey;
 

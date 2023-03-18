@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BloodyMaze
+namespace BloodyMaze.Components
 {
-    public class ObjectSetActive : MonoBehaviour
+    public class SetObjectsActiveComponent : MonoBehaviour
     {
         [SerializeField] private GameObject m_objectToActivate;
 

@@ -5,7 +5,7 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModulePickable : InteractableComponentModuleAbstract
+    public class InteractableComponentModulePickable : ActivateModuleAbstract
     {
         private PickableItemComponent m_item;
         public PickableItemComponent item => m_item;

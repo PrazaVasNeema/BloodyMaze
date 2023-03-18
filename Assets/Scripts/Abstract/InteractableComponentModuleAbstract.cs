@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BloodyMaze
 {
-    public abstract class InteractableComponentModuleAbstract : MonoBehaviour
+    public abstract class ActivateModuleAbstract : MonoBehaviour
     {
         protected bool m_flag;
 

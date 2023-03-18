@@ -5,7 +5,7 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModuleSave : InteractableComponentModuleAbstract
+    public class InteractableComponentModuleSave : ActivateModuleAbstract
     {
         public override void ActivateModule()
         {
