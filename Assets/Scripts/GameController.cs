@@ -34,6 +34,16 @@ namespace BloodyMaze
             m_loader.SetActive(false);
         }
 
+        private void OnEnable()
+        {
+            GameEvents.OnFlagCheck += CheckEvent;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnFlagCheck -= CheckEvent;
+        }
+
         private void Start()
         {
             //LoadPlayerProfile();
@@ -44,6 +54,11 @@ namespace BloodyMaze
 
         private void OnApplicationQuit()
         {
+        }
+
+        private void CheckEvent(string eventKey)
+        {
+            playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
         }
 
         private void InitLevel()

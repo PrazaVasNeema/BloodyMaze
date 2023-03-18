@@ -16,6 +16,7 @@ namespace BloodyMaze
         public float typingSpeed = 0.1f;
 
         private string sentence;
+        private string m_flagToCheck;
 
         // Queue - FIFO: First In First Out
         private Queue<string> sentences = new Queue<string>();
@@ -36,10 +37,11 @@ namespace BloodyMaze
             GameEvents.OnStartDialogue -= StartDialogue;
         }
 
-        public void StartDialogue(string key)
+        public void StartDialogue(string key, string flagToCheck)
         {
             Dialogue dialogue = GameController.instance.locData.GetDialogue(key);
             Debug.Log("Starting conversation with " + dialogue.npcName);
+            m_flagToCheck = flagToCheck;
 
             animator.SetBool("IsOpen", true);
 
@@ -101,6 +103,8 @@ namespace BloodyMaze
                 doOnce = true;
                 yield return new WaitForSecondsRealtime(1f);
             }
+            if (!string.IsNullOrEmpty(m_flagToCheck))
+                GameEvents.OnFlagCheck?.Invoke(m_flagToCheck);
             FindObjectOfType<GameplayGameMode>().GotoGameplay();
         }
     }

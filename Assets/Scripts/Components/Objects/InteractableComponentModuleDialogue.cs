@@ -7,6 +7,7 @@ namespace BloodyMaze.Components
     public class InteractableComponentModuleDialogue : InteractableComponentModuleAbstract
     {
         [SerializeField] private string m_dialogueKey;
+        [SerializeField] private string m_flagToCheck;
 
         public override void ActivateModule()
         {
@@ -16,7 +17,7 @@ namespace BloodyMaze.Components
             while (!m_flag)
             {
             }
-            GameEvents.OnStartDialogue?.Invoke(m_dialogueKey);
+            GameEvents.OnStartDialogue?.Invoke(m_dialogueKey, m_flagToCheck);
             m_flag = false;
         }
     }

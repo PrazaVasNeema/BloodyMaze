@@ -15,10 +15,7 @@ namespace BloodyMaze.Controllers
         public void Init()
         {
             var globalEvents = GameController.instance.playerProfileSO.playerProfileData.globalEventsData;
-            var temp = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID];
-            List<AgentRoomStatus> agentsToSpawnIDs = new();
-            if (temp != null)
-                agentsToSpawnIDs = temp.agentsToSpawnIDs;
+
             for (int i = 0; i < m_roomItems.Length; i++)
             {
                 var item = m_roomItems[i].gameObject.GetComponentInChildren<PickableItemComponent>();
@@ -28,7 +25,16 @@ namespace BloodyMaze.Controllers
                     m_roomItems[i].gameObject.SetActive(false);
                 }
             }
+            InitAgents();
 
+        }
+
+        public void InitAgents()
+        {
+            var temp = GameController.instance.playerProfileSO.playerProfileData.roomsData[m_roomID];
+            List<AgentRoomStatus> agentsToSpawnIDs = new();
+            if (temp != null)
+                agentsToSpawnIDs = temp.agentsToSpawnIDs;
             for (int i = 0; i < agentsToSpawnIDs.Count; i++)
             {
                 var temp2 = agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID);
@@ -36,6 +42,30 @@ namespace BloodyMaze.Controllers
                 {
                     m_roomAgents[i].gameObject.SetActive(false);
                 }
+            }
+        }
+
+        public void ShowAgents(List<int> agentsNumsToShow)
+        {
+            for (int i = 0; i < m_roomAgents.Length; i++)
+            {
+                if (agentsNumsToShow.Contains(i) && m_roomAgents[i] != null)
+                    m_roomAgents[i].gameObject.SetActive(true);
+            }
+        }
+
+        public void ShowAgentss(int[] agentsNumsToShow)
+        {
+
+        }
+
+        public void HideAgents(List<int> agentsNumsToHide)
+        {
+            for (int i = 0; i < m_roomAgents.Length; i++)
+            {
+                if (!agentsNumsToHide.Contains(i))
+                    continue;
+                m_roomAgents[i].gameObject.SetActive(false);
             }
         }
     }
