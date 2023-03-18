@@ -10,12 +10,12 @@ namespace BloodyMaze
 
         private void OnEnable()
         {
-            GameEvents.OnGameplayStateChanged += SetFlagToTrue;
+            GameEvents.OnStateChanged += SetFlagToTrue;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnGameplayStateChanged -= SetFlagToTrue;
+            GameEvents.OnStateChanged -= SetFlagToTrue;
         }
 
         private void SetFlagToTrue()

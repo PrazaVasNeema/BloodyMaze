@@ -24,7 +24,7 @@ namespace BloodyMaze
         IEnumerator DeathLogicsCo()
         {
             GameEvents.OnChangeGameplayState?.Invoke(4);
-            GameState.current.SetState(GameStates.INTERACTING);
+            ActionStatesManager.current.SetState(ActionStates.INTERACTING);
             GameController.instance.SetLoaderText("Прошли сутки");
             bool doOnce = true;
             while (doOnce)

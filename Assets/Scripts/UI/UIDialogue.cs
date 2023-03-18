@@ -10,22 +10,12 @@ namespace BloodyMaze
     {
         public Text nameText;
         public Text dialogueText;
-
         public Animator animator;
-
         public float typingSpeed = 0.1f;
 
         private string sentence;
         private string m_flagToCheck;
-
-        // Queue - FIFO: First In First Out
         private Queue<string> sentences = new Queue<string>();
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            // sentences = new Queue<string>();
-        }
 
         private void OnEnable()
         {
@@ -40,21 +30,15 @@ namespace BloodyMaze
         public void StartDialogue(string key, string flagToCheck)
         {
             Dialogue dialogue = GameController.instance.locData.GetDialogue(key);
-            Debug.Log("Starting conversation with " + dialogue.npcName);
             m_flagToCheck = flagToCheck;
-
             animator.SetBool("IsOpen", true);
-
             nameText.text = dialogue.npcName;
-
             sentences.Clear();
-
             foreach (string sentence in dialogue.sentences)
             {
                 Debug.Log(sentence);
                 sentences.Enqueue(sentence);
             }
-
             sentence = sentences.Dequeue();
             DisplayNextSentence();
         }
@@ -84,15 +68,12 @@ namespace BloodyMaze
             foreach (char letter in sentence.ToCharArray())
             {
                 dialogueText.text += letter;
-                //yield return null;
                 yield return new WaitForSeconds(typingSpeed);
             }
-            Debug.Log("this");
         }
 
         IEnumerator EndDialogueCo()
         {
-            Debug.Log("End of conversation");
             GameEvents.OnSetInteractState?.Invoke();
 
             animator.SetBool("IsOpen", false);
@@ -104,7 +85,7 @@ namespace BloodyMaze
                 yield return new WaitForSecondsRealtime(1f);
             }
             if (!string.IsNullOrEmpty(m_flagToCheck))
-                GameEvents.OnFlagCheck?.Invoke(m_flagToCheck);
+                GameEvents.OnEventFlagChecked?.Invoke(m_flagToCheck);
             FindObjectOfType<GameplayGameMode>().GotoGameplay();
         }
     }

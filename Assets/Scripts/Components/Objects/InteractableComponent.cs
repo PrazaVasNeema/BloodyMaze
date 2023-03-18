@@ -17,7 +17,7 @@ namespace BloodyMaze.Components
         private void OnTriggerEnter(Collider other)
         {
             m_interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
-            if (m_interactComponent && GameState.current.state == GameStates.EXPLORING)
+            if (m_interactComponent && ActionStatesManager.current.state == ActionStates.EXPLORING)
             {
                 m_interactComponent.OnInteract += Activate;
                 GameEvents.OnShowMessage?.Invoke(m_messageTextKey);
@@ -27,7 +27,7 @@ namespace BloodyMaze.Components
         private void OnTriggerExit(Collider other)
         {
             m_interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
-            if (m_interactComponent && GameState.current.state == GameStates.EXPLORING)
+            if (m_interactComponent && ActionStatesManager.current.state == ActionStates.EXPLORING)
             {
                 m_interactComponent.OnInteract -= Activate;
                 GameEvents.OnHideMessage?.Invoke();

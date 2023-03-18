@@ -8,13 +8,13 @@ namespace BloodyMaze.States
     {
         private void OnEnable()
         {
-            GameState.current.ChangeState();
+            ActionStatesManager.current.ChangeState();
         }
 
         private void OnDisable()
         {
-            if (GameState.current.state == GameStates.INTERACTING)
-                GameState.current.ChangeState();
+            if (ActionStatesManager.current.state == ActionStates.INTERACTING)
+                ActionStatesManager.current.ChangeState();
         }
     }
 }

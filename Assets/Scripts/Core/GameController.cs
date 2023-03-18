@@ -38,12 +38,12 @@ namespace BloodyMaze
 
         private void OnEnable()
         {
-            GameEvents.OnFlagCheck += CheckEvent;
+            GameEvents.OnEventFlagChecked += CheckEvent;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnFlagCheck -= CheckEvent;
+            GameEvents.OnEventFlagChecked -= CheckEvent;
         }
 
         private void Start()

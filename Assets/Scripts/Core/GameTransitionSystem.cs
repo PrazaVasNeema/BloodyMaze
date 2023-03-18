@@ -8,6 +8,7 @@ namespace BloodyMaze.Controllers
     public class GameTransitionSystem : MonoBehaviour
     {
         public static GameTransitionSystem current { private set; get; }
+
         [SerializeField] private float m_fadeInDuration;
         [SerializeField] private float m_fadeOutDuration;
         [SerializeField] private Animator m_animator;
@@ -33,6 +34,16 @@ namespace BloodyMaze.Controllers
             m_characterComponent = characterComponent;
         }
 
+        public static void ScreenFade()
+        {
+            current.m_animator.SetTrigger("Start");
+        }
+
+        public static void ScreenUnfade()
+        {
+            current.m_animator.SetTrigger("End");
+        }
+
         public void TransitCharacter(Transform whereTo, RoomController prevRoom, RoomController nextRoom, bool shouldChangeRoom)
         {
             m_prevRoom = prevRoom;
@@ -44,8 +55,7 @@ namespace BloodyMaze.Controllers
 
         private IEnumerator InCoroutine()
         {
-            Debug.Log("Start");
-            m_animator.SetTrigger("Start");
+            ScreenFade();
             bool doOnce = true;
             while (doOnce)
             {
@@ -54,13 +64,10 @@ namespace BloodyMaze.Controllers
             }
             if (m_shouldChangeRoom)
                 m_nextRoom.gameObject.SetActive(true);
-            Debug.Log("Continue");
             m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
             GameEvents.OnTransition?.Invoke();
-
             if (m_shouldChangeRoom)
                 m_prevRoom.gameObject.SetActive(false);
-            m_animator.SetTrigger("End");
             doOnce = true;
             while (doOnce)
             {
@@ -71,6 +78,5 @@ namespace BloodyMaze.Controllers
             GameEvents.OnChangeGameplayState?.Invoke(0);
             GameEvents.OnHideMessage?.Invoke();
         }
-
     }
 }

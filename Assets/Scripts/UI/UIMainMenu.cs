@@ -37,7 +37,7 @@ namespace BloodyMaze.UI
 
         public void OnEnterGame()
         {
-            UICore.current.LoadLevel("SampleScene");
+            GameController.LoadScene("SampleScene");
         }
 
         public void OnExitGame()

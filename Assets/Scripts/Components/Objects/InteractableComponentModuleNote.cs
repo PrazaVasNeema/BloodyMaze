@@ -13,7 +13,7 @@ namespace BloodyMaze
         public override void ActivateModule()
         {
             m_flag = false;
-            GameState.current.ChangeState();
+            ActionStatesManager.current.ChangeState();
             GameEvents.OnChangeGameplayState?.Invoke(1);
             while (!m_flag)
             {
