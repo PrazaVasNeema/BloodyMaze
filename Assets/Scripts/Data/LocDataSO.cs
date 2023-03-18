@@ -8,11 +8,11 @@ namespace BloodyMaze
     [System.Serializable]
     public class LocDataSO : ScriptableObject
     {
-        public List<LocNotesText> locNotesTexts { private set; get; }
-        public List<LocDialogueData> locDialogueTexts { private set; get; }
-        public List<LocInterfaceText> locInterfaceTexts { private set; get; }
-        public List<LocMessagesText> locMessagesText { private set; get; }
-        public List<LocJournalNotesText> locJournalNotesText { private set; get; }
+        public List<LocNotesText> locNotesTexts;
+        public List<LocDialogueData> locDialogueTexts;
+        public List<LocInterfaceText> locInterfaceTexts;
+        public List<LocMessagesText> locMessagesText;
+        public List<LocJournalNotesText> locJournalNotesText;
 
 
         public string GetNoteText(string key)

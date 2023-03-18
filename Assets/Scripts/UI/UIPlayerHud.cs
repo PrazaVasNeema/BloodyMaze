@@ -9,24 +9,41 @@ namespace BloodyMaze.UI
 {
     public class UIPlayerHud : MonoBehaviour
     {
+        [Header("PC Stats")]
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;
         [SerializeField] private TMP_Text m_ammoHoly;
         [SerializeField] private TMP_Text m_ammoSilver;
+        [Header("Mini message")]
+        [SerializeField] private TMP_Text m_miniMessage;
+        [SerializeField] private float m_miniMessageDisplayTime = 3f;
+        [Header("Other")]
         [SerializeField] private GameObject m_showcase;
+
 
         private GameObject m_UIPanel;
         private CharacterComponent m_characterComponent;
         private GameObject m_refImage;
         private List<GameObject> m_inventoryItemsInShowcase = new List<GameObject>();
         private float m_itemImageOffset = 50f;
+        private Animator m_animator;
 
-        private void Awake()
+        private void OnEnable()
         {
+            m_animator = GetComponent<Animator>();
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
             m_inventoryItemsInShowcase.Add(m_refImage);
             m_refImage.SetActive(false);
+            GameEvents.OnShowMiniMessage += ShowMiniMessage;
+        }
+
+        private void OnDisable()
+        {
+            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
+            m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
+            // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
+            GameEvents.OnShowMiniMessage -= ShowMiniMessage;
         }
 
         public void Init(CharacterComponent characterComponent)
@@ -37,13 +54,6 @@ namespace BloodyMaze.UI
             GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
-        }
-
-        private void OnDestroy()
-        {
-            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
-            m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
-            // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
         }
 
         private void Update()
@@ -128,6 +138,25 @@ namespace BloodyMaze.UI
                     ammoSilverTransform.localScale = scaleTwo;
                     break;
             }
+        }
+
+        private void ShowMiniMessage(string messageText)
+        {
+            m_miniMessage.text = messageText;
+            m_animator.SetBool("MiniMessageShouldBeShown", true);
+            StopCoroutine(HideMiniMessage());
+            StartCoroutine(HideMiniMessage());
+        }
+
+        IEnumerator HideMiniMessage()
+        {
+            bool doOnce = true;
+            while (doOnce)
+            {
+                doOnce = false;
+                yield return new WaitForSecondsRealtime(m_miniMessageDisplayTime);
+            }
+            m_animator.SetBool("MiniMessageShouldBeShown", false);
         }
     }
 }

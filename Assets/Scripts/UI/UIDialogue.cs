@@ -83,7 +83,7 @@ namespace BloodyMaze
             }
             if (!string.IsNullOrEmpty(m_flagToCheck))
                 GameEvents.OnEventFlagCheck?.Invoke(m_flagToCheck);
-            GameEvents.OnCallGotoFunction("dialogue");
+            GameEvents.OnCallGotoFunction("gameplay");
         }
     }
 }

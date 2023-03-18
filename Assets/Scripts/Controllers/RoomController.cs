@@ -25,7 +25,7 @@ namespace BloodyMaze.Controllers
                     m_roomItems[i].gameObject.SetActive(false);
                 }
             }
-            InitAgents();
+            // InitAgents();
 
         }
 
