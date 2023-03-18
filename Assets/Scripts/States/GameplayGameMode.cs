@@ -36,6 +36,9 @@ namespace BloodyMaze.States
                 case 4:
                     GotoNone();
                     break;
+                case 5:
+                    ReloadLevel();
+                    break;
             }
         }
 

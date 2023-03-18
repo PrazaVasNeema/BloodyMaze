@@ -18,5 +18,6 @@ namespace BloodyMaze
         public static System.Action OnTransition;
         public static System.Action<string> OnFlagCheck;
         public static System.Action<string> OnModeChange;
+        public static System.Action OnPCDeath;
     }
 }

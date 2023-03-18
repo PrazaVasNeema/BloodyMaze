@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using BloodyMaze.Controllers;
+using TMPro;
 
 namespace BloodyMaze
 {
@@ -15,6 +16,7 @@ namespace BloodyMaze
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
         public LocDataSO locData => m_locData;
+        [SerializeField] private TMP_Text m_TMP_Text;
 
         public PlayerProfileSO playerProfileSO;
         public DataDefault dataDefault;
@@ -135,6 +137,11 @@ namespace BloodyMaze
             m_levelController = FindObjectOfType<LevelController>();
             m_loader.SetActive(false);
             InitLevel();
+        }
+
+        public void SetLoaderText(string text)
+        {
+            m_TMP_Text.text = text;
         }
     }
 
