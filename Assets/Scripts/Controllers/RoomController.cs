@@ -9,7 +9,7 @@ namespace BloodyMaze.Controllers
     {
         [SerializeField] private int m_roomID;
         public int roomID => m_roomID;
-        [SerializeField] private InteractableComponentModulePickable[] m_roomItems;
+        [SerializeField] private ActivateModulePickUpItem[] m_roomItems;
         [SerializeField] private AgentIdentifier[] m_roomAgents;
 
         public void Init()
@@ -19,7 +19,7 @@ namespace BloodyMaze.Controllers
             for (int i = 0; i < m_roomItems.Length; i++)
             {
                 var item = m_roomItems[i].gameObject.GetComponentInChildren<PickableItemComponent>();
-                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].item.correspondingEventKey);
+                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
                 if (globalEventsEvent != null && globalEventsEvent.flag)
                 {
                     m_roomItems[i].gameObject.SetActive(false);

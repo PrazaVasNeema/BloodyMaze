@@ -12,12 +12,12 @@ namespace BloodyMaze.Components
 
         private void OnEnable()
         {
-            GameEvents.OnEventFlagChecked += Activate;
+            GameEvents.OnEventFlagCheck += Activate;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnEventFlagChecked -= Activate;
+            GameEvents.OnEventFlagCheck -= Activate;
         }
 
         private void Activate(string eventKey)

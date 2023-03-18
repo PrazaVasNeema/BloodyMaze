@@ -18,8 +18,8 @@ namespace BloodyMaze.States
         }
 
         /// <summary>
-        /// States: gameplay, note, dialogue
-        /// journal, none, reload_level
+        /// States: gameplay, note, dialogue,
+        /// journal, none, reload_level,
         /// main_menu
         /// </summary>
         /// <param name="stateName"></param>

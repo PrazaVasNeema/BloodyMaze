@@ -82,7 +82,7 @@ namespace BloodyMaze
                 yield return new WaitForSecondsRealtime(1f);
             }
             if (!string.IsNullOrEmpty(m_flagToCheck))
-                GameEvents.OnEventFlagChecked?.Invoke(m_flagToCheck);
+                GameEvents.OnEventFlagCheck?.Invoke(m_flagToCheck);
             GameEvents.OnCallGotoFunction("dialogue");
         }
     }

@@ -5,11 +5,11 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModuleSave : ActivateModuleAbstract
+    public class ActivateModuleSave : ActivateModuleAbstract
     {
         public override void ActivateModule()
         {
-            GameController.instance.SaveData();
+            GameController.SaveData();
         }
     }
 }

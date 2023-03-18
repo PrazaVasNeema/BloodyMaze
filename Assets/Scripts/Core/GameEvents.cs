@@ -12,15 +12,15 @@ namespace BloodyMaze
         public static System.Action<string, string> OnStartDialogue;
         public static System.Action OnSaveData;
         /// <summary>
-        /// States: gameplay, note, dialogue
-        /// journal, none, reload_level
+        /// States: gameplay, note, dialogue,
+        /// journal, none, reload_level,
         /// main_menu
         /// </summary>
         /// <param name="stateName"></param>
         public static System.Action<string> OnCallGotoFunction;
         public static System.Action OnStateChanged;
         public static System.Action OnTransition;
-        public static System.Action<string> OnEventFlagChecked;
+        public static System.Action<string> OnEventFlagCheck;
         public static System.Action OnPCDeath;
     }
 }

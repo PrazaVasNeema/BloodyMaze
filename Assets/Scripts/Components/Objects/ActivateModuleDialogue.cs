@@ -4,20 +4,19 @@ using UnityEngine;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModuleDialogue : ActivateModuleAbstract
+    public class ActivateModuleDialogue : ActivateModuleAbstract
     {
         [SerializeField] private string m_dialogueKey;
-        [SerializeField] private string m_flagToCheck;
 
         public override void ActivateModule()
         {
             m_flag = false;
-            ActionStatesManager.current.ChangeState();
-            GameEvents.OnCallGotoFunction?.Invoke(2);
+            ActionStatesManager.ChangeState();
+            GameEvents.OnCallGotoFunction?.Invoke("dialogue");
             while (!m_flag)
             {
             }
-            GameEvents.OnStartDialogue?.Invoke(m_dialogueKey, m_flagToCheck);
+            GameEvents.OnStartDialogue?.Invoke(m_dialogueKey, m_eventFlagToCheck);
             m_flag = false;
         }
     }

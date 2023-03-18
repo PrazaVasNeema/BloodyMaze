@@ -5,7 +5,7 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class InteractableComponentModulePickable : ActivateModuleAbstract
+    public class ActivateModulePickUpItem : ActivateModuleAbstract
     {
         private PickableItemComponent m_item;
         public PickableItemComponent item => m_item;
@@ -20,9 +20,9 @@ namespace BloodyMaze.Components
         public override void ActivateModule()
         {
             GameInventory.current.AddItem(m_item.item);
-            GameController.instance.playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == item.correspondingEventKey).flag = true;
-            Destroy(gameObject);
             GameEvents.OnHideMessage?.Invoke();
+            GameController.instance.playerProfileSO.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
+            Destroy(gameObject);
         }
     }
 }

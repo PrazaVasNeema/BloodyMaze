@@ -6,7 +6,11 @@ namespace BloodyMaze
 {
     public abstract class ActivateModuleAbstract : MonoBehaviour
     {
+        [SerializeField] protected string m_eventFlagToCheck;
+        public string eventFlagCheck => m_eventFlagToCheck;
+
         protected bool m_flag;
+
 
         private void OnEnable()
         {

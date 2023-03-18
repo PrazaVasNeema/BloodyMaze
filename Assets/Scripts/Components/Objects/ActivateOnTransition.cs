@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
-    public class OnTransitionAct : MonoBehaviour
+    public class ActivateOnTransition : MonoBehaviour
     {
-        [SerializeField] private UnityEvent onActivate;
+        [SerializeField] private UnityEvent OnTransition;
 
         private void OnEnable()
         {
@@ -21,7 +21,7 @@ namespace BloodyMaze.Components
 
         public void Activate()
         {
-            onActivate?.Invoke();
+            OnTransition?.Invoke();
         }
     }
 }
