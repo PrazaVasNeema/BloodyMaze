@@ -28,7 +28,7 @@ namespace BloodyMaze.AI
 
             blackboard.target = target;
 
-            return target ? State.Success : State.Failure;
+            return target || blackboard.targetPreviousSeenAt ? State.Success : State.Failure;
         }
 
         private Transform Search(Vector3 position, float radius, LayerMask mask)

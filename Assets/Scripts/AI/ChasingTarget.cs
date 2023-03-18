@@ -12,6 +12,7 @@ namespace BloodyMaze.AI
         {
             context.agent.stoppingDistance = context.agentComponent.attackDistance;
             context.agent.SetDestination(blackboard.target.position);
+            blackboard.targetPreviousSeenAt = context.agentComponent.m_previousSeenAtTransform;
         }
 
         protected override void OnStop()
@@ -20,13 +21,15 @@ namespace BloodyMaze.AI
 
         protected override State OnUpdate()
         {
-            var target = blackboard.target;
-            if (target)
+            var targetPosition = blackboard.target == null ? blackboard.targetPreviousSeenAt : blackboard.target;
+            if (targetPosition != null)
             {
                 var agent = context.agent;
                 if (Time.frameCount % 3 == 0)
                 {
-                    agent.SetDestination(target.position);
+                    agent.SetDestination(targetPosition.position);
+                    if (blackboard.target != null)
+                        blackboard.targetPreviousSeenAt.position = blackboard.target.position;
                 }
 
                 if (agent.pathPending)
@@ -36,17 +39,24 @@ namespace BloodyMaze.AI
 
                 if (agent.remainingDistance < agent.stoppingDistance)
                 {
-                    return State.Success;
+                    // blackboard.targetPreviousSeenAt = blackboard.target;
+                    if (blackboard.target)
+                        return State.Success;
+                    else
+                    {
+                        Debug.Log("test");
+                        blackboard.lostTarget = true;
+                        blackboard.targetPreviousSeenAt = null;
+                        return State.Failure;
+                    }
                 }
 
                 if (agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathInvalid)
                 {
                     return State.Failure;
                 }
-
                 return State.Running;
             }
-
             return State.Failure;
         }
     }

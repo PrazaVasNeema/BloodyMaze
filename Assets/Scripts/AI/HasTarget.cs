@@ -14,7 +14,7 @@ namespace BloodyMaze.AI
 
         protected override State OnUpdate()
         {
-            if (!blackboard.target)
+            if (!blackboard.target && !blackboard.targetPreviousSeenAt)
             {
                 return State.Failure;
             }
