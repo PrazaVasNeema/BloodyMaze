@@ -24,5 +24,6 @@ namespace BloodyMaze
         public static System.Action OnPCDeath;
         public static System.Action<string> OnShowMiniMessage;
         public static System.Action OnInitLevelComplete;
+        public static System.Action OnEnterGameplayState;
     }
 }

@@ -47,8 +47,8 @@ namespace BloodyMaze.Controllers
                 rc.Init();
                 if (rc.roomID == m_activeRoom)
                     rc.gameObject.SetActive(true);
-                else
-                    rc.gameObject.SetActive(false);
+                // else
+                // rc.gameObject.SetActive(false);
             }
 
             var player = SpawnPlayer();

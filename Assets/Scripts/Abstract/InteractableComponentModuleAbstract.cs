@@ -6,10 +6,10 @@ namespace BloodyMaze
 {
     public abstract class ActivateModuleAbstract : MonoBehaviour
     {
-        [SerializeField] protected string m_correspondingEventKey;
-        public string correspondingEventKey => m_correspondingEventKey;
-        [SerializeField] protected bool m_shouldSpawnOnEventKey;
-        public bool shouldSpawnOnEventKey => m_shouldSpawnOnEventKey;
+        [SerializeField] protected string[] m_eventsShouldBeChecked;
+        public string[] eventsShouldBeChecked => m_eventsShouldBeChecked;
+        [SerializeField] protected string[] m_eventsShouldBeUnchecked;
+        public string[] eventsShouldBeUnhecked => m_eventsShouldBeUnchecked;
         [SerializeField] protected string m_eventFlagToCheck;
         public string eventFlagCheck => m_eventFlagToCheck;
 

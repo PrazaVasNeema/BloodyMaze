@@ -29,12 +29,34 @@ namespace BloodyMaze.Controllers
 
             for (int i = 0; i < m_roomActivaters.Length; i++)
             {
-                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomActivaters[i].correspondingEventKey);
-                if (globalEventsEvent != null)
+                bool flag = true;
+                foreach (string str in m_roomActivaters[i].eventsShouldBeChecked)
                 {
-                    m_roomActivaters[i].gameObject.SetActive(m_roomActivaters[i].shouldSpawnOnEventKey ?
-                    globalEventsEvent.flag : !globalEventsEvent.flag);
+                    var globalEventsEvent = globalEvents.Find((x) => x.eventKey == str);
+                    if (globalEventsEvent != null)
+                    {
+                        if (globalEventsEvent.flag == false)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
                 }
+                foreach (string str in m_roomActivaters[i].eventsShouldBeUnhecked)
+                {
+                    var globalEventsEvent = globalEvents.Find((x) => x.eventKey == str);
+                    if (globalEventsEvent != null)
+                    {
+                        if (globalEventsEvent.flag == true)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+
+                m_roomActivaters[i].gameObject.SetActive(flag);
+
             }
             // InitAgents();
         }
