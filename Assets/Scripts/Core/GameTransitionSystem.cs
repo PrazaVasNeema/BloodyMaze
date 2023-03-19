@@ -74,7 +74,7 @@ namespace BloodyMaze.Controllers
                 doOnce = false;
                 yield return new WaitForSeconds(m_fadeOutDuration);
             }
-            Debug.Log("End");
+            ScreenUnfade();
             GameEvents.OnCallGotoFunction?.Invoke("gameplay");
             GameEvents.OnHideMessage?.Invoke();
         }

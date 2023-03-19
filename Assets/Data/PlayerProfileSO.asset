@@ -33,8 +33,10 @@ MonoBehaviour:
     globalEventsData:
     - eventKey: 
       flag: 0
+    - eventKey: 
+      flag: 0
     optionsData:
-      language: 0
+      language: 1
     roomsData:
     - agentsToSpawnIDs: []
       itemsToSpawnIDs: []
