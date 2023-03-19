@@ -124,7 +124,7 @@ Material:
     - _Shininess: 0.078125
     - _SideScale: 1
     - _SrcBlend: 1
-    - _TexScale: 0.2
+    - _TexScale: 0.5
     - _TextureScale: 1
     - _TopScale: 1
     - _TriplanarBlendSharpness: 2
