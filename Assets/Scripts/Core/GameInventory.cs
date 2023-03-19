@@ -14,6 +14,7 @@ namespace BloodyMaze
         private void Awake()
         {
             current = this;
+            GameEvents.OnInitLevelComplete += InitHudInventoryDisplay;
         }
 
         private void OnDestroy()
@@ -42,6 +43,15 @@ namespace BloodyMaze
                 return true;
             }
             return false;
+        }
+
+        private void InitHudInventoryDisplay()
+        {
+            foreach (KeyValuePair<string, PickableItem> pickableItem in m_inventory)
+            {
+                onInventoryChange?.Invoke(pickableItem.Value.name, pickableItem.Value);
+            }
+            GameEvents.OnInitLevelComplete -= InitHudInventoryDisplay;
         }
 
     }

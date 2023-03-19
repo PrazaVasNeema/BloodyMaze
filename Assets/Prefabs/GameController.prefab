@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_loader: {fileID: 2494103161065296157}
-  m_shouldInitNewData: 1
+  m_shouldInitNewData: 0
   m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
   m_TMP_Text: {fileID: 2494103161525922202}
   m_playerProfile: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}

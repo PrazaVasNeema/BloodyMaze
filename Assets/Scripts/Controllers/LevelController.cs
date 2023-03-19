@@ -15,7 +15,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private PlayerInputController m_playerInputController;
         [SerializeField] private UIPlayerHud m_playerHud;
         [SerializeField] private CharacterComponent m_playerPrefab;
-        [SerializeField] private Transform m_spawnPoint;
+        [SerializeField] private Transform[] m_spawnPoints;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         [SerializeField] private RoomController[] m_rooms;
         [SerializeField] private int m_activeRoom;
@@ -40,7 +40,8 @@ namespace BloodyMaze.Controllers
                 m_transiters[i].InitRoomTransiter(m_transiters[i + 1]);
                 m_transiters[i + 1].InitRoomTransiter(m_transiters[i]);
             }
-
+            m_activeRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
+                        7 : 0;
             foreach (RoomController rc in m_rooms)
             {
                 rc.Init();
@@ -60,7 +61,9 @@ namespace BloodyMaze.Controllers
 
         private CharacterComponent SpawnPlayer()
         {
-            return Instantiate(m_playerPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
+            Transform spawnPoint = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
+            m_spawnPoints[1] : m_spawnPoints[0];
+            return Instantiate(m_playerPrefab, spawnPoint.position, spawnPoint.rotation);
         }
 
         public void SetControlls(bool state)

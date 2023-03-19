@@ -22,6 +22,7 @@ namespace BloodyMaze.Controllers
                 var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
                 if (globalEventsEvent != null && globalEventsEvent.flag)
                 {
+                    GameInventory.current.AddItem(m_roomItems[i].item.item);
                     m_roomItems[i].gameObject.SetActive(false);
                 }
             }

@@ -31,12 +31,44 @@ MonoBehaviour:
         roundSize: 12
         currentRoundAmmo: 0
     globalEventsData:
-    - eventKey: 
+    - eventKey: sat_at_desk
       flag: 0
-    - eventKey: 
+    - eventKey: tried_to_open_bathroom_secret
+      flag: 0
+    - eventKey: talked_to_girl
+      flag: 0
+    - eventKey: pick_up_key_one
+      flag: 0
+    - eventKey: opened_piano_door
+      flag: 0
+    - eventKey: pick_up_mirror
+      flag: 0
+    - eventKey: placed_mirror
+      flag: 0
+    - eventKey: solved_puzzle
+      flag: 0
+    - eventKey: pick_up_key_two
+      flag: 0
+    - eventKey: opened_library_door
+      flag: 0
+    - eventKey: opened_library_secret
+      flag: 0
+    - eventKey: pick_up_key_three
+      flag: 0
+    - eventKey: opened_bathroom_secret
+      flag: 0
+    - eventKey: outsides_note_1
+      flag: 0
+    - eventKey: dining_note_1
+      flag: 0
+    - eventKey: piano_note_1
+      flag: 0
+    - eventKey: library_note_1
+      flag: 0
+    - eventKey: library_secret_note_1
       flag: 0
     optionsData:
-      language: 1
+      language: 0
     roomsData:
     - agentsToSpawnIDs: []
       itemsToSpawnIDs: []

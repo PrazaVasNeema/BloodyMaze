@@ -9,6 +9,7 @@ namespace BloodyMaze.Components
     {
         public override void ActivateModule()
         {
+            GameEvents.OnEventFlagCheck?.Invoke(m_eventFlagToCheck);
             GameController.SaveData();
         }
     }

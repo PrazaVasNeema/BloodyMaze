@@ -51,6 +51,18 @@ namespace BloodyMaze
             LoadPlayerProfileGameplayData();
             m_levelController = FindObjectOfType<LevelController>();
             InitLevel();
+            StartCoroutine(WaitForInitLevelCompleteCo());
+        }
+
+        IEnumerator WaitForInitLevelCompleteCo()
+        {
+            bool DoOnce = true;
+            while (DoOnce)
+            {
+                DoOnce = false;
+                yield return new WaitForSecondsRealtime(2f);
+            }
+            GameEvents.OnInitLevelComplete?.Invoke();
         }
 
         private void OnApplicationQuit()

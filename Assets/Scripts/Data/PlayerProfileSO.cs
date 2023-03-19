@@ -17,6 +17,11 @@ namespace BloodyMaze
             return playerProfileData.characterSaveData;
         }
 
+        public bool GetGlobalEventFlag(string eventKey)
+        {
+            return playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag;
+        }
+
         public RoomsData GetRoomsData(int roomID)
         {
             return playerProfileData.roomsData[roomID];
