@@ -13,9 +13,7 @@ namespace BloodyMaze.Components
             m_flag = false;
             ActionStatesManager.ChangeState();
             GameEvents.OnCallGotoFunction?.Invoke("dialogue");
-            while (!m_flag)
-            {
-            }
+
             GameEvents.OnStartDialogue?.Invoke(m_dialogueKey, m_eventFlagToCheck);
             m_flag = false;
         }

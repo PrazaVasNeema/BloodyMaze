@@ -48,7 +48,7 @@ namespace BloodyMaze.UI
             m_characterComponent = characterComponent;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
-            GameInventory.current.onInventoryChange += ReorganizeShowcase;
+            // GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;

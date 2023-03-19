@@ -20,9 +20,12 @@ namespace BloodyMaze.Components
         public override void ActivateModule()
         {
             GameInventory.current.AddItem(m_item.item);
+            Debug.Log("Check1");
             GameEvents.OnHideMessage?.Invoke();
+            Debug.Log("Check2");
             if (!string.IsNullOrEmpty(m_eventFlagToCheck))
                 GameController.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
+            Debug.Log("Check3");
             Destroy(gameObject);
         }
     }

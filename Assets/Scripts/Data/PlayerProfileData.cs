@@ -46,6 +46,7 @@ namespace BloodyMaze
     {
         public List<AgentRoomStatus> agentsToSpawnIDs = new();
         public List<ItemRoomStatus> itemsToSpawnIDs = new();
+        public List<ItemRoomStatus> activatersToSpawnIDs = new();
     }
 
     [System.Serializable]

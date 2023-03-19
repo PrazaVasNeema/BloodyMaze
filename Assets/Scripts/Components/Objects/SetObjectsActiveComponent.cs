@@ -14,7 +14,16 @@ namespace BloodyMaze.Components
         public void Activate()
         {
             m_objectToActivate.SetActive(m_shouldSetActive);
-            gameObject.SetActive(m_shouldSetActiveFalseSelf);
+            if (m_shouldSetActiveFalseSelf)
+            {
+                ActivateOnInteract activateOnInteract = GetComponent<ActivateOnInteract>();
+                if (activateOnInteract)
+                {
+                    activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
+                    GameEvents.OnHideMessage?.Invoke();
+                }
+                gameObject.SetActive(false);
+            }
         }
     }
 }

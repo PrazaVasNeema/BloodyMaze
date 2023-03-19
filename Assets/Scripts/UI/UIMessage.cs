@@ -21,6 +21,7 @@ namespace BloodyMaze.UI
         {
             GameEvents.OnShowMessage += ShowMessage;
             GameEvents.OnHideMessage += HideMessage;
+            HideMessage();
         }
 
         private void OnDisable()
@@ -31,7 +32,6 @@ namespace BloodyMaze.UI
 
         private void ShowMessage(string key)
         {
-            Debug.Log("ShowMessage");
             m_subLevel.SetActive(true);
 
             m_messageTMPText.SetText(GameController.locData.GetMessage(key));
@@ -39,7 +39,6 @@ namespace BloodyMaze.UI
 
         private void HideMessage()
         {
-            Debug.Log("HideMessage");
             m_subLevel.SetActive(false);
         }
     }

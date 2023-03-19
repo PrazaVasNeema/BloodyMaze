@@ -1,51 +1,116 @@
 fileFormatVersion: 2
 guid: ae1057f934c75a249ae1a6462f310568
-timeCreated: 1507564910
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cupboard
-    100004: Cupboard_Door
-    100006: Cupboard_Door_2
-    100008: Cupboard_Door_3
-    100010: Cupboard_Door_4
-    400000: //RootNode
-    400002: Cupboard
-    400004: Cupboard_Door
-    400006: Cupboard_Door_2
-    400008: Cupboard_Door_3
-    400010: Cupboard_Door_4
-    2300000: Cupboard
-    2300002: Cupboard_Door
-    2300004: Cupboard_Door_2
-    2300006: Cupboard_Door_3
-    2300008: Cupboard_Door_4
-    3300000: Cupboard
-    3300002: Cupboard_Door
-    3300004: Cupboard_Door_2
-    3300006: Cupboard_Door_3
-    3300008: Cupboard_Door_4
-    4300000: Cupboard
-    4300002: Cupboard_Door
-    4300004: Cupboard_Door_2
-    4300006: Cupboard_Door_3
-    4300008: Cupboard_Door_4
-    6400000: Cupboard
-    6400002: Cupboard_Door
-    6400004: Cupboard_Door_2
-    6400006: Cupboard_Door_3
-    6400008: Cupboard_Door_4
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Cupboard
+  - first:
+      1: 100004
+    second: Cupboard_Door
+  - first:
+      1: 100006
+    second: Cupboard_Door_2
+  - first:
+      1: 100008
+    second: Cupboard_Door_3
+  - first:
+      1: 100010
+    second: Cupboard_Door_4
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Cupboard
+  - first:
+      4: 400004
+    second: Cupboard_Door
+  - first:
+      4: 400006
+    second: Cupboard_Door_2
+  - first:
+      4: 400008
+    second: Cupboard_Door_3
+  - first:
+      4: 400010
+    second: Cupboard_Door_4
+  - first:
+      23: 2300000
+    second: Cupboard
+  - first:
+      23: 2300002
+    second: Cupboard_Door
+  - first:
+      23: 2300004
+    second: Cupboard_Door_2
+  - first:
+      23: 2300006
+    second: Cupboard_Door_3
+  - first:
+      23: 2300008
+    second: Cupboard_Door_4
+  - first:
+      33: 3300000
+    second: Cupboard
+  - first:
+      33: 3300002
+    second: Cupboard_Door
+  - first:
+      33: 3300004
+    second: Cupboard_Door_2
+  - first:
+      33: 3300006
+    second: Cupboard_Door_3
+  - first:
+      33: 3300008
+    second: Cupboard_Door_4
+  - first:
+      43: 4300000
+    second: Cupboard
+  - first:
+      43: 4300002
+    second: Cupboard_Door
+  - first:
+      43: 4300004
+    second: Cupboard_Door_2
+  - first:
+      43: 4300006
+    second: Cupboard_Door_3
+  - first:
+      43: 4300008
+    second: Cupboard_Door_4
+  - first:
+      64: 6400000
+    second: Cupboard
+  - first:
+      64: 6400002
+    second: Cupboard_Door
+  - first:
+      64: 6400004
+    second: Cupboard_Door_2
+  - first:
+      64: 6400006
+    second: Cupboard_Door_3
+  - first:
+      64: 6400008
+    second: Cupboard_Door_4
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -53,12 +118,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -66,26 +134,47 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -95,14 +184,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

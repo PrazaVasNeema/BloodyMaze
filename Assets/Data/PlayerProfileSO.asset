@@ -72,3 +72,4 @@ MonoBehaviour:
     roomsData:
     - agentsToSpawnIDs: []
       itemsToSpawnIDs: []
+      activatersToSpawnIDs: []
