@@ -20,5 +20,12 @@ namespace BloodyMaze.Components
                 activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
             GameEvents.OnCallGotoFunction?.Invoke("none");
         }
+
+        public void InitRoomTransiter(ActivateModuleCallTransition activateModuleCallTransition)
+        {
+            m_prevRoom = transform.parent.GetComponent<RoomController>();
+            m_nextRoom = activateModuleCallTransition.transform.parent.GetComponent<RoomController>();
+            m_transitPoint = activateModuleCallTransition.transform.GetChild(0).transform;
+        }
     }
 }

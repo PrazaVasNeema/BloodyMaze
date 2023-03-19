@@ -19,6 +19,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         [SerializeField] private RoomController[] m_rooms;
         [SerializeField] private int m_activeRoom;
+        [SerializeField] private List<ActivateModuleCallTransition> m_transiters;
 
         private void Awake()
         {
@@ -33,6 +34,13 @@ namespace BloodyMaze.Controllers
         public void Init()
         {
             PlayerProfileSO playerProfileSO = GameController.playerProfile;
+
+            for (int i = 0; i < m_transiters.Count; i += 2)
+            {
+                m_transiters[i].InitRoomTransiter(m_transiters[i + 1]);
+                m_transiters[i + 1].InitRoomTransiter(m_transiters[i]);
+            }
+
             foreach (RoomController rc in m_rooms)
             {
                 rc.Init();
@@ -41,6 +49,7 @@ namespace BloodyMaze.Controllers
                 else
                     rc.gameObject.SetActive(false);
             }
+
             var player = SpawnPlayer();
             player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);

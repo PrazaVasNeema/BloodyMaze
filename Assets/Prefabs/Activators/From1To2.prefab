@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1279980707930759896}
   - component: {fileID: 8993612608551888377}
   - component: {fileID: 7404289237490072054}
-  - component: {fileID: 8629296778469573343}
   m_Layer: 0
   m_Name: PCReference
   m_TagString: Untagged
@@ -27,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733436438155232159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.071, z: -1.27}
-  m_LocalScale: {x: 0.47, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.27}
+  m_LocalScale: {x: 0.47, y: 2.0732374, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3513441772129813268}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8993612608551888377
 MeshFilter:
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8629296778469573343
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733436438155232159}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940696}
 --- !u!1 &7397397649348526011
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +116,6 @@ Transform:
   m_LocalScale: {x: 1.8166343, y: 1, z: 0.8485331}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1551575866564887369}
   - {fileID: 1279980707930759896}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -245,34 +229,3 @@ MonoBehaviour:
   m_nextRoom: {fileID: 0}
   m_shouldChangeRoom: 1
   m_transitPoint: {fileID: 0}
---- !u!1 &9206382313722972476
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1551575866564887369}
-  m_Layer: 0
-  m_Name: CorrespondingTransiterTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1551575866564887369
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206382313722972476}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3513441772129813268}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
