@@ -17,6 +17,7 @@ namespace BloodyMaze.Components
         public float percent => m_currentHealth / m_maxHealth;
 
         public UnityEvent onDead;
+        public UnityEvent<bool> OnChangeTargetLockStatus;
 
         public void Init(float currentHealth, float maxHealth)
         {

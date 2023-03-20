@@ -17,6 +17,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private Transform[] m_spawnPoints;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
+        public GameObject virtualCamera => m_virtualCamera.gameObject;
         [SerializeField] private RoomController[] m_rooms;
         [SerializeField] private int m_activeRoom;
         [SerializeField] private List<ActivateModuleCallTransition> m_transiters;
