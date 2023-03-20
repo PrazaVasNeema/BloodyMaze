@@ -25,7 +25,6 @@ namespace BloodyMaze
         public float moveSpeed;
 
         public AmmoType holyAmmoType;
-        public AmmoType silverAmmoType;
     }
 
     [System.Serializable]

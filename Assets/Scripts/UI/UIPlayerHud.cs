@@ -13,7 +13,6 @@ namespace BloodyMaze.UI
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;
         [SerializeField] private TMP_Text m_ammoHoly;
-        [SerializeField] private TMP_Text m_ammoSilver;
         [Header("Mini message")]
         [SerializeField] private TMP_Text m_miniMessage;
         [SerializeField] private float m_miniMessageDisplayTime = 3f;
@@ -38,7 +37,6 @@ namespace BloodyMaze.UI
         private void OnDisable()
         {
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
-            m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
             GameEvents.OnShowMiniMessage -= ShowMiniMessage;
         }
 
@@ -46,10 +44,8 @@ namespace BloodyMaze.UI
         {
             m_characterComponent = characterComponent;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
-            m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
             GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
-            m_characterComponent.ammunitionComponent.Reload("silver");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_animator = GetComponent<Animator>();
             m_refImage.SetActive(false);
@@ -115,34 +111,7 @@ namespace BloodyMaze.UI
 
         private void RefreshAmmoCount(string ammoTypeName, AmmoType ammoType)
         {
-            switch (ammoTypeName)
-            {
-                case "holy":
-                    m_ammoHoly.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}   {ammoType.currentAmmo}");
-                    break;
-                case "silver":
-                    m_ammoSilver.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}   {ammoType.currentAmmo}");
-                    break;
-            }
-        }
-
-        public void ChangeRevolverStatsFocus(int currentRevolverIndex)
-        {
-            Transform ammoHolyTransform = m_ammoHoly.transform.parent.transform.parent.GetComponent<Transform>();
-            Transform ammoSilverTransform = m_ammoSilver.transform.parent.transform.parent.GetComponent<Transform>();
-            Vector3 scaleOne = new Vector3(0.8f, 0.8f, 0.8f);
-            Vector3 scaleTwo = new Vector3(1f, 1f, 1f);
-            switch (currentRevolverIndex)
-            {
-                case 0:
-                    ammoHolyTransform.localScale = scaleTwo;
-                    ammoSilverTransform.localScale = scaleOne;
-                    break;
-                case 1:
-                    ammoHolyTransform.localScale = scaleOne;
-                    ammoSilverTransform.localScale = scaleTwo;
-                    break;
-            }
+            m_ammoHoly.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}   {ammoType.currentAmmo}");
         }
 
         private void ShowMiniMessage(string miniMessageKey)

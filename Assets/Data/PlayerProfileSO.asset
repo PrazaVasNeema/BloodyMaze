@@ -25,18 +25,13 @@ MonoBehaviour:
         currentAmmo: 42
         roundSize: 6
         currentRoundAmmo: 0
-      silverAmmoType:
-        maxAmmo: 42
-        currentAmmo: 42
-        roundSize: 12
-        currentRoundAmmo: 0
     globalEventsData:
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door

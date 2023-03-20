@@ -36,7 +36,7 @@ namespace BloodyMaze.Components
 
             if (TryGetComponent(out ammunitionComponent))
             {
-                ammunitionComponent.Init(m_characterSaveData.holyAmmoType, m_characterSaveData.silverAmmoType);
+                ammunitionComponent.Init(m_characterSaveData.holyAmmoType);
             }
 
             TryGetComponent(out interactComponent);
@@ -61,8 +61,6 @@ namespace BloodyMaze.Components
             m_characterSaveData.currentHealth = healthComponent.currentHealth;
             m_characterSaveData.holyAmmoType.currentAmmo = ammunitionComponent.m_ammoType["holy"].currentAmmo
             + ammunitionComponent.m_ammoType["holy"].currentRoundAmmo;
-            m_characterSaveData.silverAmmoType.currentAmmo = ammunitionComponent.m_ammoType["silver"].currentAmmo
-            + ammunitionComponent.m_ammoType["silver"].currentRoundAmmo;
         }
     }
 }

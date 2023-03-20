@@ -12,10 +12,9 @@ namespace BloodyMaze.Components
 
         public System.Action<string, AmmoType> onAmmoCountChange;
 
-        public void Init(AmmoType holyAmmoType, AmmoType silverAmmoType)
+        public void Init(AmmoType holyAmmoType)
         {
             m_ammoType.Add("holy", holyAmmoType.Clone());
-            m_ammoType.Add("silver", silverAmmoType.Clone());
             // m_ammoType["holy"].Reload();
             // m_ammoType["silver"].Reload();
             // onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
