@@ -14,6 +14,10 @@ namespace BloodyMaze.Components
 
         public Vector2 ChooseNext()
         {
+            if (m_patrol_positions.Length == 0)
+            {
+                return gameObject.transform.position;
+            }
             if (m_shouldBeRandom)
             {
                 int index = Random.Range(0, m_patrol_positions.Length);
