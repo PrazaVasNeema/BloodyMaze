@@ -19,7 +19,10 @@ namespace BloodyMaze.Components
                 return;
             }
             GameInventory.current.RemoveItem(m_requiredItemName);
+            if (!string.IsNullOrEmpty(m_eventFlagToCheck))
+                GameEvents.OnEventFlagCheck?.Invoke(m_eventFlagToCheck);
             onSuccesfullActivate?.Invoke();
+
         }
     }
 }

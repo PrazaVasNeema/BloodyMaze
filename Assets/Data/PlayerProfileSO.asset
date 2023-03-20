@@ -26,6 +26,8 @@ MonoBehaviour:
         roundSize: 6
         currentRoundAmmo: 0
     globalEventsData:
+    - eventKey: opened_main_door
+      flag: 0
     - eventKey: sat_at_desk
       flag: 0
     - eventKey: tried_to_open_bathroom_secret
@@ -63,7 +65,7 @@ MonoBehaviour:
     - eventKey: library_secret_note_1
       flag: 0
     optionsData:
-      language: 0
+      language: 1
     roomsData:
     - roomID: 0
       agentsToSpawnIDs: []

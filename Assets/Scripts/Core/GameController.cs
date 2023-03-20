@@ -49,6 +49,7 @@ namespace BloodyMaze
         {
             //LoadPlayerProfile();
             LoadPlayerProfileGameplayData();
+            LoadPlayerProfileOptionsData();
             m_levelController = FindObjectOfType<LevelController>();
             InitLevel();
             StartCoroutine(WaitForInitLevelCompleteCo());

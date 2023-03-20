@@ -30,7 +30,6 @@ namespace BloodyMaze.UI
         private void OnEnable()
         {
             m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
-            m_inventoryItemsInShowcase.Add(m_refImage);
             GameEvents.OnShowMiniMessage += ShowMiniMessage;
         }
 
@@ -47,6 +46,7 @@ namespace BloodyMaze.UI
             GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
+            m_inventoryItemsInShowcase.Add(m_refImage);
             m_animator = GetComponent<Animator>();
             m_refImage.SetActive(false);
         }
@@ -73,10 +73,13 @@ namespace BloodyMaze.UI
                 GameObject tempItem = Instantiate(m_refImage, m_showcase.transform);
                 tempItem.SetActive(true);
                 PickableItemComponent tempComponent = tempItem.AddComponent<PickableItemComponent>();
+                Debug.Log(tempComponent.name);
                 tempComponent.SetItem(item);
+                Debug.Log(tempComponent.item.name);
                 tempItem.GetComponent<Image>().sprite = tempComponent.item.displaySprite;
                 if (m_inventoryItemsInShowcase[m_inventoryItemsInShowcase.Count - 1] == m_refImage)
                 {
+                    Debug.Log("ghfgh");
                     tempItem.transform.position = m_inventoryItemsInShowcase[m_inventoryItemsInShowcase.Count - 1].transform.position;
                 }
                 else

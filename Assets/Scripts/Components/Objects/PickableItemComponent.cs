@@ -12,6 +12,7 @@ namespace BloodyMaze.Components
         public void SetItem(PickableItem item)
         {
             m_item = new PickableItem(item.name, item.displaySprite, item.modelPrefab);
+            Debug.Log($"m_item: {m_item.name}");
         }
     }
 }

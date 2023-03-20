@@ -26,7 +26,10 @@ namespace BloodyMaze.Components
             if (!string.IsNullOrEmpty(m_eventFlagToCheck))
                 GameController.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
             Debug.Log("Check3");
-            Destroy(gameObject);
+            var activateOnInteract = GetComponent<ActivateOnInteract>();
+            if (activateOnInteract)
+                activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
+            gameObject.SetActive(false);
         }
     }
 }

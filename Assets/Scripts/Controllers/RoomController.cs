@@ -125,7 +125,7 @@ namespace BloodyMaze.Controllers
 
         public void InitAgents()
         {
-            var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID - 1];
+            var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID];
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;

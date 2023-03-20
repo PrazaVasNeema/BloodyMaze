@@ -32,7 +32,7 @@ namespace BloodyMaze
         public void RemoveItem(string name)
         {
             onInventoryChange?.Invoke(name, null);
-            m_inventory.Remove(name);
+            // m_inventory.Remove(name);
         }
 
         public bool InventoryContains(string name)
