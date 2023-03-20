@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5729177184881943755}
   - component: {fileID: 5729177184881957685}
   - component: {fileID: 5729177184881957684}
+  - component: {fileID: -2629723073809983015}
   m_Layer: 0
   m_Name: UnlockAndDisappear
   m_TagString: Untagged
@@ -141,8 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120aea14cdef8774a87bebf585af7afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_correspondingEventKey: 
-  m_shouldSpawnOnEventKey: 0
   m_eventFlagToCheck: 
   m_requiredItemName: key_zero
   onSuccesfullActivate:
@@ -177,3 +176,17 @@ MonoBehaviour:
   m_shouldSetActive: 1
   m_shouldSetActiveFalseSelf: 1
   m_objectToActivate: {fileID: 0}
+--- !u!114 &-2629723073809983015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729177184881943757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []

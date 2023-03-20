@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2802711680137190495}
   - component: {fileID: 2802711680137190494}
   - component: {fileID: 2802711680137190489}
+  - component: {fileID: -12776340621733963}
   m_Layer: 0
   m_Name: ReadNote
   m_TagString: Untagged
@@ -141,3 +142,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
   m_noteTextKey: 0
+--- !u!114 &-12776340621733963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802711680137190488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []

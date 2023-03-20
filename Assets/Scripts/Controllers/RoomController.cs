@@ -11,7 +11,7 @@ namespace BloodyMaze.Controllers
         public int roomID => m_roomID;
         [SerializeField] private ActivateModulePickUpItem[] m_roomItems;
         [SerializeField] private AgentIdentifier[] m_roomAgents;
-        [SerializeField] private ActivateModuleAbstract[] m_roomActivaters;
+        [SerializeField] private CheckIfObjectShouldSpawn[] m_roomActivaters;
 
         public void Init()
         {

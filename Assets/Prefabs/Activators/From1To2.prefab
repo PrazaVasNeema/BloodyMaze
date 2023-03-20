@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8655416541001619299}
   - component: {fileID: 8451231947899178884}
   - component: {fileID: 1250591336383199606}
+  - component: {fileID: -5357850672259217213}
   m_Layer: 0
   m_Name: From1To2
   m_TagString: Untagged
@@ -229,3 +230,17 @@ MonoBehaviour:
   m_nextRoom: {fileID: 0}
   m_shouldChangeRoom: 1
   m_transitPoint: {fileID: 0}
+--- !u!114 &-5357850672259217213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397397649348526011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []

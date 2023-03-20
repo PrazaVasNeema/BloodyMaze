@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2838817315141783935}
   - component: {fileID: 2838817315141783920}
   - component: {fileID: 2838817315141783921}
+  - component: {fileID: 2602884556266958261}
   m_Layer: 0
   m_Name: CheckForRequiredItem
   m_TagString: Untagged
@@ -158,3 +159,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   activationFailedMiniMessageKey: key_needed
+--- !u!114 &2602884556266958261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838817315141783923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []

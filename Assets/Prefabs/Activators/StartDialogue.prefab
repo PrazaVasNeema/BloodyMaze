@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8773164460460532268}
   - component: {fileID: 8773164460460532271}
   - component: {fileID: 8773164460460532270}
+  - component: {fileID: 1636216518837374801}
   m_Layer: 0
   m_Name: StartDialogue
   m_TagString: Untagged
@@ -139,7 +140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aaf79f06a9e85847b8db10fec0f6716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_correspondingEventKey: 
-  m_shouldSpawnOnEventKey: 0
   m_eventFlagToCheck: 
   m_dialogueKey: 0
+--- !u!114 &1636216518837374801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773164460460532265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []

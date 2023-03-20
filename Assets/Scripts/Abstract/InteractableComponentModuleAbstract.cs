@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BloodyMaze
+namespace BloodyMaze.Components
 {
     public abstract class ActivateModuleAbstract : MonoBehaviour
     {
-        [SerializeField] protected string[] m_eventsShouldBeChecked;
-        public string[] eventsShouldBeChecked => m_eventsShouldBeChecked;
-        [SerializeField] protected string[] m_eventsShouldBeUnchecked;
-        public string[] eventsShouldBeUnhecked => m_eventsShouldBeUnchecked;
+
         [SerializeField] protected string m_eventFlagToCheck;
         public string eventFlagCheck => m_eventFlagToCheck;
 
