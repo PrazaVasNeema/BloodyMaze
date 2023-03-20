@@ -10,5 +10,12 @@ namespace BloodyMaze
         public string name;
         public Sprite displaySprite;
         public GameObject modelPrefab;
+
+        public PickableItem(string name, Sprite displaySprite, GameObject modelPrefab)
+        {
+            this.name = name;
+            this.displaySprite = displaySprite;
+            this.modelPrefab = modelPrefab;
+        }
     }
 }

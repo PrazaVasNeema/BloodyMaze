@@ -54,6 +54,17 @@ namespace BloodyMaze.Controllers
                 m_roomActivaters[i].gameObject.SetActive(flag);
 
             }
+
+
+            for (int i = 0; i < m_roomItems.Length; i++)
+            {
+                var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
+                if (globalEventsEvent != null && globalEventsEvent.flag)
+                {
+                    GameInventory.current.AddItem(m_roomItems[i].item.item);
+                    m_roomItems[i].gameObject.SetActive(false);
+                }
+            }
         }
 
         private void OnEnable()
@@ -109,17 +120,7 @@ namespace BloodyMaze.Controllers
 
         public void InitItems()
         {
-            var globalEvents = GameController.playerProfile.playerProfileData.globalEventsData;
 
-            for (int i = 0; i < m_roomItems.Length; i++)
-            {
-                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
-                if (globalEventsEvent != null && globalEventsEvent.flag)
-                {
-                    // GameInventory.current.AddItem(m_roomItems[i].item.item);
-                    m_roomItems[i].gameObject.SetActive(false);
-                }
-            }
         }
 
         public void InitAgents()

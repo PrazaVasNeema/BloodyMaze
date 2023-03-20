@@ -39,7 +39,6 @@ namespace BloodyMaze.UI
         {
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange -= ChangeRevolverStatsFocus;
-            // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
             GameEvents.OnShowMiniMessage -= ShowMiniMessage;
         }
 
@@ -48,12 +47,17 @@ namespace BloodyMaze.UI
             m_characterComponent = characterComponent;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             m_characterComponent.abilitiesManagerSlot1.onAbilityChange += ChangeRevolverStatsFocus;
-            // GameInventory.current.onInventoryChange += ReorganizeShowcase;
+            GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_characterComponent.ammunitionComponent.Reload("silver");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_animator = GetComponent<Animator>();
             m_refImage.SetActive(false);
+        }
+
+        private void OnDestroy()
+        {
+            // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
         }
 
         private void Update()
@@ -69,6 +73,7 @@ namespace BloodyMaze.UI
         {
             if (item != null)
             {
+                Debug.Log("ReorganizeShowcase");
                 GameObject tempItem = Instantiate(m_refImage, m_showcase.transform);
                 tempItem.SetActive(true);
                 PickableItemComponent tempComponent = tempItem.AddComponent<PickableItemComponent>();
