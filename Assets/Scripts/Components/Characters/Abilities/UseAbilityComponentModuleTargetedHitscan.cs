@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -14,6 +15,7 @@ namespace BloodyMaze.Components
         private IAbilityComponent m_abilityComponent;
         private SphereCollider m_sphereCollider;
         private HealthComponent m_currentTarget;
+        public UnityEvent<GameObject> OnTargetLockedChanged;
 
         private void Awake()
         {
@@ -47,14 +49,20 @@ namespace BloodyMaze.Components
                     }
                 }
                 if (m_currentTarget)
+                {
                     m_currentTarget.OnChangeTargetLockStatus?.Invoke(false);
+                }
                 m_currentTarget = m_targetHealthComponent;
                 m_currentTarget.OnChangeTargetLockStatus?.Invoke(true);
+                OnTargetLockedChanged?.Invoke(m_currentTarget.gameObject);
             }
             else
             {
                 if (m_currentTarget)
+                {
                     m_currentTarget.OnChangeTargetLockStatus?.Invoke(false);
+                    OnTargetLockedChanged?.Invoke(null);
+                }
                 m_currentTarget = null;
             }
         }
