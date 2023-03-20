@@ -31,9 +31,14 @@ namespace BloodyMaze
         {
             if (shouldInitNewData)
             {
-                playerProfileData.characterSaveData = m_default.characterSaveData;
-                playerProfileData.globalEventsData = m_default.globalEventsData;
-                playerProfileData.roomsData = m_default.roomsData;
+                PlayerProfileData currentData = new PlayerProfileData();
+                currentData.characterSaveData = m_default.characterSaveData;
+                currentData.globalEventsData = m_default.globalEventsData;
+                currentData.roomsData = m_default.roomsData;
+                var data = JsonUtility.FromJson<PlayerProfileData>(JsonUtility.ToJson(currentData));
+                playerProfileData.characterSaveData = data.characterSaveData;
+                playerProfileData.globalEventsData = data.globalEventsData;
+                playerProfileData.roomsData = data.roomsData;
             }
             else
             {

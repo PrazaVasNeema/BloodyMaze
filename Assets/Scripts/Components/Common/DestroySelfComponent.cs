@@ -9,6 +9,7 @@ namespace TopDownShooter
         [SerializeField] private float m_destroyDelay;
         public void DestroySelf()
         {
+            StartCoroutine(DestroySelfCo());
         }
 
         IEnumerator DestroySelfCo()

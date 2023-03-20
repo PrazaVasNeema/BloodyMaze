@@ -11,8 +11,7 @@ namespace BloodyMaze
 
         private void OnTriggerEnter(Collider other)
         {
-            if (LayerMask.NameToLayer("Player") == 1 << other.gameObject.layer
-             && ActionStatesManager.current.state == ActionStates.EXPLORING)
+            if (ActionStatesManager.current.state == ActionStates.EXPLORING)
             {
                 onActivate?.Invoke();
             }

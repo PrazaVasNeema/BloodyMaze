@@ -9,11 +9,12 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private bool m_shouldSetActive;
         [SerializeField] private bool m_shouldSetActiveFalseSelf;
-        [SerializeField] private GameObject m_objectToActivate;
+        [SerializeField] private GameObject[] m_objectToSetActivate;
 
         public void Activate()
         {
-            m_objectToActivate.SetActive(m_shouldSetActive);
+            foreach (GameObject objectToSetActivate in m_objectToSetActivate)
+                objectToSetActivate.SetActive(m_shouldSetActive);
             if (m_shouldSetActiveFalseSelf)
             {
                 ActivateOnInteract activateOnInteract = GetComponent<ActivateOnInteract>();
