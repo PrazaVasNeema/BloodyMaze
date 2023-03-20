@@ -12,7 +12,7 @@ namespace BloodyMaze.States
         private void OnDisable()
         {
             Time.timeScale = 1f;
-            if (ActionStatesManager.current.state == ActionStates.INTERACTING)
+            if (ActionStatesManager.state == ActionStates.INTERACTING)
                 ActionStatesManager.ChangeState();
         }
     }

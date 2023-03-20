@@ -5,7 +5,7 @@ using BloodyMaze.Controllers;
 
 namespace BloodyMaze.Components
 {
-    public class ShowOrHideRoomAgents : MonoBehaviour
+    public class ShowOrHideRoomAgentsComponent : MonoBehaviour
     {
         [SerializeField] private List<int> m_agentsToAffect;
         [SerializeField] private bool m_shouldShow;

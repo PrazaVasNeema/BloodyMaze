@@ -55,7 +55,7 @@ namespace BloodyMaze.Controllers
             {
                 if (!m_menusAreOpen)
                 {
-                    if (ActionStatesManager.current.state != ActionStates.INTERACTING)
+                    if (ActionStatesManager.state != ActionStates.INTERACTING)
                     {
                         var move = m_moveAction.ReadValue<Vector2>();
                         Vector3 offset = new(move.x, 0f, move.y);
@@ -90,7 +90,7 @@ namespace BloodyMaze.Controllers
                             }
                         }
                     }
-                    if (m_interactAction.WasPressedThisFrame() && ActionStatesManager.current.state != ActionStates.BATTLE)
+                    if (m_interactAction.WasPressedThisFrame() && ActionStatesManager.state != ActionStates.BATTLE)
                     {
                         m_characterComponent.interactComponent.Interact();
                     }

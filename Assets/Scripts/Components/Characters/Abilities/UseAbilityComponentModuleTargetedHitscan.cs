@@ -37,10 +37,12 @@ namespace BloodyMaze.Components
             Collider[] targets = Physics.OverlapSphere(transform.position, m_sphereCollider.radius, m_layersToTarget);
             if (targets.Length > 0)
             {
-                float minDistance = (transform.position - targets[0].transform.position).sqrMagnitude;
-                HealthComponent m_targetHealthComponent = targets[0].GetComponentInParent<HealthComponent>();
+                float minDistance = 10000f;
+                HealthComponent m_targetHealthComponent = null;
                 foreach (Collider target in targets)
                 {
+                    if (target.gameObject.active == false)
+                        break;
                     float curDistance = (transform.position - target.transform.position).sqrMagnitude;
                     if (curDistance < minDistance)
                     {
@@ -48,6 +50,8 @@ namespace BloodyMaze.Components
                         m_targetHealthComponent = target.GetComponentInParent<HealthComponent>();
                     }
                 }
+                if (m_targetHealthComponent == null)
+                    return;
                 if (m_currentTarget)
                 {
                     m_currentTarget.OnChangeTargetLockStatus?.Invoke(false);
@@ -72,7 +76,7 @@ namespace BloodyMaze.Components
             bool canAttack = m_currentTarget && m_ammunitionComponent.ShootAmmo(m_ammoTypeName) ? true : false;
             if (canAttack)
             {
-                m_currentTarget.TakeDamage(10);
+                m_currentTarget.TakeDamage(50);
             }
             return canAttack;
         }

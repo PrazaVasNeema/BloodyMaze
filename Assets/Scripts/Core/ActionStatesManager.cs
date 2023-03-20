@@ -11,7 +11,7 @@ namespace BloodyMaze
         public static ActionStatesManager current { private set; get; }
 
         private ActionStates m_state = ActionStates.EXPLORING;
-        public ActionStates state => current.m_state;
+        public static ActionStates state => current.m_state;
         private float m_enemiesTriggered = 0;
 
         private void Awake()

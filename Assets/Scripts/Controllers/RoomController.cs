@@ -12,27 +12,23 @@ namespace BloodyMaze.Controllers
         [SerializeField] private ActivateModulePickUpItem[] m_roomItems;
         [SerializeField] private AgentIdentifier[] m_roomAgents;
         [SerializeField] private CheckIfObjectShouldSpawn[] m_roomActivaters;
+        private List<GlobalEventsData> m_globalEventsData;
+        private bool m_enabledFlag;
+
 
         public void Init()
         {
-            var globalEvents = GameController.playerProfile.playerProfileData.globalEventsData;
+            GameEvents.OnInitLevelComplete += CheckEnableFlag;
+            m_globalEventsData = GameController.playerProfile.playerProfileData.globalEventsData;
 
-            for (int i = 0; i < m_roomItems.Length; i++)
-            {
-                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
-                if (globalEventsEvent != null && globalEventsEvent.flag)
-                {
-                    GameInventory.current.AddItem(m_roomItems[i].item.item);
-                    m_roomItems[i].gameObject.SetActive(false);
-                }
-            }
-
+            // InitActivaters();
+            // InitAgents();
             for (int i = 0; i < m_roomActivaters.Length; i++)
             {
                 bool flag = true;
                 foreach (string str in m_roomActivaters[i].eventsShouldBeChecked)
                 {
-                    var globalEventsEvent = globalEvents.Find((x) => x.eventKey == str);
+                    var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == str);
                     if (globalEventsEvent != null)
                     {
                         if (globalEventsEvent.flag == false)
@@ -44,7 +40,7 @@ namespace BloodyMaze.Controllers
                 }
                 foreach (string str in m_roomActivaters[i].eventsShouldBeUnhecked)
                 {
-                    var globalEventsEvent = globalEvents.Find((x) => x.eventKey == str);
+                    var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == str);
                     if (globalEventsEvent != null)
                     {
                         if (globalEventsEvent.flag == true)
@@ -58,12 +54,76 @@ namespace BloodyMaze.Controllers
                 m_roomActivaters[i].gameObject.SetActive(flag);
 
             }
-            // InitAgents();
+        }
+
+        private void OnEnable()
+        {
+            if (m_enabledFlag)
+            {
+                InitActivaters();
+                InitAgents();
+            }
+        }
+
+        public void InitActivaters()
+        {
+            for (int i = 0; i < m_roomActivaters.Length; i++)
+            {
+                bool flag = true;
+                foreach (string str in m_roomActivaters[i].eventsShouldBeChecked)
+                {
+                    var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == str);
+                    if (globalEventsEvent != null)
+                    {
+                        if (globalEventsEvent.flag == false)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+                foreach (string str in m_roomActivaters[i].eventsShouldBeUnhecked)
+                {
+                    var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == str);
+                    if (globalEventsEvent != null)
+                    {
+                        if (globalEventsEvent.flag == true)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+
+                m_roomActivaters[i].gameObject.SetActive(flag);
+
+            }
+        }
+
+        private void CheckEnableFlag()
+        {
+            m_enabledFlag = true;
+            GameEvents.OnInitLevelComplete -= CheckEnableFlag;
+        }
+
+        public void InitItems()
+        {
+            var globalEvents = GameController.playerProfile.playerProfileData.globalEventsData;
+
+            for (int i = 0; i < m_roomItems.Length; i++)
+            {
+                var globalEventsEvent = globalEvents.Find((x) => x.eventKey == m_roomItems[i].eventFlagCheck);
+                if (globalEventsEvent != null && globalEventsEvent.flag)
+                {
+                    GameInventory.current.AddItem(m_roomItems[i].item.item);
+                    m_roomItems[i].gameObject.SetActive(false);
+                }
+            }
         }
 
         public void InitAgents()
         {
-            var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID];
+            var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID - 1];
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;

@@ -8,6 +8,7 @@ namespace BloodyMaze
     {
         [SerializeField] private Transform m_shouldTurnToThis;
         [SerializeField] private bool m_shouldTurnToPC;
+        [SerializeField] private bool m_shouldTurnPC;
 
         public void Activate()
         {

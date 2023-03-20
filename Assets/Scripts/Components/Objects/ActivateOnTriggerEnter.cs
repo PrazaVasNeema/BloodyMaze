@@ -11,7 +11,7 @@ namespace BloodyMaze
 
         private void OnTriggerEnter(Collider other)
         {
-            if (ActionStatesManager.current.state == ActionStates.EXPLORING)
+            if (ActionStatesManager.state == ActionStates.EXPLORING)
             {
                 onActivate?.Invoke();
             }
