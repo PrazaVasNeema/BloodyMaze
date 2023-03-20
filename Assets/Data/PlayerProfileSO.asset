@@ -38,7 +38,7 @@ MonoBehaviour:
     - eventKey: talked_to_girl
       flag: 1
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
       flag: 0
     - eventKey: pick_up_mirror
