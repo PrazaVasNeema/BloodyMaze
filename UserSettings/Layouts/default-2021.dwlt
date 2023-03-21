@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 10}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -150,8 +150,8 @@ MonoBehaviour:
     y: 0
     width: 639
     height: 606
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 30}
   m_Panes:
   - {fileID: 30}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 200}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 55
+  controlID: 41
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -231,14 +231,14 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 333
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 32}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 27}
   m_Panes:
   - {fileID: 27}
   - {fileID: 32}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 42
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 57
+  controlID: 43
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -511,22 +511,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Visuals/Reworked
+    - Assets/Prefabs/PCAndAgents
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 56
   m_LastFolders:
-  - Assets/Visuals/Reworked
+  - Assets/Prefabs/PCAndAgents
   m_LastFoldersGridSize: 56
   m_LastProjectPath: V:\ConvoLine\Unity\Projects\BloodyMaze
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 524}
-    m_SelectedIDs: 3c730c00
-    m_LastClickedID: 815932
-    m_ExpandedIDs: 00000000a0990000e09b0000f49b0000fa9b0000029c0000fa750c0000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 249e0000
+    m_LastClickedID: 40484
+    m_ExpandedIDs: 00000000b8990000d09a0000d69a0000de9a00003a9e00004a9e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -554,7 +554,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0990000
+    m_ExpandedIDs: 00000000b8990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c0470c0096200600
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
     m_CachedPref: 188
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 4504
+  m_LastInspectedObjectInstanceID: 4506
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: GlobalObjectId_V1-3-e384ae10f41db044797370e27bccbced-11400000-0
   m_InspectorMode: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 780
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: GlobalObjectId_V1-3-45b560feae642f547a63162206195a88-11400000-0
   m_InspectorMode: 0
 --- !u!114 &20
@@ -720,7 +720,7 @@ MonoBehaviour:
     m_CachedPref: 188
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 25252
+  m_LastInspectedObjectInstanceID: 25314
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-1379924498-0
   m_InspectorMode: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 289c0000
     m_LastClickedID: 39976
-    m_ExpandedIDs: 00000000a0990000ea9b000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000b8990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -895,7 +895,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0990000
+    m_ExpandedIDs: 00000000b8990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1048,22 +1048,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Visuals
+    - Assets/Prefabs/PCAndAgents
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 62
   m_LastFolders:
-  - Assets/Prefabs/Visuals
+  - Assets/Prefabs/PCAndAgents
   m_LastFoldersGridSize: 62
   m_LastProjectPath: V:\ConvoLine\Unity\Projects\BloodyMaze
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 00dd0300
-    m_LastClickedID: 253184
-    m_ExpandedIDs: 00000000a0990000f49b0000fa9b0000029c0000ce60050000ca9a3bffffff7f
+    m_SelectedIDs: 249e0000
+    m_LastClickedID: 40484
+    m_ExpandedIDs: 00000000b8990000d09a0000d69a00003a9e00004a9e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1091,7 +1091,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0990000
+    m_ExpandedIDs: 00000000b8990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1116,8 +1116,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 96200600
-    m_LastClickedInstanceID: 401558
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a2a80000c4a8000048600000486900004c6f0000c67000009877000090770000947700002a72000080960100526f00007c53010000cd0000
     m_RenameOverlay:
@@ -1218,10 +1218,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1132}
-      m_SelectedIDs: 3af7ffff
-      m_LastClickedID: -2246
-      m_ExpandedIDs: be86feff1489feffd856ffffb66fffff0a75ffff387affff6cf5ffff28f7ffff3af7ffff82f7ffff82f8ffff12fbfffff4ffffff106100007a61000030630000e263000020660000007700001677000008790000bc810000e681000074820000ee820000888300003e85000078850000568a0000468b0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 26930000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 12fbffff1c610000b0710000a4830000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1503,9 +1503,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 243.93015, y: -273.58963, z: -82.44506}
+    m_Target: {x: 96.95529, y: -304.22153, z: 71.32077}
     speed: 2
-    m_Value: {x: 243.93015, y: -273.58963, z: -82.44506}
+    m_Value: {x: 96.95529, y: -304.22153, z: 71.32077}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1552,9 +1552,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.30001354, y: -0.58586466, z: 0.24705286, w: -0.71116585}
+    m_Target: {x: -0.39410755, y: -0.22435483, z: 0.0997489, w: -0.885679}
     speed: 2
-    m_Value: {x: -0.29963702, y: -0.5869198, z: 0.24749798, w: -0.71027297}
+    m_Value: {x: -0.39410105, y: -0.22435114, z: 0.09974726, w: -0.88566446}
   m_Size:
     m_Target: 211.98454
     speed: 2

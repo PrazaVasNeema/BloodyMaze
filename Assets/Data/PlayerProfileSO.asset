@@ -19,7 +19,7 @@ MonoBehaviour:
       currentMana: 100
       maxMana: 100
       manaRestoringRate: 10
-      moveSpeed: 15
+      moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
         currentAmmo: 42

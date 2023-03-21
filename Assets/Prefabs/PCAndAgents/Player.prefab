@@ -68,11 +68,6 @@ MonoBehaviour:
       currentAmmo: 0
       roundSize: 0
       currentRoundAmmo: 0
-    silverAmmoType:
-      maxAmmo: 0
-      currentAmmo: 0
-      roundSize: 0
-      currentRoundAmmo: 0
   healthComponent: {fileID: 0}
   manaComponent: {fileID: 0}
   movementComponentCharacter: {fileID: 0}
@@ -513,6 +508,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cafd3fcf01aefc541b478cb2ff9ea798, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cafd3fcf01aefc541b478cb2ff9ea798, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7587822380302052528, guid: cafd3fcf01aefc541b478cb2ff9ea798, type: 3}
