@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
   m_noteTextKey: 0
+  m_noteBackground: {fileID: 0}
 --- !u!114 &-12776340621733963
 MonoBehaviour:
   m_ObjectHideFlags: 0

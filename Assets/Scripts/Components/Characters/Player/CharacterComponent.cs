@@ -12,8 +12,10 @@ namespace BloodyMaze.Components
         [HideInInspector] public MovementComponentCharacter movementComponentCharacter;
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot1;
         [HideInInspector] public AbilitiesManager abilitiesManagerSlot2;
+        [HideInInspector] public AbilitiesManager abilitiesManagerSlot3;
         [HideInInspector] public AmmunitionComponent ammunitionComponent;
         [HideInInspector] public InteractComponent interactComponent;
+        [HideInInspector] public MedsComponent medsComponent;
 
         public void Init(CharacterSaveData characterSaveData)
         {
@@ -39,6 +41,11 @@ namespace BloodyMaze.Components
                 ammunitionComponent.Init(m_characterSaveData.holyAmmoType);
             }
 
+            if (TryGetComponent(out medsComponent))
+            {
+                medsComponent.Init(m_characterSaveData.commonMeds);
+            }
+
             TryGetComponent(out interactComponent);
 
 
@@ -46,7 +53,8 @@ namespace BloodyMaze.Components
             abilitiesManagers = GetComponents<AbilitiesManager>();
             abilitiesManagerSlot1 = abilitiesManagers[0];
             abilitiesManagerSlot2 = abilitiesManagers[1];
-            TryGetComponent(out ammunitionComponent);
+            abilitiesManagerSlot3 = abilitiesManagers[2];
+            // TryGetComponent(out ammunitionComponent);
 
             GameEvents.OnSaveData += SaveData;
         }
@@ -61,6 +69,7 @@ namespace BloodyMaze.Components
             m_characterSaveData.currentHealth = healthComponent.currentHealth;
             m_characterSaveData.holyAmmoType.currentAmmo = ammunitionComponent.m_ammoType["holy"].currentAmmo
             + ammunitionComponent.m_ammoType["holy"].currentRoundAmmo;
+            m_characterSaveData.commonMeds.currentAmount = medsComponent.meds.currentAmount;
         }
     }
 }

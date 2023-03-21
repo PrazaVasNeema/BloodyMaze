@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shouldSetActive: 1
   m_shouldSetActiveFalseSelf: 1
-  m_objectToActivate: {fileID: 0}
+  m_objectToSetActivate: []
 --- !u!114 &-2629723073809983015
 MonoBehaviour:
   m_ObjectHideFlags: 0

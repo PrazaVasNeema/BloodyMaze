@@ -35,7 +35,7 @@ namespace BloodyMaze.Components
             if (health && !(m_shouldBeBlockedBy.value == 1 << other.gameObject.layer)
             && !shouldIgnoreThisCollision)
             {
-                health.TakeDamage(m_damage);
+                health.ChangeHPWithAmount(m_damage);
             }
             if (!shouldIgnoreThisCollision)
                 Destroy(gameObject);

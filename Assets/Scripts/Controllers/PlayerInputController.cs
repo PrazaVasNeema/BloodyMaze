@@ -20,6 +20,7 @@ namespace BloodyMaze.Controllers
         private InputAction m_interactAction;
         private InputAction m_reloadAction;
         private InputAction m_escAction;
+        private InputAction m_useMedsAction;
 
         public bool m_menusAreOpen;
 
@@ -32,6 +33,7 @@ namespace BloodyMaze.Controllers
             m_interactAction = m_inputAsset.FindAction("Interact");
             m_reloadAction = m_inputAsset.FindAction("Reload");
             m_escAction = m_inputAsset.FindAction("Esc");
+            m_useMedsAction = m_inputAsset.FindAction("UseMeds");
         }
 
         private void OnEnable()
@@ -76,6 +78,10 @@ namespace BloodyMaze.Controllers
                         if (m_useAbilityAction.WasPerformedThisFrame())
                         {
                             m_characterComponent.abilitiesManagerSlot2.UseAbility();
+                        }
+                        if (m_useMedsAction.WasPerformedThisFrame())
+                        {
+                            m_characterComponent.abilitiesManagerSlot3.UseAbility();
                         }
                         if (m_reloadAction.WasPerformedThisFrame())
                         {

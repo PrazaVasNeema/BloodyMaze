@@ -8,9 +8,10 @@ namespace BloodyMaze.Components
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private float m_currentHealth = 100;
-        [SerializeField] private float m_maxHealth = 100;
-
         public float currentHealth => m_currentHealth;
+        [SerializeField] private float m_maxHealth = 100;
+        public float maxHealth => m_maxHealth;
+
 
         public bool isDead => m_currentHealth <= 0;
 
@@ -25,9 +26,9 @@ namespace BloodyMaze.Components
             m_maxHealth = maxHealth;
         }
 
-        public void TakeDamage(float damage)
+        public void ChangeHPWithAmount(float amount)
         {
-            m_currentHealth = Mathf.Max(m_currentHealth - damage, 0f);
+            m_currentHealth = amount >= 0 ? Mathf.Max(m_currentHealth - amount, 0f) : Mathf.Min(m_currentHealth - amount, 100f);
 
             if (m_currentHealth == 0)
             {

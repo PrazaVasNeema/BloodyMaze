@@ -76,7 +76,7 @@ namespace BloodyMaze.Components
             bool canAttack = m_currentTarget && m_ammunitionComponent.ShootAmmo(m_ammoTypeName) ? true : false;
             if (canAttack)
             {
-                m_currentTarget.TakeDamage(50);
+                m_currentTarget.ChangeHPWithAmount(50);
             }
             return canAttack;
         }

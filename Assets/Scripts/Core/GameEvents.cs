@@ -8,7 +8,7 @@ namespace BloodyMaze
     {
         public static System.Action<string> OnShowMessage;
         public static System.Action OnHideMessage;
-        public static System.Action<string> OnShowNote;
+        public static System.Action<string, Sprite> OnShowNote;
         public static System.Action<string, string> OnStartDialogue;
         public static System.Action OnSaveData;
         /// <summary>

@@ -31,7 +31,7 @@ namespace BloodyMaze.Components
             var health = other.gameObject.GetComponentInParent<HealthComponent>();
             if (health)
             {
-                health.TakeDamage(m_damage);
+                health.ChangeHPWithAmount(m_damage);
             }
         }
     }

@@ -14,38 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_default:
     characterSaveData:
-      currentHealth: 100
+      currentHealth: 10
       maxHealth: 100
       currentMana: 100
       maxMana: 100
       manaRestoringRate: 10
-      moveSpeed: 5
+      moveSpeed: 16
       holyAmmoType:
         maxAmmo: 42
         currentAmmo: 42
         roundSize: 6
         currentRoundAmmo: 0
+      commonMeds:
+        name: common
+        hpToHeal: 30
+        maxAmount: 4
+        currentAmount: 4
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -65,7 +70,7 @@ MonoBehaviour:
     - eventKey: library_secret_note_1
       flag: 0
     optionsData:
-      language: 1
+      language: 0
     roomsData:
     - roomID: 0
       agentsToSpawnIDs: []

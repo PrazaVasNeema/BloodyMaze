@@ -13,6 +13,7 @@ namespace BloodyMaze.UI
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;
         [SerializeField] private TMP_Text m_ammoHoly;
+        [SerializeField] private TMP_Text m_medsCommon;
         [Header("Mini message")]
         [SerializeField] private TMP_Text m_miniMessage;
         [SerializeField] private float m_miniMessageDisplayTime = 3f;
@@ -31,24 +32,31 @@ namespace BloodyMaze.UI
         {
             m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
             GameEvents.OnShowMiniMessage += ShowMiniMessage;
+            if (m_characterComponent)
+            {
+                m_characterComponent.medsComponent.OnMedsCountChange += RefreshMedsCount;
+                m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
+            }
         }
 
         private void OnDisable()
         {
-            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             GameEvents.OnShowMiniMessage -= ShowMiniMessage;
+            m_characterComponent.medsComponent.OnMedsCountChange -= RefreshMedsCount;
+            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
         }
 
         public void Init(CharacterComponent characterComponent)
         {
             m_characterComponent = characterComponent;
-            m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             GameInventory.current.onInventoryChange += ReorganizeShowcase;
             m_characterComponent.ammunitionComponent.Reload("holy");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_inventoryItemsInShowcase.Add(m_refImage);
             m_animator = GetComponent<Animator>();
             m_refImage.SetActive(false);
+            m_characterComponent.medsComponent.OnMedsCountChange += RefreshMedsCount;
+            m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
         }
 
         private void OnDestroy()
@@ -134,6 +142,11 @@ namespace BloodyMaze.UI
                 yield return new WaitForSecondsRealtime(m_miniMessageDisplayTime);
             }
             m_animator.SetBool("MiniMessageShouldBeShown", false);
+        }
+
+        private void RefreshMedsCount(MedsType medsCommon)
+        {
+            m_medsCommon.text = medsCommon.currentAmount + "/" + medsCommon.maxAmount;
         }
     }
 }

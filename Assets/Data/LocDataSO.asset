@@ -17,6 +17,9 @@ MonoBehaviour:
     text:
     - "\u041D\u0443, \u043F\u0440\u0438\u0432\u0435\u0442!"
     - Hello there!
+  - key: dining_1
+    text:
+    - "\u041D\u0443, \u043F\u0440\u0438\u0432\u0435\u0442!"
   locDialogueTexts:
   - key: 0
     dialogue:

@@ -17,7 +17,7 @@ namespace BloodyMaze.Components
                 if (m_targetLayerMask.value == 1 << hitCollider.gameObject.layer
                  && hitCollider.GetComponent<HealthComponent>())
                 {
-                    hitCollider.GetComponent<HealthComponent>().TakeDamage(m_damage);
+                    hitCollider.GetComponent<HealthComponent>().ChangeHPWithAmount(m_damage);
                 }
             }
         }
