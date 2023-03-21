@@ -38,19 +38,19 @@ MonoBehaviour:
     - eventKey: tried_to_open_bathroom_secret
       flag: 1
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
     - eventKey: placed_mirror
-      flag: 1
+      flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
-      flag: 1
+      flag: 0
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -70,7 +70,7 @@ MonoBehaviour:
     - eventKey: library_secret_note_1
       flag: 0
     optionsData:
-      language: 0
+      language: 1
     roomsData:
     - roomID: 0
       agentsToSpawnIDs: []
