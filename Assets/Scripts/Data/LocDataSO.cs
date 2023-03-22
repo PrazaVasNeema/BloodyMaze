@@ -50,6 +50,7 @@ namespace BloodyMaze
     public class LocNotesText
     {
         public string key;
+        [TextArea(3, 12)]
         public string[] text;
     }
 

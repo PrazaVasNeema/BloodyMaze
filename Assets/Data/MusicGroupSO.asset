@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_musicGroups:
   - key: MainMenu
-    audioClips: []
+    audioClips:
+    - {fileID: 0}
     shouldPlayRandom: 0
     hasIntro: 0
   - key: Gameplay
