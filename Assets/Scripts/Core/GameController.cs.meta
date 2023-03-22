@@ -8,7 +8,7 @@ MonoImporter:
   - m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
   - playerProfileSO: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
   - dataDefault: {fileID: 11400000, guid: 6b14b38e8b24f1541a950e4089b2a6ec, type: 2}
-  executionOrder: 0
+  executionOrder: 5
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

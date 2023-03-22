@@ -21,6 +21,9 @@ namespace BloodyMaze
         [SerializeField] private TMP_Text m_TMP_Text;
         [SerializeField] private PlayerProfileSO m_playerProfile;
         public static PlayerProfileSO playerProfile => instance.m_playerProfile;
+        [SerializeField] private LevelsInfoSO m_levelsInfo;
+        public static LevelsInfoSO levelsInfo => instance.m_levelsInfo;
+
 
 
         private LevelController m_levelController;
@@ -80,7 +83,8 @@ namespace BloodyMaze
 
         private static void InitLevel()
         {
-            instance.m_levelController.Init();
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+                instance.m_levelController.Init();
         }
 
         private static void LoadPlayerProfileGameplayData()

@@ -11,8 +11,11 @@ namespace BloodyMaze.States
 
         private void Awake()
         {
+            Debug.Log("1");
             InitGameController();
+            Debug.Log("2");
             InitStates();
+            Debug.Log("3");
         }
 
         private void InitStates()
@@ -43,6 +46,7 @@ namespace BloodyMaze.States
 
         private static void InitGameController()
         {
+            Debug.Log("4");
 #if UNITY_EDITOR
             if (GameController.instance == null)
             {
