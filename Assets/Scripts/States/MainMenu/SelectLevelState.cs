@@ -13,12 +13,13 @@ namespace BloodyMaze.States
 
         private void Start()
         {
-            // m_playerProfile = GameController.playerProfile;
-            // m_levelsInfo = GameController.levelsInfo;
+
         }
 
         protected override void OnEnter()
         {
+            m_playerProfile = GameController.playerProfile;
+            m_levelsInfo = GameController.levelsInfo;
             m_levelsData = m_levelsInfo.GetLevels();
             if (!TrySelectLevel(m_playerProfile.playerProfileData.characterSaveData.lastLevelIndex))
             {
