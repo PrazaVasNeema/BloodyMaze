@@ -46,14 +46,15 @@ MonoBehaviour:
   - rid: 7064259274651729922
   - rid: 7064259274651729923
   - rid: 7064259274651729924
+  - rid: 7064259373672169472
   treeState: 0
   blackboard:
     target: {fileID: 0}
     targetPreviousSeenAt: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     lostTarget: 0
-  viewPosition: {x: 775, y: -12, z: 0}
-  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
+  viewPosition: {x: 80, y: -72, z: 0}
+  viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
     RefIds:
@@ -186,6 +187,21 @@ MonoBehaviour:
         children:
         - rid: 7064259274651729921
         - rid: 7064259274651729922
+    - rid: 7064259373672169472
+      type: {class: InterruptSelector, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 374f44b1e3b9b3342b98566450612b26
+        position: {x: 434.87003, y: 551}
+        blackboard:
+          target: {fileID: 0}
+          targetPreviousSeenAt: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          lostTarget: 0
+        description: 
+        drawGizmos: 0
+        children: []
     - rid: 8670659163155857408
       type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:

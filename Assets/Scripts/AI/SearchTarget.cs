@@ -39,16 +39,18 @@ namespace BloodyMaze.AI
                 if (m_targetIsFound == false)
                 {
                     m_targetIsFound = true;
-                    ActionStatesManager.ChangeEnemiesTriggeredCount(1);
-                    ActionStatesManager.ChangeState();
+                    if (!blackboard.lostTarget && !blackboard.lostTarget)
+                    {
+                        ActionStatesManager.ChangeEnemiesTriggeredCount(1);
+                        ActionStatesManager.ChangeState();
+                    }
                 }
                 return result[0].transform;
             }
             if (m_targetIsFound == true)
             {
                 m_targetIsFound = false;
-                ActionStatesManager.ChangeEnemiesTriggeredCount(-1);
-                ActionStatesManager.ChangeState();
+
             }
             return null;
         }

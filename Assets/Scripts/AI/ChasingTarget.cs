@@ -13,6 +13,7 @@ namespace BloodyMaze.AI
             context.agent.stoppingDistance = context.agentComponent.attackDistance;
             context.agent.SetDestination(blackboard.target.position);
             blackboard.targetPreviousSeenAt = context.agentComponent.m_previousSeenAtTransform;
+
         }
 
         protected override void OnStop()
@@ -21,10 +22,16 @@ namespace BloodyMaze.AI
 
         protected override State OnUpdate()
         {
+
             var targetPosition = blackboard.target == null ? blackboard.targetPreviousSeenAt : blackboard.target;
+            bool isPreviousSeetAtTarget = blackboard.target == null ? true : false;
             if (targetPosition != null)
             {
                 var agent = context.agent;
+                if (isPreviousSeetAtTarget)
+                    agent.stoppingDistance = .1f;
+                else
+                    agent.stoppingDistance = context.agentComponent.attackDistance;
                 if (Time.frameCount % 3 == 0)
                 {
                     agent.SetDestination(targetPosition.position);
@@ -37,13 +44,14 @@ namespace BloodyMaze.AI
                     return State.Running;
                 }
 
-                if (agent.remainingDistance < agent.stoppingDistance)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
                     // blackboard.targetPreviousSeenAt = blackboard.target;
                     if (blackboard.target)
                         return State.Success;
                     else
                     {
+
                         Debug.Log("test");
                         blackboard.lostTarget = true;
                         blackboard.targetPreviousSeenAt = null;

@@ -68,8 +68,11 @@ namespace BloodyMaze
             {
                 MusicManager.current.SetJam("MainMenu");
             }
-            if (SceneManager.GetActiveScene().name == "SampleScene")
+            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem")
+            {
                 MusicManager.current.SetJam("Gameplay");
+                shouldStartNewGame = instance.m_shouldInitNewData;
+            }
 
         }
 
@@ -108,12 +111,16 @@ namespace BloodyMaze
                 instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name == "SampleScene")
+            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem")
             {
                 if (!instance.m_shouldInitNewData)
                 {
                     json = PlayerPrefs.GetString("PlayerProfile_0");
                     Debug.Log($">>> load {json}");
+                }
+                else
+                {
+                    json = "";
                 }
                 instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
                 instance.m_levelController = FindObjectOfType<LevelController>();
