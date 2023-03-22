@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aced1baf59dae408c3c05103560a9b, type: 3}
+  m_Name: MusicGroupSO
+  m_EditorClassIdentifier: 
+  m_musicGroups:
+  - key: MainMenu
+    audioClips: []
+    shouldPlayRandom: 0
+    hasIntro: 0
+  - key: Gameplay
+    audioClips:
+    - {fileID: 8300000, guid: 16145632301850443a5c73873b17d390, type: 3}
+    - {fileID: 8300000, guid: 27604fcb5d9362549b4a2aaed2aaffcd, type: 3}
+    shouldPlayRandom: 0
+    hasIntro: 1

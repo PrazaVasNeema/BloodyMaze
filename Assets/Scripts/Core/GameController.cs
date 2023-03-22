@@ -16,6 +16,8 @@ namespace BloodyMaze
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
         public static LocDataSO locData => instance.m_locData;
+        [SerializeField] private MusicGroupsSO m_musicGroups;
+        public static MusicGroupsSO musicGroups => instance.m_musicGroups;
         [SerializeField] private TMP_Text m_TMP_Text;
         [SerializeField] private PlayerProfileSO m_playerProfile;
         public static PlayerProfileSO playerProfile => instance.m_playerProfile;
@@ -64,6 +66,7 @@ namespace BloodyMaze
                 yield return new WaitForSecondsRealtime(2f);
             }
             GameEvents.OnInitLevelComplete?.Invoke();
+            MusicManager.current.SetJam("Gameplay");
         }
 
         private void OnApplicationQuit()
