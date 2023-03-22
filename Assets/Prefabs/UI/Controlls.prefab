@@ -544,6 +544,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 839264016673526676}
     m_Modifications:
+    - target: {fileID: 8324130452942062549, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324130453678702724, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324130453678702724, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca2564c61e4b11e428e7e9cae388b8dc, type: 3}
+    - target: {fileID: 8324130453678702724, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8324130453678702726, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -610,11 +626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8324130453678702726, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -372.8
+      value: -364.4
       objectReference: {fileID: 0}
     - target: {fileID: 8324130453678702726, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 192.8
+      value: 133.9
       objectReference: {fileID: 0}
     - target: {fileID: 8324130453678702726, guid: 420e034a16ef1dd4cac99908d992b2a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
