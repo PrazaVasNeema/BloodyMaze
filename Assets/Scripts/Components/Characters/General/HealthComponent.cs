@@ -18,6 +18,7 @@ namespace BloodyMaze.Components
         public float percent => m_currentHealth / m_maxHealth;
 
         public UnityEvent onDead;
+        public UnityEvent onTakeDamage;
         public UnityEvent<bool> OnChangeTargetLockStatus;
 
         public void Init(float currentHealth, float maxHealth)
@@ -29,7 +30,8 @@ namespace BloodyMaze.Components
         public void ChangeHPWithAmount(float amount)
         {
             m_currentHealth = amount >= 0 ? Mathf.Max(m_currentHealth - amount, 0f) : Mathf.Min(m_currentHealth - amount, 100f);
-
+            if (amount > 0)
+                onTakeDamage?.Invoke();
             if (m_currentHealth == 0)
             {
                 onDead.Invoke();
