@@ -219,9 +219,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
 --- !u!224 &80934210 stripped
@@ -327,7 +343,6 @@ MonoBehaviour:
   m_views:
   - {fileID: 1200429597}
   m_uiLevelInfo: {fileID: 1200429602}
-  m_saveSlotsLayoutGroup: {fileID: 0}
 --- !u!1001 &277470186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,16 +1239,20 @@ PrefabInstance:
       value: LoadGameButton
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnExitGame
+      value: GotoChooseSaveFileState
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BloodyMaze.States.MainMenuState, Assembly-CSharp
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1337,7 +1356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905720453152898002, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_text
-      value: "\u0412\u044B\u0439\u0442\u0438"
+      value: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
@@ -2086,8 +2105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30c9b5be3084d348a8326db4b622da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_selectLevelPanel: {fileID: 0}
-  m_chooseDestinyPanel: {fileID: 0}
+  m_selectLevelPanel: {fileID: 642692063}
+  m_chooseDestinyPanel: {fileID: 1302055209}
   levelNameText: {fileID: 1156606148}
   previewImage: {fileID: 1156606149}
 --- !u!1 &1257508887
@@ -2137,16 +2156,24 @@ PrefabInstance:
       value: NewGameButton
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: GotoChooseSaveFileState
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BloodyMaze.States.MainMenuState, Assembly-CSharp
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2250,7 +2277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905720453152898002, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_text
-      value: "\u0418\u0433\u0440\u0430\u0442\u044C"
+      value: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
@@ -2274,7 +2301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1302055210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2312,14 +2339,14 @@ PrefabInstance:
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnExitGame
+      value: GotoSelectLevelState
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BloodyMaze.States.MainMenuState, Assembly-CSharp
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2921,6 +2948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9300b13a1517b5b4d9d2adc4a0fcad0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_saveSlotsLayoutGroup: {fileID: 540310531}
 --- !u!1 &1765085479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,9 +3097,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
 --- !u!224 &1790018767 stripped
@@ -3530,8 +3574,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 818368500}
+      objectReference: {fileID: 1765085481}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724730640497075879, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BloodyMaze.States.MainMenuGameMode, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}

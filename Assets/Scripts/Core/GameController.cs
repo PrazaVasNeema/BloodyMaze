@@ -106,7 +106,7 @@ namespace BloodyMaze
             {
                 if (!instance.m_shouldInitNewData)
                 {
-                    json = PlayerPrefs.GetString("PlayerProfile_1");
+                    json = PlayerPrefs.GetString("PlayerProfile_0");
                     Debug.Log($">>> load {json}");
                 }
                 instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
@@ -118,7 +118,7 @@ namespace BloodyMaze
 
         private void SetPlayerProfileSOData()
         {
-            instance.m_playerProfile.LoadFromJsonGameplay(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), instance.m_shouldInitNewData);
+            instance.m_playerProfile.LoadFromJsonGameplay(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
         }
 
         private static void LoadPlayerProfileOptionsData()
@@ -126,7 +126,7 @@ namespace BloodyMaze
             var json = "";
             if (!instance.m_shouldInitNewData)
             {
-                json = PlayerPrefs.GetString("PlayerProfile_1");
+                json = PlayerPrefs.GetString("PlayerProfile_0");
                 Debug.Log($">>> load {json}");
             }
             instance.m_playerProfile.LoadFromJsonOptions(json);
