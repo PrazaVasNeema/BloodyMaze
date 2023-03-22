@@ -65,6 +65,42 @@ MonoBehaviour:
     text:
     - "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0445\u043E\u043B\u043B"
     - Main hall
+  - key: safe_zone
+    text:
+    - "\u041C\u043E\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
+    - Main hall
+  - key: bathroom
+    text:
+    - "\u0412\u0430\u043D\u043D\u0430\u044F"
+    - Main hall
+  - key: dining_room
+    text:
+    - "\u0421\u0442\u043E\u043B\u043E\u0432\u0430\u044F"
+    - Main hall
+  - key: piano_room
+    text:
+    - "\u0427\u0438\u0442\u0430\u043B\u044C\u043D\u044F"
+    - Main hall
+  - key: locked_room
+    text:
+    - "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    - Main hall
+  - key: library
+    text:
+    - "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    - Main hall
+  - key: bathroom_secret
+    text:
+    - "\u0421\u0442\u0440\u0430\u043D\u043D\u0430\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
+    - Main hall
+  - key: inner_house_room_1
+    text:
+    - "\u0421\u0442\u0440\u0430\u043D\u043D\u0430\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
+    - Main hall
+  - key: inner_house_room_2
+    text:
+    - "\u0421\u0442\u0440\u0430\u043D\u043D\u0430\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
+    - Main hall
   locMiniMessagesText:
   - key: closed
     text:
