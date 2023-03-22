@@ -60,9 +60,16 @@ namespace BloodyMaze
 
         private void Start()
         {
+            Debug.Log("START GAMECONTROLLER");
             //LoadPlayerProfile();
             LoadPlayerProfileGameplayData();
             LoadPlayerProfileOptionsData();
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                MusicManager.current.SetJam("MainMenu");
+            }
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+                MusicManager.current.SetJam("Gameplay");
 
         }
 
@@ -75,7 +82,6 @@ namespace BloodyMaze
                 yield return new WaitForSecondsRealtime(2f);
             }
             GameEvents.OnInitLevelComplete?.Invoke();
-            MusicManager.current.SetJam("Gameplay");
         }
 
         private void OnApplicationQuit()
@@ -177,9 +183,20 @@ namespace BloodyMaze
                 yield return new WaitForSecondsRealtime(1 - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
-            m_levelController = FindObjectOfType<LevelController>();
+            switch (sceneName)
+            {
+                case "SampleScene":
+                    m_levelController = FindObjectOfType<LevelController>();
+                    InitLevel();
+                    MusicManager.current.SetJam("Gameplay");
+                    break;
+                case "MainMenu":
+
+                    MusicManager.current.SetJam("MainMenu");
+                    break;
+
+            }
             m_loader.SetActive(false);
-            InitLevel();
         }
 
         public static void SetLoaderText(string text)

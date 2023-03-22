@@ -16,7 +16,7 @@ namespace BloodyMaze.Controllers
         private AudioSource[] m_audioSources;
         private int m_currentParamIndex = 0;
         private Coroutine m_currentJam;
-        private bool m_shouldStopJam;
+        private bool m_jamIsRunning;
 
         private void Awake()
         {
@@ -26,7 +26,7 @@ namespace BloodyMaze.Controllers
                 Debug.Log(m_exposureParams[b]);
             }
             m_audioSources = GetComponents<AudioSource>();
-            int i = 0;
+            int i = 1;
             foreach (AudioSource audioSource in m_audioSources)
                 audioSource.outputAudioMixerGroup = m_audioMixer.FindMatchingGroups("Master")[i++];
             // AudioMixer. a f.
@@ -43,19 +43,23 @@ namespace BloodyMaze.Controllers
 
         public void SetJam(string audioGroupName)
         {
-            // if (current.m_currentJam != null)
-            // {
-            //     current.StopCoroutine(current.m_currentJam);
-            //     FadeMixerGroup.StartFade(current.m_audioMixer, current.m_exposureParams[current.m_currentParamIndex], 2f, 0f);
-            // }
+            if (m_jamIsRunning)
+            {
+                m_jamIsRunning = false;
+                current.StopCoroutine(current.m_currentJam);
+                current.StartCoroutine(FadeMixerGroup.StartFade(current.m_audioMixer, current.m_exposureParams[current.m_currentParamIndex], 2f, -80f));
+            }
             m_currentParamIndex = (m_exposureParams.Count + ++m_currentParamIndex) % m_exposureParams.Count;
             MusicGroup musicGroup = GameController.musicGroups.GetGroup(audioGroupName);
-            current.StartCoroutine(current.CurrentJamCo(musicGroup));
+            m_audioSources[m_currentParamIndex].Stop();
+            current.m_audioMixer.SetFloat(current.m_exposureParams[m_currentParamIndex], 0f);
+            current.m_currentJam = current.StartCoroutine(current.CurrentJamCo(musicGroup));
         }
 
 
         IEnumerator CurrentJamCo(MusicGroup musicGroup)
         {
+            m_jamIsRunning = true;
             int minIndex = musicGroup.hasIntro ? 1 : 0;
             int index = musicGroup.shouldPlayRandom ? Random.Range(minIndex, musicGroup.audioClips.Count) : 0;
             while (true)
