@@ -24,8 +24,9 @@ namespace BloodyMaze.States
             m_animator.SetTrigger("GotoSelectLevel");
         }
 
-        public void GotoChooseSaveFileState()
+        public void GotoChooseSaveFileState(bool shouldStartNewGame)
         {
+            GameController.shouldStartNewGame = shouldStartNewGame;
             ChangeState<ChooseSaveFileState>();
         }
 
@@ -35,10 +36,10 @@ namespace BloodyMaze.States
             m_animator.SetTrigger("GotoSettings");
         }
 
-        public void LoadLevel()
+        public void LoadLevel(int choosenProfileIndex)
         {
             var levelInfo = GameController.levelsInfo.GetLevel(GameController.playerProfile.playerProfileData.characterSaveData.lastLevelIndex);
-            GameController.LoadScene(levelInfo.sceneName);
+            GameController.LoadScene(levelInfo.sceneName, choosenProfileIndex);
         }
 
         public void OnExitGame()

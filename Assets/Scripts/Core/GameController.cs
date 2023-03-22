@@ -24,6 +24,14 @@ namespace BloodyMaze
         [SerializeField] private LevelsInfoSO m_levelsInfo;
         public static LevelsInfoSO levelsInfo => instance.m_levelsInfo;
 
+        private List<PlayerProfileData> m_allPlayerProfilesData = new();
+        public static List<PlayerProfileData> allPlayerProfilesData => instance.m_allPlayerProfilesData;
+
+        public static bool shouldStartNewGame;
+
+        private static int m_choosenProfileIndex = 0;
+        public static int choosenProfileIndex => m_choosenProfileIndex;
+
 
 
         private LevelController m_levelController;
@@ -55,9 +63,7 @@ namespace BloodyMaze
             //LoadPlayerProfile();
             LoadPlayerProfileGameplayData();
             LoadPlayerProfileOptionsData();
-            m_levelController = FindObjectOfType<LevelController>();
-            InitLevel();
-            StartCoroutine(WaitForInitLevelCompleteCo());
+
         }
 
         IEnumerator WaitForInitLevelCompleteCo()
@@ -83,19 +89,36 @@ namespace BloodyMaze
 
         private static void InitLevel()
         {
-            if (SceneManager.GetActiveScene().name == "SampleScene")
-                instance.m_levelController.Init();
+            instance.m_levelController.Init();
+            instance.StartCoroutine(instance.WaitForInitLevelCompleteCo());
         }
 
         private static void LoadPlayerProfileGameplayData()
         {
             var json = "";
-            if (!instance.m_shouldInitNewData)
+            for (int i = 0; i < 3; i++)
             {
-                json = PlayerPrefs.GetString("PlayerProfile");
-                Debug.Log($">>> load {json}");
+                json = PlayerPrefs.GetString($"PlayerProfile_{i}");
+                instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
-            instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+#if UNITY_EDITOR
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+            {
+                if (!instance.m_shouldInitNewData)
+                {
+                    json = PlayerPrefs.GetString("PlayerProfile_1");
+                    Debug.Log($">>> load {json}");
+                }
+                instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+                instance.m_levelController = FindObjectOfType<LevelController>();
+                InitLevel();
+            }
+#endif
+        }
+
+        private void SetPlayerProfileSOData()
+        {
+            instance.m_playerProfile.LoadFromJsonGameplay(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), instance.m_shouldInitNewData);
         }
 
         private static void LoadPlayerProfileOptionsData()
@@ -103,7 +126,7 @@ namespace BloodyMaze
             var json = "";
             if (!instance.m_shouldInitNewData)
             {
-                json = PlayerPrefs.GetString("PlayerProfile");
+                json = PlayerPrefs.GetString("PlayerProfile_1");
                 Debug.Log($">>> load {json}");
             }
             instance.m_playerProfile.LoadFromJsonOptions(json);
@@ -125,9 +148,14 @@ namespace BloodyMaze
             }
             var json = m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
-            PlayerPrefs.SetString("PlayerProfile", json);
+            PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
         }
 
+        public static void LoadScene(string sceneName, int choosenProfileIndex)
+        {
+            m_choosenProfileIndex = choosenProfileIndex;
+            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
+        }
         public static void LoadScene(string sceneName)
         {
             instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
@@ -142,7 +170,7 @@ namespace BloodyMaze
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
-            LoadPlayerProfileGameplayData();
+            SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < 1)
             {

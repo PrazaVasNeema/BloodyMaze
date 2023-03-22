@@ -6,11 +6,6 @@ namespace BloodyMaze.States
 {
     public class MainMenuState : GameStateBehavior
     {
-        public void LoadLevel()
-        {
-            GameController.LoadScene("SampleScene");
-        }
-
 
     }
 }
