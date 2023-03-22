@@ -343,6 +343,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ead63d6c-2393-41dc-9632-ec56b88323c1",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "UseAbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "16a1edd4-aa76-4563-9634-c1a1c289e112",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -381,6 +392,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "UseMeds",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "529203d5-d445-428d-b883-a26b731fba79",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "UseMeds",
                     "isComposite": false,
                     "isPartOfComposite": false
