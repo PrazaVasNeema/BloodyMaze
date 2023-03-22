@@ -13,6 +13,7 @@ namespace BloodyMaze.Components
         private MovementComponentCharacter m_movementComponentCharacter;
 
         static int SpeedMoveId = Animator.StringToHash("MoveSpeed");
+        static int m_isTurnedAroundID = Animator.StringToHash("IsTurnedAround");
         static int ShootRoundId = Animator.StringToHash("ShootRound");
 
         private Vector3 m_lastPosition;
@@ -46,7 +47,7 @@ namespace BloodyMaze.Components
             if (m_currentTarget == null)
             {
                 m_manSpine.LookAt(gameObject.transform.forward);
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.localRotation = Quaternion.Euler(0, 30, 0);
                 m_isTurnedAround = false;
             }
         }
@@ -77,10 +78,11 @@ namespace BloodyMaze.Components
                 // Debug.Log($"Angle: {angle}, {75f * Mathf.Deg2Rad}");
                 if (angle > 1.57f)
                 {
-                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 180, 0);
+                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 210, 0);
                     // transform.localScale = new Vector3(1, 1, -transform.localScale.z);
                     m_isTurnedAround = !m_isTurnedAround;
                 }
+                m_animator.SetFloat(m_isTurnedAroundID, m_isTurnedAround ? 1 : 0);
 
                 // m_manSpine.LookAt(new Vector3(m_currentTarget.transform.position.x, m_manSpine.transform.position.y, m_currentTarget.transform.position.z));
                 //     // m_manSpine.rotation = new Quaternion(m_manSpine.rotation.x, 0, m_manSpine.rotation.z, 0);
