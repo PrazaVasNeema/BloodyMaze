@@ -27,7 +27,8 @@ namespace BloodyMaze.AI
             var target = Search(context.transform.position, radius, mask);
 
             blackboard.target = target;
-
+            if (blackboard.targetPreviousSeenAt)
+                blackboard.targetPreviousSeenAt.position = target ? target.position : blackboard.targetPreviousSeenAt.position;
             return target || blackboard.targetPreviousSeenAt ? State.Success : State.Failure;
         }
 
@@ -39,7 +40,7 @@ namespace BloodyMaze.AI
                 if (m_targetIsFound == false)
                 {
                     m_targetIsFound = true;
-                    if (!blackboard.lostTarget && !blackboard.lostTarget)
+                    if (!blackboard.targetPreviousSeenAt && !blackboard.lostTarget)
                     {
                         ActionStatesManager.ChangeEnemiesTriggeredCount(1);
                         ActionStatesManager.ChangeState();

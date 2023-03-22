@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TheKiwiCoder {
+namespace TheKiwiCoder
+{
     [System.Serializable]
-    public class RandomFailure : ActionNode {
+    public class RandomFailure : ActionNode
+    {
 
-        [Range(0,1)]
+        [Range(0, 1)]
         public float chanceOfFailure = 0.5f;
 
-        protected override void OnStart() {
+        protected override void OnStart()
+        {
         }
 
-        protected override void OnStop() {
+        protected override void OnStop()
+        {
         }
 
-        protected override State OnUpdate() {
+        protected override State OnUpdate()
+        {
             float value = Random.value;
-            if (value > chanceOfFailure) {
+            Debug.Log(value);
+            if (value > chanceOfFailure)
+            {
                 return State.Failure;
             }
             return State.Success;

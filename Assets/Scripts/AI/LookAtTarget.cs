@@ -15,7 +15,7 @@ namespace BloodyMaze.AI
 
         protected override State OnUpdate()
         {
-            var targetPosition = blackboard.target.position;
+            var targetPosition = blackboard.target ? blackboard.target.position : blackboard.targetPreviousSeenAt.position;
             targetPosition.y = context.transform.position.y;
             context.transform.LookAt(targetPosition, Vector3.up);
             return State.Success;

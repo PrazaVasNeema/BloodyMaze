@@ -11,8 +11,8 @@ namespace BloodyMaze.AI
         protected override void OnStart()
         {
             context.agent.stoppingDistance = context.agentComponent.attackDistance;
-            context.agent.SetDestination(blackboard.target.position);
-            blackboard.targetPreviousSeenAt = context.agentComponent.m_previousSeenAtTransform;
+
+            context.agent.SetDestination(blackboard.target ? blackboard.target.position : blackboard.targetPreviousSeenAt.position);
 
         }
 
