@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_default:
     characterSaveData:
-      currentHealth: 10
+      currentHealth: 100
       maxHealth: 100
       currentMana: 100
       maxMana: 100
@@ -32,19 +32,19 @@ MonoBehaviour:
         currentAmount: 4
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
     - eventKey: placed_mirror
       flag: 0
     - eventKey: solved_puzzle

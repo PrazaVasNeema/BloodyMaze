@@ -49,6 +49,7 @@ namespace BloodyMaze.Components
                 m_manSpine.LookAt(gameObject.transform.forward);
                 transform.localRotation = Quaternion.Euler(0, 30, 0);
                 m_isTurnedAround = false;
+                m_animator.SetFloat(m_isTurnedAroundID, m_isTurnedAround ? 1 : 0);
             }
         }
 
