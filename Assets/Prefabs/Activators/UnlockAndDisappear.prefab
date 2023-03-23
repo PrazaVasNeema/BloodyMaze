@@ -9,13 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5729177184881943799}
-  - component: {fileID: 5729177184881943752}
-  - component: {fileID: 5729177184881943753}
-  - component: {fileID: 5729177184881943754}
-  - component: {fileID: 5729177184881943755}
-  - component: {fileID: 5729177184881957685}
-  - component: {fileID: 5729177184881957684}
   - component: {fileID: -2629723073809983015}
+  - component: {fileID: 3354711164140761406}
+  - component: {fileID: 6380105479761061888}
+  - component: {fileID: 6756864196452877420}
   m_Layer: 0
   m_Name: UnlockAndDisappear
   m_TagString: Untagged
@@ -34,30 +31,209 @@ Transform:
   m_LocalPosition: {x: 1.41, y: 5.7247043, z: 17.49}
   m_LocalScale: {x: 3.6536, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7742920227151467050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5729177184881943752
-BoxCollider:
+--- !u!114 &-2629723073809983015
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5729177184881943757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked: []
+--- !u!82 &3354711164140761406
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729177184881943757}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6380105479761061888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729177184881943757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88ef795c77385445bb06abc32f9181c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventFlagToCheck: 
+  m_audioClips:
+  - {fileID: 8300000, guid: 91ee4d6b341038d4e9ba2fc074bb2009, type: 3}
+  m_shouldPlayRandom: 0
+--- !u!114 &6756864196452877420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729177184881943757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88ef795c77385445bb06abc32f9181c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventFlagToCheck: 
+  m_audioClips: []
+  m_shouldPlayRandom: 0
+--- !u!1 &8890894455669466949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7742920227151467050}
+  - component: {fileID: 5974061467939747159}
+  - component: {fileID: 459049847108550660}
+  - component: {fileID: 5542673878457238337}
+  - component: {fileID: 6850700890530506159}
+  - component: {fileID: 4772382672187450892}
+  - component: {fileID: 1769355583667512740}
+  m_Layer: 0
+  m_Name: UnlockAndDisappear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7742920227151467050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890894455669466949}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5729177184881943799}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5974061467939747159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &5729177184881943753
+--- !u!23 &459049847108550660
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,21 +269,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &5729177184881943754
+--- !u!33 &5542673878457238337
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5729177184881943755
+--- !u!114 &6850700890530506159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a376ed8c229dc7b43bcdcd2053a78a10, type: 3}
@@ -117,7 +293,7 @@ MonoBehaviour:
   onActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5729177184881957685}
+      - m_Target: {fileID: 4772382672187450892}
         m_TargetAssemblyTypeName: BloodyMaze.Components.ActivateModuleRequiredItemsCheck,
           Assembly-CSharp
         m_MethodName: ActivateModule
@@ -130,13 +306,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5729177184881957685
+--- !u!114 &4772382672187450892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 120aea14cdef8774a87bebf585af7afe, type: 3}
@@ -147,7 +323,7 @@ MonoBehaviour:
   onSuccesfullActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5729177184881957684}
+      - m_Target: {fileID: 1769355583667512740}
         m_TargetAssemblyTypeName: BloodyMaze.Components.SetObjectsActiveComponent,
           Assembly-CSharp
         m_MethodName: Activate
@@ -160,14 +336,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6756864196452877420}
+        m_TargetAssemblyTypeName: BloodyMaze.Components.ActivateModulePlaySound,
+          Assembly-CSharp
+        m_MethodName: ActivateModule
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFailureActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6380105479761061888}
+        m_TargetAssemblyTypeName: BloodyMaze.Components.ActivateModulePlaySound,
+          Assembly-CSharp
+        m_MethodName: ActivateModule
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   activationFailedMiniMessageKey: key_needed
---- !u!114 &5729177184881957684
+--- !u!114 &1769355583667512740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
+  m_GameObject: {fileID: 8890894455669466949}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acea85a10398f564aa7884e7439e58ca, type: 3}
@@ -176,17 +381,3 @@ MonoBehaviour:
   m_shouldSetActive: 1
   m_shouldSetActiveFalseSelf: 1
   m_objectToSetActivate: []
---- !u!114 &-2629723073809983015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5729177184881943757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_eventsShouldBeChecked: []
-  m_eventsShouldBeUnchecked: []

@@ -9,6 +9,7 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private string m_requiredItemName;
         [SerializeField] private UnityEvent onSuccesfullActivate;
+        [SerializeField] private UnityEvent onFailureActivate;
         [SerializeField] private string activationFailedMiniMessageKey;
 
         public override void ActivateModule()
@@ -16,6 +17,7 @@ namespace BloodyMaze.Components
             if (!GameInventory.current.InventoryContains(m_requiredItemName) && !string.IsNullOrEmpty(activationFailedMiniMessageKey))
             {
                 GameEvents.OnShowMiniMessage?.Invoke(activationFailedMiniMessageKey);
+                onFailureActivate?.Invoke();
                 return;
             }
             GameInventory.current.RemoveItem(m_requiredItemName);
