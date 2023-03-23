@@ -11,10 +11,20 @@ namespace BloodyMaze.UI
         [SerializeField] private Image m_noteImage;
         [SerializeField] private TMP_Text m_noteText;
         [SerializeField] private Sprite m_defaultBackground;
+        [SerializeField] private TMP_FontAsset[] m_fonts;
+
+        private TMP_FontAsset m_defaultFont;
+        private float m_defaultFontSize;
+        private float m_defaultLineSpacing;
+        private float m_defaultRectPosYOffset;
 
         private void Awake()
         {
             m_noteImage.sprite = m_defaultBackground;
+            m_defaultFont = m_noteText.font;
+            m_defaultFontSize = m_noteText.fontSize;
+            m_defaultLineSpacing = m_noteText.lineSpacing;
+            m_defaultRectPosYOffset = m_noteText.GetComponent<RectTransform>().position.y;
         }
 
         private void OnEnable()
@@ -30,6 +40,11 @@ namespace BloodyMaze.UI
 
         private void FillNote(string key, Sprite background)
         {
+            LocNotesText noteData = GameController.locData.GetNoteData(key);
+            m_noteText.font = noteData.fontNum < m_fonts.Length && noteData.fontNum >= 0 ? m_fonts[noteData.fontNum] : m_defaultFont;
+            m_noteText.fontSize = noteData.fontSize != 0f ? noteData.fontSize : m_defaultFontSize;
+            m_noteText.lineSpacing = noteData.spacingLine != 0f ? noteData.spacingLine : m_defaultLineSpacing;
+            m_noteText.GetComponent<RectTransform>().localPosition = new Vector2(m_noteText.GetComponent<RectTransform>().localPosition.x, noteData.posYOffset != 0 ? noteData.posYOffset : m_defaultRectPosYOffset);
             m_noteText.text = GameController.locData.GetNoteText(key);
             if (background)
                 m_noteImage.sprite = background;

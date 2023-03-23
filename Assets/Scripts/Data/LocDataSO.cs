@@ -23,6 +23,13 @@ namespace BloodyMaze
             // return locNotesTexts.Find((x) => x.key == key).text[0];
             // return locNotesTexts[0].text[0];
         }
+        public LocNotesText GetNoteData(string key)
+        {
+            return locNotesTexts.Find((x) => x.key == key);
+            // var temp = locNotesTexts.Find((x) => x.key == key);
+            // return locNotesTexts.Find((x) => x.key == key).text[0];
+            // return locNotesTexts[0].text[0];
+        }
 
         public Dialogue GetDialogue(string key)
         {
@@ -50,6 +57,10 @@ namespace BloodyMaze
     public class LocNotesText
     {
         public string key;
+        public int fontNum;
+        public float fontSize;
+        public float spacingLine;
+        public float posYOffset;
         [TextArea(3, 12)]
         public string[] text;
     }
