@@ -26,6 +26,7 @@ namespace BloodyMaze.Controllers
             for (int i = 0; i < m_roomActivaters.Length; i++)
             {
                 bool flag = true;
+                Debug.Log(roomID);
                 foreach (string str in m_roomActivaters[i].eventsShouldBeChecked)
                 {
                     var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == str);

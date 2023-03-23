@@ -30,6 +30,7 @@ MonoBehaviour:
         hpToHeal: 30
         maxAmount: 4
         currentAmount: 4
+      lastLevelIndex: 0
     globalEventsData:
     - eventKey: opened_main_door
       flag: 0
@@ -48,7 +49,7 @@ MonoBehaviour:
     - eventKey: placed_mirror
       flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
       flag: 0
     - eventKey: opened_library_door
