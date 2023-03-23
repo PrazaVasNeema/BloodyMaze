@@ -7,12 +7,12 @@ namespace BloodyMaze.Components
     public class GraphicsAgent : MonoBehaviour
     {
         private Animator m_animator;
-        private Animator m_animatorLocked;
+        [SerializeField] private Animator m_animatorLocked;
 
         private void Awake()
         {
             m_animator = GetComponent<Animator>();
-            m_animatorLocked = GetComponentsInChildren<Animator>()[1];
+            // m_animatorLocked = GetComponentsInChildren<Animator>()[1];
         }
 
         private void OnEnable()
