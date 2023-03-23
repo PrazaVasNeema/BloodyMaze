@@ -15,7 +15,7 @@ MonoBehaviour:
   m_musicGroups:
   - key: MainMenu
     audioClips:
-    - {fileID: 8300000, guid: 5dc39f3009cca2e499339f3c922caee8, type: 3}
+    - {fileID: 0}
     shouldPlayRandom: 0
     hasIntro: 0
   - key: Gameplay
