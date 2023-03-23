@@ -13,9 +13,9 @@ namespace BloodyMaze
         public Animator animator;
         public float typingSpeed = 0.1f;
 
-        private string sentence;
+        private SentenceData sentenceData;
         private string m_flagToCheck;
-        private Queue<string> sentences = new Queue<string>();
+        private Queue<SentenceData> sentencesData = new Queue<SentenceData>();
 
         private void OnEnable()
         {
@@ -32,38 +32,39 @@ namespace BloodyMaze
             Dialogue dialogue = GameController.locData.GetDialogue(key);
             m_flagToCheck = flagToCheck;
             animator.SetBool("IsOpen", true);
-            nameText.text = dialogue.npcName;
-            sentences.Clear();
-            foreach (string sentence in dialogue.sentences)
+            sentencesData.Clear();
+            foreach (SentenceData sentence in dialogue.sentencesData)
             {
                 Debug.Log(sentence);
-                sentences.Enqueue(sentence);
+                sentencesData.Enqueue(sentence);
             }
-            sentence = sentences.Dequeue();
+            sentenceData = sentencesData.Dequeue();
             DisplayNextSentence();
         }
 
         public void DisplayNextSentence()
         {
-            if (dialogueText.text.Length == sentence.Length)
+            nameText.text = sentenceData.personName;
+            if (dialogueText.text.Length == sentenceData.sentence.Length)
             {
-                if (sentences.Count == 0)
+                if (sentencesData.Count == 0)
                 {
                     StartCoroutine(EndDialogueCo());
                     return;
                 }
-                sentence = sentences.Dequeue();
-                StartCoroutine(TypeSentence(sentence));
+                sentenceData = sentencesData.Dequeue();
+                StartCoroutine(TypeSentence(sentenceData.sentence));
             }
             else
             {
-                dialogueText.text = sentence;
+                dialogueText.text = sentenceData.sentence;
                 StopAllCoroutines();
             }
         }
 
         IEnumerator TypeSentence(string sentence)
         {
+            nameText.text = sentenceData.personName;
             dialogueText.text = "";
             foreach (char letter in sentence.ToCharArray())
             {

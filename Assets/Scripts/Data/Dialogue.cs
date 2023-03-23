@@ -7,8 +7,14 @@ namespace BloodyMaze
     [System.Serializable]
     public class Dialogue
     {
-        public string npcName;
+        public List<SentenceData> sentencesData = new();
+    }
+
+    [System.Serializable]
+    public class SentenceData
+    {
+        public string personName;
         [TextArea(3, 10)]
-        public string[] sentences;
+        public string sentence;
     }
 }
