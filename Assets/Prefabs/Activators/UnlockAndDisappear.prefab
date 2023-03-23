@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
-  m_audioClips: []
+  m_audioClips:
+  - {fileID: 8300000, guid: a576542a236eb2a4b8b18356f44c9c8c, type: 3}
   m_shouldPlayRandom: 0
 --- !u!1 &8890894455669466949
 GameObject:
