@@ -147,19 +147,8 @@ namespace BloodyMaze
 
         public static void SaveData()
         {
-            instance.StartCoroutine(instance.SaveDataCo());
-        }
-
-        private IEnumerator SaveDataCo()
-        {
             GameEvents.OnSaveData?.Invoke();
-            bool doOnce = true;
-            while (doOnce)
-            {
-                doOnce = false;
-                yield return new WaitForSeconds(2f);
-            }
-            var json = m_playerProfile.ToJsonGameplay();
+            var json = instance.m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
         }
