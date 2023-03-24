@@ -37,6 +37,7 @@ namespace BloodyMaze.Components
             Collider[] targets = Physics.OverlapSphere(transform.position, m_sphereCollider.radius, m_layersToTarget);
             if (targets.Length > 0)
             {
+                Debug.Log("ghhg");
                 float minDistance = 10000f;
                 HealthComponent m_targetHealthComponent = null;
                 foreach (Collider target in targets)

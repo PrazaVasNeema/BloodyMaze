@@ -14,6 +14,7 @@ namespace BloodyMaze.Components
         public UnityEvent onAttack;
         public UnityEvent onLookForTarget;
         public UnityEvent<bool> OnSetLostTargetStatus;
+        public UnityEvent OnAlert;
 
 
         private void Awake()

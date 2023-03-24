@@ -30,6 +30,7 @@ namespace BloodyMaze.Components
             agentComponent.onAttack.AddListener(SetAttackTrigger);
             agentComponent.onLookForTarget.AddListener(SetLookForTargetTrigger);
             agentComponent.OnSetLostTargetStatus.AddListener(SetLostTargetValue);
+            agentComponent.OnAlert.AddListener(SetAlertTrigger);
         }
 
         private void OnDisable()
@@ -42,6 +43,7 @@ namespace BloodyMaze.Components
             agentComponent.onAttack.RemoveListener(SetAttackTrigger);
             agentComponent.onLookForTarget.RemoveListener(SetLookForTargetTrigger);
             agentComponent.OnSetLostTargetStatus.RemoveListener(SetLostTargetValue);
+            agentComponent.OnAlert.RemoveListener(SetAlertTrigger);
         }
 
         private void SetTargetIsBeingLocked(bool flag)
@@ -51,22 +53,22 @@ namespace BloodyMaze.Components
 
         private void SetStaggerTrigger()
         {
-            m_animatorLocked.SetTrigger("Stagger");
+            m_animator.SetTrigger("Stagger");
         }
 
         private void SetDieTrigger()
         {
-            m_animatorLocked.SetTrigger("Die");
+            m_animator.SetTrigger("Die");
         }
 
         private void SetAttackTrigger()
         {
-            m_animatorLocked.SetTrigger("Attack");
+            m_animator.SetTrigger("Attack");
         }
 
         private void SetLookForTargetTrigger()
         {
-            m_animatorLocked.SetTrigger("LookForTarget");
+            m_animator.SetTrigger("LookForTarget");
         }
 
         private void SetLostTargetValue(bool lostTarget)
@@ -74,9 +76,13 @@ namespace BloodyMaze.Components
             m_lostTarget = lostTarget;
         }
 
+        private void SetAlertTrigger()
+        {
+            m_animator.SetTrigger("Alert");
+        }
+
         private void LateUpdate()
         {
-            Debug.Log(Vector3.SqrMagnitude(transform.position - m_prevPosition));
             float moveSpeedDir = Vector3.SqrMagnitude(transform.position - m_prevPosition) > 0f ? 1f : 0f;
             // m_moveSpeed = Mathf.Lerp(m_moveSpeed, moveSpeedDir, Time.deltaTime);
             m_moveSpeed = Mathf.SmoothDamp(m_moveSpeed, moveSpeedDir, ref blendIdleFlyChangingSpeed, 0.5f, 1f);
