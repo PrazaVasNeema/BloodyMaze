@@ -43,7 +43,7 @@ MonoBehaviour:
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
       flag: 0
     - eventKey: placed_mirror
