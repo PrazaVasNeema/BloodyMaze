@@ -11,6 +11,7 @@ namespace BloodyMaze.Components
         private Vector3 m_prevPosition;
         private float m_moveSpeed;
         protected float blendIdleFlyChangingSpeed = 0f;
+        private bool m_lostTarget;
 
 
         private void Awake()
@@ -21,17 +22,56 @@ namespace BloodyMaze.Components
 
         private void OnEnable()
         {
-            transform.parent.GetComponent<HealthComponent>().OnChangeTargetLockStatus.AddListener(SetTargetIsBeingLocked);
+            HealthComponent healthComponent = transform.parent.GetComponent<HealthComponent>();
+            AgentComponent agentComponent = transform.parent.GetComponent<AgentComponent>();
+            healthComponent.OnChangeTargetLockStatus.AddListener(SetTargetIsBeingLocked);
+            healthComponent.onTakeDamage.AddListener(SetStaggerTrigger);
+            healthComponent.onDead.AddListener(SetDieTrigger);
+            agentComponent.onAttack.AddListener(SetAttackTrigger);
+            agentComponent.onLookForTarget.AddListener(SetLookForTargetTrigger);
+            agentComponent.OnSetLostTargetStatus.AddListener(SetLostTargetValue);
         }
 
         private void OnDisable()
         {
-            transform.parent.GetComponent<HealthComponent>().OnChangeTargetLockStatus.RemoveListener(SetTargetIsBeingLocked);
+            HealthComponent healthComponent = transform.parent.GetComponent<HealthComponent>();
+            AgentComponent agentComponent = transform.parent.GetComponent<AgentComponent>();
+            healthComponent.OnChangeTargetLockStatus.RemoveListener(SetTargetIsBeingLocked);
+            healthComponent.onTakeDamage.RemoveListener(SetStaggerTrigger);
+            healthComponent.onDead.RemoveListener(SetDieTrigger);
+            agentComponent.onAttack.RemoveListener(SetAttackTrigger);
+            agentComponent.onLookForTarget.RemoveListener(SetLookForTargetTrigger);
+            agentComponent.OnSetLostTargetStatus.RemoveListener(SetLostTargetValue);
         }
 
         private void SetTargetIsBeingLocked(bool flag)
         {
             m_animatorLocked.SetBool("SetTargetIsBeingLocked", flag);
+        }
+
+        private void SetStaggerTrigger()
+        {
+            m_animatorLocked.SetTrigger("Stagger");
+        }
+
+        private void SetDieTrigger()
+        {
+            m_animatorLocked.SetTrigger("Die");
+        }
+
+        private void SetAttackTrigger()
+        {
+            m_animatorLocked.SetTrigger("Attack");
+        }
+
+        private void SetLookForTargetTrigger()
+        {
+            m_animatorLocked.SetTrigger("LookForTarget");
+        }
+
+        private void SetLostTargetValue(bool lostTarget)
+        {
+            m_lostTarget = lostTarget;
         }
 
         private void LateUpdate()

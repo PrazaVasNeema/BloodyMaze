@@ -55,6 +55,8 @@ namespace BloodyMaze.AI
                         Debug.Log("test");
                         blackboard.lostTarget = true;
                         blackboard.targetPreviousSeenAt = null;
+                        context.agentComponent.onLookForTarget?.Invoke();
+                        context.agentComponent.OnSetLostTargetStatus?.Invoke(true);
                         return State.Failure;
                     }
                 }

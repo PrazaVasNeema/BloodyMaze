@@ -19,6 +19,7 @@ public class UnsetLostTarget : ActionNode
     protected override State OnUpdate()
     {
         blackboard.lostTarget = false;
+        context.agentComponent.OnSetLostTargetStatus?.Invoke(false);
         ActionStatesManager.ChangeEnemiesTriggeredCount(-1);
         ActionStatesManager.ChangeState();
         return State.Failure;
