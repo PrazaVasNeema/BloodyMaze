@@ -10,6 +10,7 @@ namespace BloodyMaze.Components
         [SerializeField] private UseAbilityComponentModuleTargetedHitscan m_ability;
         [SerializeField] private GameObject m_revolverArmed;
         [SerializeField] private GameObject m_revolverUnarmed;
+        [SerializeField] private GameObject m_revolverToDrop;
 
         private Animator m_animator;
         private AbilitiesManager m_abilitiesManager;
@@ -42,6 +43,7 @@ namespace BloodyMaze.Components
         private GameObject m_currentTarget;
         private bool m_isTurnedAround;
         private bool m_isInBattleState;
+        private bool m_isDead;
 
         private Quaternion m_manSpineErrorRoot;
         private void Awake()
@@ -106,12 +108,15 @@ namespace BloodyMaze.Components
 
         private void SetActionStateRelatedVars(bool isBattleState)
         {
-            m_isInBattleState = isBattleState;
-            m_animator.SetBool(IsInBattleId, m_isInBattleState);
-            m_animator.SetTrigger(m_isInBattleState ? HolsterId : UnholsterId);
-            transform.localRotation = Quaternion.Euler(0, isBattleState ? 0 : 0, 0);
-            m_revolverArmed.SetActive(isBattleState);
-            m_revolverUnarmed.SetActive(!isBattleState);
+            if (!m_isDead)
+            {
+                m_isInBattleState = isBattleState;
+                m_animator.SetBool(IsInBattleId, m_isInBattleState);
+                m_animator.SetTrigger(m_isInBattleState ? HolsterId : UnholsterId);
+                transform.localRotation = Quaternion.Euler(0, isBattleState ? 0 : 0, 0);
+                m_revolverArmed.SetActive(isBattleState);
+                m_revolverUnarmed.SetActive(!isBattleState);
+            }
         }
 
         private void SetMatchingUseTrigger()
@@ -121,6 +126,10 @@ namespace BloodyMaze.Components
 
         private void SetIsDeadBool()
         {
+            m_isDead = true;
+            m_revolverArmed.SetActive(false);
+            m_revolverUnarmed.SetActive(false);
+            m_revolverToDrop.SetActive(true);
             m_animator.SetBool(IsDeadId, true);
         }
 
@@ -144,8 +153,8 @@ namespace BloodyMaze.Components
             if (m_currentTarget)
             {
                 var m_currentTargetPosition = m_currentTarget.transform.position;
-                // var dir = new Vector3(m_currentTargetPosition.x, m_manSpine.position.y, m_currentTargetPosition.z) - m_manSpine.position;
-                var dir = new Vector3(m_currentTargetPosition.x, m_currentTargetPosition.y, m_currentTargetPosition.z) - m_manSpine.position;
+                var dir = new Vector3(m_currentTargetPosition.x, m_manSpine.position.y, m_currentTargetPosition.z) - m_manSpine.position;
+                // var dir = new Vector3(m_currentTargetPosition.x, m_currentTargetPosition.y, m_currentTargetPosition.z) - m_manSpine.position;
                 var rotation = Quaternion.LookRotation(dir) * m_manSpineErrorRoot;
                 // if (velocity <= .5f)
                 //     rotation = Quaternion.Euler(rotation.x, rotation.y + 30f, rotation.z);

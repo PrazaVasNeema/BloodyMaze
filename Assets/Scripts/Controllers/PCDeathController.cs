@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BloodyMaze
+namespace BloodyMaze.Controllers
 {
     public class PCDeathController : MonoBehaviour
     {
@@ -25,14 +25,24 @@ namespace BloodyMaze
         {
             GameEvents.OnCallGotoFunction?.Invoke("none");
             ActionStatesManager.SetState(ActionStates.INTERACTING);
+            // StartCoroutine(SlowDownTimeCo());
+            yield return new WaitForSecondsRealtime(2f);
             GameController.SetLoaderText("Прошли сутки");
-            bool doOnce = true;
-            while (doOnce)
-            {
-                doOnce = false;
-                yield return new WaitForSecondsRealtime(2);
-            }
+            GameTransitionSystem.ScreenFade();
+
+
+            yield return new WaitForSecondsRealtime(2);
+
             GameEvents.OnCallGotoFunction?.Invoke("reload_level");
+        }
+
+        IEnumerator SlowDownTimeCo()
+        {
+            while (Time.timeScale != 0.1f)
+            {
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 0f, 0.1f);
+                yield return new();
+            }
         }
     }
 }

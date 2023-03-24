@@ -188,6 +188,11 @@ namespace BloodyMaze
                     InitLevel();
                     MusicManager.current.SetJam("Gameplay");
                     break;
+                case "BattleSystem_2":
+                    m_levelController = FindObjectOfType<LevelController>();
+                    InitLevel();
+                    MusicManager.current.SetJam("Gameplay");
+                    break;
                 case "MainMenu":
 
                     MusicManager.current.SetJam("MainMenu");
