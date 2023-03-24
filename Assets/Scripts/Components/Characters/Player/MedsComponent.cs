@@ -8,6 +8,7 @@ namespace BloodyMaze
     {
         public System.Action<MedsType> OnMedsCountChange;
 
+
         private MedsType m_meds;
         public MedsType meds => m_meds;
 
@@ -22,6 +23,7 @@ namespace BloodyMaze
             if (m_meds.UseMeds())
             {
                 OnMedsCountChange?.Invoke(m_meds);
+
                 return true;
             }
             return false;

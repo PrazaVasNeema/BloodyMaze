@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -8,6 +9,7 @@ namespace BloodyMaze.Components
     {
         private MedsComponent m_medsComponent;
         private HealthComponent m_healthComponent;
+        public UnityEvent OnUseMeds;
 
         private void Awake()
         {
@@ -20,6 +22,7 @@ namespace BloodyMaze.Components
             if (m_healthComponent.currentHealth != m_healthComponent.maxHealth && m_medsComponent.UseMeds())
             {
                 m_healthComponent.ChangeHPWithAmount(-m_medsComponent.meds.hpToHeal);
+                OnUseMeds?.Invoke();
                 return true;
             }
             else

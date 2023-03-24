@@ -26,6 +26,10 @@ namespace BloodyMaze.Components
         static int UseUnarmedId = Animator.StringToHash("UseUnarmed");
         static int IsDeadId = Animator.StringToHash("IsDead");
         static int TakeDamageId = Animator.StringToHash("TakeDamage");
+        static int UseMedsArmedId = Animator.StringToHash("UseMedsArmed");
+        static int UseMedsUnarmedId = Animator.StringToHash("UseMedsUnarmed");
+
+
 
 
 
@@ -77,17 +81,17 @@ namespace BloodyMaze.Components
             }
         }
 
-        private void SetShootRoundTrigger()
+        public void SetShootRoundTrigger()
         {
             m_animator.SetTrigger(ShootRoundId);
         }
 
-        private void SetReloadTrigger()
+        public void SetReloadTrigger()
         {
             m_animator.SetTrigger(ReloadId);
         }
 
-        private void SetActivateBarrierTrigger()
+        public void SetActivateBarrierTrigger()
         {
             m_animator.SetTrigger(ActivateBarrierId);
         }
@@ -114,6 +118,11 @@ namespace BloodyMaze.Components
             m_animator.SetTrigger(TakeDamageId);
         }
 
+        public void SetMatchingUseMedsTrigger()
+        {
+            m_animator.SetTrigger(m_isInBattleState ? UseArmedId : UseUnarmedId);
+        }
+
         private void LateUpdate()
         {
             // transform.LookAt(new Vector3(1, transform.position.y, 1));
@@ -134,7 +143,7 @@ namespace BloodyMaze.Components
                 // Debug.Log($"Angle: {angle}, {75f * Mathf.Deg2Rad}");
                 if (angle > 1.57f)
                 {
-                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 210, 0);
+                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 210, 30);
                     // transform.localScale = new Vector3(1, 1, -transform.localScale.z);
                     m_isTurnedAround = !m_isTurnedAround;
                 }
