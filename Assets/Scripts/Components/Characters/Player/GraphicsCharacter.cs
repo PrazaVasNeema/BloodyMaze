@@ -11,14 +11,30 @@ namespace BloodyMaze.Components
         private Animator m_animator;
         private AbilitiesManager m_abilitiesManager;
         private MovementComponentCharacter m_movementComponentCharacter;
+        private CharacterComponent m_characterComponent;
+        private HealthComponent m_healthComponent;
 
         static int SpeedMoveId = Animator.StringToHash("MoveSpeed");
         static int m_isTurnedAroundID = Animator.StringToHash("IsTurnedAround");
         static int ShootRoundId = Animator.StringToHash("ShootRound");
+        static int IsInBattleId = Animator.StringToHash("IsInBattle");
+        static int ReloadId = Animator.StringToHash("Reload");
+        static int ActivateBarrierId = Animator.StringToHash("ActivateBarrier");
+        static int HolsterId = Animator.StringToHash("Holster");
+        static int UnholsterId = Animator.StringToHash("Unholster");
+        static int UseArmedId = Animator.StringToHash("UseArmed");
+        static int UseUnarmedId = Animator.StringToHash("UseUnarmed");
+        static int IsDeadId = Animator.StringToHash("IsDead");
+        static int TakeDamageId = Animator.StringToHash("TakeDamage");
+
+
+
+
 
         private Vector3 m_lastPosition;
         private GameObject m_currentTarget;
         private bool m_isTurnedAround;
+        private bool m_isInBattleState;
 
         private Quaternion m_manSpineErrorRoot;
         private void Awake()
@@ -27,18 +43,26 @@ namespace BloodyMaze.Components
             m_animator = GetComponent<Animator>();
             m_abilitiesManager = GetComponentInParent<AbilitiesManager>();
             m_movementComponentCharacter = GetComponentInParent<MovementComponentCharacter>();
+            m_characterComponent = GetComponentInParent<CharacterComponent>();
+            m_healthComponent = GetComponentInParent<HealthComponent>();
         }
 
         private void OnEnable()
         {
-            m_abilitiesManager.onUseAbility.AddListener(OnShootRoundHandler);
+            m_abilitiesManager.onUseAbility.AddListener(SetShootRoundTrigger);
             m_ability.OnTargetLockedChanged.AddListener(SetCurrentTarget);
+            GameEvents.OnBattleActionStateIsSet += SetActionStateRelatedVars;
+            m_healthComponent.onTakeDamage.AddListener(SetTakeDamageTrigger);
+            m_healthComponent.onDead.AddListener(SetIsDeadBool);
         }
 
         private void OnDisable()
         {
-            m_abilitiesManager.onUseAbility.RemoveListener(OnShootRoundHandler);
+            m_abilitiesManager.onUseAbility.RemoveListener(SetShootRoundTrigger);
             m_ability.OnTargetLockedChanged.RemoveListener(SetCurrentTarget);
+            GameEvents.OnBattleActionStateIsSet -= SetActionStateRelatedVars;
+            m_healthComponent.onTakeDamage.RemoveListener(SetTakeDamageTrigger);
+            m_healthComponent.onDead.RemoveListener(SetIsDeadBool);
         }
 
         private void SetCurrentTarget(GameObject target)
@@ -53,10 +77,41 @@ namespace BloodyMaze.Components
             }
         }
 
-        private void OnShootRoundHandler()
+        private void SetShootRoundTrigger()
         {
-            Debug.Log("CheckInvoke");
             m_animator.SetTrigger(ShootRoundId);
+        }
+
+        private void SetReloadTrigger()
+        {
+            m_animator.SetTrigger(ReloadId);
+        }
+
+        private void SetActivateBarrierTrigger()
+        {
+            m_animator.SetTrigger(ActivateBarrierId);
+        }
+
+        private void SetActionStateRelatedVars(bool isBattleState)
+        {
+            m_isInBattleState = isBattleState;
+            m_animator.SetBool(IsInBattleId, m_isInBattleState);
+            m_animator.SetTrigger(m_isInBattleState ? HolsterId : UnholsterId);
+        }
+
+        private void SetMatchingUseTrigger()
+        {
+            m_animator.SetTrigger(m_isInBattleState ? UseArmedId : UseUnarmedId);
+        }
+
+        private void SetIsDeadBool()
+        {
+            m_animator.SetBool(IsDeadId, true);
+        }
+
+        private void SetTakeDamageTrigger()
+        {
+            m_animator.SetTrigger(TakeDamageId);
         }
 
         private void LateUpdate()

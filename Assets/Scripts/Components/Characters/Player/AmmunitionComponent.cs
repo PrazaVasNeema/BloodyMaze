@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -11,6 +11,8 @@ namespace BloodyMaze.Components
         public Dictionary<string, AmmoType> m_ammoType = new Dictionary<string, AmmoType>();
 
         public System.Action<string, AmmoType> onAmmoCountChange;
+        public UnityEvent OnReload;
+
 
         public void Init(AmmoType holyAmmoType)
         {
@@ -39,6 +41,7 @@ namespace BloodyMaze.Components
             {
                 Debug.Log("Reload");
                 onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
+                OnReload?.Invoke();
                 return true;
             }
             return false;

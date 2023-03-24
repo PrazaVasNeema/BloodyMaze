@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BloodyMaze.Components
 {
@@ -13,6 +14,8 @@ namespace BloodyMaze.Components
 
         private ManaComponent m_manaComponent;
         private IAbilityComponent m_abilityComponent;
+        public UnityEvent OnActivateBarrier;
+
 
         private void Awake()
         {
@@ -27,6 +30,7 @@ namespace BloodyMaze.Components
             {
                 m_manaComponent.DrainAllOverTime(m_drainingTime);
                 m_abilityComponent.UseAbility(m_drainingTime);
+                OnActivateBarrier?.Invoke();
             }
             return canAttack;
         }

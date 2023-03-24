@@ -10,6 +10,7 @@ namespace BloodyMaze
     {
         public static ActionStatesManager current { private set; get; }
 
+
         private ActionStates m_state = ActionStates.EXPLORING;
         public static ActionStates state => current.m_state;
         private float m_enemiesTriggered = 0;
@@ -26,6 +27,7 @@ namespace BloodyMaze
 
         public static void ChangeState()
         {
+            bool isBattleState = false;
             switch (current.m_state)
             {
                 case ActionStates.EXPLORING:
@@ -33,6 +35,7 @@ namespace BloodyMaze
                     {
                         current.m_state = ActionStates.BATTLE;
                         GameEvents.OnHideMessage?.Invoke();
+                        isBattleState = true;
                     }
                     else
                         current.m_state = ActionStates.INTERACTING;
@@ -45,6 +48,7 @@ namespace BloodyMaze
                     current.m_state = ActionStates.EXPLORING;
                     break;
             }
+            GameEvents.OnBattleActionStateIsSet?.Invoke(isBattleState);
         }
 
         public static void SetState(ActionStates stateToSet)

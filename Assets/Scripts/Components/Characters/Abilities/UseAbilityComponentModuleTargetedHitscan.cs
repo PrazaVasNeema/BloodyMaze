@@ -16,6 +16,7 @@ namespace BloodyMaze.Components
         private SphereCollider m_sphereCollider;
         private HealthComponent m_currentTarget;
         public UnityEvent<GameObject> OnTargetLockedChanged;
+        public UnityEvent OnShootRound;
 
         private void Awake()
         {
@@ -77,6 +78,7 @@ namespace BloodyMaze.Components
             if (canAttack)
             {
                 m_currentTarget.ChangeHPWithAmount(50);
+                OnShootRound?.Invoke();
             }
             return canAttack;
         }
