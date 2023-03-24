@@ -68,7 +68,8 @@ namespace BloodyMaze
             {
                 MusicManager.current.SetJam("MainMenu");
             }
-            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem")
+            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
+            || SceneManager.GetActiveScene().name == "BattleSystem_2")
             {
                 MusicManager.current.SetJam("Gameplay");
                 shouldStartNewGame = instance.m_shouldInitNewData;
@@ -111,7 +112,8 @@ namespace BloodyMaze
                 instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem")
+            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
+            || SceneManager.GetActiveScene().name == "BattleSystem_2")
             {
                 if (!instance.m_shouldInitNewData)
                 {

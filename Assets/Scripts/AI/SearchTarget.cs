@@ -45,6 +45,7 @@ namespace BloodyMaze.AI
                         ActionStatesManager.ChangeEnemiesTriggeredCount(1);
                         ActionStatesManager.ChangeState();
                     }
+                    blackboard.targetPreviousSeenAt = context.agentComponent.m_previousSeenAtTransform;
                 }
                 return result[0].transform;
             }

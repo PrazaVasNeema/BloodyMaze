@@ -55,6 +55,7 @@ namespace BloodyMaze
         public static void ChangeEnemiesTriggeredCount(int changingDir)
         {
             current.m_enemiesTriggered += changingDir;
+            current.m_enemiesTriggered = current.m_enemiesTriggered < 0 ? 0 : current.m_enemiesTriggered;
         }
     }
 }

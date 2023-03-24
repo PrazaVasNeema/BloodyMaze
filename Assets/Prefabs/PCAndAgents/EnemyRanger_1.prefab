@@ -373,14 +373,13 @@ GameObject:
   - component: {fileID: 2536498855862592369}
   - component: {fileID: 2536498855862592374}
   - component: {fileID: 2536498855862592371}
-  - component: {fileID: 2536498855862592368}
   m_Layer: 8
   m_Name: Gr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2536498855862592375
 Transform:
   m_ObjectHideFlags: 0
@@ -460,26 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d3d419fdfd9f14492b37d068767962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &2536498855862592368
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536498855862592372}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c8327dcb7fca74419a3ff37d7044a68, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_animatorLocked: {fileID: 2536498856092404775}
 --- !u!1 &2536498855959720941
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +681,10 @@ PrefabInstance:
     - target: {fileID: 1606339480521703464, guid: 0bb1f73947dc8f5478fe3e584284b653, type: 3}
       propertyPath: m_Name
       value: Gr_ghostRanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606339480521703464, guid: 0bb1f73947dc8f5478fe3e584284b653, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2089966630168615570, guid: 0bb1f73947dc8f5478fe3e584284b653, type: 3}
       propertyPath: m_RootOrder
