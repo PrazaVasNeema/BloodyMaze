@@ -65,7 +65,7 @@ MonoBehaviour:
     targetPreviousSeenAt: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     lostTarget: 0
-  viewPosition: {x: 1498, y: -18, z: 0}
+  viewPosition: {x: 1177, y: -117, z: 0}
   viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
@@ -587,7 +587,7 @@ MonoBehaviour:
         mask:
           serializedVersion: 2
           m_Bits: 64
-        radius: 5
+        radius: 7
     - rid: 8670659163155857419
       type: {class: HasTarget, ns: BloodyMaze.AI, asm: Assembly-CSharp}
       data:

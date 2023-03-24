@@ -29,7 +29,7 @@ namespace BloodyMaze.AI
             {
                 var agent = context.agent;
                 if (isPreviousSeetAtTarget)
-                    agent.stoppingDistance = .1f;
+                    agent.stoppingDistance = 1f;
                 else
                     agent.stoppingDistance = context.agentComponent.attackDistance;
                 if (Time.frameCount % 3 == 0)
