@@ -8,6 +8,9 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private Transform m_manSpine;
         [SerializeField] private UseAbilityComponentModuleTargetedHitscan m_ability;
+        [SerializeField] private GameObject m_revolverArmed;
+        [SerializeField] private GameObject m_revolverUnarmed;
+
         private Animator m_animator;
         private AbilitiesManager m_abilitiesManager;
         private MovementComponentCharacter m_movementComponentCharacter;
@@ -49,6 +52,9 @@ namespace BloodyMaze.Components
             m_movementComponentCharacter = GetComponentInParent<MovementComponentCharacter>();
             m_characterComponent = GetComponentInParent<CharacterComponent>();
             m_healthComponent = GetComponentInParent<HealthComponent>();
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            m_revolverArmed.SetActive(false);
+            m_revolverUnarmed.SetActive(true);
         }
 
         private void OnEnable()
@@ -58,6 +64,7 @@ namespace BloodyMaze.Components
             GameEvents.OnBattleActionStateIsSet += SetActionStateRelatedVars;
             m_healthComponent.onTakeDamage.AddListener(SetTakeDamageTrigger);
             m_healthComponent.onDead.AddListener(SetIsDeadBool);
+            transform.GetComponentInParent<InteractComponent>().OnInteract += SetMatchingUseTrigger;
         }
 
         private void OnDisable()
@@ -67,6 +74,7 @@ namespace BloodyMaze.Components
             GameEvents.OnBattleActionStateIsSet -= SetActionStateRelatedVars;
             m_healthComponent.onTakeDamage.RemoveListener(SetTakeDamageTrigger);
             m_healthComponent.onDead.RemoveListener(SetIsDeadBool);
+            transform.GetComponentInParent<InteractComponent>().OnInteract -= SetMatchingUseTrigger;
         }
 
         private void SetCurrentTarget(GameObject target)
@@ -101,6 +109,9 @@ namespace BloodyMaze.Components
             m_isInBattleState = isBattleState;
             m_animator.SetBool(IsInBattleId, m_isInBattleState);
             m_animator.SetTrigger(m_isInBattleState ? HolsterId : UnholsterId);
+            transform.localRotation = Quaternion.Euler(0, isBattleState ? 30 : 0, 0);
+            m_revolverArmed.SetActive(isBattleState);
+            m_revolverUnarmed.SetActive(!isBattleState);
         }
 
         private void SetMatchingUseTrigger()
@@ -143,7 +154,7 @@ namespace BloodyMaze.Components
                 // Debug.Log($"Angle: {angle}, {75f * Mathf.Deg2Rad}");
                 if (angle > 1.57f)
                 {
-                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 210, 30);
+                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 30 : 210, 0);
                     // transform.localScale = new Vector3(1, 1, -transform.localScale.z);
                     m_isTurnedAround = !m_isTurnedAround;
                 }
