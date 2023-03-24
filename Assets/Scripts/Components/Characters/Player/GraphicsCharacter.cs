@@ -83,7 +83,7 @@ namespace BloodyMaze.Components
             if (m_currentTarget == null)
             {
                 m_manSpine.LookAt(gameObject.transform.forward);
-                transform.localRotation = Quaternion.Euler(0, 30, 0);
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
                 m_isTurnedAround = false;
                 m_animator.SetFloat(m_isTurnedAroundID, m_isTurnedAround ? 1 : 0);
             }
@@ -109,7 +109,7 @@ namespace BloodyMaze.Components
             m_isInBattleState = isBattleState;
             m_animator.SetBool(IsInBattleId, m_isInBattleState);
             m_animator.SetTrigger(m_isInBattleState ? HolsterId : UnholsterId);
-            transform.localRotation = Quaternion.Euler(0, isBattleState ? 30 : 0, 0);
+            transform.localRotation = Quaternion.Euler(0, isBattleState ? 0 : 0, 0);
             m_revolverArmed.SetActive(isBattleState);
             m_revolverUnarmed.SetActive(!isBattleState);
         }
@@ -144,17 +144,20 @@ namespace BloodyMaze.Components
             if (m_currentTarget)
             {
                 var m_currentTargetPosition = m_currentTarget.transform.position;
-                var dir = new Vector3(m_currentTargetPosition.x, m_manSpine.position.y, m_currentTargetPosition.z) - m_manSpine.position;
+                // var dir = new Vector3(m_currentTargetPosition.x, m_manSpine.position.y, m_currentTargetPosition.z) - m_manSpine.position;
+                var dir = new Vector3(m_currentTargetPosition.x, m_currentTargetPosition.y, m_currentTargetPosition.z) - m_manSpine.position;
                 var rotation = Quaternion.LookRotation(dir) * m_manSpineErrorRoot;
+                // if (velocity <= .5f)
+                //     rotation = Quaternion.Euler(rotation.x, rotation.y + 30f, rotation.z);
                 m_manSpine.rotation = rotation;
 
                 Vector3 PCForward = transform.forward, manSpineForward = m_manSpine.transform.forward;
                 var dotProduct = PCForward.x * manSpineForward.x + PCForward.y * manSpineForward.y + PCForward.z * manSpineForward.z;
                 var angle = Mathf.Acos(dotProduct / (PCForward.sqrMagnitude * manSpineForward.sqrMagnitude));
                 // Debug.Log($"Angle: {angle}, {75f * Mathf.Deg2Rad}");
-                if (angle > 1.57f)
+                if (Mathf.Abs(angle) > 1.57f)
                 {
-                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 30 : 210, 0);
+                    transform.localRotation = Quaternion.Euler(0, m_isTurnedAround ? 0 : 180, 0);
                     // transform.localScale = new Vector3(1, 1, -transform.localScale.z);
                     m_isTurnedAround = !m_isTurnedAround;
                 }
