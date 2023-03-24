@@ -33,9 +33,9 @@ MonoBehaviour:
       lastLevelIndex: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
       flag: 0
     - eventKey: talked_to_girl
@@ -93,8 +93,10 @@ MonoBehaviour:
     - roomID: 0
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
+    - roomID: 6
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomID: 0
       agentsToSpawnIDs: []

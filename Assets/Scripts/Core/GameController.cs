@@ -32,6 +32,8 @@ namespace BloodyMaze
         private static int m_choosenProfileIndex = 0;
         public static int choosenProfileIndex => m_choosenProfileIndex;
 
+        private bool m_isReloaded;
+
 
 
         private LevelController m_levelController;
@@ -51,11 +53,13 @@ namespace BloodyMaze
         private void OnEnable()
         {
             GameEvents.OnEventFlagCheck += CheckEvent;
+            GameEvents.OnSetNewRoomAgentStatus += SetRoomAgentStatus;
         }
 
         private void OnDisable()
         {
             GameEvents.OnEventFlagCheck -= CheckEvent;
+            GameEvents.OnSetNewRoomAgentStatus -= SetRoomAgentStatus;
         }
 
         private void Start()
@@ -95,6 +99,11 @@ namespace BloodyMaze
         private static void CheckEvent(string eventKey)
         {
             instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
+        }
+        private static void SetRoomAgentStatus(int roomID, int agentID)
+        {
+            Debug.Log("fghhgfjjghjghkjkhhjkhjk");
+            playerProfile.SetRoomAgentStatus(roomID, agentID);
         }
 
         private static void InitLevel()
@@ -155,6 +164,13 @@ namespace BloodyMaze
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
         }
 
+        public static void SaveDataWithoutOnSave()
+        {
+            var json = instance.m_playerProfile.ToJsonGameplay();
+            Debug.Log($">>> save {json}");
+            PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
+        }
+
         public static void LoadScene(string sceneName, int choosenProfileIndex)
         {
             m_choosenProfileIndex = choosenProfileIndex;
@@ -162,6 +178,12 @@ namespace BloodyMaze
         }
         public static void LoadScene(string sceneName)
         {
+            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
+        }
+
+        public static void LoadScene(string sceneName, bool isReloaded)
+        {
+            instance.m_isReloaded = isReloaded;
             instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
         }
 
@@ -174,6 +196,13 @@ namespace BloodyMaze
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
+            if (m_isReloaded)
+            {
+                m_allPlayerProfilesData[m_choosenProfileIndex].roomsData = playerProfile.defaultData.roomsData;
+                playerProfile.SetPlayerProfileSOData(m_allPlayerProfilesData[m_choosenProfileIndex]);
+                SaveDataWithoutOnSave();
+                m_isReloaded = false;
+            }
             SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < 1)

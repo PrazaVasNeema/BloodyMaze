@@ -33,7 +33,6 @@ namespace BloodyMaze.Components
             onTakeDamage?.Invoke();
             if (m_currentHealth == 0)
             {
-                Debug.Log("ghffg");
                 onDead.Invoke();
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();

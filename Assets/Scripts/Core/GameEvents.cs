@@ -26,5 +26,6 @@ namespace BloodyMaze
         public static System.Action OnInitLevelComplete;
         public static System.Action OnEnterGameplayState;
         public static System.Action<bool> OnBattleActionStateIsSet;
+        public static System.Action<int, int> OnSetNewRoomAgentStatus;
     }
 }

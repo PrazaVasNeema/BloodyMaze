@@ -9,12 +9,24 @@ namespace BloodyMaze
     public class PlayerProfileSO : ScriptableObject
     {
         [SerializeField] private PlayerProfileData m_default;
+        public PlayerProfileData defaultData => m_default;
 
-        public PlayerProfileData playerProfileData { private set; get; } = new();
+        [SerializeField] public PlayerProfileData playerProfileData = new();
 
         public CharacterSaveData GetCharacterSaveData()
         {
             return playerProfileData.characterSaveData;
+        }
+
+        public void SetRoomAgentStatus(int roomID, int agentID)
+        {
+            playerProfileData.roomsData.Find((x) => x.roomID == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID).shouldntSpawn = true;
+            Debug.Log(playerProfileData.roomsData.Find((x) => x.roomID == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID));
+        }
+
+        public void SetPlayerProfileSOData(PlayerProfileData playerProfileDataToSet)
+        {
+            playerProfileData = playerProfileDataToSet;
         }
 
         public bool GetGlobalEventFlag(string eventKey)
