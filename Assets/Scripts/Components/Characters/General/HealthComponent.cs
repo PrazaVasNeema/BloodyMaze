@@ -30,10 +30,10 @@ namespace BloodyMaze.Components
         public void ChangeHPWithAmount(float amount)
         {
             m_currentHealth = amount >= 0 ? Mathf.Max(m_currentHealth - amount, 0f) : Mathf.Min(m_currentHealth - amount, 100f);
-            if (amount > 0)
-                onTakeDamage?.Invoke();
+            onTakeDamage?.Invoke();
             if (m_currentHealth == 0)
             {
+                Debug.Log("ghffg");
                 onDead.Invoke();
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();

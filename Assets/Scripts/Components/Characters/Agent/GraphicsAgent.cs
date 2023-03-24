@@ -26,10 +26,10 @@ namespace BloodyMaze.Components
             AgentComponent agentComponent = transform.parent.GetComponent<AgentComponent>();
             healthComponent.OnChangeTargetLockStatus.AddListener(SetTargetIsBeingLocked);
             healthComponent.onTakeDamage.AddListener(SetStaggerTrigger);
-            healthComponent.onDead.AddListener(SetDieTrigger);
+            healthComponent.onDead.AddListener(SetDeadBool);
             agentComponent.onAttack.AddListener(SetAttackTrigger);
             agentComponent.onLookForTarget.AddListener(SetLookForTargetTrigger);
-            agentComponent.OnSetLostTargetStatus.AddListener(SetLostTargetValue);
+            agentComponent.OnSetIsTriggeredStatus.AddListener(SetLostTargetValue);
             agentComponent.OnAlert.AddListener(SetAlertTrigger);
         }
 
@@ -39,10 +39,10 @@ namespace BloodyMaze.Components
             AgentComponent agentComponent = transform.parent.GetComponent<AgentComponent>();
             healthComponent.OnChangeTargetLockStatus.RemoveListener(SetTargetIsBeingLocked);
             healthComponent.onTakeDamage.RemoveListener(SetStaggerTrigger);
-            healthComponent.onDead.RemoveListener(SetDieTrigger);
+            healthComponent.onDead.RemoveListener(SetDeadBool);
             agentComponent.onAttack.RemoveListener(SetAttackTrigger);
             agentComponent.onLookForTarget.RemoveListener(SetLookForTargetTrigger);
-            agentComponent.OnSetLostTargetStatus.RemoveListener(SetLostTargetValue);
+            agentComponent.OnSetIsTriggeredStatus.RemoveListener(SetLostTargetValue);
             agentComponent.OnAlert.RemoveListener(SetAlertTrigger);
         }
 
@@ -56,9 +56,9 @@ namespace BloodyMaze.Components
             m_animator.SetTrigger("Stagger");
         }
 
-        private void SetDieTrigger()
+        private void SetDeadBool()
         {
-            m_animator.SetTrigger("Die");
+            m_animator.SetBool("Dead", true);
         }
 
         private void SetAttackTrigger()

@@ -43,6 +43,7 @@ namespace BloodyMaze.AI
                     if (!blackboard.targetPreviousSeenAt && !blackboard.lostTarget)
                     {
                         context.agentComponent.OnAlert?.Invoke();
+                        context.agentComponent.OnSetIsTriggeredStatus?.Invoke(true);
                         ActionStatesManager.ChangeEnemiesTriggeredCount(1);
                         ActionStatesManager.ChangeState();
                     }

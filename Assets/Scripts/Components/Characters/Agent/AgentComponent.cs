@@ -13,7 +13,7 @@ namespace BloodyMaze.Components
         public bool isStaggered;
         public UnityEvent onAttack;
         public UnityEvent onLookForTarget;
-        public UnityEvent<bool> OnSetLostTargetStatus;
+        public UnityEvent<bool> OnSetIsTriggeredStatus;
         public UnityEvent OnAlert;
 
 

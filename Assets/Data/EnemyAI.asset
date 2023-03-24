@@ -65,7 +65,7 @@ MonoBehaviour:
     targetPreviousSeenAt: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     lostTarget: 0
-  viewPosition: {x: 885, y: -47, z: 0}
+  viewPosition: {x: 1498, y: -18, z: 0}
   viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
@@ -371,7 +371,7 @@ MonoBehaviour:
           lostTarget: 0
         description: 
         drawGizmos: 0
-        duration: 2
+        duration: 1
     - rid: 7064259373672169488
       type: {class: Unstagger, ns: , asm: Assembly-CSharp}
       data:
@@ -505,7 +505,7 @@ MonoBehaviour:
           lostTarget: 0
         description: 
         drawGizmos: 0
-        duration: 1
+        duration: 3
     - rid: 8670659163155857414
       type: {class: Log, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
