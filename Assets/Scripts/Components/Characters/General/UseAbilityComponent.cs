@@ -32,14 +32,17 @@ namespace BloodyMaze.Components
                 if (m_useAbilityComponentModule != null)
                 {
                     if (m_useAbilityComponentModule.Check())
+                    {
                         m_timer = m_cooldownTime;
+                        return true;
+                    }
                 }
                 else
                 {
                     m_abilityComponent.UseAbility(-1);
                     m_timer = m_cooldownTime;
+                    return true;
                 }
-                return true;
             }
             return false;
         }
