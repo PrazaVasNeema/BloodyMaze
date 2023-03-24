@@ -12,7 +12,8 @@ namespace BloodyMaze.UI
         [Header("PC Stats")]
         [SerializeField] private Image m_healthImage;
         [SerializeField] private Image m_manaImage;
-        [SerializeField] private TMP_Text m_ammoHoly;
+        [SerializeField] private TMP_Text m_ammoAllRemainingAmmo;
+        [SerializeField] private TMP_Text m_drumAmmo;
         [SerializeField] private TMP_Text m_medsCommon;
         [Header("Mini message")]
         [SerializeField] private TMP_Text m_miniMessage;
@@ -50,13 +51,13 @@ namespace BloodyMaze.UI
         {
             m_characterComponent = characterComponent;
             GameInventory.current.onInventoryChange += ReorganizeShowcase;
-            m_characterComponent.ammunitionComponent.Reload("holy");
             m_refImage = m_showcase.GetComponentInChildren<Image>().gameObject;
             m_inventoryItemsInShowcase.Add(m_refImage);
             m_animator = GetComponent<Animator>();
             m_refImage.SetActive(false);
             m_characterComponent.medsComponent.OnMedsCountChange += RefreshMedsCount;
             m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
+            m_characterComponent.ammunitionComponent.Reload("holy");
         }
 
         private void OnDestroy()
@@ -122,7 +123,8 @@ namespace BloodyMaze.UI
 
         private void RefreshAmmoCount(string ammoTypeName, AmmoType ammoType)
         {
-            m_ammoHoly.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}   {ammoType.currentAmmo}");
+            m_ammoAllRemainingAmmo.SetText(ammoType.currentAmmo.ToString());
+            m_drumAmmo.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}");
         }
 
         private void ShowMiniMessage(string miniMessageKey)
