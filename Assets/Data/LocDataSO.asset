@@ -381,7 +381,39 @@ MonoBehaviour:
         sentence: "\u0418\u0434\u0435\u043C"
       - personName: "\u0414\u0435\u0442\u0435\u043A\u0442\u0438\u0432"
         sentence: "\u041F\u043E\u0440\u0430 \u0434\u043E\u043C\u043E\u0439"
-  locInterfaceTexts: []
+  locInterfaceTexts:
+  - key: end_game_sentence_1
+    text:
+    - "\u0423\u0432\u0438\u0434\u0435\u043B\u0438 \u0440\u0430\u0441\u0441\u0432\u0435\u0442"
+  - key: end_game_sentence_2
+    text:
+    - "\u041D\u0435 \u043F\u0435\u0440\u0435\u0436\u0438\u043B\u0438 \u044D\u0442\u043E
+      \u0431\u0435\u0437\u0443\u043C\u0438\u0435"
+  - key: end_game_sentence_3
+    text:
+    - "\u041A\u043E\u043D\u0435\u0446"
+  - key: end_game_to_main_menu_button_text
+    text:
+    - "\u0412 \u0433\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
+  - key: loading_screen_gameplay_re_sentence_1
+    text:
+    - "\u0412\u0440\u0435\u043C\u044F \u0438\u0433\u0440\u0430\u0435\u0442 \u0433\u043B\u0430\u0432\u043D\u0443\u044E
+      \u0440\u043E\u043B\u044C"
+  - key: loading_screen_gameplay_re_sentence_2
+    text:
+    - "\u0414\u0435\u043D\u044C"
+  - key: loading_screen_common_press_any_key_initial
+    text:
+    - "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u044D\u043A\u0440\u0430\u043D\u0430,
+      \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C \u043F\u0443\u0442\u044C"
+  - key: loading_screen_common_press_any_key_re
+    text:
+    - "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u044D\u043A\u0440\u0430\u043D\u0430,
+      \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C
+      \u043F\u0443\u0442\u044C"
+  - key: loading_screen_main_menu_sentence
+    text:
+    - . . .
   locMessagesText:
   - key: interact
     text:
