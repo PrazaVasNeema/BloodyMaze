@@ -151,11 +151,11 @@ namespace BloodyMaze.Controllers
             for (int i = 0; i < agentsToSpawnIDs.Count; i++)
             {
                 var temp2 = agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID);
-                if (temp2 != null)
+                if (temp2 != null && m_roomAgents[i] != null)
                 {
                     m_roomAgents[i].gameObject.SetActive(temp2.shouldntSpawn ? false : true);
                 }
-                if (!temp2.shouldntSpawn)
+                if (!temp2.shouldntSpawn && m_roomAgents[i] != null)
                     m_roomAgents[i].OnDead.AddListener(ChangeRoomAgentStatus);
             }
             Debug.Log("InitAgents3");
