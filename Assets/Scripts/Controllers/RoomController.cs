@@ -136,6 +136,7 @@ namespace BloodyMaze.Controllers
             if (!string.IsNullOrEmpty(m_eventFlagShouldBeCheckedToSpawnEnemies) && !GameController.playerProfile.playerProfileData.globalEventsData.Find((x) =>
             x.eventKey == m_eventFlagShouldBeCheckedToSpawnEnemies).flag)
             {
+                Debug.Log("InitAgents false");
                 foreach (AgentIdentifier agent in m_roomAgents)
                     agent.gameObject.SetActive(false);
                 return;

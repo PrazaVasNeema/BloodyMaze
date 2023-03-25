@@ -29,7 +29,7 @@ namespace BloodyMaze
             bool requirementsSatisfied = true;
             foreach (string flagKey in m_keysOfFlagsThatShouldBeChecked)
             {
-                if (eventsData.Find((x) => x.eventKey == flagKey) == null)
+                if (eventsData.Find((x) => x.eventKey == flagKey).flag == false)
                 {
                     requirementsSatisfied = false;
                     break;
