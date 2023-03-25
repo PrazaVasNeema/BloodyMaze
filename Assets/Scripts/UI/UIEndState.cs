@@ -52,6 +52,7 @@ namespace BloodyMaze
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             yield return new WaitForSecondsRealtime(2f);
             m_audioSource.clip = m_audioClipSingleType;
+            m_audioSource.loop = false;
             m_audioSource.Play();
             m_thirdSentenceField.text += "?";
 
