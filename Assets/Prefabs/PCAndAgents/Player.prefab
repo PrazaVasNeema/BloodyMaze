@@ -820,6 +820,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5255840023239468433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4287436919282803864}
+  m_Layer: 6
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4287436919282803864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255840023239468433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02577, y: 0, z: 0.00439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6667638261403950743}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5632876766005214520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1218,7 @@ Transform:
   - {fileID: 6667638261403950749}
   - {fileID: 6667638261403950739}
   - {fileID: 6667638261403950737}
+  - {fileID: 4287436919282803864}
   m_Father: {fileID: 7143986206652190851}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -5.236, y: -183.111, z: 10.081}
@@ -2781,6 +2813,8 @@ MonoBehaviour:
   m_revolverArmed: {fileID: 0}
   m_revolverUnarmed: {fileID: 0}
   m_revolverToDrop: {fileID: 0}
+  m_shootPoint: {fileID: 0}
+  m_shootEffectPrefab: {fileID: 0}
 --- !u!4 &3717946900668062366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7587822380302052528, guid: cafd3fcf01aefc541b478cb2ff9ea798, type: 3}
@@ -3510,3 +3544,5 @@ MonoBehaviour:
   m_revolverArmed: {fileID: 6667638261404304055}
   m_revolverUnarmed: {fileID: 2190877411372991578}
   m_revolverToDrop: {fileID: 1902615580508676280}
+  m_shootPoint: {fileID: 4287436919282803864}
+  m_shootEffectPrefab: {fileID: 1758473627833946668, guid: 197ee26be3a0203498861db122fa2c66, type: 3}

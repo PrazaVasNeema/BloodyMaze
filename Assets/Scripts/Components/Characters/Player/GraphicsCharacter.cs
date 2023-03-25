@@ -11,6 +11,8 @@ namespace BloodyMaze.Components
         [SerializeField] private GameObject m_revolverArmed;
         [SerializeField] private GameObject m_revolverUnarmed;
         [SerializeField] private GameObject m_revolverToDrop;
+        [SerializeField] private Transform m_shootPoint;
+        [SerializeField] private GameObject m_shootEffectPrefab;
 
         private Animator m_animator;
         private AbilitiesManager m_abilitiesManager;
@@ -93,6 +95,7 @@ namespace BloodyMaze.Components
 
         public void SetShootRoundTrigger()
         {
+            Instantiate(m_shootEffectPrefab, m_shootPoint.position, m_shootPoint.rotation);
             m_animator.SetTrigger(ShootRoundId);
         }
 
