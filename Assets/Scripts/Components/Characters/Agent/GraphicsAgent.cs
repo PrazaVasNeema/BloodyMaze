@@ -9,7 +9,7 @@ namespace BloodyMaze.Components
         [SerializeField] private Animator m_animator;
         [SerializeField] private Animator m_animatorLocked;
         private Vector3 m_prevPosition;
-        private float m_moveSpeed;
+        private float m_moveSpeed = 0f;
         protected float blendIdleFlyChangingSpeed = 0f;
         private bool m_lostTarget;
 
@@ -31,6 +31,7 @@ namespace BloodyMaze.Components
             agentComponent.onLookForTarget.AddListener(SetLookForTargetTrigger);
             agentComponent.OnSetIsTriggeredStatus.AddListener(SetLostTargetValue);
             agentComponent.OnAlert.AddListener(SetAlertTrigger);
+            m_prevPosition = transform.position;
         }
 
         private void OnDisable()
@@ -83,7 +84,7 @@ namespace BloodyMaze.Components
 
         private void LateUpdate()
         {
-            float moveSpeedDir = Vector3.SqrMagnitude(transform.position - m_prevPosition) > 0f ? 1f : 0f;
+            float moveSpeedDir = Vector3.SqrMagnitude(transform.position - m_prevPosition) > .1f ? .9f : .1f;
             // m_moveSpeed = Mathf.Lerp(m_moveSpeed, moveSpeedDir, Time.deltaTime);
             m_moveSpeed = Mathf.SmoothDamp(m_moveSpeed, moveSpeedDir, ref blendIdleFlyChangingSpeed, 0.5f, 1f);
             m_animator.SetFloat("MoveSpeed", m_moveSpeed);

@@ -12,6 +12,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private ActivateModulePickUpItem[] m_roomItems;
         [SerializeField] private AgentIdentifier[] m_roomAgents;
         [SerializeField] private CheckIfObjectShouldSpawn[] m_roomActivaters;
+        [SerializeField] private string m_eventFlagShouldBeCheckedToSpawnEnemies;
         private List<GlobalEventsData> m_globalEventsData;
         private bool m_enabledFlag;
 
@@ -132,6 +133,13 @@ namespace BloodyMaze.Controllers
 
         public void InitAgents()
         {
+            if (!string.IsNullOrEmpty(m_eventFlagShouldBeCheckedToSpawnEnemies) && !GameController.playerProfile.playerProfileData.globalEventsData.Find((x) =>
+            x.eventKey == m_eventFlagShouldBeCheckedToSpawnEnemies).flag)
+            {
+                foreach (AgentIdentifier agent in m_roomAgents)
+                    agent.gameObject.SetActive(false);
+                return;
+            }
             var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID];
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)

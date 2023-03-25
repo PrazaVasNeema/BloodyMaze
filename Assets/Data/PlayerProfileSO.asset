@@ -112,6 +112,8 @@ MonoBehaviour:
       agentsToSpawnIDs:
       - agentID: 0
         shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomID: 0
       agentsToSpawnIDs: []
@@ -227,7 +229,7 @@ MonoBehaviour:
     - roomID: 6
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomID: 0
       agentsToSpawnIDs: []
