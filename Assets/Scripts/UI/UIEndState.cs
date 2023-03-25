@@ -16,6 +16,7 @@ namespace BloodyMaze
         [SerializeField] private AudioClip m_audipClipToPlayWhileTyping;
         [SerializeField] private AudioClip m_audioClipSingleType;
         [SerializeField] private string[] m_sentencesOpenTextFieldsLocKeys = new string[3];
+        [SerializeField] private float m_sentencesTypingSpeed = .02f;
 
         private AudioSource m_audioSource;
 
@@ -33,21 +34,22 @@ namespace BloodyMaze
 
         IEnumerator EndGameCo()
         {
+            m_firstSentenceField.text = "";
+            m_secondSentenceField.text = "";
+            m_thirdSentenceField.text = "";
             List<List<string>> peopleNamesByLivingStatus = GameController.locData.GetPeopleNamesSortByLivingStatus();
             string textToType;
-            GameEvents.OnCallGotoFunction?.Invoke("none");
             GameTransitionSystem.ScreenFade();
-            ActionStatesManager.SetState(ActionStates.INTERACTING);
             // StartCoroutine(SlowDownTimeCo());
             yield return new WaitForSecondsRealtime(2f);
             textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[0])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[0])}";
-            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_firstSentenceField, textToType, m_audioSource, 0.02f));
+            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_firstSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             yield return new WaitForSecondsRealtime(1f);
             textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[1])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[1])}";
-            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_secondSentenceField, textToType, m_audioSource, 0.02f));
+            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_secondSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             yield return new WaitForSecondsRealtime(2f);
             textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[2])}";
-            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, 0.02f));
+            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             yield return new WaitForSecondsRealtime(2f);
             m_audioSource.clip = m_audioClipSingleType;
             m_audioSource.Play();

@@ -42,10 +42,13 @@ namespace BloodyMaze.States
                 case "none":
                     GotoNone();
                     break;
-                case "reload_level":
-                    ReloadLevel();
+                case "end_game":
+                    GotoEndGame();
                     break;
                 case "main_menu":
+                    ReloadLevel();
+                    break;
+                case "reload_level":
                     ReloadLevel();
                     break;
             }
@@ -73,6 +76,11 @@ namespace BloodyMaze.States
         public void GotoNone()
         {
             ChangeState<NoneState>();
+        }
+
+        public void GotoEndGame()
+        {
+            ChangeState<EndGameState>();
         }
 
         public void GotoMainMenu()
