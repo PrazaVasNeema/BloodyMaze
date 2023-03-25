@@ -36,6 +36,14 @@ namespace BloodyMaze
         private bool m_isReloaded;
         private bool m_gameShouldStart;
 
+        [SerializeField] private string[] m_UILoaderTextsLocKeys = new string[4];
+        [SerializeField] private TMP_Text m_UIToMainMenuText;
+        [SerializeField] private TMP_Text m_UIToGameplayReText_1;
+        [SerializeField] private TMP_Text m_UIToGameplayReText_2;
+        [SerializeField] private TMP_Text m_UICommonLoadingCompleteTipText;
+
+
+
 
 
         private LevelController m_levelController;
@@ -80,7 +88,14 @@ namespace BloodyMaze
                 MusicManager.current.SetJam("Gameplay");
                 shouldStartNewGame = instance.m_shouldInitNewData;
             }
+        }
 
+        public void InitInterfaceLocLoadingScreen()
+        {
+            m_UIToMainMenuText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[0]);
+            m_UIToGameplayReText_1.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[1]);
+            m_UIToGameplayReText_2.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[2]);
+            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
         }
 
         IEnumerator WaitForInitLevelCompleteCo()
@@ -106,7 +121,6 @@ namespace BloodyMaze
         }
         private static void SetRoomAgentStatus(int roomID, int agentID)
         {
-            Debug.Log("fghhgfjjghjghkjkhhjkhjk");
             playerProfile.SetRoomAgentStatus(roomID, agentID);
         }
 
@@ -200,7 +214,15 @@ namespace BloodyMaze
             m_UILoadingAnimator.SetTrigger(m_isReloaded ? "ToGameplayRe" : sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
             yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
-
+            if (m_isReloaded)
+            {
+                m_UIToGameplayReText_2.text = $"{locData.GetInterfaceText(m_UILoaderTextsLocKeys[2])} {playerProfile.playerProfileData.characterSaveData.dayNum + 1}";
+                m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[4]);
+            }
+            else
+            {
+                m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
+            }
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
             var timeToWait = m_isReloaded ? 5f : 2f;
