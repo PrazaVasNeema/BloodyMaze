@@ -98,7 +98,9 @@ namespace BloodyMaze
 
         private static void CheckEvent(string eventKey)
         {
-            instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey).flag = true;
+            var globalEvent = instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey);
+            if (globalEvent != null)
+                globalEvent.flag = true;
         }
         private static void SetRoomAgentStatus(int roomID, int agentID)
         {
@@ -200,6 +202,8 @@ namespace BloodyMaze
             {
                 m_allPlayerProfilesData[m_choosenProfileIndex].roomsData = playerProfile.defaultData.roomsData;
                 playerProfile.SetPlayerProfileSOData(m_allPlayerProfilesData[m_choosenProfileIndex]);
+                CheckEvent($"DayIsBehind_{playerProfile.playerProfileData.characterSaveData.dayNum}");
+                playerProfile.playerProfileData.characterSaveData.dayNum++;
                 SaveDataWithoutOnSave();
                 m_isReloaded = false;
             }

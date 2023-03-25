@@ -27,6 +27,7 @@ namespace BloodyMaze
         public AmmoType holyAmmoType;
         public MedsType commonMeds;
         public int lastLevelIndex;
+        public int dayNum = 0;
     }
 
     [System.Serializable]
