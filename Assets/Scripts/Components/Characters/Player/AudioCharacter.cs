@@ -51,7 +51,7 @@ namespace BloodyMaze.Components
             m_audioSourceOther.Play();
         }
 
-        private void OnReloadDrumHandler()
+        public void OnReloadDrumHandler()
         {
             m_audioSourceOther.clip = m_reloadSound;
             m_audioSourceOther.Play();

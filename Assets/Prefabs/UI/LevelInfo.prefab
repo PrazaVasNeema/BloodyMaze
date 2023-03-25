@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 3581031857328814154}
   - component: {fileID: 2224775559142899953}
   - component: {fileID: 3760504993651146313}
-  - component: {fileID: 8924490085094446405}
+  - component: {fileID: 3588563566908845213}
   m_Layer: 5
   m_Name: LevelInfo
   m_TagString: Untagged
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8924490085094446405
+--- !u!114 &3588563566908845213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,8 +299,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8924490085094446410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a8c9a5c0d193748811ed8f459534f2, type: 3}
+  m_Script: {fileID: 11500000, guid: a30c9b5be3084d348a8326db4b622da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNameText: {fileID: 374789458202868008}
-  previewImage: {fileID: 374789457779257703}
+  m_selectLevelPanel: {fileID: 0}
+  m_chooseDestinyPanel: {fileID: 0}
+  levelNameText: {fileID: 0}
+  previewImage: {fileID: 0}
