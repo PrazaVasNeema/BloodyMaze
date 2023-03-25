@@ -36,11 +36,13 @@ namespace BloodyMaze.Controllers
 
         public static void ScreenFade()
         {
+            Debug.Log("ScreenFade");
             current.m_animator.SetTrigger("Start");
         }
 
         public static void ScreenUnfade()
         {
+            Debug.Log("ScreenUnfade");
             current.m_animator.SetTrigger("End");
         }
 

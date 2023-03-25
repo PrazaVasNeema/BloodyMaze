@@ -12,6 +12,7 @@ namespace BloodyMaze
     {
         public static GameController instance { get; private set; }
 
+        [SerializeField] private Animator m_UILoadingAnimator;
         [SerializeField] private GameObject m_loader;
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
@@ -33,6 +34,7 @@ namespace BloodyMaze
         public static int choosenProfileIndex => m_choosenProfileIndex;
 
         private bool m_isReloaded;
+        private bool m_gameShouldStart;
 
 
 
@@ -191,13 +193,17 @@ namespace BloodyMaze
 
         private IEnumerator LoadSceneAsync(string sceneName)
         {
+            m_gameShouldStart = false;
             float timer = Time.unscaledTime;
             m_loader.SetActive(true);
-
+            m_UILoadingAnimator.SetBool("IsLoading", true);
+            m_UILoadingAnimator.SetTrigger(m_isReloaded ? "ToGameplayRe" : sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
+            yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
+            var timeToWait = m_isReloaded ? 5f : 2f;
             if (m_isReloaded)
             {
                 m_allPlayerProfilesData[m_choosenProfileIndex].roomsData = playerProfile.defaultData.roomsData;
@@ -209,11 +215,13 @@ namespace BloodyMaze
             }
             SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
-            if (dif < 1)
+            if (dif < timeToWait)
             {
-                yield return new WaitForSecondsRealtime(1 - dif);
+                yield return new WaitForSecondsRealtime(timeToWait - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
+            m_UILoadingAnimator.SetBool("IsLoading", false);
+
             switch (sceneName)
             {
                 case "SampleScene":
@@ -232,12 +240,28 @@ namespace BloodyMaze
                     break;
 
             }
+            GameTransitionSystem.ScreenFade();
+            GameEvents.OnCallGotoFunction?.Invoke("none");
+            while (!m_gameShouldStart)
+            {
+                if (sceneName == "MainMenu")
+                    m_gameShouldStart = true;
+                yield return new();
+            }
             m_loader.SetActive(false);
+            GameTransitionSystem.ScreenUnfade();
+            yield return new WaitForSecondsRealtime(2f);
+            // GameEvents.OnCallGotoFunction("gameplay");
         }
 
         public static void SetLoaderText(string text)
         {
             instance.m_TMP_Text.text = text;
+        }
+
+        public void SetGameShouldStart()
+        {
+            m_gameShouldStart = true;
         }
     }
 
