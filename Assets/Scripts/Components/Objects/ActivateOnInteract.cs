@@ -10,23 +10,26 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private string m_messageTextKey = "interact";
         [SerializeField] private UnityEvent onActivate;
+        [SerializeField] private LayerMask m_layerMask;
 
         private InteractComponent m_interactComponent;
         public InteractComponent interactComponent => m_interactComponent;
 
-        private void OnEnable()
-        {
-            GameEvents.OnHideMessage?.Invoke();
-            BoxCollider collider = GetComponent<BoxCollider>();
-            Vector3 worldCenter = collider.transform.TransformPoint(collider.center);
-            Vector3 worldHalfExtents = collider.transform.TransformVector(collider.size * 0.5f);
-            Collider[] colliders = Physics.OverlapBox(worldCenter, worldHalfExtents, collider.transform.rotation, LayerMask.NameToLayer("Player"));
-            if (colliders.Length > 0)
-            {
-                m_interactComponent.OnInteract += Activate;
-                GameEvents.OnShowMessage?.Invoke(m_messageTextKey);
-            }
-        }
+        // private void OnEnable()
+        // {
+        //     GameEvents.OnHideMessage?.Invoke();
+        //     BoxCollider collider = GetComponent<BoxCollider>();
+        //     Vector3 worldCenter = collider.transform.TransformPoint(collider.center);
+        //     Vector3 worldHalfExtents = collider.transform.TransformVector(collider.size * 0.5f);
+        //     Collider[] colliders = Physics.OverlapBox(worldCenter, worldHalfExtents, collider.transform.rotation, LayerMask.GetMask("Player"));
+        //     if (colliders.Length > 0)
+        //     {
+        //         Debug.Log(colliders.Length);
+        //         colliders[0].gameObject.GetComponentInParent<InteractComponent>().OnInteract += Activate;
+        //         // m_interactComponent.OnInteract += Activate;
+        //         GameEvents.OnShowMessage?.Invoke(m_messageTextKey);
+        //     }
+        // }
 
         private void OnTriggerEnter(Collider other)
         {

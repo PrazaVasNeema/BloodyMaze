@@ -262,16 +262,16 @@ namespace BloodyMaze
                     break;
 
             }
-            GameTransitionSystem.ScreenFade();
-            GameEvents.OnCallGotoFunction?.Invoke("none");
-            while (!m_gameShouldStart)
-            {
-                if (sceneName == "MainMenu")
-                    m_gameShouldStart = true;
-                yield return new();
-            }
+            if (sceneName != "MainMenu")
+                GameTransitionSystem.ScreenFade();
+            if (sceneName != "MainMenu")
+                while (!m_gameShouldStart)
+                {
+                    yield return new();
+                }
             m_loader.SetActive(false);
-            GameTransitionSystem.ScreenUnfade();
+            if (sceneName != "MainMenu")
+                GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);
             // GameEvents.OnCallGotoFunction("gameplay");
         }

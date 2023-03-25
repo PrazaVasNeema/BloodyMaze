@@ -13,6 +13,16 @@ namespace BloodyMaze.Components
 
         private CharacterController m_characterController;
 
+        private void OnEnable()
+        {
+            GameEvents.OnEnterInteractingState += SetVelocityToZero;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnEnterInteractingState -= SetVelocityToZero;
+        }
+
         private void Awake()
         {
             m_characterController = GetComponent<CharacterController>();
@@ -31,6 +41,11 @@ namespace BloodyMaze.Components
         public override void Init(float speed)
         {
             m_speed = speed;
+        }
+
+        private void SetVelocityToZero()
+        {
+            m_characterController.SimpleMove(Vector3.zero);
         }
     }
 }

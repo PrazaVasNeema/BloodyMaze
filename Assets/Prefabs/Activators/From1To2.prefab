@@ -487,6 +487,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1250591336383199606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,8 +536,8 @@ MonoBehaviour:
   m_eventFlagToCheck: 
   m_audioClips:
   - {fileID: 8300000, guid: 0c1d46f451190514aafbab7d99d085b9, type: 3}
-  - {fileID: 8300000, guid: 0c1d46f451190514aafbab7d99d085b9, type: 3}
-  - {fileID: 8300000, guid: 0c1d46f451190514aafbab7d99d085b9, type: 3}
+  - {fileID: 8300000, guid: 276a1dce92eae1146812db6f875b8db8, type: 3}
+  - {fileID: 8300000, guid: 51f71f54e8bf91540a054ba52b776540, type: 3}
   m_shouldPlayRandom: 1
 --- !u!82 &7954231223352604125
 AudioSource:

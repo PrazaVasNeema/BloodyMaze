@@ -38,7 +38,10 @@ namespace BloodyMaze
                         isBattleState = true;
                     }
                     else
+                    {
                         current.m_state = ActionStates.INTERACTING;
+                        GameEvents.OnEnterInteractingState?.Invoke();
+                    }
                     break;
                 case ActionStates.BATTLE:
                     if (current.m_enemiesTriggered == 0)
@@ -54,6 +57,8 @@ namespace BloodyMaze
         public static void SetState(ActionStates stateToSet)
         {
             current.m_state = stateToSet;
+            if (current.m_state == ActionStates.INTERACTING)
+                GameEvents.OnEnterInteractingState?.Invoke();
         }
 
         public static void ChangeEnemiesTriggeredCount(int changingDir)
