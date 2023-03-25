@@ -155,7 +155,7 @@ MonoBehaviour:
       itemsToSpawnIDs: []
   playerProfileData:
     characterSaveData:
-      currentHealth: 60
+      currentHealth: 55
       maxHealth: 100
       currentMana: 100
       maxMana: 100
@@ -163,14 +163,14 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 23
+        currentAmmo: 15
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 1
+        currentAmount: 0
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
@@ -185,23 +185,23 @@ MonoBehaviour:
     - eventKey: pick_up_key_one
       flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
-      flag: 0
+      flag: 1
     - eventKey: opened_library_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl_in_library_secret
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
@@ -244,9 +244,7 @@ MonoBehaviour:
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
     - roomKey: bathroom_secret
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 1
+      agentsToSpawnIDs: []
       itemsToSpawnIDs: []
     - roomKey: dining_room
       agentsToSpawnIDs: []
@@ -254,9 +252,9 @@ MonoBehaviour:
     - roomKey: library
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: locked_room
       agentsToSpawnIDs: []
@@ -280,9 +278,9 @@ MonoBehaviour:
     - roomKey: piano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: inner_house_room_1
       agentsToSpawnIDs:

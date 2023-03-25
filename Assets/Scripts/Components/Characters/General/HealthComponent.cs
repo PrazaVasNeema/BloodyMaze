@@ -34,7 +34,8 @@ namespace BloodyMaze.Components
             onTakeDamage?.Invoke();
             if (m_currentHealth == 0)
             {
-                m_objectToSetUnactiveOnDeath.SetActive(false);
+                if (m_objectToSetUnactiveOnDeath != null)
+                    m_objectToSetUnactiveOnDeath.SetActive(false);
                 onDead.Invoke();
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();

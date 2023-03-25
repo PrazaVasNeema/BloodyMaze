@@ -34,6 +34,7 @@ namespace BloodyMaze
 
         IEnumerator EndGameCo()
         {
+            m_exitButton.GetComponentInChildren<TMP_Text>().text = m_sentencesOpenTextFieldsLocKeys[3];
             m_firstSentenceField.text = "";
             m_secondSentenceField.text = "";
             m_thirdSentenceField.text = "";
