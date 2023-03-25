@@ -511,6 +511,10 @@ MonoBehaviour:
     text:
     - "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C: \u043A\u043B\u044E\u0447"
     - Map
+  - key: place_mirror
+    text:
+    - "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0448\u0442\u044B\u0440\u044C"
+    - Map
   locMiniMessagesText:
   - key: closed
     text:
@@ -519,6 +523,11 @@ MonoBehaviour:
   - key: key_needed
     text:
     - "\u041D\u0443\u0436\u0435\u043D \u043A\u043B\u044E\u0447"
+    - Key is required
+  - key: something_needed
+    text:
+    - "\u0427\u0435\u0433\u043E-\u0442\u043E \u043D\u0435 \u0445\u0432\u0430\u0442\u0430\u0435\u0442
+      . . "
     - Key is required
   locJournalNotesText: []
   locPersonsData:

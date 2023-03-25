@@ -12,7 +12,6 @@ public class MoveToPosition : ActionNode
     {
         context.agent.stoppingDistance = stoppingDistance;
         context.agent.destination = blackboard.moveToPosition;
-        Debug.Log(context.agent.destination);
     }
 
     protected override void OnStop()

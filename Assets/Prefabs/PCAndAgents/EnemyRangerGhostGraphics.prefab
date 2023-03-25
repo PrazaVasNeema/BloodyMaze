@@ -1357,6 +1357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentHealth: 100
   m_maxHealth: 100
+  m_objectToSetUnactiveOnDeath: {fileID: 2536498855565585537}
   onDead:
     m_PersistentCalls:
       m_Calls: []

@@ -11,6 +11,7 @@ namespace BloodyMaze.Components
         public float currentHealth => m_currentHealth;
         [SerializeField] private float m_maxHealth = 100;
         public float maxHealth => m_maxHealth;
+        [SerializeField] private GameObject m_objectToSetUnactiveOnDeath;
 
 
         public bool isDead => m_currentHealth <= 0;
@@ -33,6 +34,7 @@ namespace BloodyMaze.Components
             onTakeDamage?.Invoke();
             if (m_currentHealth == 0)
             {
+                m_objectToSetUnactiveOnDeath.SetActive(false);
                 onDead.Invoke();
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();

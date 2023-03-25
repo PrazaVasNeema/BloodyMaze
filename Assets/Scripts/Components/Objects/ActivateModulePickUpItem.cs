@@ -7,6 +7,8 @@ namespace BloodyMaze.Components
 {
     public class ActivateModulePickUpItem : ActivateModuleAbstract
     {
+        [SerializeField] private string m_eventKeyShouldBeUncheckedForItemToBeAdded;
+        public string eventKeyShouldBeUncheckedForItemToBeAdded => m_eventKeyShouldBeUncheckedForItemToBeAdded;
         private PickableItemComponent m_item;
         public PickableItemComponent item => m_item;
 

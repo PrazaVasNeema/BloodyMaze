@@ -51,11 +51,12 @@ namespace BloodyMaze.Controllers
                         }
                     }
                 }
-                ActivateModulePickUpItem activateModulePickUpItem;
-
-                if (m_roomActivaters[i].TryGetComponent<ActivateModulePickUpItem>(out activateModulePickUpItem) && !flag)
+                ActivateModulePickUpItem activateModulePickUpItem = new();
+                if (m_roomActivaters[i].transform.childCount > 0 && m_roomActivaters[i].transform.GetChild(0).TryGetComponent<ActivateModulePickUpItem>(out activateModulePickUpItem) && !flag)
                 {
-                    GameInventory.current.AddItem(activateModulePickUpItem.item.item);
+                    var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == activateModulePickUpItem.eventKeyShouldBeUncheckedForItemToBeAdded);
+                    if (globalEventsEvent != null && globalEventsEvent.flag == false)
+                        GameInventory.current.AddItem(activateModulePickUpItem.item.item);
                 }
 
                 m_roomActivaters[i].gameObject.SetActive(flag);
@@ -133,6 +134,7 @@ namespace BloodyMaze.Controllers
 
         public void InitAgents()
         {
+            Debug.Log("InitAgents");
             if (!string.IsNullOrEmpty(m_eventFlagShouldBeCheckedToSpawnEnemies) && !GameController.playerProfile.playerProfileData.globalEventsData.Find((x) =>
             x.eventKey == m_eventFlagShouldBeCheckedToSpawnEnemies).flag)
             {
@@ -141,6 +143,7 @@ namespace BloodyMaze.Controllers
                     agent.gameObject.SetActive(false);
                 return;
             }
+            Debug.Log("InitAgents2");
             var temp = GameController.playerProfile.playerProfileData.roomsData.Find((x) => x.roomKey == m_roomKey);
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
@@ -148,13 +151,15 @@ namespace BloodyMaze.Controllers
             for (int i = 0; i < agentsToSpawnIDs.Count; i++)
             {
                 var temp2 = agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID);
-                if (temp2 != null && temp2.shouldntSpawn)
+                if (temp2 != null)
                 {
-                    m_roomAgents[i].gameObject.SetActive(false);
+                    m_roomAgents[i].gameObject.SetActive(temp2.shouldntSpawn ? false : true);
                 }
                 if (!temp2.shouldntSpawn)
                     m_roomAgents[i].OnDead.AddListener(ChangeRoomAgentStatus);
             }
+            Debug.Log("InitAgents3");
+
         }
 
         public void ShowAgents(List<int> agentsNumsToShow)
