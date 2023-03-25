@@ -38,7 +38,7 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
       flag: 0
     - eventKey: pick_up_key_one
@@ -88,46 +88,67 @@ MonoBehaviour:
     optionsData:
       language: 0
     roomsData:
-    - roomID: 0
+    - roomKey: outsides
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      - agentID: 2
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: bathroom
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: bathroom_secret
       agentsToSpawnIDs:
       - agentID: 0
         shouldntSpawn: 1
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: dining_room
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 6
+    - roomKey: library
       agentsToSpawnIDs:
       - agentID: 0
         shouldntSpawn: 0
       - agentID: 1
         shouldntSpawn: 0
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: locked_room
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: main_hall
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      - agentID: 2
+        shouldntSpawn: 0
+      - agentID: 3
+        shouldntSpawn: 0
+      - agentID: 4
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: safe_zone
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
+    - roomKey: piano_room
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
+    - roomKey: inner_house_room_1
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: inner_house_room_2
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
   playerProfileData:
@@ -140,14 +161,14 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 42
+        currentAmmo: 34
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 4
+        currentAmount: 2
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
@@ -156,9 +177,9 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -206,43 +227,66 @@ MonoBehaviour:
     optionsData:
       language: 0
     roomsData:
-    - roomID: 0
+    - roomKey: outsides
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      - agentID: 2
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: bathroom
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: bathroom_secret
       agentsToSpawnIDs:
       - agentID: 0
         shouldntSpawn: 1
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: dining_room
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: library
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: locked_room
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 6
+    - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
         shouldntSpawn: 1
+      - agentID: 1
+        shouldntSpawn: 1
+      - agentID: 2
+        shouldntSpawn: 1
+      - agentID: 3
+        shouldntSpawn: 1
+      - agentID: 4
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: safe_zone
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
+    - roomKey: piano_room
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
+    - roomKey: inner_house_room_1
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
-    - roomID: 0
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomID: 0
+    - roomKey: inner_house_room_2
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []

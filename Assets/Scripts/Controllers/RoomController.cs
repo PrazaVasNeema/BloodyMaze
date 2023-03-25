@@ -7,8 +7,8 @@ namespace BloodyMaze.Controllers
 {
     public class RoomController : MonoBehaviour
     {
-        [SerializeField] private int m_roomID;
-        public int roomID => m_roomID;
+        [SerializeField] private string m_roomKey;
+        public string roomKey => m_roomKey;
         [SerializeField] private ActivateModulePickUpItem[] m_roomItems;
         [SerializeField] private AgentIdentifier[] m_roomAgents;
         [SerializeField] private CheckIfObjectShouldSpawn[] m_roomActivaters;
@@ -62,7 +62,7 @@ namespace BloodyMaze.Controllers
 
             }
 
-            Debug.Log(roomID);
+            Debug.Log(roomKey);
 
             // for (int i = 0; i < m_roomItems.Length; i++)
             // {
@@ -140,7 +140,7 @@ namespace BloodyMaze.Controllers
                     agent.gameObject.SetActive(false);
                 return;
             }
-            var temp = GameController.playerProfile.playerProfileData.roomsData[m_roomID];
+            var temp = GameController.playerProfile.playerProfileData.roomsData.Find((x) => x.roomKey == m_roomKey);
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;
@@ -185,7 +185,7 @@ namespace BloodyMaze.Controllers
         private void ChangeRoomAgentStatus(int agentID)
         {
             Debug.Log("Roomhgfjghjjh");
-            GameEvents.OnSetNewRoomAgentStatus?.Invoke(roomID, agentID);
+            GameEvents.OnSetNewRoomAgentStatus?.Invoke(roomKey, agentID);
             m_roomAgents[agentID].GetComponent<AgentIdentifier>().OnDead.RemoveListener(ChangeRoomAgentStatus);
         }
     }

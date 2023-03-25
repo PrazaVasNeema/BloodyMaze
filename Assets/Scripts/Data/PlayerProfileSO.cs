@@ -18,10 +18,10 @@ namespace BloodyMaze
             return playerProfileData.characterSaveData;
         }
 
-        public void SetRoomAgentStatus(int roomID, int agentID)
+        public void SetRoomAgentStatus(string roomID, int agentID)
         {
-            playerProfileData.roomsData.Find((x) => x.roomID == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID).shouldntSpawn = true;
-            Debug.Log(playerProfileData.roomsData.Find((x) => x.roomID == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID));
+            playerProfileData.roomsData.Find((x) => x.roomKey == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID).shouldntSpawn = true;
+            Debug.Log(playerProfileData.roomsData.Find((x) => x.roomKey == roomID).agentsToSpawnIDs.Find((x) => x.agentID == agentID));
         }
 
         public void SetPlayerProfileSOData(PlayerProfileData playerProfileDataToSet)

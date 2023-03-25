@@ -12,7 +12,7 @@ namespace BloodyMaze.Components
         public Transform[] m_patrol_positions;
         private int m_currentPositionIndex = 0;
 
-        public Vector2 ChooseNext()
+        public Vector3 ChooseNext()
         {
             Debug.Log("AIPatrolPositionsManager");
             if (m_patrol_positions.Length == 0)

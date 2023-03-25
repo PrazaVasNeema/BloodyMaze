@@ -19,7 +19,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         public GameObject virtualCamera => m_virtualCamera.gameObject;
         [SerializeField] private RoomController[] m_rooms;
-        [SerializeField] private int m_activeRoom;
+        [SerializeField] private string m_activeRoom;
         [SerializeField] private List<ActivateModuleCallTransition> m_transiters;
         [SerializeField] private bool m_shouldHideRooms;
 
@@ -43,11 +43,11 @@ namespace BloodyMaze.Controllers
                 m_transiters[i + 1].InitRoomTransiter(m_transiters[i]);
             }
             m_activeRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
-                        7 : 0;
+                        "safe_zone" : "outsides";
             foreach (RoomController rc in m_rooms)
             {
                 rc.Init();
-                if (rc.roomID == m_activeRoom)
+                if (rc.roomKey == m_activeRoom)
                     rc.gameObject.SetActive(true);
                 else
                 if (m_shouldHideRooms)

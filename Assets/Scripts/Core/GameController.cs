@@ -119,7 +119,7 @@ namespace BloodyMaze
             if (globalEvent != null)
                 globalEvent.flag = true;
         }
-        private static void SetRoomAgentStatus(int roomID, int agentID)
+        private static void SetRoomAgentStatus(string roomID, int agentID)
         {
             playerProfile.SetRoomAgentStatus(roomID, agentID);
         }
