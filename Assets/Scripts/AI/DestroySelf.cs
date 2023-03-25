@@ -10,8 +10,11 @@ namespace BloodyMaze.AI
     {
         protected override void OnStart()
         {
-            ActionStatesManager.ChangeEnemiesTriggeredCount(-1);
-            ActionStatesManager.ChangeState();
+            if (ActionStatesManager.current.enemiesTriggered != 0)
+            {
+                ActionStatesManager.ChangeEnemiesTriggeredCount(-1);
+                ActionStatesManager.ChangeState();
+            }
             GameObject.Destroy(context.gameObject);
         }
 

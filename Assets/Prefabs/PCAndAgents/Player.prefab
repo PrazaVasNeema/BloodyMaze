@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_current: 100
   m_maxValue: 100
-  m_restoringRate: 30
+  m_restoringRate: 50
 --- !u!114 &6713269016660691082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2986,7 +2986,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1147402613172773879, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: m_damage
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2894385567903539355, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: m_RootOrder
@@ -3031,6 +3031,10 @@ PrefabInstance:
     - target: {fileID: 2894385567903539355, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019358230191026712, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
+      propertyPath: m_drainingTime
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8019358230191026712, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: OnActivateBarrier.m_PersistentCalls.m_Calls.Array.size
