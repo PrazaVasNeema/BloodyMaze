@@ -1260,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 2536498855496668811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -41.76656, y: -3.4794154, z: -168.07285}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.46, y: 1.46, z: 1.46}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2536498855862592375}
@@ -1409,6 +1409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentID: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2536498855565585537
 GameObject:
   m_ObjectHideFlags: 0

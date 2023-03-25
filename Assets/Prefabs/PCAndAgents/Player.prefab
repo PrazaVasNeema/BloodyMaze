@@ -1571,6 +1571,7 @@ MonoBehaviour:
       maxAmount: 0
       currentAmount: 0
     lastLevelIndex: 0
+    dayNum: 0
   healthComponent: {fileID: 0}
   manaComponent: {fileID: 0}
   movementComponentCharacter: {fileID: 0}
@@ -1760,10 +1761,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.316
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1856,7 +1857,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1953,8 +1954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9172624a47f91f4ea4d11c716dbcf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_walkSound: {fileID: 0}
-  m_shootSound: {fileID: 0}
+  m_walkSound: {fileID: 8300000, guid: 27c6f7887c7606144b6b10a639fc620e, type: 3}
+  m_shootSound: {fileID: 8300000, guid: d3e32a578aa6bc7458c3c2707cf6e59e, type: 3}
   m_reloadSound: {fileID: 0}
 --- !u!1 &6713269016876499788
 GameObject:

@@ -16,6 +16,8 @@ namespace BloodyMaze.Components
         private AudioSource m_audioSourceWalk;
         private AudioSource m_audioSourceOther;
 
+        private bool m_doOnceWalking;
+
         private void Awake()
         {
             m_abilitiesManager = GetComponentInParent<AbilitiesManager>();
@@ -23,6 +25,12 @@ namespace BloodyMaze.Components
             AudioSource[] audioSources = GetComponents<AudioSource>();
             m_audioSourceWalk = audioSources[0];
             m_audioSourceOther = audioSources[1];
+        }
+
+        private void Start()
+        {
+            m_audioSourceWalk.clip = m_walkSound;
+            m_audioSourceWalk.Play();
         }
 
         private void OnEnable()
@@ -54,17 +62,18 @@ namespace BloodyMaze.Components
             // transform.LookAt(new Vector3(1, transform.position.y, 1));
             // transform.LookAt(m_currentTarget.transform);
             var velocity = Mathf.Clamp01(m_movementComponentCharacter.velocity / m_movementComponentCharacter.speed);
-            if (velocity >= .1f && m_audioSourceWalk.clip != m_walkSound)
+            if (velocity >= .1f)
             {
-                m_audioSourceWalk.clip = m_walkSound;
-                m_audioSourceWalk.Play();
+                m_audioSourceWalk.UnPause();
+                m_doOnceWalking = true;
             }
             else
             {
-                m_audioSourceWalk.Stop();
-                m_audioSourceWalk.clip = null;
+                m_audioSourceWalk.Pause();
+                m_doOnceWalking = false;
             }
         }
+
 
 
     }

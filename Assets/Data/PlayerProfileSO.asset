@@ -38,27 +38,27 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
       flag: 1
     - eventKey: opened_library_secret
       flag: 1
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
@@ -138,7 +138,7 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 40
+        currentAmmo: 42
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
@@ -154,27 +154,27 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
       flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
       flag: 1
     - eventKey: opened_library_secret
       flag: 1
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
@@ -186,6 +186,20 @@ MonoBehaviour:
     - eventKey: library_note_1
       flag: 0
     - eventKey: library_secret_note_1
+      flag: 0
+    - eventKey: DayIsBehind_0
+      flag: 0
+    - eventKey: DayIsBehind_1
+      flag: 0
+    - eventKey: DayIsBehind_2
+      flag: 0
+    - eventKey: DayIsBehind_3
+      flag: 0
+    - eventKey: DayIsBehind_4
+      flag: 0
+    - eventKey: DayIsBehind_5
+      flag: 0
+    - eventKey: DayIsBehind_6
       flag: 0
     optionsData:
       language: 0
@@ -213,7 +227,7 @@ MonoBehaviour:
     - roomID: 6
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomID: 0
       agentsToSpawnIDs: []
