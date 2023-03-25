@@ -523,12 +523,12 @@ MonoBehaviour:
   locJournalNotesText: []
   locPersonsData:
   - correspondingEventKey: DayIsBehind_1
-    name: 1
+    name: "\u0414\u0436\u0435\u0439\u043C\u0441"
   - correspondingEventKey: DayIsBehind_2
-    name: 2
+    name: "\u041A\u043B\u0430\u0440\u0430"
   - correspondingEventKey: DayIsBehind_3
-    name: 3
+    name: "\u0410\u043B\u044C\u0444\u0440\u0435\u0434"
   - correspondingEventKey: DayIsBehind_4
-    name: 4
+    name: "\u0414\u0436\u043E\u043D\u043D\u0438"
   - correspondingEventKey: DayIsBehind_5
-    name: 5
+    name: "\u041A\u0435\u0439\u0442"
