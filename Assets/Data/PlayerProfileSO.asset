@@ -38,7 +38,7 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
       flag: 0
     - eventKey: pick_up_key_one
@@ -56,6 +56,8 @@ MonoBehaviour:
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
+      flag: 0
+    - eventKey: talked_to_girl_in_library_secret
       flag: 0
     - eventKey: pick_up_key_three
       flag: 0
@@ -161,14 +163,14 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 34
+        currentAmmo: 42
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 2
+        currentAmount: 4
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
@@ -177,9 +179,9 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -260,15 +262,15 @@ MonoBehaviour:
     - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 2
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 3
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 4
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: safe_zone
       agentsToSpawnIDs: []

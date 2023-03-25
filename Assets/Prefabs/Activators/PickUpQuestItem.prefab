@@ -142,6 +142,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6670713599902078554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +398,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 683369936070463221, guid: a932a661c387b7648a79c9f5e15dd9f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a932a661c387b7648a79c9f5e15dd9f0, type: 3}
 --- !u!4 &189450694912345447 stripped
 Transform:

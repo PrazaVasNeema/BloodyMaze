@@ -374,6 +374,13 @@ MonoBehaviour:
           \u043F\u0440\u0438\u0437\u043D\u0430\u0442\u044C \u044D\u0442\u043E, \u0442\u043E
           \u0441\u0442\u0430\u043D\u044C \u0441\u0442\u0443\u043F\u0435\u043D\u044C\u044E
           \u043D\u0430 \u043C\u043E\u0435\u043C \u043F\u0443\u0442\u0438 \u043A \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u0441\u0442\u0432\u0443!"
+  - key: 6
+    dialogue:
+    - sentencesData:
+      - personName: "\u0414\u0435\u0442\u0435\u043A\u0442\u0438\u0432"
+        sentence: "\u0418\u0434\u0435\u043C"
+      - personName: "\u0414\u0435\u0442\u0435\u043A\u0442\u0438\u0432"
+        sentence: "\u041F\u043E\u0440\u0430 \u0434\u043E\u043C\u043E\u0439"
   locInterfaceTexts: []
   locMessagesText:
   - key: interact
@@ -464,6 +471,14 @@ MonoBehaviour:
     text:
     - "\u0421\u043E\u043B\u043D\u0446\u0435"
     - Map
+  - key: pick_up_mirror
+    text:
+    - "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C: \u0437\u0435\u0440\u043A\u0430\u043B\u043E"
+    - Map
+  - key: pick_up_key
+    text:
+    - "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C: \u043A\u043B\u044E\u0447"
+    - Map
   locMiniMessagesText:
   - key: closed
     text:
@@ -474,3 +489,14 @@ MonoBehaviour:
     - "\u041D\u0443\u0436\u0435\u043D \u043A\u043B\u044E\u0447"
     - Key is required
   locJournalNotesText: []
+  locPersonsData:
+  - correspondingEventKey: DayIsBehind_1
+    name: 1
+  - correspondingEventKey: DayIsBehind_2
+    name: 2
+  - correspondingEventKey: DayIsBehind_3
+    name: 3
+  - correspondingEventKey: DayIsBehind_4
+    name: 4
+  - correspondingEventKey: DayIsBehind_5
+    name: 5
