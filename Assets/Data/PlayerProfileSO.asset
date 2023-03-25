@@ -60,7 +60,7 @@ MonoBehaviour:
     - eventKey: pick_up_key_three
       flag: 1
     - eventKey: opened_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: outsides_note_1
       flag: 0
     - eventKey: dining_note_1
@@ -74,9 +74,9 @@ MonoBehaviour:
     - eventKey: DayIsBehind_0
       flag: 0
     - eventKey: DayIsBehind_1
-      flag: 0
+      flag: 1
     - eventKey: DayIsBehind_2
-      flag: 0
+      flag: 1
     - eventKey: DayIsBehind_3
       flag: 0
     - eventKey: DayIsBehind_4
@@ -176,7 +176,7 @@ MonoBehaviour:
     - eventKey: pick_up_key_three
       flag: 1
     - eventKey: opened_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: outsides_note_1
       flag: 0
     - eventKey: dining_note_1
@@ -190,9 +190,9 @@ MonoBehaviour:
     - eventKey: DayIsBehind_0
       flag: 0
     - eventKey: DayIsBehind_1
-      flag: 0
+      flag: 1
     - eventKey: DayIsBehind_2
-      flag: 0
+      flag: 1
     - eventKey: DayIsBehind_3
       flag: 0
     - eventKey: DayIsBehind_4
@@ -227,7 +227,7 @@ MonoBehaviour:
     - roomID: 6
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomID: 0
       agentsToSpawnIDs: []

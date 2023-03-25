@@ -14,7 +14,34 @@ namespace BloodyMaze
         public List<LocMessagesText> locMessagesText;
         public List<LocMiniMessagesText> locMiniMessagesText;
         public List<LocJournalNotesText> locJournalNotesText;
+        public List<PersonData> locPersonsData;
 
+        public List<List<string>> GetPeopleNamesSortByLivingStatus()
+        {
+            List<List<string>> peopleNamesByLivingStatus = new();
+            peopleNamesByLivingStatus.Add(new List<string>());
+            peopleNamesByLivingStatus.Add(new List<string>());
+            foreach (PersonData personData in locPersonsData)
+            {
+                GlobalEventsData globalEvent = GameController.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == personData.correspondingEventKey);
+                if (globalEvent != null)
+                {
+                    switch (globalEvent.flag)
+                    {
+                        case true:
+                            peopleNamesByLivingStatus[1].Add(personData.name);
+                            break;
+                        case false:
+                            peopleNamesByLivingStatus[0].Add(personData.name);
+                            break;
+                    }
+                }
+            }
+            return peopleNamesByLivingStatus;
+            // var temp = locNotesTexts.Find((x) => x.key == key);
+            // return locNotesTexts.Find((x) => x.key == key).text[0];
+            // return locNotesTexts[0].text[0];
+        }
 
         public string GetNoteText(string key)
         {
@@ -48,6 +75,12 @@ namespace BloodyMaze
         public string GetMiniMessage(string key)
         {
             return locMiniMessagesText.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
+
+        }
+
+        public string GetInterfaceText(string key)
+        {
+            return locInterfaceTexts.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
 
         }
     }
@@ -98,5 +131,12 @@ namespace BloodyMaze
     {
         public string key;
         public string[] text;
+    }
+
+    [System.Serializable]
+    public class PersonData
+    {
+        public string correspondingEventKey;
+        public string name;
     }
 }
