@@ -50,7 +50,7 @@ namespace BloodyMaze.States
         {
             if (index >= 0 && index < m_levelsData.Count)
             {
-                m_uiLevelInfo.SetInfo(m_levelsData[index]);
+                m_uiLevelInfo.SetInfo(m_levelsData[index], index == m_levelsData.Count - 1 ? true : false, index == 0 ? true : false);
                 m_playerProfile.playerProfileData.characterSaveData.lastLevelIndex = index;
                 return true;
             }

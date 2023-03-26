@@ -613,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 88746161171190737, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3e2911ccb7546824cb7d677f834f60dc, type: 3}
+      objectReference: {fileID: 21300000, guid: c76ebd7eed0a810429433bebe6033f6d, type: 3}
     - target: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Name
       value: PrevChapter
@@ -621,6 +621,22 @@ PrefabInstance:
     - target: {fileID: 4077802037765298369, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167410938}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PrevLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BloodyMaze.States.SelectLevelState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Pivot.x
@@ -672,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -680,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalRotation.z
@@ -700,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -840,6 +856,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &383894266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+  m_PrefabInstance: {fileID: 313098850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &524053451 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
@@ -884,7 +905,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 62}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 258.38, y: 407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540310533
 MonoBehaviour:
@@ -1543,6 +1564,22 @@ PrefabInstance:
     - target: {fileID: 4077802037765298369, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167410938}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BloodyMaze.States.SelectLevelState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8628006730689382758, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Pivot.x
@@ -2231,6 +2268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_selectLevelPanel: {fileID: 642692063}
   m_chooseDestinyPanel: {fileID: 1302055209}
+  m_buttonNext: {fileID: 1851107739}
+  m_buttonPrev: {fileID: 383894266}
   levelNameText: {fileID: 1156606148}
   previewImage: {fileID: 1156606149}
 --- !u!1 &1257508887
@@ -3219,7 +3258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1762359731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3481,6 +3520,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5988485787166361815, guid: ee99a18178dfb8e46913247dc7f02922, type: 3}
   m_PrefabInstance: {fileID: 1790018766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851107739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+  m_PrefabInstance: {fileID: 836751001}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945587615
 GameObject:
