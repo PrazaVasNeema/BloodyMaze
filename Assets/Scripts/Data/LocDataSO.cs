@@ -45,7 +45,7 @@ namespace BloodyMaze
 
         public string GetNoteText(string key)
         {
-            return locNotesTexts.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
+            return locNotesTexts.Find((x) => x.key == key).text[GameController.gameOptions.GameOptionsData.language];
             // var temp = locNotesTexts.Find((x) => x.key == key);
             // return locNotesTexts.Find((x) => x.key == key).text[0];
             // return locNotesTexts[0].text[0];
@@ -60,7 +60,7 @@ namespace BloodyMaze
 
         public Dialogue GetDialogue(string key)
         {
-            return locDialogueTexts.Find((x) => x.key == key).dialogue[GameController.playerProfile.playerProfileData.optionsData.language];
+            return locDialogueTexts.Find((x) => x.key == key).dialogue[GameController.gameOptions.GameOptionsData.language];
 
         }
 
@@ -68,19 +68,19 @@ namespace BloodyMaze
 
         public string GetMessage(string key)
         {
-            return locMessagesText.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
+            return locMessagesText.Find((x) => x.key == key).text[GameController.gameOptions.GameOptionsData.language];
 
         }
 
         public string GetMiniMessage(string key)
         {
-            return locMiniMessagesText.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
+            return locMiniMessagesText.Find((x) => x.key == key).text[GameController.gameOptions.GameOptionsData.language];
 
         }
 
         public string GetInterfaceText(string key)
         {
-            var temp = locInterfaceTexts.Find((x) => x.key == key).text[GameController.playerProfile.playerProfileData.optionsData.language];
+            var temp = locInterfaceTexts.Find((x) => x.key == key).text[GameController.gameOptions.GameOptionsData.language];
             return string.IsNullOrEmpty(temp) ? key : temp;
 
         }

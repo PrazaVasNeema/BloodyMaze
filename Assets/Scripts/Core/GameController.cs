@@ -49,7 +49,7 @@ namespace BloodyMaze
         [SerializeField] private AudioMixer m_SFXMixer;
 
 
-        public System.Action OnLoadingDataComplete;
+        public System.Action OnLoadingDataGameOptionsComplete;
 
 
 
@@ -198,9 +198,12 @@ namespace BloodyMaze
         {
             GameOptionsData newOptionsData = new();
             newOptionsData.language = language;
+            Debug.Log($"set: {newOptionsData.language}");
             newOptionsData.volumeMusic = music;
             newOptionsData.volumeSFX = sfx;
             gameOptions.GameOptionsData = newOptionsData;
+            Debug.Log($"set2: {gameOptions.GameOptionsData.language}");
+
             SaveDataGameOptions();
             LoadDataGameOptions();
         }
@@ -210,21 +213,19 @@ namespace BloodyMaze
             var json = instance.m_gameOptions.ToJsonGameOptions();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"GameOptionsData", json);
-
         }
 
         private static void LoadDataGameOptions()
         {
             var json = "";
-            if (!instance.m_shouldInitNewData)
-            {
-                json = PlayerPrefs.GetString("GameOptionsData");
-                Debug.Log($">>> load {json}");
-            }
+
+            json = PlayerPrefs.GetString("GameOptionsData");
+            Debug.Log($">>> load {json}");
+
             instance.m_gameOptions.LoadFromJsonGameOptions(json);
             instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic);
             instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX);
-            instance.OnLoadingDataComplete?.Invoke();
+            instance.OnLoadingDataGameOptionsComplete?.Invoke();
         }
 
         //GameOptionsZone END

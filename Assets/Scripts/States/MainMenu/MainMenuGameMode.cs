@@ -19,12 +19,12 @@ namespace BloodyMaze.States
         }
         private void OnEnable()
         {
-            GameController.instance.OnLoadingDataComplete += InitOptionsAndLoc;
+            GameController.instance.OnLoadingDataGameOptionsComplete += InitOptionsAndLoc;
         }
 
         private void OnDisable()
         {
-            GameController.instance.OnLoadingDataComplete -= InitOptionsAndLoc;
+            GameController.instance.OnLoadingDataGameOptionsComplete -= InitOptionsAndLoc;
         }
 
         private void InitOptionsAndLoc()
