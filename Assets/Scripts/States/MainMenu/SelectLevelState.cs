@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.UI;
 
 namespace BloodyMaze.States
 {
