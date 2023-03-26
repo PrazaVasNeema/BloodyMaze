@@ -47,6 +47,8 @@ namespace BloodyMaze
         public static GameOptionsSO gameOptions => instance.m_gameOptions;
         [SerializeField] private AudioMixer m_musicMixer;
         [SerializeField] private AudioMixer m_SFXMixer;
+        private bool m_gameInitializeComplete = false;
+        public static bool gameInitializeComplete => instance.m_gameInitializeComplete;
 
 
         public System.Action OnLoadingDataGameOptionsComplete;
@@ -111,6 +113,7 @@ namespace BloodyMaze
         IEnumerator WaitForInitLevelCompleteCo()
         {
             yield return new WaitForSecondsRealtime(1f);
+            m_gameInitializeComplete = true;
             GameEvents.OnInitLevelComplete?.Invoke();
         }
 

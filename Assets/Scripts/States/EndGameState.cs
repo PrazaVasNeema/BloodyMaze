@@ -8,7 +8,8 @@ namespace BloodyMaze.States
     {
         private void OnEnable()
         {
-            ActionStatesManager.SetState(ActionStates.INTERACTING);
+            if (GameController.gameInitializeComplete)
+                ActionStatesManager.SetState(ActionStates.INTERACTING);
         }
     }
 }
