@@ -126,7 +126,7 @@ namespace BloodyMaze.UI
         public void RefreshHPAndMana(float healthPr, float manaPr)
         {
             m_healthImage.fillAmount = healthPr;
-            m_manaImage.fillAmount = manaPr;
+            m_manaImage.fillAmount = 1 - manaPr;
         }
 
         private void RefreshAmmoCount(string ammoTypeName, AmmoType ammoType)
@@ -181,7 +181,7 @@ namespace BloodyMaze.UI
         IEnumerator IncreaseValue()
         {
             m_reloadingValue = 1f;
-            while (m_reloadingValue != 1f)
+            while (m_reloadingValue != 0f)
             {
                 m_reloadingValue -= 0.5f * Time.deltaTime;
                 yield return new();
