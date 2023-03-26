@@ -28,6 +28,8 @@ namespace BloodyMaze.UI
         private List<GameObject> m_inventoryItemsInShowcase = new List<GameObject>();
         private float m_itemImageOffset = 50f;
         private Animator m_animator;
+        private float m_reloadingValue = 1f;
+        [SerializeField] private Image m_reloadingButtonImage;
 
         private void OnEnable()
         {
@@ -38,6 +40,7 @@ namespace BloodyMaze.UI
                 m_characterComponent.medsComponent.OnMedsCountChange += RefreshMedsCount;
                 m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             }
+            GameEvents.OnReload += OnReload;
         }
 
         private void OnDisable()
@@ -45,6 +48,7 @@ namespace BloodyMaze.UI
             GameEvents.OnShowMiniMessage -= ShowMiniMessage;
             m_characterComponent.medsComponent.OnMedsCountChange -= RefreshMedsCount;
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
+            GameEvents.OnReload -= OnReload;
         }
 
         public void Init(CharacterComponent characterComponent)
@@ -71,7 +75,9 @@ namespace BloodyMaze.UI
             {
                 RefreshHPAndMana(m_characterComponent.healthComponent.percent,
                                     m_characterComponent.manaComponent.percent);
+                m_reloadingButtonImage.fillAmount = m_reloadingValue;
             }
+
         }
 
         private void ReorganizeShowcase(string name, PickableItem item)
@@ -149,6 +155,21 @@ namespace BloodyMaze.UI
         private void RefreshMedsCount(MedsType medsCommon)
         {
             m_medsCommon.text = medsCommon.currentAmount + "/" + medsCommon.maxAmount;
+        }
+
+        private void OnReload()
+        {
+            StartCoroutine(IncreaseValue());
+        }
+
+        IEnumerator IncreaseValue()
+        {
+            m_reloadingValue = 0f;
+            while (m_reloadingValue != 1f)
+            {
+                m_reloadingValue += 0.5f * Time.deltaTime;
+                yield return new();
+            }
         }
     }
 }

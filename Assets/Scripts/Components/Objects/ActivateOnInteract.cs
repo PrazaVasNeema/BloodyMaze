@@ -31,6 +31,12 @@ namespace BloodyMaze.Components
         //     }
         // }
 
+        private void OnDisable()
+        {
+            if (m_interactComponent != null)
+                m_interactComponent.OnInteract -= Activate;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             m_interactComponent = other.gameObject.GetComponentInParent<InteractComponent>();
@@ -47,6 +53,7 @@ namespace BloodyMaze.Components
             {
                 GameEvents.OnShowMessage?.Invoke(m_messageTextKey);
             }
+
         }
 
         private void OnTriggerExit(Collider other)
@@ -57,6 +64,7 @@ namespace BloodyMaze.Components
                 m_interactComponent.OnInteract -= Activate;
                 GameEvents.OnHideMessage?.Invoke();
             }
+            m_interactComponent = null;
         }
 
         public void Activate()

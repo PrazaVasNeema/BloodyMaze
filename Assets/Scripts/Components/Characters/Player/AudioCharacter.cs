@@ -10,6 +10,7 @@ namespace BloodyMaze.Components
         [SerializeField] AudioClip m_walkSound;
         [SerializeField] AudioClip m_shootSound;
         [SerializeField] AudioClip m_reloadSound;
+        [SerializeField] AudioClip m_drumIsEmptySound;
 
         private AbilitiesManager m_abilitiesManager;
         private MovementComponentCharacter m_movementComponentCharacter;
@@ -54,6 +55,12 @@ namespace BloodyMaze.Components
         public void OnReloadDrumHandler()
         {
             m_audioSourceOther.clip = m_reloadSound;
+            m_audioSourceOther.Play();
+        }
+
+        public void OnDrumIsEmpty()
+        {
+            m_audioSourceOther.clip = m_drumIsEmptySound;
             m_audioSourceOther.Play();
         }
 

@@ -12,6 +12,7 @@ namespace BloodyMaze.Components
 
         public System.Action<string, AmmoType> onAmmoCountChange;
         public UnityEvent OnReload;
+        public bool m_isRealoading;
 
 
         public void Init(AmmoType holyAmmoType)
@@ -39,9 +40,11 @@ namespace BloodyMaze.Components
         {
             if (m_ammoType[ammoTypeName].Reload())
             {
-                Debug.Log("Reload");
-                onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
+                GameEvents.OnReload?.Invoke();
+                m_isRealoading = true;
                 OnReload?.Invoke();
+                StartCoroutine(ReloadCo());
+                Debug.Log("Reload");
                 return true;
             }
             return false;
@@ -54,6 +57,12 @@ namespace BloodyMaze.Components
             onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
         }
 
+        IEnumerator ReloadCo()
+        {
+            yield return new WaitForSeconds(1f);
+            m_isRealoading = false;
+            onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
+        }
     }
 
 }

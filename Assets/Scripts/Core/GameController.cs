@@ -146,7 +146,10 @@ namespace BloodyMaze
             for (int i = 0; i < 3; i++)
             {
                 json = PlayerPrefs.GetString($"PlayerProfile_{i}");
-                instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
+                if (string.IsNullOrEmpty(json))
+                    instance.m_allPlayerProfilesData.Add(null);
+                else
+                    instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
             if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
@@ -190,6 +193,7 @@ namespace BloodyMaze
             var json = instance.m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
+            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData;
         }
 
         //GameOptionsZone START
@@ -235,6 +239,7 @@ namespace BloodyMaze
             var json = instance.m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
+            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData;
         }
 
         public static void LoadScene(string sceneName, int choosenProfileIndex)

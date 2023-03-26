@@ -17,6 +17,7 @@ namespace BloodyMaze.Components
         private HealthComponent m_currentTarget;
         public UnityEvent<GameObject> OnTargetLockedChanged;
         public UnityEvent OnShootRound;
+        public UnityEvent OnDrumIsEmpty;
 
         private void Awake()
         {
@@ -80,6 +81,8 @@ namespace BloodyMaze.Components
                 m_currentTarget.ChangeHPWithAmount(50);
                 OnShootRound?.Invoke();
             }
+            else
+                OnDrumIsEmpty?.Invoke();
             return canAttack;
         }
 

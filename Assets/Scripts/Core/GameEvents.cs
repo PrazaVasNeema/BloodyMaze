@@ -28,5 +28,6 @@ namespace BloodyMaze
         public static System.Action<bool> OnBattleActionStateIsSet;
         public static System.Action<string, int> OnSetNewRoomAgentStatus;
         public static System.Action OnEnterInteractingState;
+        public static System.Action OnReload;
     }
 }
