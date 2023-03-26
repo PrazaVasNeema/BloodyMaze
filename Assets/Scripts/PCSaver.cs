@@ -15,13 +15,26 @@ namespace BloodyMaze
             if (m_layersToSave.value == 1 << other.gameObject.layer)
             {
                 Debug.Log("PCSaver1");
-                Collider[] colliders = Physics.OverlapSphere(transform.position, 100000, m_layersToHelpSaving);
+                Collider[] colliders = Physics.OverlapSphere(other.transform.position, 100000, m_layersToHelpSaving);
                 if (colliders.Length > 0)
                 {
+                    float minDistance = 10000f;
+                    Transform closestObject = null;
+                    foreach (Collider collider in colliders)
+                    {
+                        if (collider.gameObject.active == false)
+                            break;
+                        float curDistance = (other.transform.position - collider.transform.position).sqrMagnitude;
+                        if (curDistance < minDistance)
+                        {
+                            minDistance = curDistance;
+                            closestObject = collider.GetComponent<Transform>();
+                        }
+                    }
                     Debug.Log("PCSaver2");
                     Debug.Log($"colliders[0].transform.position {colliders[0].transform.position}");
                     ActionStatesManager.SetState(ActionStates.INTERACTING);
-                    other.GetComponentInParent<CharacterComponent>().transform.position = colliders[0].transform.position;
+                    other.GetComponentInParent<CharacterComponent>().transform.position = closestObject.position;
                     StartCoroutine(WaitAndSetExploringCo());
                 }
                 Debug.Log("PCSaver3");
