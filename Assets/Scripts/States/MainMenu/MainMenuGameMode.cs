@@ -27,6 +27,11 @@ namespace BloodyMaze.States
             GameController.instance.OnLoadingDataGameOptionsComplete -= InitOptionsAndLoc;
         }
 
+        private void Start()
+        {
+            InitOptionsAndLoc();
+        }
+
         private void InitOptionsAndLoc()
         {
             GameOptionsData gameOptionsData = GameController.gameOptions.GameOptionsData;

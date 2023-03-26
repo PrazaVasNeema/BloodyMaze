@@ -34,33 +34,33 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
     - eventKey: placed_mirror
-      flag: 1
+      flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
-      flag: 1
+      flag: 0
     - eventKey: opened_library_door
-      flag: 1
+      flag: 0
     - eventKey: opened_library_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl_in_library_secret
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_three
-      flag: 1
+      flag: 0
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
