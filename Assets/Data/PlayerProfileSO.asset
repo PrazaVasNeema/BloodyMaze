@@ -34,13 +34,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -170,18 +170,18 @@ MonoBehaviour:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 4
+        currentAmount: 2
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -217,9 +217,9 @@ MonoBehaviour:
     - eventKey: DayIsBehind_0
       flag: 0
     - eventKey: DayIsBehind_1
-      flag: 1
+      flag: 0
     - eventKey: DayIsBehind_2
-      flag: 1
+      flag: 0
     - eventKey: DayIsBehind_3
       flag: 0
     - eventKey: DayIsBehind_4
@@ -266,7 +266,7 @@ MonoBehaviour:
       - agentID: 0
         shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 2
         shouldntSpawn: 0
       - agentID: 3

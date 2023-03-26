@@ -1731,6 +1731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_isRealoading: 0
 --- !u!114 &6713269016660691083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentHealth: 100
   m_maxHealth: 100
+  m_objectToSetUnactiveOnDeath: {fileID: 0}
   onDead:
     m_PersistentCalls:
       m_Calls: []
@@ -2012,7 +2014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_walkSound: {fileID: 8300000, guid: 27c6f7887c7606144b6b10a639fc620e, type: 3}
   m_shootSound: {fileID: 8300000, guid: d3e32a578aa6bc7458c3c2707cf6e59e, type: 3}
-  m_reloadSound: {fileID: 0}
+  m_reloadSound: {fileID: 8300000, guid: 1585b16240f21814cab8309cd48f1ed6, type: 3}
+  m_drumIsEmptySound: {fileID: 8300000, guid: d7188c35c6456694dae8e0bc48bbbefd, type: 3}
 --- !u!1 &6713269016876499788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,6 +3014,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnDrumIsEmpty:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6713269016909878342
 PrefabInstance:
   m_ObjectHideFlags: 0

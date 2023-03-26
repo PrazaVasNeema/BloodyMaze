@@ -28,8 +28,10 @@ namespace BloodyMaze.UI
         private List<GameObject> m_inventoryItemsInShowcase = new List<GameObject>();
         private float m_itemImageOffset = 50f;
         private Animator m_animator;
-        private float m_reloadingValue = 1f;
+        private float m_reloadingValue = 0f;
         [SerializeField] private Image m_reloadingButtonImage;
+        [SerializeField] private Button m_medsButton;
+        [SerializeField] private Button m_reloadButton;
 
         private void OnEnable()
         {
@@ -75,7 +77,7 @@ namespace BloodyMaze.UI
             {
                 RefreshHPAndMana(m_characterComponent.healthComponent.percent,
                                     m_characterComponent.manaComponent.percent);
-                // m_reloadingButtonImage.fillAmount = m_reloadingValue;
+                m_reloadingButtonImage.fillAmount = m_reloadingValue;
             }
 
         }
@@ -131,6 +133,16 @@ namespace BloodyMaze.UI
         {
             m_ammoAllRemainingAmmo.SetText(ammoType.currentAmmo.ToString());
             m_drumAmmo.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}");
+            if (ammoType.currentRoundAmmo != ammoType.maxAmmo)
+            {
+                m_reloadButton.gameObject.SetActive(true);
+                if (ammoType.currentAmmo == 0)
+                    m_reloadButton.interactable = false;
+                else
+                    m_reloadButton.interactable = true;
+            }
+            else
+                m_reloadButton.gameObject.SetActive(false);
         }
 
         private void ShowMiniMessage(string miniMessageKey)
@@ -155,6 +167,10 @@ namespace BloodyMaze.UI
         private void RefreshMedsCount(MedsType medsCommon)
         {
             m_medsCommon.text = medsCommon.currentAmount + "/" + medsCommon.maxAmount;
+            if (medsCommon.currentAmount == 0)
+                m_medsButton.interactable = false;
+            else
+                m_medsButton.interactable = true;
         }
 
         private void OnReload()
@@ -164,10 +180,10 @@ namespace BloodyMaze.UI
 
         IEnumerator IncreaseValue()
         {
-            m_reloadingValue = 0f;
+            m_reloadingValue = 1f;
             while (m_reloadingValue != 1f)
             {
-                m_reloadingValue += 0.5f * Time.deltaTime;
+                m_reloadingValue -= 0.5f * Time.deltaTime;
                 yield return new();
             }
         }

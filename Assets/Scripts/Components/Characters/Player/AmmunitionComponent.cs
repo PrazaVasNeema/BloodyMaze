@@ -28,11 +28,12 @@ namespace BloodyMaze.Components
 
         public bool ShootAmmo(string ammoTypeName)
         {
-            if (m_ammoType[ammoTypeName].ShootAmmo())
-            {
-                onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
-                return true;
-            }
+            if (!m_isRealoading)
+                if (m_ammoType[ammoTypeName].ShootAmmo())
+                {
+                    onAmmoCountChange?.Invoke(ammoTypeName, m_ammoType[ammoTypeName]);
+                    return true;
+                }
             return false;
         }
 
