@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levels:
   - name: Mansion
-    icon: {fileID: 21300000, guid: 42c385d28a61b0c46b8fff12f373fbdc, type: 3}
+    icon: {fileID: 21300000, guid: 1e7ea70d034efe64b8006b46ba2efc87, type: 3}
+    sceneName: SampleScene
+  - name: Mansion
+    icon: {fileID: 21300000, guid: 2376d8ed2d5c6354387e0ed2eb9774ba, type: 3}
     sceneName: SampleScene

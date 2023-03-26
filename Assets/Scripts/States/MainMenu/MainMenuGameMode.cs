@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BloodyMaze.States
 {
     public class MainMenuGameMode : GameModeBehavior
     {
         [SerializeField] private Animator m_animator;
+        [SerializeField] private GameObject m_zoomInButton;
 
         public void ZoomIn()
         {
+            m_zoomInButton.SetActive(false);
             m_animator.SetBool("AppearAndDisappear", false);
             m_animator.SetTrigger("ZoomIn");
         }
