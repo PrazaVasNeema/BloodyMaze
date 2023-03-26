@@ -27,7 +27,7 @@ namespace BloodyMaze.Controllers
             ActionStatesManager.SetState(ActionStates.INTERACTING);
             // StartCoroutine(SlowDownTimeCo());
             yield return new WaitForSecondsRealtime(2f);
-            GameController.SetLoaderText("Прошли сутки");
+            // GameController.SetLoaderText("Прошли сутки");
             GameTransitionSystem.ScreenFade();
 
 

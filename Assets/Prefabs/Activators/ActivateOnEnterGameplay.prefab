@@ -56,7 +56,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205646786194491981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_nextRoom: {fileID: 0}
   m_shouldChangeRoom: 0
   m_transitPoint: {fileID: 6205646786194491975}
+  m_shouldWait: 0
