@@ -487,6 +487,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4013240171166097570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +507,7 @@ MonoBehaviour:
   m_nextRoom: {fileID: 0}
   m_shouldChangeRoom: 1
   m_transitPoint: {fileID: 0}
+  m_shouldWait: 0
 --- !u!114 &1391064378505498903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +550,7 @@ AudioSource:
   m_GameObject: {fileID: 4630772878648387183}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: de115390bbede5d4381b063622abe371, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
