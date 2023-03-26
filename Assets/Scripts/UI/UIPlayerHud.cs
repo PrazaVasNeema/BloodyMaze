@@ -75,7 +75,7 @@ namespace BloodyMaze.UI
             {
                 RefreshHPAndMana(m_characterComponent.healthComponent.percent,
                                     m_characterComponent.manaComponent.percent);
-                m_reloadingButtonImage.fillAmount = m_reloadingValue;
+                // m_reloadingButtonImage.fillAmount = m_reloadingValue;
             }
 
         }
