@@ -87,6 +87,7 @@ namespace BloodyMaze
             //LoadPlayerProfile();
             LoadPlayerProfileGameplayData();
             LoadPlayerProfileOptionsData();
+            LoadDataGameOptions();
             if (SceneManager.GetActiveScene().name == "MainMenu")
             {
                 MusicManager.current.SetJam("MainMenu");
