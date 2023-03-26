@@ -19,7 +19,7 @@ namespace BloodyMaze.AI
         {
             var sqrMagnitude = Vector3.SqrMagnitude(blackboard.target.position - context.transform.position);
             var attackDistance = context.agentComponent.attackDistance;
-            if (sqrMagnitude > attackDistance * attackDistance - 1f)
+            if (sqrMagnitude > attackDistance * attackDistance)
             {
                 return State.Failure;
             }

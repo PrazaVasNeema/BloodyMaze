@@ -8,6 +8,7 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Animator m_animatorLocked;
+        [SerializeField] private float m_smoothTime = .5f;
         private Vector3 m_prevPosition;
         private float m_moveSpeed = 0f;
         protected float blendIdleFlyChangingSpeed = 0f;
@@ -84,12 +85,17 @@ namespace BloodyMaze.Components
 
         private void LateUpdate()
         {
-            float moveSpeedDir = Vector3.SqrMagnitude(transform.position - m_prevPosition) > .1f ? .9f : .1f;
             // m_moveSpeed = Mathf.Lerp(m_moveSpeed, moveSpeedDir, Time.deltaTime);
-            m_moveSpeed = Mathf.SmoothDamp(m_moveSpeed, moveSpeedDir, ref blendIdleFlyChangingSpeed, 0.5f, 1f);
+
+
+        }
+
+        private void FixedUpdate()
+        {
+            float moveSpeedDir = Vector3.SqrMagnitude(transform.position - m_prevPosition) > .001f ? .9f : .1f;
+            m_moveSpeed = Mathf.SmoothDamp(m_moveSpeed, moveSpeedDir, ref blendIdleFlyChangingSpeed, m_smoothTime, 1f);
             m_animator.SetFloat("MoveSpeed", m_moveSpeed);
             m_prevPosition = transform.position;
-
         }
 
     }

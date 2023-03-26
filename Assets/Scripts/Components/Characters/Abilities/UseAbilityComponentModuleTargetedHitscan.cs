@@ -82,6 +82,7 @@ namespace BloodyMaze.Components
                 OnShootRound?.Invoke();
             }
             else
+            if (m_currentTarget != null)
                 OnDrumIsEmpty?.Invoke();
             return canAttack;
         }

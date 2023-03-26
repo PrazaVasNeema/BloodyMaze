@@ -10,7 +10,7 @@ namespace BloodyMaze.AI
     {
         protected override void OnStart()
         {
-            context.agent.stoppingDistance = context.agentComponent.attackDistance;
+            context.agent.stoppingDistance = context.agentComponent.attackDistance - context.agentComponent.attackDistance / 2;
 
             context.agent.SetDestination(blackboard.target ? blackboard.target.position : blackboard.targetPreviousSeenAt.position);
 
@@ -44,7 +44,7 @@ namespace BloodyMaze.AI
                     return State.Running;
                 }
 
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.remainingDistance <= agent.stoppingDistance + 1f)
                 {
                     // blackboard.targetPreviousSeenAt = blackboard.target;
                     if (blackboard.target)
