@@ -223,8 +223,8 @@ namespace BloodyMaze
             Debug.Log($">>> load {json}");
 
             instance.m_gameOptions.LoadFromJsonGameOptions(json);
-            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic);
-            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX);
+            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic * 100f - 80f);
+            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX * 100f - 80f);
             instance.OnLoadingDataGameOptionsComplete?.Invoke();
         }
 

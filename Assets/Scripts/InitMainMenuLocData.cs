@@ -57,6 +57,7 @@ namespace BloodyMaze
 
             levelSelectBack.text = GameController.locData.GetInterfaceText(levelSelectBackKey);
             levelSelectLoad.text = GameController.locData.GetInterfaceText(levelSelectLoadKey);
+            levelSelectNew.text = GameController.locData.GetInterfaceText(levelSelectNewKey);
         }
     }
 }
