@@ -133,7 +133,7 @@ namespace BloodyMaze.UI
         {
             m_ammoAllRemainingAmmo.SetText(ammoType.currentAmmo.ToString());
             m_drumAmmo.SetText($"{ammoType.currentRoundAmmo}/{ammoType.roundSize}");
-            if (ammoType.currentRoundAmmo != ammoType.maxAmmo)
+            if (ammoType.currentRoundAmmo != ammoType.roundSize)
             {
                 m_reloadButton.gameObject.SetActive(true);
                 if (ammoType.currentAmmo == 0)
