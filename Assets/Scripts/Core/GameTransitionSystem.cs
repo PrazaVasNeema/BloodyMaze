@@ -80,6 +80,7 @@ namespace BloodyMaze.Controllers
             m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
             if (m_shouldWait)
             {
+                yield return new WaitForSecondsRealtime(1f);
                 FindObjectOfType<ShowTutorialCo>().ShowTutorial();
             }
 
