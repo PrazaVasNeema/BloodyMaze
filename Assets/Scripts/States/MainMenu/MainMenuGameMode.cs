@@ -11,6 +11,7 @@ namespace BloodyMaze.States
         [SerializeField] private TMP_Dropdown m_optionsLanguageDropdown;
         [SerializeField] private Slider m_optionsMusicSlider;
         [SerializeField] private Slider m_optionsSFXSlider;
+        [SerializeField] private InitMainMenuLocData m_initMainMenuLocData;
 
         public void ApplyOptionsData()
         {
@@ -32,6 +33,7 @@ namespace BloodyMaze.States
             m_optionsLanguageDropdown.value = gameOptionsData.language;
             m_optionsMusicSlider.value = gameOptionsData.volumeMusic;
             m_optionsSFXSlider.value = gameOptionsData.volumeSFX;
+            m_initMainMenuLocData.SetLocDataMainMenu();
         }
 
         public void ZoomIn()
