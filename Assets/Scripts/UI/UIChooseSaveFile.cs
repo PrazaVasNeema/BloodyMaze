@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace BloodyMaze.UI
 {
@@ -23,6 +24,10 @@ namespace BloodyMaze.UI
                 }
                 m_saveSlotsLayoutGroup.transform.GetChild(i).GetChild(1).GetComponent<TMP_Text>().text = playerProfileData
                 == null ? "Пустой слот" : $"Прогресс: {Mathf.Round(totalEventsTrue * 1f / (progressPercent * 1f) * 100f * 1f)}%";
+                if (GameController.shouldStartNewGame == false && playerProfileData == null)
+                    m_saveSlotsLayoutGroup.transform.GetChild(i).GetComponent<Button>().interactable = false;
+                else
+                    m_saveSlotsLayoutGroup.transform.GetChild(i).GetComponent<Button>().interactable = true;
             }
         }
     }

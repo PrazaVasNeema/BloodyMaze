@@ -68,9 +68,9 @@ namespace BloodyMaze
                 backButton.text = GameController.locData.GetInterfaceText(levelSelectBackKey);
             }
 
-            saveSlot1_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} + 1";
-            saveSlot2_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} + 2";
-            saveSlot3_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} + 3";
+            saveSlot1_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 1";
+            saveSlot2_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 2";
+            saveSlot3_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 3";
         }
     }
 }

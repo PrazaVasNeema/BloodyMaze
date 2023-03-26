@@ -27,7 +27,8 @@ namespace BloodyMaze
         [SerializeField] private LevelsInfoSO m_levelsInfo;
         public static LevelsInfoSO levelsInfo => instance.m_levelsInfo;
 
-        private List<PlayerProfileData> m_allPlayerProfilesData = new();
+
+        [SerializeField] private List<PlayerProfileData> m_allPlayerProfilesData = new();
         public static List<PlayerProfileData> allPlayerProfilesData => instance.m_allPlayerProfilesData;
 
         public static bool shouldStartNewGame;
@@ -149,24 +150,24 @@ namespace BloodyMaze
                 else
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
-#if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
-            || SceneManager.GetActiveScene().name == "BattleSystem_2")
-            {
-                if (!instance.m_shouldInitNewData)
-                {
-                    json = PlayerPrefs.GetString("PlayerProfile_0");
-                    Debug.Log($">>> load {json}");
-                }
-                else
-                {
-                    json = "";
-                }
-                instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
-                instance.m_levelController = FindObjectOfType<LevelController>();
-                InitLevel();
-            }
-#endif
+            // #if UNITY_EDITOR
+            //             if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
+            //             || SceneManager.GetActiveScene().name == "BattleSystem_2")
+            //             {
+            //                 if (!instance.m_shouldInitNewData)
+            //                 {
+            //                     json = PlayerPrefs.GetString("PlayerProfile_0");
+            //                     Debug.Log($">>> load {json}");
+            //                 }
+            //                 else
+            //                 {
+            //                     json = "";
+            //                 }
+            //                 instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+            //                 instance.m_levelController = FindObjectOfType<LevelController>();
+            //                 InitLevel();
+            //             }
+            // #endif
         }
 
         private void SetPlayerProfileSOData()
@@ -286,7 +287,8 @@ namespace BloodyMaze
                 SaveDataWithoutOnSave();
                 m_isReloaded = false;
             }
-            SetPlayerProfileSOData();
+            if (sceneName == "SampleScene")
+                SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
             {
