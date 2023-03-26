@@ -60,7 +60,7 @@ namespace BloodyMaze.Components
 
         IEnumerator ReloadCo()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             m_isRealoading = false;
             onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
         }

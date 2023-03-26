@@ -43,6 +43,7 @@ namespace BloodyMaze.UI
                 m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             }
             GameEvents.OnReload += OnReload;
+            GameEvents.OnTransition += OnTransitionUpdateUI;
         }
 
         private void OnDisable()
@@ -51,6 +52,7 @@ namespace BloodyMaze.UI
             m_characterComponent.medsComponent.OnMedsCountChange -= RefreshMedsCount;
             m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             GameEvents.OnReload -= OnReload;
+            GameEvents.OnTransition -= OnTransitionUpdateUI;
         }
 
         public void Init(CharacterComponent characterComponent)
@@ -71,6 +73,11 @@ namespace BloodyMaze.UI
             // GameInventory.current.onInventoryChange -= ReorganizeShowcase;
         }
 
+        private void OnTransitionUpdateUI()
+        {
+            m_reloadingButtonImage.fillAmount = 0f;
+        }
+
         private void Update()
         {
             if (Time.frameCount % 10 == 0)
@@ -79,6 +86,10 @@ namespace BloodyMaze.UI
                                     m_characterComponent.manaComponent.percent);
                 m_reloadingButtonImage.fillAmount = m_reloadingValue;
             }
+
+            if (m_reloadingValue != 0f)
+                m_reloadingValue -= 0.45f * Time.deltaTime;
+
 
         }
 
@@ -175,15 +186,15 @@ namespace BloodyMaze.UI
 
         private void OnReload()
         {
-            StartCoroutine(IncreaseValue());
+            m_reloadingValue = 1f;
+            // StartCoroutine(IncreaseValue());
         }
 
         IEnumerator IncreaseValue()
         {
-            m_reloadingValue = 1f;
             while (m_reloadingValue != 0f)
             {
-                m_reloadingValue -= 0.5f * Time.deltaTime;
+                m_reloadingValue -= 0.45f * Time.deltaTime;
                 yield return new();
             }
         }

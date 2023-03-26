@@ -110,12 +110,7 @@ namespace BloodyMaze
 
         IEnumerator WaitForInitLevelCompleteCo()
         {
-            bool DoOnce = true;
-            while (DoOnce)
-            {
-                DoOnce = false;
-                yield return new WaitForSecondsRealtime(2f);
-            }
+            yield return new WaitForSecondsRealtime(1f);
             GameEvents.OnInitLevelComplete?.Invoke();
         }
 

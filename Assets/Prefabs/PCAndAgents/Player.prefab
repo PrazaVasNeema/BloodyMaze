@@ -3074,7 +3074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8019358230191026712, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: m_drainingTime
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8019358230191026712, guid: e1789d4118dbf904bb2c41c67a93f721, type: 3}
       propertyPath: OnActivateBarrier.m_PersistentCalls.m_Calls.Array.size

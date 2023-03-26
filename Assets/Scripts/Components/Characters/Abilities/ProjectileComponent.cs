@@ -30,14 +30,22 @@ namespace BloodyMaze.Components
 
         private void OnCollisionEnter(Collision other)
         {
-            HealthComponent health = other.gameObject.GetComponentInParent<HealthComponent>();
             bool shouldIgnoreThisCollision = m_shouldIgnore.value == 1 << other.gameObject.layer;
+            if (m_shouldBeBlockedBy.value == 1 << other.gameObject.layer)
+                Destroy(gameObject);
+            if (!shouldIgnoreThisCollision)
+                Destroy(gameObject);
+            HealthComponent health = other.gameObject.GetComponentInParent<HealthComponent>();
             if (health && !(m_shouldBeBlockedBy.value == 1 << other.gameObject.layer)
             && !shouldIgnoreThisCollision)
             {
                 health.ChangeHPWithAmount(m_damage);
             }
-            if (!shouldIgnoreThisCollision)
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (m_shouldBeBlockedBy.value == 1 << other.gameObject.layer)
                 Destroy(gameObject);
         }
 

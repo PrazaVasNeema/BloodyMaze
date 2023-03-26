@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6087613113092057927}
   - component: {fileID: 613577586845341826}
   - component: {fileID: 8224559662413880063}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6016468315093772017}
   - component: {fileID: 7173398546469745898}
   - component: {fileID: 7433886120375870256}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 7285157224142889964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.21, y: 3.21, z: 3.21}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6087613113092057927}

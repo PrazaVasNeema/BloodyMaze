@@ -129,4 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shouldBeBlockedBy:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
+  m_shouldIgnore:
+    serializedVersion: 2
+    m_Bits: 256
