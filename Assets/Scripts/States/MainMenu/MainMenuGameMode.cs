@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace BloodyMaze.States
 {
@@ -7,6 +8,31 @@ namespace BloodyMaze.States
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private GameObject m_zoomInButton;
+        [SerializeField] private TMP_Dropdown m_optionsLanguageDropdown;
+        [SerializeField] private Slider m_optionsMusicSlider;
+        [SerializeField] private Slider m_optionsSFXSlider;
+
+        public void ApplyOptionsData()
+        {
+            GameController.instance.SetDataGameOptions(m_optionsLanguageDropdown.value, m_optionsMusicSlider.value, m_optionsSFXSlider.value);
+        }
+        private void OnEnable()
+        {
+            GameController.instance.OnLoadingDataComplete += InitOptionsAndLoc;
+        }
+
+        private void OnDisable()
+        {
+            GameController.instance.OnLoadingDataComplete -= InitOptionsAndLoc;
+        }
+
+        private void InitOptionsAndLoc()
+        {
+            GameOptionsData gameOptionsData = GameController.gameOptions.GameOptionsData;
+            m_optionsLanguageDropdown.value = gameOptionsData.language;
+            m_optionsMusicSlider.value = gameOptionsData.volumeMusic;
+            m_optionsSFXSlider.value = gameOptionsData.volumeSFX;
+        }
 
         public void ZoomIn()
         {

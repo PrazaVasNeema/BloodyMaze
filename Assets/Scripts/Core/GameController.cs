@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using BloodyMaze.Controllers;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 namespace BloodyMaze
 {
@@ -41,6 +43,13 @@ namespace BloodyMaze
         [SerializeField] private TMP_Text m_UIToGameplayReText_1;
         [SerializeField] private TMP_Text m_UIToGameplayReText_2;
         [SerializeField] private TMP_Text m_UICommonLoadingCompleteTipText;
+        [SerializeField] private GameOptionsSO m_gameOptions;
+        public static GameOptionsSO gameOptions => instance.m_gameOptions;
+        [SerializeField] private AudioMixer m_musicMixer;
+        [SerializeField] private AudioMixer m_SFXMixer;
+
+
+        public System.Action OnLoadingDataComplete;
 
 
 
@@ -181,6 +190,43 @@ namespace BloodyMaze
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
         }
+
+        //GameOptionsZone START
+
+        public void SetDataGameOptions(int language, float music, float sfx)
+        {
+            GameOptionsData newOptionsData = new();
+            newOptionsData.language = language;
+            newOptionsData.volumeMusic = music;
+            newOptionsData.volumeSFX = sfx;
+            gameOptions.GameOptionsData = newOptionsData;
+            SaveDataGameOptions();
+            LoadDataGameOptions();
+        }
+
+        public static void SaveDataGameOptions()
+        {
+            var json = instance.m_gameOptions.ToJsonGameOptions();
+            Debug.Log($">>> save {json}");
+            PlayerPrefs.SetString($"GameOptionsData", json);
+
+        }
+
+        private static void LoadDataGameOptions()
+        {
+            var json = "";
+            if (!instance.m_shouldInitNewData)
+            {
+                json = PlayerPrefs.GetString("GameOptionsData");
+                Debug.Log($">>> load {json}");
+            }
+            instance.m_gameOptions.LoadFromJsonGameOptions(json);
+            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic);
+            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX);
+            instance.OnLoadingDataComplete?.Invoke();
+        }
+
+        //GameOptionsZone END
 
         public static void SaveDataWithoutOnSave()
         {
