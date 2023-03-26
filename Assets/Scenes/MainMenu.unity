@@ -1954,6 +1954,14 @@ PrefabInstance:
       value: "\u0414\u0435\u043B\u043E No 1"
       objectReference: {fileID: 0}
     - target: {fileID: 374789458202868008, guid: 589b6d38997e42b438668c534784f4e8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
+    - target: {fileID: 374789458202868008, guid: 589b6d38997e42b438668c534784f4e8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1455479793669392037, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
+    - target: {fileID: 374789458202868008, guid: 589b6d38997e42b438668c534784f4e8, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
@@ -2695,7 +2703,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1555324013
 GameObject:

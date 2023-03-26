@@ -34,25 +34,25 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
     - eventKey: placed_mirror
-      flag: 1
+      flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
-      flag: 1
+      flag: 0
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -155,7 +155,7 @@ MonoBehaviour:
       itemsToSpawnIDs: []
   playerProfileData:
     characterSaveData:
-      currentHealth: 100
+      currentHealth: 55
       maxHealth: 100
       currentMana: 100
       maxMana: 100
@@ -163,16 +163,16 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 23
+        currentAmmo: 15
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 2
+        currentAmount: 0
       lastLevelIndex: 0
-      dayNum: 0
+      dayNum: 2
     globalEventsData:
     - eventKey: opened_main_door
       flag: 1
@@ -195,13 +195,13 @@ MonoBehaviour:
     - eventKey: pick_up_key_two
       flag: 1
     - eventKey: opened_library_door
-      flag: 0
+      flag: 1
     - eventKey: opened_library_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl_in_library_secret
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
@@ -215,7 +215,7 @@ MonoBehaviour:
     - eventKey: library_secret_note_1
       flag: 0
     - eventKey: DayIsBehind_0
-      flag: 0
+      flag: 1
     - eventKey: DayIsBehind_1
       flag: 1
     - eventKey: DayIsBehind_2
