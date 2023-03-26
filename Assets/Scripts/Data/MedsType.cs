@@ -31,5 +31,11 @@ namespace BloodyMaze
             }
             return false;
         }
+
+        public bool FullUpMeds()
+        {
+            currentAmount = maxAmount;
+            return true;
+        }
     }
 }

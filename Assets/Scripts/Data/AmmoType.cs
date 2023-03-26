@@ -51,6 +51,12 @@ namespace BloodyMaze
             return false;
         }
 
+        public bool AddAmmo()
+        {
+            currentAmmo = maxAmmo;
+            return true;
+        }
+
 
     }
 

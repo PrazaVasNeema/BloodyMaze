@@ -28,6 +28,7 @@ namespace BloodyMaze.UI
 
         public void ChangePage(bool shouldBeNext)
         {
+            Debug.Log("ChangePage");
             StartCoroutine(ChangePageCo(shouldBeNext));
         }
 

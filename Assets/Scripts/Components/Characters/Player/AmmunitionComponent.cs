@@ -47,6 +47,13 @@ namespace BloodyMaze.Components
             return false;
         }
 
+        public void AddAmmo()
+        {
+            m_ammoType["holy"].AddAmmo();
+            m_ammoType["holy"].Reload();
+            onAmmoCountChange?.Invoke("holy", m_ammoType["holy"]);
+        }
+
     }
 
 }

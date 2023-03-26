@@ -22,14 +22,14 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 42
+        currentAmmo: 23
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 4
+        currentAmount: 2
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
@@ -163,14 +163,14 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 42
+        currentAmmo: 23
         roundSize: 6
         currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
         maxAmount: 4
-        currentAmount: 4
+        currentAmount: 2
       lastLevelIndex: 0
       dayNum: 0
     globalEventsData:
@@ -195,13 +195,13 @@ MonoBehaviour:
     - eventKey: pick_up_key_two
       flag: 1
     - eventKey: opened_library_door
-      flag: 1
+      flag: 0
     - eventKey: opened_library_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl_in_library_secret
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_three
-      flag: 1
+      flag: 0
     - eventKey: opened_bathroom_secret
       flag: 0
     - eventKey: outsides_note_1
@@ -254,9 +254,9 @@ MonoBehaviour:
     - roomKey: library
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: locked_room
       agentsToSpawnIDs: []

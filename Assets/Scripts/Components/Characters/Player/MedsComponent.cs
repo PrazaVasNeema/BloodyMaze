@@ -12,6 +12,17 @@ namespace BloodyMaze
         private MedsType m_meds;
         public MedsType meds => m_meds;
 
+        private void OnEnable()
+        {
+            GameEvents.OnInitLevelComplete += CallChange;
+        }
+
+        private void CallChange()
+        {
+            OnMedsCountChange?.Invoke(m_meds);
+            GameEvents.OnInitLevelComplete -= CallChange;
+        }
+
         public void Init(MedsType commonMedsType)
         {
             m_meds = commonMedsType;
@@ -37,6 +48,12 @@ namespace BloodyMaze
                 return true;
             }
             return false;
+        }
+
+        public void FullUpMeds()
+        {
+            m_meds.FullUpMeds();
+            OnMedsCountChange?.Invoke(m_meds);
         }
     }
 }
