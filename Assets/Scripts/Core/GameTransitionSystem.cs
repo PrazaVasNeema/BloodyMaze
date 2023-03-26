@@ -18,6 +18,7 @@ namespace BloodyMaze.Controllers
         private RoomController m_nextRoom;
         private Transform m_whereTo;
         private bool m_shouldChangeRoom;
+        private bool m_shouldWait = false;
 
         private void Awake()
         {
@@ -55,6 +56,16 @@ namespace BloodyMaze.Controllers
             StartCoroutine(InCoroutine());
         }
 
+        public void TransitCharacter(Transform whereTo, RoomController prevRoom, RoomController nextRoom, bool shouldChangeRoom, bool shouldWait)
+        {
+            m_shouldWait = true;
+            m_prevRoom = prevRoom;
+            m_nextRoom = nextRoom;
+            m_shouldChangeRoom = shouldChangeRoom;
+            m_whereTo = whereTo;
+            StartCoroutine(InCoroutine());
+        }
+
         private IEnumerator InCoroutine()
         {
             ScreenFade();
@@ -67,6 +78,17 @@ namespace BloodyMaze.Controllers
             if (m_shouldChangeRoom)
                 m_nextRoom.gameObject.SetActive(true);
             m_characterComponent.GetComponent<Transform>().position = m_whereTo.transform.position;
+            if (m_shouldWait)
+            {
+                FindObjectOfType<ShowTutorialCo>().ShowTutorial();
+            }
+
+            while (m_shouldWait)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+
+
             GameEvents.OnTransition?.Invoke();
             if (m_shouldChangeRoom)
                 m_prevRoom.gameObject.SetActive(false);
@@ -79,6 +101,12 @@ namespace BloodyMaze.Controllers
             ScreenUnfade();
             GameEvents.OnCallGotoFunction?.Invoke("gameplay");
             GameEvents.OnHideMessage?.Invoke();
+        }
+
+        public void CheckShouldWaitFalse()
+        {
+            m_shouldWait = false;
+            FindObjectOfType<ShowTutorialCo>().HideTutorial();
         }
     }
 }

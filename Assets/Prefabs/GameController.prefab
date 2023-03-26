@@ -626,7 +626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loading...
+  m_text: BLOODY MAZE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
   m_sharedMaterial: {fileID: 3045635992686565919, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
