@@ -242,9 +242,7 @@ MonoBehaviour:
       agentsToSpawnIDs: []
       itemsToSpawnIDs: []
     - roomKey: bathroom_secret
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 1
+      agentsToSpawnIDs: []
       itemsToSpawnIDs: []
     - roomKey: dining_room
       agentsToSpawnIDs: []
@@ -254,7 +252,7 @@ MonoBehaviour:
       - agentID: 0
         shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: locked_room
       agentsToSpawnIDs: []
@@ -285,9 +283,9 @@ MonoBehaviour:
     - roomKey: inner_house_room_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: inner_house_room_2
       agentsToSpawnIDs: []
