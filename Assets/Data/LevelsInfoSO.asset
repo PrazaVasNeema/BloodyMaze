@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: LevelsInfoSO
   m_EditorClassIdentifier: 
   m_levels:
-  - name: Mansion
-    icon: {fileID: 21300000, guid: 1e7ea70d034efe64b8006b46ba2efc87, type: 3}
+  - name: "\u041E\u0441\u043E\u0431\u043D\u044F\u043A \u201C\u0412\u043E\u0440\u043E\u043D\u044C\u0435
+      \u043A\u0440\u044B\u043B\u043E\u201D"
+    icon: {fileID: 21300000, guid: ec86177416c65fa4a9ab5c58390f5d1c, type: 3}
     sceneName: SampleScene
-  - name: Mansion
+  - name: '? ? ?'
     icon: {fileID: 21300000, guid: 2376d8ed2d5c6354387e0ed2eb9774ba, type: 3}
     sceneName: SampleScene

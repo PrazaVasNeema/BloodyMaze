@@ -11,6 +11,7 @@ namespace BloodyMaze
         [SerializeField] private GameObject m_chooseDestinyPanel;
         [SerializeField] private GameObject m_buttonNext;
         [SerializeField] private GameObject m_buttonPrev;
+        [SerializeField] private GameObject m_buttonSelect;
         public TMPro.TextMeshProUGUI levelNameText;
         public Image previewImage;
 
@@ -23,6 +24,7 @@ namespace BloodyMaze
 
         public void SetInfo(LevelsInfoSO.Data data, bool isLast, bool isFirst)
         {
+            m_buttonSelect.SetActive(!isLast);
             m_buttonNext.SetActive(!isLast);
             m_buttonPrev.SetActive(!isFirst);
             levelNameText.text = data.name;

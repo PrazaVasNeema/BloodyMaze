@@ -2088,8 +2088,8 @@ RectTransform:
   m_GameObject: {fileID: 642692063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1156606147}
   - {fileID: 836751002}
@@ -3862,7 +3862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3581031857328814154, guid: 589b6d38997e42b438668c534784f4e8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1320
+      value: 1284.72
       objectReference: {fileID: 0}
     - target: {fileID: 3581031857328814154, guid: 589b6d38997e42b438668c534784f4e8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4163,6 +4163,7 @@ MonoBehaviour:
   m_chooseDestinyPanel: {fileID: 1302055209}
   m_buttonNext: {fileID: 1851107739}
   m_buttonPrev: {fileID: 383894266}
+  m_buttonSelect: {fileID: 1890039556}
   levelNameText: {fileID: 1156606148}
   previewImage: {fileID: 1156606149}
 --- !u!1 &1247682729
@@ -6200,6 +6201,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
   m_PrefabInstance: {fileID: 836751001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1890039556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+  m_PrefabInstance: {fileID: 934109973}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916687379
 GameObject:
