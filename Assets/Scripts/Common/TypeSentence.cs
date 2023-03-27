@@ -14,7 +14,7 @@ namespace BloodyMaze
             foreach (char letter in text.ToCharArray())
             {
                 fieldToFill.text += letter;
-                yield return new WaitForSeconds(typingSpeed);
+                yield return new WaitForSecondsRealtime(typingSpeed);
             }
             audioSourceToPlay.Stop();
         }

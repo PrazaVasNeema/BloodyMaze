@@ -13,12 +13,14 @@ namespace BloodyMaze
         [SerializeField] private TMP_Text m_secondSentenceField;
         [SerializeField] private TMP_Text m_thirdSentenceField;
         [SerializeField] private GameObject m_exitButton;
+        [SerializeField] private GameObject m_continueButton;
         [SerializeField] private AudioClip[] m_audipClipToPlayWhileTyping = new AudioClip[3];
         [SerializeField] private AudioClip m_audioClipSingleType;
         [SerializeField] private string[] m_sentencesOpenTextFieldsLocKeys = new string[3];
         [SerializeField] private float m_sentencesTypingSpeed = .02f;
 
         private AudioSource m_audioSource;
+        private bool m_shouldContinue = false;
 
         private void OnEnable()
         {
@@ -35,6 +37,7 @@ namespace BloodyMaze
         IEnumerator EndGameCo()
         {
             m_exitButton.GetComponentInChildren<TMP_Text>().text = GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[3]);
+            m_continueButton.GetComponentInChildren<TMP_Text>().text = GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[4]);
             m_firstSentenceField.text = "";
             m_secondSentenceField.text = "";
             m_thirdSentenceField.text = "";
@@ -61,6 +64,33 @@ namespace BloodyMaze
 
             yield return new WaitForSecondsRealtime(2f);
 
+            m_continueButton.SetActive(true);
+
+            while (!m_shouldContinue)
+            {
+                yield return new WaitForSecondsRealtime(.5f);
+            }
+
+            m_continueButton.SetActive(false);
+            m_firstSentenceField.text = "";
+            m_secondSentenceField.text = "";
+            m_thirdSentenceField.text = "";
+
+            m_firstSentenceField.fontSize = 70f;
+            m_thirdSentenceField.fontSize = 70f;
+            m_sentencesTypingSpeed = .05f;
+            m_audioSource.clip = m_audipClipToPlayWhileTyping[0];
+            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[5])}";
+            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_firstSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
+
+            m_audioSource.clip = m_audipClipToPlayWhileTyping[0];
+            yield return new WaitForSecondsRealtime(1f);
+
+            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[6])}";
+            yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
+
+            yield return new WaitForSecondsRealtime(2f);
+
             m_exitButton.SetActive(true);
         }
 
@@ -72,6 +102,11 @@ namespace BloodyMaze
                 namesByComma += i != peopleNames.Count - 1 ? $"{peopleNames[i]}, " : $"{peopleNames[i]}.";
             }
             return namesByComma;
+        }
+
+        public void SetShouldContinue()
+        {
+            m_shouldContinue = true;
         }
     }
 }
