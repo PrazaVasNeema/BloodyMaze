@@ -42,17 +42,17 @@ MonoBehaviour:
     - eventKey: talked_to_girl
       flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -228,6 +228,8 @@ MonoBehaviour:
       flag: 0
     - eventKey: DayIsBehind_6
       flag: 0
+    - eventKey: safe_zone_note
+      flag: 0
     optionsData:
       language: 0
     roomsData:
@@ -321,17 +323,17 @@ MonoBehaviour:
     - eventKey: talked_to_girl
       flag: 1
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
     - eventKey: placed_mirror
-      flag: 1
+      flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
-      flag: 1
+      flag: 0
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -365,6 +367,8 @@ MonoBehaviour:
     - eventKey: DayIsBehind_5
       flag: 0
     - eventKey: DayIsBehind_6
+      flag: 0
+    - eventKey: safe_zone_note
       flag: 0
     optionsData:
       language: 0
@@ -456,27 +460,27 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
-      flag: 0
+      flag: 1
     - eventKey: opened_library_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl_in_library_secret
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_three
       flag: 0
     - eventKey: opened_bathroom_secret
@@ -531,9 +535,9 @@ MonoBehaviour:
     - roomKey: library
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: locked_room
       agentsToSpawnIDs: []
