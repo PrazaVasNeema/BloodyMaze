@@ -8,6 +8,7 @@ namespace BloodyMaze
 {
     public class UIDialogue : MonoBehaviour
     {
+        public GameObject m_nextSentenceButton;
         public Text nameText;
         public Text dialogueText;
         public Animator animator;
@@ -40,6 +41,7 @@ namespace BloodyMaze
             }
             sentenceData = sentencesData.Dequeue();
             DisplayNextSentence();
+            m_nextSentenceButton.SetActive(true);
         }
 
         public void DisplayNextSentence()
@@ -76,6 +78,7 @@ namespace BloodyMaze
         IEnumerator EndDialogueCo()
         {
             animator.SetBool("IsOpen", false);
+            m_nextSentenceButton.SetActive(false);
             bool doOnce = false;
             if (doOnce)
             {
