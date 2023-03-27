@@ -11,6 +11,9 @@ namespace BloodyMaze
         [SerializeField] private PlayerProfileData m_default;
         public PlayerProfileData defaultData => m_default;
 
+        [SerializeField] private PlayerProfileData[] m_defaultTest;
+        public PlayerProfileData[] defaultTest => m_defaultTest;
+
         [SerializeField] public PlayerProfileData playerProfileData = new();
 
         public CharacterSaveData GetCharacterSaveData()

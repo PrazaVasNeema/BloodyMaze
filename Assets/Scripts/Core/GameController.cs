@@ -54,6 +54,8 @@ namespace BloodyMaze
 
         public System.Action OnLoadingDataGameOptionsComplete;
 
+        [SerializeField] private bool m_shouldUseTestDefault;
+
 
 
 
@@ -146,7 +148,7 @@ namespace BloodyMaze
             {
                 json = PlayerPrefs.GetString($"PlayerProfile_{i}");
                 if (string.IsNullOrEmpty(json))
-                    instance.m_allPlayerProfilesData.Add(null);
+                    instance.m_allPlayerProfilesData.Add(instance.m_shouldUseTestDefault && i != 2 ? playerProfile.defaultTest[i] : null);
                 else
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
@@ -238,7 +240,7 @@ namespace BloodyMaze
             var json = instance.m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
-            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData;
+            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
         }
 
         public static void LoadScene(string sceneName, int choosenProfileIndex)
