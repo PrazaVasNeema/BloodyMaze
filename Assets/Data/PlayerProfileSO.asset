@@ -34,13 +34,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -86,6 +86,8 @@ MonoBehaviour:
     - eventKey: DayIsBehind_5
       flag: 0
     - eventKey: DayIsBehind_6
+      flag: 0
+    - eventKey: safe_zone_note
       flag: 0
     optionsData:
       language: 0
@@ -450,9 +452,9 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
       flag: 0
     - eventKey: talked_to_girl
@@ -502,6 +504,8 @@ MonoBehaviour:
     - eventKey: DayIsBehind_5
       flag: 0
     - eventKey: DayIsBehind_6
+      flag: 0
+    - eventKey: safe_zone_note
       flag: 0
     optionsData:
       language: 0
@@ -560,9 +564,9 @@ MonoBehaviour:
     - roomKey: inner_house_room_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: inner_house_room_2
       agentsToSpawnIDs: []

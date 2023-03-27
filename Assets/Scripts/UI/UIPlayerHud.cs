@@ -33,6 +33,8 @@ namespace BloodyMaze.UI
         [SerializeField] private Button m_medsButton;
         [SerializeField] private Button m_reloadButton;
 
+        private int m_medsCommonCurrentAmount = 4;
+
         private void OnEnable()
         {
             m_UIPanel = m_manaImage.transform.parent.transform.parent.gameObject;
@@ -136,6 +138,8 @@ namespace BloodyMaze.UI
 
         public void RefreshHPAndMana(float healthPr, float manaPr)
         {
+            if (m_medsCommonCurrentAmount != 0)
+                m_medsButton.gameObject.SetActive(healthPr == 1 ? false : true);
             m_healthImage.fillAmount = healthPr;
             m_manaImage.fillAmount = 1 - manaPr;
         }
@@ -177,9 +181,13 @@ namespace BloodyMaze.UI
 
         private void RefreshMedsCount(MedsType medsCommon)
         {
+            m_medsCommonCurrentAmount = medsCommon.currentAmount;
             m_medsCommon.text = medsCommon.currentAmount + "/" + medsCommon.maxAmount;
             if (medsCommon.currentAmount == 0)
+            {
+                m_medsButton.gameObject.SetActive(true);
                 m_medsButton.interactable = false;
+            }
             else
                 m_medsButton.interactable = true;
         }

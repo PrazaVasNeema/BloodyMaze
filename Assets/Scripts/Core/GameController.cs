@@ -152,24 +152,24 @@ namespace BloodyMaze
                 else
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
-            // #if UNITY_EDITOR
-            //             if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
-            //             || SceneManager.GetActiveScene().name == "BattleSystem_2")
-            //             {
-            //                 if (!instance.m_shouldInitNewData)
-            //                 {
-            //                     json = PlayerPrefs.GetString("PlayerProfile_0");
-            //                     Debug.Log($">>> load {json}");
-            //                 }
-            //                 else
-            //                 {
-            //                     json = "";
-            //                 }
-            //                 instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
-            //                 instance.m_levelController = FindObjectOfType<LevelController>();
-            //                 InitLevel();
-            //             }
-            // #endif
+#if UNITY_EDITOR
+            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
+            || SceneManager.GetActiveScene().name == "BattleSystem_2")
+            {
+                if (!instance.m_shouldInitNewData)
+                {
+                    json = PlayerPrefs.GetString("PlayerProfile_0");
+                    Debug.Log($">>> load {json}");
+                }
+                else
+                {
+                    json = "";
+                }
+                instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+                instance.m_levelController = FindObjectOfType<LevelController>();
+                InitLevel();
+            }
+#endif
         }
 
         private void SetPlayerProfileSOData()
