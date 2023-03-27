@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
@@ -13,6 +14,7 @@ namespace BloodyMaze.States
         [SerializeField] private Slider m_optionsSFXSlider;
         [SerializeField] private InitMainMenuLocData m_initMainMenuLocData;
 
+
         public void ApplyOptionsData()
         {
             GameController.instance.SetDataGameOptions(m_optionsLanguageDropdown.value, m_optionsMusicSlider.value, m_optionsSFXSlider.value);
@@ -20,16 +22,13 @@ namespace BloodyMaze.States
         private void OnEnable()
         {
             GameController.instance.OnLoadingDataGameOptionsComplete += InitOptionsAndLoc;
+            InitOptionsAndLoc();
+
         }
 
         private void OnDisable()
         {
             GameController.instance.OnLoadingDataGameOptionsComplete -= InitOptionsAndLoc;
-        }
-
-        private void Start()
-        {
-            InitOptionsAndLoc();
         }
 
         private void InitOptionsAndLoc()
