@@ -4726,6 +4726,7 @@ MonoBehaviour:
   - {fileID: 863047079}
   - {fileID: 1120749798}
   - {fileID: 813384154}
+  IntroText: {fileID: 1555324015}
   mainButtonPlayKey: mainButtonPlayKey
   mainOptionsKey: mainOptionsKey
   mainExitKey: mainExitKey
@@ -4744,6 +4745,7 @@ MonoBehaviour:
   saveSlot3_1Key: 
   saveSlot3_2Key: 
   levelSelectSelectLevelKey: levelSelectSelectLevel
+  IntroTextKey: IntroTextKey
 --- !u!1 &1398018438
 GameObject:
   m_ObjectHideFlags: 0

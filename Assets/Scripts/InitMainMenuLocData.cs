@@ -26,6 +26,7 @@ namespace BloodyMaze
         [SerializeField] private TMP_Text saveSlot3_1;
         [SerializeField] private TMP_Text saveSlot3_2;
         [SerializeField] private TMP_Text[] backButtons;
+        [SerializeField] private TMP_Text IntroText;
 
         [SerializeField] private string mainButtonPlayKey;
         [SerializeField] private string mainOptionsKey;
@@ -45,6 +46,7 @@ namespace BloodyMaze
         [SerializeField] private string saveSlot3_1Key;
         [SerializeField] private string saveSlot3_2Key;
         [SerializeField] private string levelSelectSelectLevelKey;
+        [SerializeField] private string IntroTextKey;
 
         public void SetLocDataMainMenu()
         {
@@ -71,6 +73,7 @@ namespace BloodyMaze
             saveSlot1_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 1";
             saveSlot2_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 2";
             saveSlot3_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 3";
+            IntroText.text = GameController.locData.GetInterfaceText(IntroTextKey);
         }
     }
 }

@@ -34,13 +34,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -460,9 +460,9 @@ MonoBehaviour:
     - eventKey: sat_at_desk
       flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -545,15 +545,15 @@ MonoBehaviour:
     - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 2
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 3
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 4
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: safe_zone
       agentsToSpawnIDs: []
