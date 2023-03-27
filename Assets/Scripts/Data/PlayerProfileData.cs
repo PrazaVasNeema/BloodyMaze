@@ -12,7 +12,17 @@ namespace BloodyMaze
         public OptionsData optionsData = new();
         public List<RoomsData> roomsData = new();
 
+        public PlayerProfileData Clone() => new PlayerProfileData
+        {
+
+            characterSaveData = this.characterSaveData,
+            globalEventsData = this.globalEventsData,
+            optionsData = this.optionsData,
+            roomsData = this.roomsData
+        };
     }
+
+
 
     [System.Serializable]
     public class CharacterSaveData

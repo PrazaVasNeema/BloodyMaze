@@ -192,7 +192,7 @@ namespace BloodyMaze
             var json = instance.m_playerProfile.ToJsonGameplay();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
-            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData;
+            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
         }
 
         //GameOptionsZone START
