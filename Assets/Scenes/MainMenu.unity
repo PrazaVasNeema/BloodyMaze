@@ -1225,6 +1225,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 167410938}
@@ -2215,6 +2219,10 @@ PrefabInstance:
       value: BackButton
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1765085481}
@@ -2926,6 +2934,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 167410938}
@@ -3278,6 +3290,10 @@ PrefabInstance:
     - target: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Name
       value: ChooseChapter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3642,6 +3658,10 @@ PrefabInstance:
     - target: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Name
       value: ApplyOptionsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5477,6 +5497,10 @@ PrefabInstance:
       value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1765085481}
@@ -5617,6 +5641,10 @@ PrefabInstance:
     - target: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Name
       value: GoBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6632,6 +6660,10 @@ PrefabInstance:
       value: PlayButton
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.740566
       objectReference: {fileID: 0}
@@ -6784,6 +6816,10 @@ PrefabInstance:
     - target: {fileID: 108025447300833096, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Name
       value: ExitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751967016525375254, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_Colors.m_NormalColor.b

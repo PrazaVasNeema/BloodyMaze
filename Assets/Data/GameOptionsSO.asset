@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_defaultGameOptionsData:
     language: 0
-    volumeMusic: 0.7
-    volumeSFX: 0.7
+    volumeMusic: 0.65
+    volumeSFX: 0.65
   GameOptionsData:
     language: 0
     volumeMusic: 0.7
