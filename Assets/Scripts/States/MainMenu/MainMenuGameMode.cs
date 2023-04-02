@@ -21,23 +21,22 @@ namespace BloodyMaze.States
         }
         private void OnEnable()
         {
-            GameController.instance.OnLoadingDataGameOptionsComplete += InitOptionsAndLoc;
-            InitOptionsAndLoc();
-
+            GameController.instance.OnLoadingDataGameOptionsComplete += InitOptions;
+            InitOptions();
         }
 
         private void OnDisable()
         {
-            GameController.instance.OnLoadingDataGameOptionsComplete -= InitOptionsAndLoc;
+            GameController.instance.OnLoadingDataGameOptionsComplete -= InitOptions;
         }
 
-        private void InitOptionsAndLoc()
+        private void InitOptions()
         {
             GameOptionsData gameOptionsData = GameController.gameOptions.GameOptionsData;
             m_optionsLanguageDropdown.value = gameOptionsData.language;
             m_optionsMusicSlider.value = gameOptionsData.volumeMusic;
             m_optionsSFXSlider.value = gameOptionsData.volumeSFX;
-            m_initMainMenuLocData.SetLocDataMainMenu();
+            InitInterfaceLocalization();
         }
 
         public void ZoomIn()
