@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using BloodyMaze.Controllers;
 using TMPro;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+
+// Сохранение данных, загрузка данных, загрузка сцены, контроль прогресса игры
 
 namespace BloodyMaze
 {
@@ -36,7 +37,6 @@ namespace BloodyMaze
         private static int m_choosenProfileIndex = 0;
         public static int choosenProfileIndex => m_choosenProfileIndex;
 
-        private bool m_isReloaded;
         private bool m_gameShouldStart;
 
         [SerializeField] private string[] m_UILoaderTextsLocKeys = new string[4];
@@ -88,21 +88,8 @@ namespace BloodyMaze
 
         private void Start()
         {
-            Debug.Log("START GAMECONTROLLER");
-            //LoadPlayerProfile();
             LoadPlayerProfileGameplayData();
-            LoadPlayerProfileOptionsData();
             LoadDataGameOptions();
-            if (SceneManager.GetActiveScene().name == "MainMenu")
-            {
-                MusicManager.current.SetJam("MainMenu");
-            }
-            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
-            || SceneManager.GetActiveScene().name == "BattleSystem_2")
-            {
-                MusicManager.current.SetJam("Gameplay");
-                shouldStartNewGame = instance.m_shouldInitNewData;
-            }
         }
 
         public void InitInterfaceLocLoadingScreen()
@@ -120,16 +107,13 @@ namespace BloodyMaze
             GameEvents.OnInitLevelComplete?.Invoke();
         }
 
-        private void OnApplicationQuit()
-        {
-        }
-
         private static void CheckEvent(string eventKey)
         {
             var globalEvent = instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey);
             if (globalEvent != null)
                 globalEvent.flag = true;
         }
+
         private static void SetRoomAgentStatus(string roomID, int agentID)
         {
             playerProfile.SetRoomAgentStatus(roomID, agentID);
@@ -153,8 +137,11 @@ namespace BloodyMaze
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name == "SampleScene" || SceneManager.GetActiveScene().name == "BattleSystem"
-            || SceneManager.GetActiveScene().name == "BattleSystem_2")
+            if (SceneManager.GetActiveScene().name.Contains("Main"))
+            {
+                MusicManager.current.SetJam("MainMenu");
+            }
+            else
             {
                 if (!instance.m_shouldInitNewData)
                 {
@@ -165,33 +152,25 @@ namespace BloodyMaze
                 {
                     json = "";
                 }
-                instance.m_playerProfile.LoadFromJsonGameplay(json, instance.m_shouldInitNewData);
+                instance.m_playerProfile.LoadFromJson(json, instance.m_shouldInitNewData);
                 instance.m_levelController = FindObjectOfType<LevelController>();
                 InitLevel();
+                MusicManager.current.SetJam("Gameplay");
+                shouldStartNewGame = instance.m_shouldInitNewData;
             }
 #endif
         }
 
         private void SetPlayerProfileSOData()
         {
-            instance.m_playerProfile.LoadFromJsonGameplay(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
+            instance.m_playerProfile.LoadFromJson(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
         }
 
-        private static void LoadPlayerProfileOptionsData()
+        public static void SaveData(bool shouldCallOnSave = true)
         {
-            var json = "";
-            if (!instance.m_shouldInitNewData)
-            {
-                json = PlayerPrefs.GetString("PlayerProfile_0");
-                Debug.Log($">>> load {json}");
-            }
-            instance.m_playerProfile.LoadFromJsonOptions(json);
-        }
-
-        public static void SaveData()
-        {
-            GameEvents.OnSaveData?.Invoke();
-            var json = instance.m_playerProfile.ToJsonGameplay();
+            if (shouldCallOnSave)
+                GameEvents.OnSaveData?.Invoke();
+            var json = instance.m_playerProfile.ToJson();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
             instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
@@ -208,7 +187,6 @@ namespace BloodyMaze
             newOptionsData.volumeSFX = sfx;
             gameOptions.GameOptionsData = newOptionsData;
             Debug.Log($"set2: {gameOptions.GameOptionsData.language}");
-
             SaveDataGameOptions();
             LoadDataGameOptions();
         }
@@ -223,40 +201,26 @@ namespace BloodyMaze
         private static void LoadDataGameOptions()
         {
             var json = "";
-
             json = PlayerPrefs.GetString("GameOptionsData");
-            Debug.Log($">>> load {json}");
-
+            Debug.Log($">>> load (GameOptions) {json}");
             instance.m_gameOptions.LoadFromJsonGameOptions(json);
-            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic * 100f - 80f);
-            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX * 100f - 80f);
+            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeMusic * 30f - 25f);
+            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeSFX * 30f - 25f);
             instance.OnLoadingDataGameOptionsComplete?.Invoke();
         }
 
         //GameOptionsZone END
 
-        public static void SaveDataWithoutOnSave()
-        {
-            var json = instance.m_playerProfile.ToJsonGameplay();
-            Debug.Log($">>> save {json}");
-            PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
-            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
-        }
 
-        public static void LoadScene(string sceneName, int choosenProfileIndex)
-        {
-            m_choosenProfileIndex = choosenProfileIndex;
-            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
-        }
-        public static void LoadScene(string sceneName)
-        {
-            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
-        }
 
-        public static void LoadScene(string sceneName, bool isReloaded)
+        public static void LoadScene(string sceneName, int choosenProfileIndex = -1, bool isReloaded = false)
         {
-            instance.m_isReloaded = isReloaded;
-            instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
+            if (choosenProfileIndex != -1)
+                m_choosenProfileIndex = choosenProfileIndex;
+            if (isReloaded)
+                instance.StartCoroutine(instance.LoadSceneAsync(sceneName, isReloaded));
+            else
+                instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
         }
 
         private IEnumerator LoadSceneAsync(string sceneName)
@@ -265,31 +229,15 @@ namespace BloodyMaze
             float timer = Time.unscaledTime;
             m_loader.SetActive(true);
             m_UILoadingAnimator.SetBool("IsLoading", true);
-            m_UILoadingAnimator.SetTrigger(m_isReloaded ? "ToGameplayRe" : sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
+            m_UILoadingAnimator.SetTrigger(sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
             yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
-            if (m_isReloaded)
-            {
-                m_UIToGameplayReText_2.text = $"{locData.GetInterfaceText(m_UILoaderTextsLocKeys[2])} {playerProfile.playerProfileData.characterSaveData.dayNum + 1}";
-                m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[4]);
-            }
-            else
-            {
-                m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
-            }
+            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
-            var timeToWait = m_isReloaded ? 5f : 2f;
-            if (m_isReloaded)
-            {
-                m_allPlayerProfilesData[m_choosenProfileIndex].roomsData = playerProfile.defaultData.roomsData;
-                playerProfile.SetPlayerProfileSOData(m_allPlayerProfilesData[m_choosenProfileIndex]);
-                CheckEvent($"DayIsBehind_{playerProfile.playerProfileData.characterSaveData.dayNum}");
-                playerProfile.playerProfileData.characterSaveData.dayNum++;
-                SaveDataWithoutOnSave();
-                m_isReloaded = false;
-            }
-            if (sceneName == "SampleScene")
+            var timeToWait = 2f;
+            // Chapter<Name>Room<Num>
+            if (sceneName.Contains("Room"))
                 SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
@@ -298,42 +246,66 @@ namespace BloodyMaze
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
             m_UILoadingAnimator.SetBool("IsLoading", false);
-
-            switch (sceneName)
+            if (sceneName == "MainMenu")
+                MusicManager.current.SetJam("MainMenu");
+            else
             {
-                case "SampleScene":
-                    m_levelController = FindObjectOfType<LevelController>();
-                    InitLevel();
-                    MusicManager.current.SetJam("Gameplay");
-                    break;
-                case "BattleSystem_2":
-                    m_levelController = FindObjectOfType<LevelController>();
-                    InitLevel();
-                    MusicManager.current.SetJam("Gameplay");
-                    break;
-                case "MainMenu":
-
-                    MusicManager.current.SetJam("MainMenu");
-                    break;
-
-            }
-            if (sceneName != "MainMenu")
+                m_levelController = FindObjectOfType<LevelController>();
+                InitLevel();
+                MusicManager.current.SetJam("Gameplay");
                 GameTransitionSystem.ScreenFade();
-            if (sceneName != "MainMenu")
                 while (!m_gameShouldStart)
                 {
                     yield return new();
                 }
+            }
             m_loader.SetActive(false);
             if (sceneName != "MainMenu")
                 GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);
-            // GameEvents.OnCallGotoFunction("gameplay");
         }
 
-        public static void SetLoaderText(string text)
+        // Scene reload case
+        private IEnumerator LoadSceneAsync(string sceneName, bool isReloaded)
         {
-            instance.m_TMP_Text.text = text;
+            m_gameShouldStart = false;
+            float timer = Time.unscaledTime;
+            m_loader.SetActive(true);
+            m_UILoadingAnimator.SetBool("IsLoading", true);
+            m_UILoadingAnimator.SetTrigger("ToGameplayRe");
+            yield return new WaitForSecondsRealtime(2f);
+            yield return SceneManager.LoadSceneAsync("Empty");
+
+            m_UIToGameplayReText_2.text = $"{locData.GetInterfaceText(m_UILoaderTextsLocKeys[2])} {playerProfile.playerProfileData.characterSaveData.dayNum + 1}";
+            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[4]);
+
+            System.GC.Collect();
+            Resources.UnloadUnusedAssets();
+            var timeToWait = 5f;
+            m_allPlayerProfilesData[m_choosenProfileIndex].roomsData = playerProfile.defaultData.roomsData;
+            playerProfile.SetPlayerProfileSOData(m_allPlayerProfilesData[m_choosenProfileIndex]);
+            CheckEvent($"DayIsBehind_{playerProfile.playerProfileData.characterSaveData.dayNum}");
+            playerProfile.playerProfileData.characterSaveData.dayNum++;
+            SaveData(false);
+            SetPlayerProfileSOData();
+            var dif = Time.unscaledTime - timer;
+            if (dif < timeToWait)
+            {
+                yield return new WaitForSecondsRealtime(timeToWait - dif);
+            }
+            yield return SceneManager.LoadSceneAsync(sceneName);
+            m_UILoadingAnimator.SetBool("IsLoading", false);
+            m_levelController = FindObjectOfType<LevelController>();
+            InitLevel();
+            GameTransitionSystem.ScreenFade();
+            while (!m_gameShouldStart)
+            {
+                yield return new();
+            }
+            m_loader.SetActive(false);
+            GameTransitionSystem.ScreenUnfade();
+            yield return new WaitForSecondsRealtime(2f);
+            // GameEvents.OnCallGotoFunction("gameplay");
         }
 
         public void SetGameShouldStart()
@@ -341,5 +313,4 @@ namespace BloodyMaze
             m_gameShouldStart = true;
         }
     }
-
 }

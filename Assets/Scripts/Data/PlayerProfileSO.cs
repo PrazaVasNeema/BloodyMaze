@@ -42,7 +42,7 @@ namespace BloodyMaze
             return playerProfileData.roomsData[roomID];
         }
 
-        public void LoadFromJsonGameplay(string json, bool shouldInitNewData)
+        public void LoadFromJson(string json, bool shouldInitNewData)
         {
             if (shouldInitNewData)
             {
@@ -70,30 +70,76 @@ namespace BloodyMaze
             }
         }
 
-        public string ToJsonGameplay()
+        public string ToJson()
         {
             PlayerProfileData currentData = new PlayerProfileData();
             currentData.characterSaveData = playerProfileData.characterSaveData;
             currentData.globalEventsData = playerProfileData.globalEventsData;
             currentData.roomsData = playerProfileData.roomsData;
-
             return JsonUtility.ToJson(currentData);
         }
+    }
 
-        public void LoadFromJsonOptions(string json)
+    // Data classes ↓
+
+    [System.Serializable]
+    public class PlayerProfileData
+    {
+        public CharacterSaveData characterSaveData = new();
+        public List<GlobalEventsData> globalEventsData = new();
+        public List<RoomsData> roomsData = new();
+
+        public PlayerProfileData Clone() => new PlayerProfileData
         {
-            if (!string.IsNullOrEmpty(json))
-            {
-                var data = JsonUtility.FromJson<PlayerProfileData>(json);
-                if (data != null)
-                {
-                    playerProfileData.optionsData = data.optionsData;
-                }
-            }
-            else
-            {
-                playerProfileData.optionsData = m_default.optionsData;
-            }
-        }
+
+            characterSaveData = this.characterSaveData,
+            globalEventsData = this.globalEventsData,
+            roomsData = this.roomsData
+        };
+    }
+
+    [System.Serializable]
+    public class CharacterSaveData
+    {
+        public float currentHealth;
+        public float maxHealth;
+        public float currentMana;
+        public float maxMana;
+        public float manaRestoringRate;
+        public float moveSpeed;
+
+        public AmmoType holyAmmoType;
+        public MedsType commonMeds;
+        public int lastLevelIndex;
+        public int dayNum = 0;
+    }
+
+    [System.Serializable]
+    public class GlobalEventsData
+    {
+        public string eventKey;
+        public bool flag;
+    }
+
+    [System.Serializable]
+    public class RoomsData
+    {
+        public string roomKey;
+        public List<AgentRoomStatus> agentsToSpawnIDs = new();
+        public List<ItemRoomStatus> itemsToSpawnIDs = new();
+    }
+
+    [System.Serializable]
+    public class AgentRoomStatus
+    {
+        public int agentID;
+        public bool shouldntSpawn;
+    }
+
+    [System.Serializable]
+    public class ItemRoomStatus
+    {
+        public int itemID;
+        public bool shouldntSpawn;
     }
 }
