@@ -66,6 +66,8 @@ namespace BloodyMaze.Controllers
             StartCoroutine(InCoroutine());
         }
 
+
+
         private IEnumerator InCoroutine()
         {
             ScreenFade();

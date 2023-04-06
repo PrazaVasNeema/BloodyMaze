@@ -218,7 +218,7 @@ namespace BloodyMaze
             if (choosenProfileIndex != -1)
                 m_choosenProfileIndex = choosenProfileIndex;
             if (isReloaded)
-                instance.StartCoroutine(instance.LoadSceneAsync(sceneName, isReloaded));
+                instance.StartCoroutine(instance.LoadSceneAsyncReload(sceneName));
             else
                 instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
         }
@@ -266,7 +266,7 @@ namespace BloodyMaze
         }
 
         // Scene reload case
-        private IEnumerator LoadSceneAsync(string sceneName, bool isReloaded)
+        private IEnumerator LoadSceneAsyncReload(string sceneName)
         {
             m_gameShouldStart = false;
             float timer = Time.unscaledTime;
@@ -306,6 +306,11 @@ namespace BloodyMaze
             GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);
             // GameEvents.OnCallGotoFunction("gameplay");
+        }
+
+        private IEnumerator LoadSceneAsyncRoom(string sceneName)
+        {
+            yield return new WaitForSecondsRealtime(2f);
         }
 
         public void SetGameShouldStart()
