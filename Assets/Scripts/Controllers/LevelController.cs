@@ -37,11 +37,6 @@ namespace BloodyMaze.Controllers
         {
             PlayerProfileSO playerProfileSO = GameController.playerProfile;
 
-            for (int i = 0; i < m_transiters.Count; i += 2)
-            {
-                m_transiters[i].InitRoomTransiter(m_transiters[i + 1]);
-                m_transiters[i + 1].InitRoomTransiter(m_transiters[i]);
-            }
             m_activeRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
                         "safe_zone" : "outsides";
             foreach (RoomController rc in m_rooms)

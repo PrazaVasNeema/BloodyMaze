@@ -2,34 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.Controllers;
+using UnityEditor;
 
 namespace BloodyMaze.Components
 {
     public class ActivateModuleCallTransition : ActivateModuleAbstract
     {
-        [SerializeField] private RoomController m_prevRoom;
-        [SerializeField] private RoomController m_nextRoom;
-        [SerializeField] private bool m_shouldChangeRoom;
-        [SerializeField] private Transform m_transitPoint;
-        [SerializeField] private bool m_shouldWait;
+
+        [HideInInspector]
+        public int RoomChoiceIndex = 0;
+        [HideInInspector]
+        public List<string> room = new List<string>(new string[] { "", "Henry", "Leslie", "Chris" });
 
         public override void ActivateModule()
         {
-            if (m_shouldWait)
-                GameTransitionSystem.current.TransitCharacter(m_transitPoint, m_prevRoom, m_nextRoom, m_shouldChangeRoom, true);
-            else
-                GameTransitionSystem.current.TransitCharacter(m_transitPoint, m_prevRoom, m_nextRoom, m_shouldChangeRoom);
+            // TODO сам транзишн
             var activateOnInteract = GetComponent<ActivateOnInteract>();
             if (activateOnInteract)
                 activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
             GameEvents.OnCallGotoFunction?.Invoke("none");
         }
+    }
 
-        public void InitRoomTransiter(ActivateModuleCallTransition activateModuleCallTransition)
+    [CustomEditor(typeof(ActivateModuleCallTransition))]
+    public class DropdownEditor : Editor
+    {
+        public override void OnInspectorGUI()
         {
-            m_prevRoom = transform.parent.GetComponent<RoomController>();
-            m_nextRoom = activateModuleCallTransition.transform.parent.GetComponent<RoomController>();
-            m_transitPoint = activateModuleCallTransition.transform.GetChild(0).transform;
+            //do this first to make sure you have the latest version
+            serializedObject.Update();
+            ActivateModuleCallTransition script = (ActivateModuleCallTransition)target;
+
+            SerializedProperty specialProp = serializedObject.FindProperty("RoomChoiceIndex");
+            specialProp.intValue = EditorGUILayout.Popup("NextRoomSceneName", script.RoomChoiceIndex, script.room.ToArray());
+            // script.RoomChoiceIndex = EditorGUILayout.Popup(script.RoomChoiceIndex, script.room.ToArray());
+            base.OnInspectorGUI();
+
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }

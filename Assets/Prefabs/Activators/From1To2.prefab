@@ -503,6 +503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
+  RoomChoiceIndex: 1
+  room:
+  - Omar
+  - Henry
+  - Leslie
+  - Chris
   m_prevRoom: {fileID: 0}
   m_nextRoom: {fileID: 0}
   m_shouldChangeRoom: 1
