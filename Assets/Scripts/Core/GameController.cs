@@ -220,16 +220,26 @@ namespace BloodyMaze
             PlayerPrefs.SetString($"GameOptionsData", json);
         }
 
+        // private static void LoadDataGameOptions()
+        // {
+        //     var json = "";
+
+        //     json = PlayerPrefs.GetString("GameOptionsData");
+        //     Debug.Log($">>> load {json}");
+
+        //     instance.m_gameOptions.LoadFromJsonGameOptions(json);
+        //     instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic * 100f - 80f);
+        //     instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX * 100f - 80f);
+        //     instance.OnLoadingDataGameOptionsComplete?.Invoke();
+        // }
         private static void LoadDataGameOptions()
         {
             var json = "";
-
             json = PlayerPrefs.GetString("GameOptionsData");
-            Debug.Log($">>> load {json}");
-
+            Debug.Log($">>> load (GameOptions) {json}");
             instance.m_gameOptions.LoadFromJsonGameOptions(json);
-            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic * 100f - 80f);
-            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX * 100f - 80f);
+            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeMusic * 30f - 25f);
+            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeSFX * 30f - 25f);
             instance.OnLoadingDataGameOptionsComplete?.Invoke();
         }
 
