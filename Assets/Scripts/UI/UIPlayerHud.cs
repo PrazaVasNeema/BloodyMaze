@@ -51,8 +51,11 @@ namespace BloodyMaze.UI
         private void OnDisable()
         {
             GameEvents.OnShowMiniMessage -= ShowMiniMessage;
-            m_characterComponent.medsComponent.OnMedsCountChange -= RefreshMedsCount;
-            m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
+            if (m_characterComponent)
+            {
+                m_characterComponent.medsComponent.OnMedsCountChange -= RefreshMedsCount;
+                m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
+            }
             GameEvents.OnReload -= OnReload;
             GameEvents.OnTransition -= OnTransitionUpdateUI;
         }

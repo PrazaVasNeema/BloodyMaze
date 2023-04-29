@@ -56,7 +56,7 @@ namespace BloodyMaze
 
         [SerializeField] private bool m_shouldUseTestDefault;
 
-        private LevelController m_levelController;
+        private LevelControllerRe m_levelController;
 
         private void Awake()
         {
@@ -149,7 +149,7 @@ namespace BloodyMaze
                     json = "";
                 }
                 instance.m_playerProfile.LoadFromJson(json, instance.m_shouldInitNewData);
-                instance.m_levelController = FindObjectOfType<LevelController>();
+                instance.m_levelController = FindObjectOfType<LevelControllerRe>();
                 InitLevel();
                 MusicManager.current.SetJam("Gameplay");
                 shouldStartNewGame = instance.m_shouldInitNewData;
@@ -227,13 +227,13 @@ namespace BloodyMaze
             m_UILoadingAnimator.SetBool("IsLoading", true);
             m_UILoadingAnimator.SetTrigger(sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
             yield return new WaitForSecondsRealtime(2f);
-            yield return SceneManager.LoadSceneAsync("Empty");
+            yield return SceneManager.LoadSceneAsync(sceneName == "MainMenu" ? "Empty" : "LevelPreLoader");
             m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
             var timeToWait = 2f;
             // Chapter<Name>Room<Num>
-            if (sceneName.Contains("Room"))
+            if (sceneName.Contains("LevelPreLoader"))
                 SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
@@ -246,18 +246,18 @@ namespace BloodyMaze
                 MusicManager.current.SetJam("MainMenu");
             else
             {
-                m_levelController = FindObjectOfType<LevelController>();
+                m_levelController = FindObjectOfType<LevelControllerRe>();
                 InitLevel();
                 MusicManager.current.SetJam("Gameplay");
-                GameTransitionSystem.ScreenFade();
+                // GameTransitionSystem.ScreenFade();
                 while (!m_gameShouldStart)
                 {
                     yield return new();
                 }
             }
             m_loader.SetActive(false);
-            if (sceneName != "MainMenu")
-                GameTransitionSystem.ScreenUnfade();
+            // if (sceneName != "MainMenu")
+            //     GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);
         }
 
@@ -291,7 +291,7 @@ namespace BloodyMaze
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
             m_UILoadingAnimator.SetBool("IsLoading", false);
-            m_levelController = FindObjectOfType<LevelController>();
+            m_levelController = FindObjectOfType<LevelControllerRe>();
             InitLevel();
             GameTransitionSystem.ScreenFade();
             while (!m_gameShouldStart)

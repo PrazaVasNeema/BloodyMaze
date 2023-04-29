@@ -18,6 +18,7 @@ namespace BloodyMaze
 
         private void Awake()
         {
+            m_state = ActionStates.EXPLORING;
             current = this;
         }
 

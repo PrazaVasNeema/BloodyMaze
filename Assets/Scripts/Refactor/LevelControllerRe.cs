@@ -18,7 +18,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         public GameObject virtualCamera => m_virtualCamera.gameObject;
-        [SerializeField] private string m_startRoom;
+        private string m_startRoom;
         private CharacterComponent m_player;
         public CharacterComponent player => m_player;
         private int m_spawnPointNum;
@@ -44,7 +44,7 @@ namespace BloodyMaze.Controllers
             player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);
             m_playerHud.Init(player);
-            GameTransitionSystem.Init(player);
+            // GameTransitionSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
             DontDestroyOnLoad(gameObject);
             LoadRoomScene(m_startRoom, 0);
@@ -75,6 +75,7 @@ namespace BloodyMaze.Controllers
 
             yield return SceneManager.LoadSceneAsync(sceneName);
             // GameTransitionSystem.ScreenFade();
+            FindObjectOfType<RoomControllerRe>().Init();
             yield return new WaitForSecondsRealtime(2f);
         }
     }
