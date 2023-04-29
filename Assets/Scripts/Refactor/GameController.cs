@@ -56,10 +56,6 @@ namespace BloodyMaze
 
         [SerializeField] private bool m_shouldUseTestDefault;
 
-
-
-
-
         private LevelController m_levelController;
 
         private void Awake()
@@ -223,11 +219,6 @@ namespace BloodyMaze
                 instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
         }
 
-        public static void LoadRoomScene(string roomSceneName)
-        {
-            instance.StartCoroutine(instance.LoadSceneAsyncRoom(roomSceneName));
-        }
-
         private IEnumerator LoadSceneAsync(string sceneName)
         {
             m_gameShouldStart = false;
@@ -318,18 +309,7 @@ namespace BloodyMaze
             m_gameShouldStart = true;
         }
 
-        private IEnumerator LoadSceneAsyncRoom(string sceneName)
-        {
-            yield return SceneManager.LoadSceneAsync("Empty");
-            System.GC.Collect();
-            Resources.UnloadUnusedAssets();
-            // Chapter<Name>Room<Num>
-            if (sceneName.Contains("Room"))
-                SetPlayerProfileSOData();
-            yield return SceneManager.LoadSceneAsync(sceneName);
-            // GameTransitionSystem.ScreenFade();
-            yield return new WaitForSecondsRealtime(2f);
-        }
+
 
 
     }
