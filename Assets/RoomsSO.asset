@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomDataList:
   - RoomSceneName: 
-    RoomTransitionPoints: []
+    RoomTransitionPoints:
+    - {fileID: 0}
+    - {fileID: 0}
+  - RoomSceneName: 
+    RoomTransitionPoints:
+    - {fileID: 0}
+    - {fileID: 0}

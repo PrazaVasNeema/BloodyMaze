@@ -223,6 +223,11 @@ namespace BloodyMaze
                 instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
         }
 
+        public static void LoadRoomScene(string roomSceneName)
+        {
+            instance.StartCoroutine(instance.LoadSceneAsyncRoom(roomSceneName));
+        }
+
         private IEnumerator LoadSceneAsync(string sceneName)
         {
             m_gameShouldStart = false;
@@ -308,14 +313,24 @@ namespace BloodyMaze
             // GameEvents.OnCallGotoFunction("gameplay");
         }
 
-        private IEnumerator LoadSceneAsyncRoom(string sceneName)
-        {
-            yield return new WaitForSecondsRealtime(2f);
-        }
-
         public void SetGameShouldStart()
         {
             m_gameShouldStart = true;
         }
+
+        private IEnumerator LoadSceneAsyncRoom(string sceneName)
+        {
+            yield return SceneManager.LoadSceneAsync("Empty");
+            System.GC.Collect();
+            Resources.UnloadUnusedAssets();
+            // Chapter<Name>Room<Num>
+            if (sceneName.Contains("Room"))
+                SetPlayerProfileSOData();
+            yield return SceneManager.LoadSceneAsync(sceneName);
+            // GameTransitionSystem.ScreenFade();
+            yield return new WaitForSecondsRealtime(2f);
+        }
+
+
     }
 }
