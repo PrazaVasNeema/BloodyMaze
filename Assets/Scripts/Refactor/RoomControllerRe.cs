@@ -25,6 +25,7 @@ namespace BloodyMaze.Controllers
             var spawnPointNum = LevelControllerRe.current.spawnPointNum;
 
             LevelControllerRe.current.player.transform.position = m_roomSpawnPoints[spawnPointNum].position;
+            LevelControllerRe.current.player.GetComponent<CharacterController>().enabled = true;
 
             // InitActivaters();
             // InitAgents();

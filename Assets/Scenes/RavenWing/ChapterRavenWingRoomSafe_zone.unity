@@ -6341,6 +6341,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7547262612666700589}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: ChapterRavenWingRoomOutsides
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
@@ -6348,6 +6352,10 @@ PrefabInstance:
       propertyPath: m_prevRoom
       value: 
       objectReference: {fileID: 9162297916593716028}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6416,8 +6424,7 @@ PrefabInstance:
       propertyPath: m_messageTextKey
       value: main_hall
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9718c458be949499a95934be81d445, type: 3}
 --- !u!4 &1594826870 stripped
 Transform:
@@ -6429,29 +6436,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 1594826869}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1594826872 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7397397649348526011, guid: 5d9718c458be949499a95934be81d445, type: 3}
-  m_PrefabInstance: {fileID: 1594826869}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1594826873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594826872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a06acd34623507469912f945f579e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_eventFlagToCheck: 
-  RoomChoiceIndex: 0
-  room:
-  - ChapterRavenWingRoomSafe_zone
-  - ChapterRavenWingRoomOutsides
-  m_nextRoomSpawnNum: 1
 --- !u!1 &1864574536
 GameObject:
   m_ObjectHideFlags: 0

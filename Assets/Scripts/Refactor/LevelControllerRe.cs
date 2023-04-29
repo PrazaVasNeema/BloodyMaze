@@ -19,8 +19,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
         public GameObject virtualCamera => m_virtualCamera.gameObject;
         private string m_startRoom;
-        private CharacterComponent m_player;
-        public CharacterComponent player => m_player;
+        public CharacterComponent player;
         private int m_spawnPointNum;
         public int spawnPointNum => m_spawnPointNum;
 
@@ -40,7 +39,8 @@ namespace BloodyMaze.Controllers
 
             m_startRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
                         "ChapterRavenWingRoomSafe_zone" : "ChapterRavenWingRoomOutsides";
-            m_player = SpawnPlayer();
+            player = SpawnPlayer();
+            player.GetComponent<CharacterController>().enabled = false;
             player.Init(playerProfileSO.GetCharacterSaveData());
             m_playerInputController.Init(player);
             m_playerHud.Init(player);
@@ -68,6 +68,7 @@ namespace BloodyMaze.Controllers
 
         private IEnumerator LoadSceneAsyncRoom(string sceneName)
         {
+            player.GetComponent<CharacterController>().enabled = false;
             yield return SceneManager.LoadSceneAsync("Empty");
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
@@ -76,7 +77,7 @@ namespace BloodyMaze.Controllers
             yield return SceneManager.LoadSceneAsync(sceneName);
             // GameTransitionSystem.ScreenFade();
             FindObjectOfType<RoomControllerRe>().Init();
-            yield return new WaitForSecondsRealtime(2f);
+            // yield return new WaitForSecondsRealtime(2f);
         }
     }
 

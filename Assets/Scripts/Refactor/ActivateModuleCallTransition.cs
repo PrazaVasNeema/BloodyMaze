@@ -9,11 +9,12 @@ namespace BloodyMaze.Components
     public class ActivateModuleCallTransition : ActivateModuleAbstract
     {
 
-        [HideInInspector]
-        public int RoomChoiceIndex = 0;
-        [HideInInspector]
+        // [HideInInspector]
+        // public int RoomChoiceIndex = 0;
+        // [HideInInspector]
         // public List<string> room = new List<string>(new string[] { "ChapterRavenWingRoomSafe_zone", "ChapterRavenWingRoomOutsides" });
-        public List<string> room = new List<string>(new string[] { "ChapterRavenWingRoomSafe_zone", "ChapterRavenWingRoomOutsides" });
+        [SerializeField]
+        private string room;
         [SerializeField] private int m_nextRoomSpawnNum = 0;
 
         public override void ActivateModule()
@@ -23,25 +24,26 @@ namespace BloodyMaze.Components
             // if (activateOnInteract)
             //     activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
             // GameEvents.OnCallGotoFunction?.Invoke("none");
-            LevelControllerRe.current.LoadRoomScene(room[RoomChoiceIndex], m_nextRoomSpawnNum);
+            Debug.Log(room);
+            LevelControllerRe.current.LoadRoomScene(room, m_nextRoomSpawnNum);
         }
     }
 
-    [CustomEditor(typeof(ActivateModuleCallTransition))]
-    public class DropdownEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            //do this first to make sure you have the latest version
-            serializedObject.Update();
-            ActivateModuleCallTransition script = (ActivateModuleCallTransition)target;
+    // [CustomEditor(typeof(ActivateModuleCallTransition))]
+    // public class DropdownEditor : Editor
+    // {
+    //     public override void OnInspectorGUI()
+    //     {
+    //         //do this first to make sure you have the latest version
+    //         serializedObject.Update();
+    //         ActivateModuleCallTransition script = (ActivateModuleCallTransition)target;
 
-            SerializedProperty specialProp = serializedObject.FindProperty("RoomChoiceIndex");
-            specialProp.intValue = EditorGUILayout.Popup("NextRoomSceneName", script.RoomChoiceIndex, script.room.ToArray());
-            // script.RoomChoiceIndex = EditorGUILayout.Popup(script.RoomChoiceIndex, script.room.ToArray());
-            base.OnInspectorGUI();
+    //         SerializedProperty specialProp = serializedObject.FindProperty("RoomChoiceIndex");
+    //         specialProp.intValue = EditorGUILayout.Popup("NextRoomSceneName", script.RoomChoiceIndex, script.room.ToArray());
+    //         // script.RoomChoiceIndex = EditorGUILayout.Popup(script.RoomChoiceIndex, script.room.ToArray());
+    //         base.OnInspectorGUI();
 
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
+    //         serializedObject.ApplyModifiedProperties();
+    //     }
+    // }
 }
