@@ -17,12 +17,36 @@ namespace BloodyMaze.Controllers
         private List<GlobalEventsData> m_globalEventsData;
         private bool m_enabledFlag;
 
+        private void Start()
+        {
+            InitLevelControllerController();
+        }
+
+        private static void InitLevelControllerController()
+        {
+#if UNITY_EDITOR
+            if (GameController.instance == null)
+            {
+                var assets = UnityEditor.AssetDatabase.FindAssets("LevelController");
+                foreach (var guid in assets)
+                {
+                    var path = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
+                    var prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                    if (prefab)
+                    {
+                        Instantiate(prefab);
+                        break;
+                    }
+                }
+            }
+#endif
+        }
 
         public void Init()
         {
             m_globalEventsData = GameController.playerProfile.playerProfileData.globalEventsData;
 
-            var spawnPointNum = LevelControllerRe.current.spawnPointNum;
+            var spawnPointNum = LevelControllerRe.current.currentSpawnPointIndex;
 
             LevelControllerRe.current.player.transform.position = m_roomSpawnPoints[spawnPointNum].position;
             LevelControllerRe.current.player.GetComponent<CharacterController>().enabled = true;
@@ -66,6 +90,7 @@ namespace BloodyMaze.Controllers
 
                 m_roomActivaters[i].gameObject.SetActive(flag);
 
+                InitAgents();
             }
 
 

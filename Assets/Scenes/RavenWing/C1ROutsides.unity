@@ -267,7 +267,7 @@ Transform:
   - {fileID: 1363967435}
   - {fileID: 864270999}
   m_Father: {fileID: 1510527903}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72665673
 GameObject:
@@ -6601,7 +6601,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1510527903}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &1176040030 stripped
 Transform:
@@ -7152,17 +7152,49 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 705507995}
-  - {fileID: 1750391670}
+  - {fileID: 1548691456}
   - {fileID: 234461426}
   - {fileID: 1889966119}
   - {fileID: 2659877726928691855}
-  - {fileID: 2336655043107060804}
   - {fileID: 1664540235}
   - {fileID: 1835289353}
   - {fileID: 30623967}
   - {fileID: 1115753919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1548691455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548691456}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548691456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548691455}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.48691, y: 27.979122, z: 35.87932}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1750391670}
+  - {fileID: 3513441772870789285}
+  m_Father: {fileID: 1510527903}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590240637
 GameObject:
@@ -7650,7 +7682,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1510527903}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750391669
 GameObject:
@@ -7676,12 +7708,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750391669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.155849, y: 3.2811508, z: -6.381241}
+  m_LocalPosition: {x: -8.33106, y: -24.697971, z: -42.26056}
   m_LocalScale: {x: 4.186821, y: 2.5083916, z: 2.1154}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1510527903}
-  m_RootOrder: 1
+  m_Father: {fileID: 1548691456}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806316996 stripped
 GameObject:
@@ -7780,7 +7812,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1510527903}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1889966118
 GameObject:
@@ -17239,9 +17271,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336655043107060805}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.024143, y: -2.383552, z: 10.113251}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.2456528, y: -0.3279367, z: 2.3701181}
+  m_LocalScale: {x: 0.056116723, y: 0.056116723, z: 0.056116723}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2336655042646586151}
@@ -17254,12 +17286,11 @@ Transform:
   - {fileID: 1419878197}
   - {fileID: 1176040030}
   - {fileID: 8108676973463814082}
-  - {fileID: 3513441772870789285}
   - {fileID: 7972479}
   - {fileID: 103434817}
   - {fileID: 364247646}
-  m_Father: {fileID: 1510527903}
-  m_RootOrder: 5
+  m_Father: {fileID: 2659877726928691855}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2336655043107060805
 GameObject:
@@ -32817,7 +32848,8 @@ Transform:
   m_LocalPosition: {x: 30.221676, y: 3.46028, z: 52.348755}
   m_LocalScale: {x: 17.82, y: 17.82, z: 17.82}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2336655043107060804}
   m_Father: {fileID: 1510527903}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -32826,23 +32858,31 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2336655043107060804}
+    m_TransformParent: {fileID: 1548691456}
     m_Modifications:
     - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.7291296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.84853303
       objectReference: {fileID: 0}
     - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: -7.9627666
       objectReference: {fileID: 0}
     - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.41
+      value: -23.952675
       objectReference: {fileID: 0}
     - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.1355
+      value: -8.630569
       objectReference: {fileID: 0}
     - target: {fileID: 1596906708342594240, guid: 1c75c207e5d391c44b6bb95565c44190, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33184,10 +33224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventFlagToCheck: 
-  RoomChoiceIndex: 0
-  room:
-  - ChapterRavenWingRoomSafe_zone
-  - ChapterRavenWingRoomOutsides
+  room: 
   m_nextRoomSpawnNum: 1
 --- !u!4 &8108676973463814082 stripped
 Transform:

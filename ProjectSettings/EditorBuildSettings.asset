@@ -21,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RavenWing/LevelPreLoader.unity
     guid: 60bb1edd7a55ad74fa18e355d8f2f625
   - enabled: 1
-    path: Assets/Scenes/RavenWing/ChapterRavenWingRoomOutsides.unity
+    path: Assets/Scenes/RavenWing/C1ROutsides.unity
     guid: ea1f8f571c2f95940ac35ed4c3b1b392
   - enabled: 1
-    path: Assets/Scenes/RavenWing/ChapterRavenWingRoomSafe_zone.unity
+    path: Assets/Scenes/RavenWing/C1RSafe_zone.unity
     guid: 77fb45a6256261740a06e1a0ef1ff9e2
   m_configObjects: {}

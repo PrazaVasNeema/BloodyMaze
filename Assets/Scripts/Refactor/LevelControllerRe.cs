@@ -20,8 +20,8 @@ namespace BloodyMaze.Controllers
         public GameObject virtualCamera => m_virtualCamera.gameObject;
         private string m_startRoom;
         public CharacterComponent player;
-        private int m_spawnPointNum;
-        public int spawnPointNum => m_spawnPointNum;
+        private int m_currentSpawnPointIndex;
+        public int currentSpawnPointIndex => m_currentSpawnPointIndex;
 
         private void Awake()
         {
@@ -47,7 +47,14 @@ namespace BloodyMaze.Controllers
             // GameTransitionSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
             DontDestroyOnLoad(gameObject);
-            LoadRoomScene(m_startRoom, 0);
+            if (SceneManager.GetActiveScene().name.Contains("LevelPreLoader"))
+                LoadRoomScene(m_startRoom, 0);
+            else
+            {
+                m_currentSpawnPointIndex = 0;
+                player.GetComponent<CharacterController>().enabled = false;
+                FindObjectOfType<RoomControllerRe>().Init();
+            }
         }
 
         private CharacterComponent SpawnPlayer()
@@ -62,7 +69,7 @@ namespace BloodyMaze.Controllers
 
         public void LoadRoomScene(string roomSceneName, int spawnPointNum)
         {
-            m_spawnPointNum = spawnPointNum;
+            m_currentSpawnPointIndex = spawnPointNum;
             StartCoroutine(LoadSceneAsyncRoom(roomSceneName));
         }
 

@@ -34,13 +34,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -89,8 +89,6 @@ MonoBehaviour:
       flag: 0
     - eventKey: safe_zone_note
       flag: 0
-    optionsData:
-      language: 0
     roomsData:
     - roomKey: outsides
       agentsToSpawnIDs:
@@ -230,8 +228,6 @@ MonoBehaviour:
       flag: 0
     - eventKey: safe_zone_note
       flag: 0
-    optionsData:
-      language: 0
     roomsData:
     - roomKey: outsides
       agentsToSpawnIDs:
@@ -370,8 +366,6 @@ MonoBehaviour:
       flag: 0
     - eventKey: safe_zone_note
       flag: 0
-    optionsData:
-      language: 0
     roomsData:
     - roomKey: outsides
       agentsToSpawnIDs:
@@ -456,13 +450,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -511,8 +505,6 @@ MonoBehaviour:
       flag: 0
     - eventKey: safe_zone_note
       flag: 0
-    optionsData:
-      language: 0
     roomsData:
     - roomKey: outsides
       agentsToSpawnIDs:
@@ -545,15 +537,15 @@ MonoBehaviour:
     - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 2
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 3
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 4
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: safe_zone
       agentsToSpawnIDs: []
