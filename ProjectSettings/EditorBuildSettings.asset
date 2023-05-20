@@ -26,4 +26,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RavenWing/C1RSafe_zone.unity
     guid: 77fb45a6256261740a06e1a0ef1ff9e2
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RBathroom.unity
+    guid: 1977972c3794a2e429a03197c800e328
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RBathroom_secret.unity
+    guid: 0b9c0c235a142c94c847cdd20d475cd7
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RDining_room.unity
+    guid: f1f8609bdbfe0964b9fb94128810761b
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RInnerHouseRoom_1.unity
+    guid: 8e40558847e5ed54ea1d56241b85d562
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RInnerHouseRoom_2.unity
+    guid: 722faff8edff2144abba8f0487717df8
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RLibrary.unity
+    guid: 461ec408a38e8d4459f9f72fc369b050
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RLocked_room.unity
+    guid: 68717cff325197b4e9025f2d86477f43
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RMain_hall.unity
+    guid: ecab7ab28aa63f143a61b5d1c6bfeabd
+  - enabled: 1
+    path: Assets/Scenes/RavenWing/C1RPiano_room.unity
+    guid: db79be2f68a66d144b413c7a0c8ba03f
   m_configObjects: {}

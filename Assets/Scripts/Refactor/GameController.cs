@@ -133,7 +133,7 @@ namespace BloodyMaze
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name.Contains("Main"))
+            if (SceneManager.GetActiveScene().name.Contains("MainMenu"))
             {
                 MusicManager.current.SetJam("MainMenu");
             }

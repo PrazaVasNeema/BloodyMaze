@@ -35,10 +35,11 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
+            Debug.Log("LevelControllerInit");
             PlayerProfileSO playerProfileSO = GameController.playerProfile;
 
             m_startRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
-                        "ChapterRavenWingRoomSafe_zone" : "ChapterRavenWingRoomOutsides";
+                        "C1RSafe_zone" : "C1ROutsides";
             player = SpawnPlayer();
             player.GetComponent<CharacterController>().enabled = false;
             player.Init(playerProfileSO.GetCharacterSaveData());

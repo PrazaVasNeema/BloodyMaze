@@ -22,11 +22,14 @@ namespace BloodyMaze
             current = null;
         }
 
-        public void AddItem(PickableItem item)
+        public bool AddItem(PickableItem item)
         {
+            if (m_inventory.ContainsKey(item.name))
+                return false;
             m_inventory.Add(item.name, item);
             onInventoryChange?.Invoke(item.name, item);
             Debug.Log(m_inventory[item.name].name);
+            return true;
         }
 
         public void RemoveItem(string name)
