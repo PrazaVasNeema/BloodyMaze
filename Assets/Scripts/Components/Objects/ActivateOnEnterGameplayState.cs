@@ -11,6 +11,7 @@ namespace BloodyMaze
         [SerializeField] private UnityEvent onActivate;
         [SerializeField] private string m_requiredModeName;
         [SerializeField] private List<string> m_keysOfFlagsThatShouldBeChecked;
+        [SerializeField] private float m_delay;
 
         private void OnEnable()
         {
@@ -24,7 +25,12 @@ namespace BloodyMaze
 
         private void Activate()
         {
+            Invoke("WhatToActivate", 0.02f);
 
+        }
+
+        private void WhatToActivate()
+        {
             List<GlobalEventsData> eventsData = GameController.playerProfile.playerProfileData.globalEventsData;
             bool requirementsSatisfied = true;
             foreach (string flagKey in m_keysOfFlagsThatShouldBeChecked)

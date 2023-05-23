@@ -7,21 +7,21 @@ namespace BloodyMaze.Components
 {
     public class ActivateOnTransition : MonoBehaviour
     {
-        [SerializeField] private UnityEvent OnTransition;
+        [SerializeField] private UnityEvent OnScreenIsBlackened;
 
         private void OnEnable()
         {
-            GameEvents.OnTransition += Activate;
+            GameEvents.OnScreenBlacken += Activate;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnTransition -= Activate;
+            GameEvents.OnScreenBlacken -= Activate;
         }
 
         public void Activate()
         {
-            OnTransition?.Invoke();
+            OnScreenIsBlackened?.Invoke();
         }
     }
 }

@@ -92,7 +92,7 @@ namespace BloodyMaze.Controllers
             }
 
 
-            GameEvents.OnTransition?.Invoke();
+            GameEvents.OnScreenBlacken?.Invoke();
             if (m_shouldChangeRoom)
                 m_prevRoom.gameObject.SetActive(false);
             doOnce = true;

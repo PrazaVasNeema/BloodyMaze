@@ -45,7 +45,7 @@ namespace BloodyMaze.UI
                 m_characterComponent.ammunitionComponent.onAmmoCountChange += RefreshAmmoCount;
             }
             GameEvents.OnReload += OnReload;
-            GameEvents.OnTransition += OnTransitionUpdateUI;
+            GameEvents.OnScreenBlacken += OnTransitionUpdateUI;
         }
 
         private void OnDisable()
@@ -57,7 +57,7 @@ namespace BloodyMaze.UI
                 m_characterComponent.ammunitionComponent.onAmmoCountChange -= RefreshAmmoCount;
             }
             GameEvents.OnReload -= OnReload;
-            GameEvents.OnTransition -= OnTransitionUpdateUI;
+            GameEvents.OnScreenBlacken -= OnTransitionUpdateUI;
         }
 
         public void Init(CharacterComponent characterComponent)

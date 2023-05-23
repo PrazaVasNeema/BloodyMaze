@@ -51,6 +51,7 @@ namespace BloodyMaze
             {
                 if (sentencesData.Count == 0)
                 {
+                    m_nextSentenceButton.SetActive(false);
                     StartCoroutine(EndDialogueCo());
                     return;
                 }
@@ -79,14 +80,10 @@ namespace BloodyMaze
         {
             animator.SetBool("IsOpen", false);
             m_nextSentenceButton.SetActive(false);
-            bool doOnce = false;
-            if (doOnce)
-            {
-                doOnce = true;
-                yield return new WaitForSecondsRealtime(1f);
-            }
+            yield return new WaitForSecondsRealtime(1f);
             if (!string.IsNullOrEmpty(m_flagToCheck))
                 GameEvents.OnEventFlagCheck?.Invoke(m_flagToCheck);
+            Debug.Log("EndDialogue");
             GameEvents.OnCallGotoFunction("gameplay");
         }
     }

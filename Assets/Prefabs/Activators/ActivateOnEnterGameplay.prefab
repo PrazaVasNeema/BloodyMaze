@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6205646786194491977}
   - component: {fileID: 6205646786194491976}
   - component: {fileID: 7939181126987804031}
-  - component: {fileID: 6672262657642019221}
   m_Layer: 0
   m_Name: ActivateOnEnterGameplay
   m_TagString: Untagged
@@ -114,7 +113,7 @@ MonoBehaviour:
   onActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6672262657642019221}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BloodyMaze.Components.ActivateModuleCallTransition,
           Assembly-CSharp
         m_MethodName: ActivateModule
@@ -129,21 +128,3 @@ MonoBehaviour:
         m_CallState: 2
   m_requiredModeName: 
   m_keysOfFlagsThatShouldBeChecked: []
---- !u!114 &6672262657642019221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205646786194491981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a06acd34623507469912f945f579e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_eventFlagToCheck: 
-  m_prevRoom: {fileID: 0}
-  m_nextRoom: {fileID: 0}
-  m_shouldChangeRoom: 0
-  m_transitPoint: {fileID: 6205646786194491975}
-  m_shouldWait: 0

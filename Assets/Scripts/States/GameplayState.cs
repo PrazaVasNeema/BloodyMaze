@@ -1,11 +1,14 @@
+using UnityEngine;
+
 namespace BloodyMaze.States
 {
     public class GameplayState : GameStateBehavior
     {
         private void OnEnable()
         {
-            GameEvents.OnEnterGameplayState?.Invoke();
+            Debug.Log("fghjhghgf");
             ActionStatesManager.SetState(ActionStates.EXPLORING);
+            GameEvents.OnEnterGameplayState?.Invoke();
         }
     }
 }

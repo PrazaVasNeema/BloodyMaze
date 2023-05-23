@@ -19,7 +19,7 @@ namespace BloodyMaze
         /// <param name="stateName"></param>
         public static System.Action<string> OnCallGotoFunction;
         public static System.Action OnStateChanged;
-        public static System.Action OnTransition;
+        public static System.Action OnScreenBlacken;
         public static System.Action<string> OnEventFlagCheck;
         public static System.Action OnPCDeath;
         public static System.Action<string> OnShowMiniMessage;

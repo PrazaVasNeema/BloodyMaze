@@ -78,9 +78,7 @@ namespace BloodyMaze.Controllers
         private IEnumerator LoadSceneAsyncRoom(string sceneName)
         {
             player.GetComponent<CharacterController>().enabled = false;
-            ActionStatesManager.ChangeState();
-            GameEvents.OnCallGotoFunction.Invoke("none");
-            m_uiRootAnimationsController.FadeScreen();
+            m_uiRootAnimationsController.FadeScreenExtra();
             yield return new WaitForSecondsRealtime(1f);
             yield return SceneManager.LoadSceneAsync("Empty");
             System.GC.Collect();
@@ -90,11 +88,7 @@ namespace BloodyMaze.Controllers
             yield return SceneManager.LoadSceneAsync(sceneName);
             // GameTransitionSystem.ScreenFade();
             FindObjectOfType<RoomControllerRe>().Init();
-            m_uiRootAnimationsController.UnfadeScreen();
-            yield return new WaitForSecondsRealtime(1f);
-            ActionStatesManager.ChangeState();
-            GameEvents.OnCallGotoFunction.Invoke("gameplay");
-            // yield return new WaitForSecondsRealtime(2f);
+            m_uiRootAnimationsController.UnfadeScreenExtra();
         }
     }
 
