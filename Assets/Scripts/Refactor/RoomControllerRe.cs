@@ -90,10 +90,10 @@ namespace BloodyMaze.Controllers
 
                 m_roomActivaters[i].gameObject.SetActive(flag);
 
-                InitAgents();
             }
 
 
+            InitAgents();
 
             // for (int i = 0; i < m_roomItems.Length; i++)
             // {

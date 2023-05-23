@@ -6375,7 +6375,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: room
-      value: ChapterRavenWingRoomOutsides
+      value: C1RMain_hall
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
@@ -6386,8 +6386,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9162297916593716028}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_eventFlagToCheck
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoomSpawnNum
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder

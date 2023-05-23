@@ -134,9 +134,13 @@ PrefabInstance:
       propertyPath: m_states.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3772804224855390514, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4205882506738007179, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5613358583313275911, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -174,6 +178,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -127.775
       objectReference: {fileID: 0}
+    - target: {fileID: 5613358583705621063, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5613358584507940241, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -198,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelControllerRe
       objectReference: {fileID: 0}
+    - target: {fileID: 5613358585222758654, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+      propertyPath: m_uiRootAnimationsController
+      value: 
+      objectReference: {fileID: 280682804}
     - target: {fileID: 5613358585222758655, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -244,3 +256,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+--- !u!1 &280682802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5678482747234047989, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+  m_PrefabInstance: {fileID: 280682801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &280682803 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 653857302038664374, guid: 4735ca2a98dd4d64cb8e91ace1a3fba6, type: 3}
+  m_PrefabInstance: {fileID: 280682801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &280682804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280682802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804510046c4958148b0c77ccf3327760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 280682803}

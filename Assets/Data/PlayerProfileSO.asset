@@ -34,13 +34,13 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
       flag: 0
     - eventKey: opened_piano_door
@@ -121,9 +121,9 @@ MonoBehaviour:
     - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 2
         shouldntSpawn: 0
       - agentID: 3
@@ -466,9 +466,9 @@ MonoBehaviour:
     - eventKey: placed_mirror
       flag: 0
     - eventKey: solved_puzzle
-      flag: 1
+      flag: 0
     - eventKey: pick_up_key_two
-      flag: 1
+      flag: 0
     - eventKey: opened_library_door
       flag: 0
     - eventKey: opened_library_secret
@@ -537,9 +537,9 @@ MonoBehaviour:
     - roomKey: main_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 2
         shouldntSpawn: 0
       - agentID: 3

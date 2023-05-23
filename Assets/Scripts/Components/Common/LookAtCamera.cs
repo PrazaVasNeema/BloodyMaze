@@ -10,16 +10,14 @@ namespace BloodyMaze.Components
     {
         private GameObject m_camera;
 
-        private void Awake()
-        {
-            m_camera = FindObjectOfType<CinemachineVirtualCamera>().gameObject;
-        }
-
         private void Update()
         {
             if (Time.frameCount % 20 == 0)
             {
-                transform.rotation = m_camera.transform.rotation;
+                if (!m_camera)
+                    m_camera = FindObjectOfType<CinemachineVirtualCamera>().gameObject;
+                else
+                    transform.rotation = m_camera.transform.rotation;
             }
         }
     }

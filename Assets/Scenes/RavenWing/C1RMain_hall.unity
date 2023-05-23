@@ -19455,7 +19455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -20634,7 +20634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -22599,7 +22599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -23226,7 +23226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -23878,7 +23878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -31503,11 +31503,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: main_hall
   m_roomItems: []
-  m_roomAgents: []
+  m_roomAgents:
+  - {fileID: 1541842420}
+  - {fileID: 509454320}
+  - {fileID: 1980436935}
+  - {fileID: 800860576}
+  - {fileID: 1648042476}
   m_roomActivaters: []
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
+  m_eventFlagShouldBeCheckedToSpawnEnemies: talked_to_girl
   m_roomSpawnPoints:
   - {fileID: 8841004033504421498}
   - {fileID: 2067453416}
@@ -53711,6 +53716,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 197260335}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RSafe_zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
@@ -53718,6 +53727,10 @@ PrefabInstance:
       propertyPath: m_prevRoom
       value: 
       objectReference: {fileID: 8333705027449970807}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 0

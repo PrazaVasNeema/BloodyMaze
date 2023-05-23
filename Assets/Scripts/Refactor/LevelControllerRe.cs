@@ -17,6 +17,7 @@ namespace BloodyMaze.Controllers
         [SerializeField] private UIPlayerHud m_playerHud;
         [SerializeField] private CharacterComponent m_playerPrefab;
         [SerializeField] private CinemachineVirtualCamera m_virtualCamera;
+        [SerializeField] private UIRootAnimationsController m_uiRootAnimationsController;
         public GameObject virtualCamera => m_virtualCamera.gameObject;
         private string m_startRoom;
         public CharacterComponent player;
@@ -77,6 +78,10 @@ namespace BloodyMaze.Controllers
         private IEnumerator LoadSceneAsyncRoom(string sceneName)
         {
             player.GetComponent<CharacterController>().enabled = false;
+            ActionStatesManager.ChangeState();
+            GameEvents.OnCallGotoFunction.Invoke("none");
+            m_uiRootAnimationsController.FadeScreen();
+            yield return new WaitForSecondsRealtime(1f);
             yield return SceneManager.LoadSceneAsync("Empty");
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
@@ -85,6 +90,10 @@ namespace BloodyMaze.Controllers
             yield return SceneManager.LoadSceneAsync(sceneName);
             // GameTransitionSystem.ScreenFade();
             FindObjectOfType<RoomControllerRe>().Init();
+            m_uiRootAnimationsController.UnfadeScreen();
+            yield return new WaitForSecondsRealtime(1f);
+            ActionStatesManager.ChangeState();
+            GameEvents.OnCallGotoFunction.Invoke("gameplay");
             // yield return new WaitForSecondsRealtime(2f);
         }
     }
