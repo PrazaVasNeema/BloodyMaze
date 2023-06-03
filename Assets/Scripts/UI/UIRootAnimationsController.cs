@@ -49,7 +49,7 @@ namespace BloodyMaze.Controllers
 
         public void CallOnScreenBlacken()
         {
-            GameEvents.OnScreenBlacken.Invoke();
+            GameEvents.OnScreenBlacken?.Invoke();
         }
     }
 }
