@@ -477,6 +477,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530570306}
     m_Modifications:
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RInnerHouseRoom_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.071

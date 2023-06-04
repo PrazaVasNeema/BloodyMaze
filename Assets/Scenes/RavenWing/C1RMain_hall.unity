@@ -18604,7 +18604,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh99010
+  m_Name: pb_Mesh90450
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20852,13 +20852,17 @@ PrefabInstance:
       value: opened_piano_door
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RPiano_room
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_transitPoint
       value: 
@@ -21910,13 +21914,17 @@ PrefabInstance:
       value: opened_library_door
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RLibrary
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -22210,14 +22218,14 @@ PrefabInstance:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_transitPoint
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_eventFlagToCheck
-      value: 0
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24769,13 +24777,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 197260335}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RDining_room
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -31014,13 +31026,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 197260335}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RBathroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -31111,7 +31127,7 @@ PrefabInstance:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_transitPoint
       value: 
@@ -31503,7 +31519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: main_hall
+  m_roomKey: C1RMain_hall
   m_roomItems: []
   m_roomAgents:
   - {fileID: 1541842420}
@@ -31511,7 +31527,19 @@ MonoBehaviour:
   - {fileID: 1980436935}
   - {fileID: 800860576}
   - {fileID: 1648042476}
-  m_roomActivaters: []
+  m_roomActivaters:
+  - {fileID: 1693660144}
+  - {fileID: 1782444930}
+  - {fileID: 1144886879}
+  - {fileID: 930857634}
+  - {fileID: 2127652728}
+  - {fileID: 555630055}
+  - {fileID: 1644999498}
+  - {fileID: 1668585491}
+  - {fileID: 6998561922011304855}
+  - {fileID: 1970981896}
+  - {fileID: 1310821932}
+  - {fileID: 468170263}
   m_eventFlagShouldBeCheckedToSpawnEnemies: talked_to_girl
   m_roomSpawnPoints:
   - {fileID: 8841004033504421498}
@@ -49923,7 +49951,6 @@ GameObject:
   - component: {fileID: 2397035720993143693}
   - component: {fileID: 8333705027449970806}
   - component: {fileID: 5890936667975891355}
-  - component: {fileID: 8333705027449970807}
   - component: {fileID: 8333705027449970808}
   m_Layer: 0
   m_Name: MainHall
@@ -52669,40 +52696,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4327190211617768806}
   m_Mesh: {fileID: 2619981444133369505, guid: 37cb0197764896648a26a684ef07b4dc, type: 3}
---- !u!114 &8333705027449970807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4327190211617768806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: main_hall
-  m_roomItems: []
-  m_roomAgents:
-  - {fileID: 509454320}
-  - {fileID: 1541842420}
-  - {fileID: 1980436935}
-  - {fileID: 800860576}
-  - {fileID: 1648042476}
-  m_roomActivaters:
-  - {fileID: 1693660144}
-  - {fileID: 1782444930}
-  - {fileID: 1144886879}
-  - {fileID: 930857634}
-  - {fileID: 2127652728}
-  - {fileID: 555630055}
-  - {fileID: 1644999498}
-  - {fileID: 1668585491}
-  - {fileID: 6998561922011304855}
-  - {fileID: 1970981896}
-  - {fileID: 1310821932}
-  - {fileID: 468170263}
-  m_eventFlagShouldBeCheckedToSpawnEnemies: talked_to_girl
 --- !u!64 &8333705027449970808
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53726,7 +53719,7 @@ PrefabInstance:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8333705027449970807}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoomSpawnNum
       value: 1

@@ -193,16 +193,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1530570306}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RMain_hall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 7989323708882471744}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_transitPoint
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.z
@@ -285,6 +293,11 @@ PrefabInstance:
 --- !u!4 &218398850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 218398849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &218398851 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 218398849}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &234461422
@@ -961,7 +974,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2604349857671001031}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1552087199
 Light:
@@ -1087,7 +1100,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2604349857671001031}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1678628087
 ParticleSystemRenderer:
@@ -6158,12 +6171,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: C1RPiano_room
   m_roomItems: []
-  m_roomAgents: []
-  m_roomActivaters: []
+  m_roomAgents:
+  - {fileID: 1752991762}
+  - {fileID: 1142446512}
+  m_roomActivaters:
+  - {fileID: 1817406907}
+  - {fileID: 891901214}
+  - {fileID: 2088202944}
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
-  m_roomSpawnPoints: []
+  m_roomSpawnPoints:
+  - {fileID: 218398851}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
@@ -6349,6 +6368,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2802711680137190498, guid: 30611dc8bcaa6164795b79da43d32be5, type: 3}
   m_PrefabInstance: {fileID: 2088202942}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088202944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1371810654600983590, guid: 30611dc8bcaa6164795b79da43d32be5, type: 3}
+  m_PrefabInstance: {fileID: 2088202942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2088202945 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 382903974480010165, guid: 30611dc8bcaa6164795b79da43d32be5, type: 3}
@@ -9841,13 +9871,13 @@ Transform:
   - {fileID: 2169767546812746914}
   - {fileID: 2336655043930040651}
   - {fileID: 2875493510115641761}
+  - {fileID: 1678628086}
   - {fileID: 513026091}
   - {fileID: 1817406905}
   - {fileID: 2088202943}
-  - {fileID: 1678628086}
+  - {fileID: 1552087198}
   - {fileID: 1752991761}
   - {fileID: 1142446511}
-  - {fileID: 1552087198}
   m_Father: {fileID: 2659877726928691855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10984,7 +11014,6 @@ GameObject:
   - component: {fileID: 2604349857671001031}
   - component: {fileID: 2921152946701227188}
   - component: {fileID: 7989323708882471743}
-  - component: {fileID: 7989323708882471744}
   - component: {fileID: 7989323708882471745}
   m_Layer: 0
   m_Name: PianoRoom
@@ -11865,28 +11894,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7989323708882471744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4591762544116304790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: piano_room
-  m_roomItems: []
-  m_roomAgents:
-  - {fileID: 1752991762}
-  - {fileID: 1142446512}
-  m_roomActivaters:
-  - {fileID: 1817406907}
-  - {fileID: 891901214}
-  - {fileID: 0}
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
 --- !u!64 &7989323708882471745
 MeshCollider:
   m_ObjectHideFlags: 0

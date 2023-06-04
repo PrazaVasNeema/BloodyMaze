@@ -398,6 +398,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530570306}
     m_Modifications:
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RBathroom_secret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.071
@@ -467,6 +475,11 @@ PrefabInstance:
 --- !u!4 &592006472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 592006471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &592006473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 592006471}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
@@ -570,6 +583,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530570306}
     m_Modifications:
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RInnerHouseRoom_2
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -635,6 +652,11 @@ PrefabInstance:
 --- !u!4 &717592752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 717592751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &717592753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 717592751}
   m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &1075135079
@@ -5840,12 +5862,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: C1RInnerHouseRoom_1
   m_roomItems: []
-  m_roomAgents: []
+  m_roomAgents:
+  - {fileID: 1278998269}
+  - {fileID: 493619978}
   m_roomActivaters: []
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
-  m_roomSpawnPoints: []
+  m_roomSpawnPoints:
+  - {fileID: 717592753}
+  - {fileID: 592006473}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
@@ -6138,7 +6164,6 @@ GameObject:
   - component: {fileID: 2336655042437650280}
   - component: {fileID: 2336655042437650281}
   - component: {fileID: 2336655042437650282}
-  - component: {fileID: 2336655042437650284}
   m_Layer: 0
   m_Name: InnerHouseRoom_1
   m_TagString: Untagged
@@ -6232,25 +6257,6 @@ Transform:
   m_Father: {fileID: 2659877726928691855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2336655042437650284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336655042437650276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: inner_house_room_1
-  m_roomItems: []
-  m_roomAgents:
-  - {fileID: 1278998269}
-  - {fileID: 493619978}
-  m_roomActivaters: []
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
 --- !u!64 &2336655042579581416
 MeshCollider:
   m_ObjectHideFlags: 0

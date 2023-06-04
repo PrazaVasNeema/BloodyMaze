@@ -183,12 +183,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: C1RBathroom
   m_roomItems: []
   m_roomAgents: []
-  m_roomActivaters: []
+  m_roomActivaters:
+  - {fileID: 1445342684}
+  - {fileID: 1445567904}
+  - {fileID: 8896329919908712737}
+  - {fileID: 1822688033}
+  - {fileID: 5018672838769640059}
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
-  m_roomSpawnPoints: []
+  m_roomSpawnPoints:
+  - {fileID: 1204586701}
+  - {fileID: 1276610347}
 --- !u!4 &318628763
 Transform:
   m_ObjectHideFlags: 0
@@ -668,13 +675,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1146738511}
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RMain_hall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoom
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 8372568469843169285}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_nextRoomSpawnNum
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -746,6 +761,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 1204586699}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1204586701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 1204586699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276610345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -764,6 +784,10 @@ PrefabInstance:
     - target: {fileID: -5357850672259217213, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_eventsShouldBeChecked.Array.data[0]
       value: opened_bathroom_secret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: room
+      value: C1RBathroom_secret
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_correspondingEventKey
@@ -854,6 +878,11 @@ PrefabInstance:
 --- !u!4 &1276610346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 1276610345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1276610347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
   m_PrefabInstance: {fileID: 1276610345}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1322622808
@@ -1086,7 +1115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1514915308637612000}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1487229451
 Light:
@@ -1439,11 +1468,11 @@ Transform:
   - {fileID: 2474745335001384190}
   - {fileID: 2336655042574368173}
   - {fileID: 2875493509597900185}
+  - {fileID: 1487229450}
   - {fileID: 1445342683}
   - {fileID: 1445567903}
   - {fileID: 8896329919908712734}
   - {fileID: 4189628890071369231}
-  - {fileID: 1487229450}
   - {fileID: 736166100}
   m_Father: {fileID: 318628763}
   m_RootOrder: 4
@@ -4280,7 +4309,6 @@ GameObject:
   - component: {fileID: 1514915308637612000}
   - component: {fileID: 8372568469843169284}
   - component: {fileID: 3388365688353572745}
-  - component: {fileID: 8372568469843169285}
   - component: {fileID: 8372568469843169286}
   m_Layer: 0
   m_Name: Bathroom
@@ -6209,28 +6237,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3249149208794212675}
   m_Mesh: {fileID: -8236469409093403598, guid: 37cb0197764896648a26a684ef07b4dc, type: 3}
---- !u!114 &8372568469843169285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3249149208794212675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: bathroom
-  m_roomItems: []
-  m_roomAgents: []
-  m_roomActivaters:
-  - {fileID: 1445342684}
-  - {fileID: 1445567904}
-  - {fileID: 8896329919908712737}
-  - {fileID: 1822688033}
-  - {fileID: 5018672838769640059}
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
 --- !u!64 &8372568469843169286
 MeshCollider:
   m_ObjectHideFlags: 0

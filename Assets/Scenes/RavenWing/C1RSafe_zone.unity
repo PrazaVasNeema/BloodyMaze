@@ -5493,7 +5493,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105026
+  m_Name: pb_Mesh85324
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6222,7 +6222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: C1RSafe_zone
   m_roomItems: []
   m_roomAgents: []
   m_roomActivaters:
@@ -6384,7 +6384,7 @@ PrefabInstance:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_prevRoom
       value: 
-      objectReference: {fileID: 9162297916593716028}
+      objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_eventFlagToCheck
       value: 
@@ -13752,7 +13752,6 @@ GameObject:
   - component: {fileID: 7547262612666700589}
   - component: {fileID: 54498633476447614}
   - component: {fileID: 8190777873310090246}
-  - component: {fileID: 9162297916593716028}
   - component: {fileID: 9162297916593716029}
   m_Layer: 0
   m_Name: SafeZone
@@ -13761,24 +13760,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9162297916593716028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9162297916593716027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: safe_zone
-  m_roomItems: []
-  m_roomAgents: []
-  m_roomActivaters:
-  - {fileID: 559643750}
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
 --- !u!64 &9162297916593716029
 MeshCollider:
   m_ObjectHideFlags: 0

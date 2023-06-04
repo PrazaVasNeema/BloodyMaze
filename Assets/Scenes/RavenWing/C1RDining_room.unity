@@ -5341,7 +5341,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60666
+  m_Name: pb_Mesh87028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6623,9 +6623,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: C1RDining_room
   m_roomItems: []
-  m_roomAgents: []
+  m_roomAgents:
+  - {fileID: 221390658}
+  - {fileID: 2010125936}
   m_roomActivaters:
   - {fileID: 1557063053}
   - {fileID: 1452692706}
