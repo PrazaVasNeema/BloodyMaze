@@ -24,6 +24,7 @@ namespace BloodyMaze
 
         private void OnEnable()
         {
+            Debug.Log("Check");
             ActivateEndGameLogics();
         }
 
@@ -43,7 +44,6 @@ namespace BloodyMaze
             m_thirdSentenceField.text = "";
             List<List<string>> peopleNamesByLivingStatus = GameController.locData.GetPeopleNamesSortByLivingStatus();
             string textToType;
-            GameTransitionSystem.ScreenFade();
             // StartCoroutine(SlowDownTimeCo());
             yield return new WaitForSecondsRealtime(2f);
             textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[0])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[0])}";

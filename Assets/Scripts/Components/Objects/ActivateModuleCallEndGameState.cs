@@ -8,6 +8,7 @@ namespace BloodyMaze.Components
     {
         public override void ActivateModule()
         {
+            Debug.Log("end_game");
             GameEvents.OnCallGotoFunction("end_game");
         }
     }

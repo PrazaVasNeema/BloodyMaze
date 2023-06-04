@@ -876,6 +876,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8722220920795210382, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
   m_PrefabInstance: {fileID: 1065458609}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1015647478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
+  m_PrefabInstance: {fileID: 498483818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1036344855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: BloodyMaze.Components.ActivateModuleDialogue, Assembly-CSharp
+      value: BloodyMaze.Components.SetObjectsActiveComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2264,12 +2269,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: 
+  m_roomKey: inner_house_room_2
   m_roomItems: []
   m_roomAgents: []
-  m_roomActivaters: []
+  m_roomActivaters:
+  - {fileID: 208483496}
+  - {fileID: 788590694}
+  - {fileID: 2139952006}
+  - {fileID: 1339259430}
+  - {fileID: 2139612180}
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
-  m_roomSpawnPoints: []
+  m_roomSpawnPoints:
+  - {fileID: 1015647478}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
@@ -8136,7 +8147,6 @@ GameObject:
   - component: {fileID: 2336655044070905414}
   - component: {fileID: 2336655044070905415}
   - component: {fileID: 2336655044070905408}
-  - component: {fileID: 2336655044070905416}
   m_Layer: 0
   m_Name: InnerHouseRoom_2
   m_TagString: Untagged
@@ -8224,28 +8234,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2336655044070905416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336655044070905409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4db079ce255574a9f83f7f470b3a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_roomKey: inner_house_room_2
-  m_roomItems: []
-  m_roomAgents: []
-  m_roomActivaters:
-  - {fileID: 208483496}
-  - {fileID: 788590694}
-  - {fileID: 2139952006}
-  - {fileID: 1339259430}
-  - {fileID: 2139612180}
-  m_eventFlagShouldBeCheckedToSpawnEnemies: 
 --- !u!23 &2336655044097009240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11449,8 +11437,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4597949455310006386}
+        m_TargetAssemblyTypeName: BloodyMaze.Components.ActivateModuleFadeOrUnfadeScreen,
+          Assembly-CSharp
+        m_MethodName: FadeOrUnfadeScreenNotExtra
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_requiredModeName: 
   m_keysOfFlagsThatShouldBeChecked: []
+  m_delay: 0
+--- !u!114 &4597949455310006386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597949455310006382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b9a166a506683429013910d0e9e3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shouldFadeScreen: 1
 --- !u!4 &4667696045193639185
 Transform:
   m_ObjectHideFlags: 0

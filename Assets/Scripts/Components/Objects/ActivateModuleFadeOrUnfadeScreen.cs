@@ -19,5 +19,17 @@ namespace BloodyMaze.Components
                 FindAnyObjectByType<UIRootAnimationsController>().UnfadeScreenExtra();
             }
         }
+
+        public void FadeOrUnfadeScreenNotExtra()
+        {
+            if (m_shouldFadeScreen)
+            {
+                FindAnyObjectByType<UIRootAnimationsController>().FadeScreen();
+            }
+            else
+            {
+                FindAnyObjectByType<UIRootAnimationsController>().UnfadeScreen();
+            }
+        }
     }
 }
