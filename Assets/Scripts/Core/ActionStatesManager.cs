@@ -29,6 +29,7 @@ namespace BloodyMaze
 
         public static void ChangeState()
         {
+            Debug.Log("ChangeStateCheck1");
             switch (current.m_state)
             {
                 case ActionStates.EXPLORING:
@@ -56,6 +57,7 @@ namespace BloodyMaze
 
         public static void SetState(ActionStates stateToSet)
         {
+            Debug.Log("ChangeStateCheck2");
             current.m_state = stateToSet;
             if (current.m_state == ActionStates.INTERACTING)
                 GameEvents.OnEnterInteractingState?.Invoke();

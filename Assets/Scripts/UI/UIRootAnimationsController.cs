@@ -34,7 +34,7 @@ namespace BloodyMaze.Controllers
         private IEnumerator UnfadeScreenExtraCO()
         {
             yield return new WaitForSecondsRealtime(2f);
-            ActionStatesManager.ChangeState();
+            ActionStatesManager.SetState(ActionStates.EXPLORING);
             GameEvents.OnCallGotoFunction.Invoke("gameplay");
         }
 
