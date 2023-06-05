@@ -693,8 +693,12 @@ PrefabInstance:
       value: opened_bathroom_secret
       objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.301501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.071
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder

@@ -34,35 +34,35 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 0
+      flag: 1
     - eventKey: sat_at_desk
-      flag: 0
+      flag: 1
     - eventKey: tried_to_open_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_one
-      flag: 0
+      flag: 1
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
     - eventKey: opened_library_door
-      flag: 0
+      flag: 1
     - eventKey: opened_library_secret
-      flag: 0
+      flag: 1
     - eventKey: talked_to_girl_in_library_secret
-      flag: 0
+      flag: 1
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
     - eventKey: opened_bathroom_secret
-      flag: 0
+      flag: 1
     - eventKey: outsides_note_1
       flag: 0
     - eventKey: dining_note_1
@@ -438,9 +438,9 @@ MonoBehaviour:
       moveSpeed: 5
       holyAmmoType:
         maxAmmo: 42
-        currentAmmo: 20
+        currentAmmo: 23
         roundSize: 6
-        currentRoundAmmo: 6
+        currentRoundAmmo: 0
       commonMeds:
         name: common
         hpToHeal: 30
@@ -504,7 +504,7 @@ MonoBehaviour:
     - eventKey: DayIsBehind_6
       flag: 0
     - eventKey: safe_zone_note
-      flag: 1
+      flag: 0
     roomsData:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
@@ -537,15 +537,15 @@ MonoBehaviour:
     - roomKey: C1RMain_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 2
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 3
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 4
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RSafe_zone
       agentsToSpawnIDs: []
@@ -553,16 +553,16 @@ MonoBehaviour:
     - roomKey: C1RPiano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
       agentsToSpawnIDs: []
