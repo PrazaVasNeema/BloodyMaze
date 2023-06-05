@@ -400,7 +400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: room
-      value: C1RBathroom_secret
+      value: C1RInnerHouseRoom_2
       objectReference: {fileID: 0}
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_nextRoomSpawnNum
@@ -585,7 +585,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1250591336383199606, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: room
-      value: C1RInnerHouseRoom_2
+      value: C1RBathroom_secret
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder

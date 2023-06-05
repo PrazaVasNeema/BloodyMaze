@@ -264,6 +264,7 @@ namespace BloodyMaze
         // Scene reload case
         private IEnumerator LoadSceneAsyncReload(string sceneName)
         {
+            SceneManager.MoveGameObjectToScene(FindAnyObjectByType<LevelControllerRe>().gameObject, SceneManager.GetActiveScene());
             m_gameShouldStart = false;
             float timer = Time.unscaledTime;
             m_loader.SetActive(true);
@@ -293,13 +294,14 @@ namespace BloodyMaze
             m_UILoadingAnimator.SetBool("IsLoading", false);
             m_levelController = FindObjectOfType<LevelControllerRe>();
             InitLevel();
-            GameTransitionSystem.ScreenFade();
+            var uiRootAnimationsController = FindObjectOfType<UIRootAnimationsController>();
+            uiRootAnimationsController.FadeScreen();
             while (!m_gameShouldStart)
             {
                 yield return new();
             }
             m_loader.SetActive(false);
-            GameTransitionSystem.ScreenUnfade();
+            uiRootAnimationsController.UnfadeScreen();
             yield return new WaitForSecondsRealtime(2f);
             // GameEvents.OnCallGotoFunction("gameplay");
         }

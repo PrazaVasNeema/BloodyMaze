@@ -28,7 +28,7 @@ namespace BloodyMaze.Controllers
             // StartCoroutine(SlowDownTimeCo());
             yield return new WaitForSecondsRealtime(2f);
             // GameController.SetLoaderText("Прошли сутки");
-            GameTransitionSystem.ScreenFade();
+            FindAnyObjectByType<UIRootAnimationsController>().FadeScreen();
 
 
             yield return new WaitForSecondsRealtime(2);
