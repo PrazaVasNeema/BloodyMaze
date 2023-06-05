@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: eff1681df581f5c40bae928b3a8477ec
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/RavenWing/LevelPreLoader.unity
     guid: 60bb1edd7a55ad74fa18e355d8f2f625
   - enabled: 1
