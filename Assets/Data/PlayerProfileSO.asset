@@ -93,11 +93,11 @@ MonoBehaviour:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 2
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RBathroom
       agentsToSpawnIDs: []
@@ -121,15 +121,15 @@ MonoBehaviour:
     - roomKey: C1RMain_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 2
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 3
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 4
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RSafe_zone
       agentsToSpawnIDs: []
@@ -137,9 +137,9 @@ MonoBehaviour:
     - roomKey: C1RPiano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
@@ -560,9 +560,9 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
       agentsToSpawnIDs: []
