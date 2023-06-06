@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1279980707930759896, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.071
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_RootOrder
@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 191.3255
+      value: 191.86
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2087,6 +2087,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1664540234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,6 +2432,7 @@ MonoBehaviour:
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
   m_roomSpawnPoints:
   - {fileID: 1015647478}
+  m_cameraBoundaries: {fileID: 0}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
@@ -11550,6 +11552,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &4597949455310006372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1392214927771248893, guid: 610ef0929e1ea3f4db49f0fb3a0ed41f, type: 3}
@@ -13119,6 +13122,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6688576322821764756
 Transform:
   m_ObjectHideFlags: 0
@@ -14005,6 +14009,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &6923821978307786480
 RectTransform:
   m_ObjectHideFlags: 0

@@ -6307,6 +6307,7 @@ MonoBehaviour:
   m_roomSpawnPoints:
   - {fileID: 1864574537}
   - {fileID: 1594826871}
+  m_cameraBoundaries: {fileID: 0}
 --- !u!1 &1497048853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,7 +6557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.295737
+      value: 10.82
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.z

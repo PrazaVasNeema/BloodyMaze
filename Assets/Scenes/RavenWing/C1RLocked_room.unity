@@ -458,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 192.62021
+      value: 193.339
       objectReference: {fileID: 0}
     - target: {fileID: 3513441772129813268, guid: 5d9718c458be949499a95934be81d445, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1240,6 +1240,7 @@ MonoBehaviour:
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
   m_roomSpawnPoints:
   - {fileID: 622252270}
+  m_cameraBoundaries: {fileID: 0}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
