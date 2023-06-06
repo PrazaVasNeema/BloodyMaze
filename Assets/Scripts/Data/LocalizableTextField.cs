@@ -13,7 +13,7 @@ namespace BloodyMaze
 
         public void LocalizeTextField()
         {
-            textField.text = GameController.locData.GetInterfaceText(interfaceLocKey);
+            textField.text = GameController.instance.locData.GetInterfaceText(interfaceLocKey);
         }
     }
 }

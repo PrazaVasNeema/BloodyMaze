@@ -50,30 +50,30 @@ namespace BloodyMaze
 
         public void SetLocDataMainMenu()
         {
-            mainButtonPlay.text = GameController.locData.GetInterfaceText(mainButtonPlayKey);
-            mainOptions.text = GameController.locData.GetInterfaceText(mainOptionsKey);
-            mainExit.text = GameController.locData.GetInterfaceText(mainExitKey);
+            mainButtonPlay.text = GameController.instance.locData.GetInterfaceText(mainButtonPlayKey);
+            mainOptions.text = GameController.instance.locData.GetInterfaceText(mainOptionsKey);
+            mainExit.text = GameController.instance.locData.GetInterfaceText(mainExitKey);
 
-            optionsLanguage.text = GameController.locData.GetInterfaceText(optionsLanguageKey);
-            optionsMusic.text = GameController.locData.GetInterfaceText(optionsMusicKey);
-            optionsSFX.text = GameController.locData.GetInterfaceText(optionsSFXKey);
-            optionsBack.text = GameController.locData.GetInterfaceText(optionsBackKey);
-            optionsApply.text = GameController.locData.GetInterfaceText(optionsApplyKey);
+            optionsLanguage.text = GameController.instance.locData.GetInterfaceText(optionsLanguageKey);
+            optionsMusic.text = GameController.instance.locData.GetInterfaceText(optionsMusicKey);
+            optionsSFX.text = GameController.instance.locData.GetInterfaceText(optionsSFXKey);
+            optionsBack.text = GameController.instance.locData.GetInterfaceText(optionsBackKey);
+            optionsApply.text = GameController.instance.locData.GetInterfaceText(optionsApplyKey);
 
-            levelSelectBack.text = GameController.locData.GetInterfaceText(levelSelectBackKey);
-            levelSelectLoad.text = GameController.locData.GetInterfaceText(levelSelectLoadKey);
-            levelSelectNew.text = GameController.locData.GetInterfaceText(levelSelectNewKey);
-            levelSelectSelectLevel.text = GameController.locData.GetInterfaceText(levelSelectSelectLevelKey);
+            levelSelectBack.text = GameController.instance.locData.GetInterfaceText(levelSelectBackKey);
+            levelSelectLoad.text = GameController.instance.locData.GetInterfaceText(levelSelectLoadKey);
+            levelSelectNew.text = GameController.instance.locData.GetInterfaceText(levelSelectNewKey);
+            levelSelectSelectLevel.text = GameController.instance.locData.GetInterfaceText(levelSelectSelectLevelKey);
 
             foreach (TMP_Text backButton in backButtons)
             {
-                backButton.text = GameController.locData.GetInterfaceText(levelSelectBackKey);
+                backButton.text = GameController.instance.locData.GetInterfaceText(levelSelectBackKey);
             }
 
-            saveSlot1_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 1";
-            saveSlot2_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 2";
-            saveSlot3_1.text = $"{GameController.locData.GetInterfaceText(saveSlot1_1Key)} 3";
-            IntroText.text = GameController.locData.GetInterfaceText(IntroTextKey);
+            saveSlot1_1.text = $"{GameController.instance.locData.GetInterfaceText(saveSlot1_1Key)} 1";
+            saveSlot2_1.text = $"{GameController.instance.locData.GetInterfaceText(saveSlot1_1Key)} 2";
+            saveSlot3_1.text = $"{GameController.instance.locData.GetInterfaceText(saveSlot1_1Key)} 3";
+            IntroText.text = GameController.instance.locData.GetInterfaceText(IntroTextKey);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace BloodyMaze
     {
         private void Start()
         {
-            GameController.LoadScene("MainMenu");
+            GameController.instance.LoadScene("MainMenu");
         }
     }
 }

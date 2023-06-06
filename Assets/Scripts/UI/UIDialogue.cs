@@ -30,7 +30,7 @@ namespace BloodyMaze
 
         public void StartDialogue(string key, string flagToCheck)
         {
-            Dialogue dialogue = GameController.locData.GetDialogue(key);
+            Dialogue dialogue = GameController.instance.locData.GetDialogue(key);
             m_flagToCheck = flagToCheck;
             animator.SetBool("IsOpen", true);
             sentencesData.Clear();

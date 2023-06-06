@@ -37,9 +37,9 @@ namespace BloodyMaze.Controllers
         public void Init()
         {
             Debug.Log("LevelControllerInit");
-            PlayerProfileSO playerProfileSO = GameController.playerProfile;
+            PlayerProfileSO playerProfileSO = GameController.instance.playerProfile;
 
-            m_startRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
+            m_startRoom = GameController.instance.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
                         "C1RSafe_zone" : "C1ROutsides";
             player = SpawnPlayer();
             player.GetComponent<CharacterController>().enabled = false;
@@ -49,17 +49,17 @@ namespace BloodyMaze.Controllers
             // GameTransitionSystem.Init(player);
             m_virtualCamera.Follow = player.transform;
             DontDestroyOnLoad(gameObject);
-            var roomController = FindObjectOfType<RoomControllerRe>();
             if (SceneManager.GetActiveScene().name.Contains("LevelPreLoader"))
                 LoadRoomScene(m_startRoom, 0);
             else
             {
+                var roomController = FindObjectOfType<RoomControllerRe>();
                 m_currentSpawnPointIndex = 0;
                 player.GetComponent<CharacterController>().enabled = false;
                 roomController.Init();
+                if (roomController.cameraBoundaries)
+                    m_virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = roomController.cameraBoundaries;
             }
-            if (roomController.cameraBoundaries)
-                m_virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = roomController.cameraBoundaries;
         }
 
         private CharacterComponent SpawnPlayer()

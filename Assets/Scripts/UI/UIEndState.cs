@@ -37,24 +37,24 @@ namespace BloodyMaze
 
         IEnumerator EndGameCo()
         {
-            m_exitButton.GetComponentInChildren<TMP_Text>().text = GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[3]);
-            m_continueButton.GetComponentInChildren<TMP_Text>().text = GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[4]);
+            m_exitButton.GetComponentInChildren<TMP_Text>().text = GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[3]);
+            m_continueButton.GetComponentInChildren<TMP_Text>().text = GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[4]);
             m_firstSentenceField.text = "";
             m_secondSentenceField.text = "";
             m_thirdSentenceField.text = "";
-            List<List<string>> peopleNamesByLivingStatus = GameController.locData.GetPeopleNamesSortByLivingStatus();
+            List<List<string>> peopleNamesByLivingStatus = GameController.instance.locData.GetPeopleNamesSortByLivingStatus();
             string textToType;
             // StartCoroutine(SlowDownTimeCo());
             yield return new WaitForSecondsRealtime(2f);
-            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[0])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[0])}";
+            textToType = $"{GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[0])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[0])}";
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_firstSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             m_audioSource.clip = m_audipClipToPlayWhileTyping[1];
             yield return new WaitForSecondsRealtime(1f);
-            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[1])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[1])}";
+            textToType = $"{GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[1])}: {FormNamesStringWithCommas(peopleNamesByLivingStatus[1])}";
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_secondSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             m_audioSource.clip = m_audipClipToPlayWhileTyping[2];
             yield return new WaitForSecondsRealtime(2f);
-            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[2])}";
+            textToType = $"{GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[2])}";
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
             yield return new WaitForSecondsRealtime(2f);
             m_audioSource.clip = m_audioClipSingleType;
@@ -80,13 +80,13 @@ namespace BloodyMaze
             m_thirdSentenceField.fontSize = 70f;
             m_sentencesTypingSpeed = .05f;
             m_audioSource.clip = m_audipClipToPlayWhileTyping[0];
-            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[5])}";
+            textToType = $"{GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[5])}";
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_firstSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
 
             m_audioSource.clip = m_audipClipToPlayWhileTyping[0];
             yield return new WaitForSecondsRealtime(1f);
 
-            textToType = $"{GameController.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[6])}";
+            textToType = $"{GameController.instance.locData.GetInterfaceText(m_sentencesOpenTextFieldsLocKeys[6])}";
             yield return StartCoroutine(TypeSentence.TypeSentenceStatic(m_thirdSentenceField, textToType, m_audioSource, m_sentencesTypingSpeed));
 
             yield return new WaitForSecondsRealtime(2f);

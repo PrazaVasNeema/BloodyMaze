@@ -42,9 +42,9 @@ namespace BloodyMaze
             return playerProfileData.roomsData[roomID];
         }
 
-        public void LoadFromJson(string json, bool shouldInitNewData)
+        public void LoadFromJson(string json, bool shouldStartNewData)
         {
-            if (shouldInitNewData)
+            if (shouldStartNewData)
             {
                 PlayerProfileData currentData = new PlayerProfileData();
                 currentData.characterSaveData = m_default.characterSaveData;

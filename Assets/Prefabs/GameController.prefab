@@ -268,6 +268,7 @@ MonoBehaviour:
   m_playerProfile: {fileID: 11400000, guid: 45b560feae642f547a63162206195a88, type: 2}
   m_levelsInfo: {fileID: 11400000, guid: d65991dbe60dfc049be75a936b3daed9, type: 2}
   m_allPlayerProfilesData: []
+  m_shouldUseTestDefault: 1
   m_UILoaderTextsLocKeys:
   - ui_loading_to_main_menu
   - ui_loading_to_gameplay_re_1
@@ -281,7 +282,7 @@ MonoBehaviour:
   m_gameOptions: {fileID: 11400000, guid: 4c159817fd7aa8c44b8bcfef2750951f, type: 2}
   m_musicMixer: {fileID: 24100000, guid: 3fdb4a5c895e1274e9356d9861ede46a, type: 2}
   m_SFXMixer: {fileID: 24100000, guid: de115390bbede5d4381b063622abe371, type: 2}
-  m_shouldUseTestDefault: 1
+  shouldStartNewGame: 0
 --- !u!1 &2494103160080002552
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +485,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2494103161224290958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1211,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3889056368952461249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1411,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4268738729900166370
 GameObject:
   m_ObjectHideFlags: 0

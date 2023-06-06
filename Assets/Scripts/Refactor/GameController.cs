@@ -19,42 +19,36 @@ namespace BloodyMaze
         [SerializeField] private GameObject m_loader;
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
-        public static LocDataSO locData => instance.m_locData;
+        public LocDataSO locData => m_locData;
         [SerializeField] private MusicGroupsSO m_musicGroups;
-        public static MusicGroupsSO musicGroups => instance.m_musicGroups;
+        public MusicGroupsSO musicGroups => m_musicGroups;
         [SerializeField] private TMP_Text m_TMP_Text;
         [SerializeField] private PlayerProfileSO m_playerProfile;
-        public static PlayerProfileSO playerProfile => instance.m_playerProfile;
+        public PlayerProfileSO playerProfile => m_playerProfile;
         [SerializeField] private LevelsInfoSO m_levelsInfo;
-        public static LevelsInfoSO levelsInfo => instance.m_levelsInfo;
+        public LevelsInfoSO levelsInfo => m_levelsInfo;
         [SerializeField] private List<PlayerProfileData> m_allPlayerProfilesData = new();
-        public static List<PlayerProfileData> allPlayerProfilesData => instance.m_allPlayerProfilesData;
-
-        public static bool shouldStartNewGame;
-
-        private static int m_choosenProfileIndex = 0;
-        public static int choosenProfileIndex => m_choosenProfileIndex;
-
-        private bool m_gameShouldStart;
-
+        public List<PlayerProfileData> allPlayerProfilesData => m_allPlayerProfilesData;
+        [SerializeField] private bool m_shouldUseTestDefault;
         [SerializeField] private string[] m_UILoaderTextsLocKeys = new string[4];
         [SerializeField] private TMP_Text m_UIToMainMenuText;
         [SerializeField] private TMP_Text m_UIToGameplayReText_1;
         [SerializeField] private TMP_Text m_UIToGameplayReText_2;
         [SerializeField] private TMP_Text m_UICommonLoadingCompleteTipText;
         [SerializeField] private GameOptionsSO m_gameOptions;
-        public static GameOptionsSO gameOptions => instance.m_gameOptions;
+        public GameOptionsSO gameOptions => m_gameOptions;
         [SerializeField] private AudioMixer m_musicMixer;
         [SerializeField] private AudioMixer m_SFXMixer;
-        private bool m_gameInitializeComplete = false;
-        public static bool gameInitializeComplete => instance.m_gameInitializeComplete;
-
 
         public System.Action OnLoadingDataGameOptionsComplete;
+        public bool shouldStartNewGame;
 
-        [SerializeField] private bool m_shouldUseTestDefault;
-
+        private bool m_gameInitializeComplete = false;
+        public bool gameInitializeComplete => m_gameInitializeComplete;
         private LevelControllerRe m_levelController;
+        private int m_choosenProfileIndex = 0;
+        public int choosenProfileIndex => m_choosenProfileIndex;
+        private bool m_gameShouldStart;
 
         private void Awake()
         {
@@ -94,41 +88,28 @@ namespace BloodyMaze
             m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
         }
 
-        IEnumerator WaitForInitLevelCompleteCo()
+        private void CheckEvent(string eventKey)
         {
-            yield return new WaitForSecondsRealtime(1f);
-            m_gameInitializeComplete = true;
-            GameEvents.OnInitLevelComplete?.Invoke();
-        }
-
-        private static void CheckEvent(string eventKey)
-        {
-            var globalEvent = instance.m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey);
+            var globalEvent = m_playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == eventKey);
             if (globalEvent != null)
                 globalEvent.flag = true;
         }
 
-        private static void SetRoomAgentStatus(string roomID, int agentID)
+        private void SetRoomAgentStatus(string roomID, int agentID)
         {
             playerProfile.SetRoomAgentStatus(roomID, agentID);
         }
 
-        private static void InitLevel()
-        {
-            instance.m_levelController.Init();
-            instance.StartCoroutine(instance.WaitForInitLevelCompleteCo());
-        }
-
-        private static void LoadPlayerProfileGameplayData()
+        private void LoadPlayerProfileGameplayData()
         {
             var json = "";
             for (int i = 0; i < 3; i++)
             {
                 json = PlayerPrefs.GetString($"PlayerProfile_{i}");
                 if (string.IsNullOrEmpty(json))
-                    instance.m_allPlayerProfilesData.Add(instance.m_shouldUseTestDefault && i != 2 ? playerProfile.defaultTest[i] : null);
+                    m_allPlayerProfilesData.Add(m_shouldUseTestDefault && i != 2 ? playerProfile.defaultTest[i] : null);
                 else
-                    instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
+                    m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
             if (SceneManager.GetActiveScene().name.Contains("MainMenu") || SceneManager.GetActiveScene().name.Contains("GameLoader"))
@@ -137,7 +118,7 @@ namespace BloodyMaze
             }
             else
             {
-                if (!instance.m_shouldInitNewData)
+                if (!m_shouldInitNewData)
                 {
                     json = PlayerPrefs.GetString("PlayerProfile_0");
                     Debug.Log($">>> load {json}");
@@ -146,28 +127,28 @@ namespace BloodyMaze
                 {
                     json = "";
                 }
-                instance.m_playerProfile.LoadFromJson(json, instance.m_shouldInitNewData);
-                instance.m_levelController = FindObjectOfType<LevelControllerRe>();
-                InitLevel();
+                m_playerProfile.LoadFromJson(json, m_shouldInitNewData);
+                m_levelController = FindObjectOfType<LevelControllerRe>();
+                m_levelController.Init();
                 MusicManager.current.SetJam("Gameplay");
-                shouldStartNewGame = instance.m_shouldInitNewData;
+                shouldStartNewGame = m_shouldInitNewData;
             }
 #endif
         }
 
         private void SetPlayerProfileSOData()
         {
-            instance.m_playerProfile.LoadFromJson(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
+            m_playerProfile.LoadFromJson(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
         }
 
-        public static void SaveData(bool shouldCallOnSave = true)
+        public void SaveData(bool shouldCallOnSave = true)
         {
             if (shouldCallOnSave)
                 GameEvents.OnSaveData?.Invoke();
-            var json = instance.m_playerProfile.ToJson();
+            var json = m_playerProfile.ToJson();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"PlayerProfile_{m_choosenProfileIndex}", json);
-            instance.m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
+            m_allPlayerProfilesData[m_choosenProfileIndex] = playerProfile.playerProfileData.Clone();
         }
 
         //GameOptionsZone START
@@ -185,36 +166,36 @@ namespace BloodyMaze
             LoadDataGameOptions();
         }
 
-        public static void SaveDataGameOptions()
+        public void SaveDataGameOptions()
         {
-            var json = instance.m_gameOptions.ToJsonGameOptions();
+            var json = m_gameOptions.ToJsonGameOptions();
             Debug.Log($">>> save {json}");
             PlayerPrefs.SetString($"GameOptionsData", json);
         }
 
-        private static void LoadDataGameOptions()
+        private void LoadDataGameOptions()
         {
             var json = "";
             json = PlayerPrefs.GetString("GameOptionsData");
             Debug.Log($">>> load (GameOptions) {json}");
-            instance.m_gameOptions.LoadFromJsonGameOptions(json);
-            instance.m_musicMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeMusic == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeMusic * 30f - 25f);
-            instance.m_SFXMixer.SetFloat("Master", instance.m_gameOptions.GameOptionsData.volumeSFX == 0f ? -80f : instance.m_gameOptions.GameOptionsData.volumeSFX * 30f - 25f);
-            instance.OnLoadingDataGameOptionsComplete?.Invoke();
+            m_gameOptions.LoadFromJsonGameOptions(json);
+            m_musicMixer.SetFloat("Master", m_gameOptions.GameOptionsData.volumeMusic == 0f ? -80f : m_gameOptions.GameOptionsData.volumeMusic * 30f - 25f);
+            m_SFXMixer.SetFloat("Master", m_gameOptions.GameOptionsData.volumeSFX == 0f ? -80f : m_gameOptions.GameOptionsData.volumeSFX * 30f - 25f);
+            OnLoadingDataGameOptionsComplete?.Invoke();
         }
 
         //GameOptionsZone END
 
 
 
-        public static void LoadScene(string sceneName, int choosenProfileIndex = -1, bool isReloaded = false)
+        public void LoadScene(string sceneName, int choosenProfileIndex = -1, bool isReloaded = false)
         {
             if (choosenProfileIndex != -1)
                 m_choosenProfileIndex = choosenProfileIndex;
             if (isReloaded)
-                instance.StartCoroutine(instance.LoadSceneAsyncReload(sceneName));
+                StartCoroutine(LoadSceneAsyncReload(sceneName));
             else
-                instance.StartCoroutine(instance.LoadSceneAsync(sceneName));
+                StartCoroutine(LoadSceneAsync(sceneName));
         }
 
         private IEnumerator LoadSceneAsync(string sceneName)
@@ -224,30 +205,34 @@ namespace BloodyMaze
             m_loader.SetActive(true);
             m_UILoadingAnimator.SetBool("IsLoading", true);
             m_UILoadingAnimator.SetTrigger(sceneName == "MainMenu" ? "ToMainMenu" : "ToGameplay");
+            if (SceneManager.GetActiveScene().name.Contains("C1"))
+                SceneManager.MoveGameObjectToScene(FindAnyObjectByType<LevelControllerRe>().gameObject, SceneManager.GetActiveScene());
             yield return new WaitForSecondsRealtime(2f);
-            yield return SceneManager.LoadSceneAsync(sceneName == "MainMenu" ? "Empty" : "LevelPreLoader");
+            yield return SceneManager.LoadSceneAsync("Empty");
             m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
             var timeToWait = 2f;
             // Chapter<Name>Room<Num>
-            if (sceneName.Contains("LevelPreLoader"))
-                SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
             {
                 yield return new WaitForSecondsRealtime(timeToWait - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
-            m_UILoadingAnimator.SetBool("IsLoading", false);
             if (sceneName == "MainMenu")
+            {
                 MusicManager.current.SetJam("MainMenu");
+                m_UILoadingAnimator.SetBool("IsLoading", false);
+            }
             else
             {
+                SetPlayerProfileSOData();
                 m_levelController = FindObjectOfType<LevelControllerRe>();
-                InitLevel();
+                m_levelController.Init();
                 MusicManager.current.SetJam("Gameplay");
                 // GameTransitionSystem.ScreenFade();
+                m_UILoadingAnimator.SetBool("IsLoading", false);
                 while (!m_gameShouldStart)
                 {
                     yield return new();
@@ -291,7 +276,7 @@ namespace BloodyMaze
             yield return SceneManager.LoadSceneAsync(sceneName);
             m_UILoadingAnimator.SetBool("IsLoading", false);
             m_levelController = FindObjectOfType<LevelControllerRe>();
-            InitLevel();
+            m_levelController.Init();
             var uiRootAnimationsController = FindObjectOfType<UIRootAnimationsController>();
             uiRootAnimationsController.FadeScreen();
             while (!m_gameShouldStart)
@@ -308,9 +293,5 @@ namespace BloodyMaze
         {
             m_gameShouldStart = true;
         }
-
-
-
-
     }
 }

@@ -19,8 +19,8 @@ namespace BloodyMaze.States
 
         protected override void OnEnter()
         {
-            m_playerProfile = GameController.playerProfile;
-            m_levelsInfo = GameController.levelsInfo;
+            m_playerProfile = GameController.instance.playerProfile;
+            m_levelsInfo = GameController.instance.levelsInfo;
             m_levelsData = m_levelsInfo.GetLevels();
             if (!TrySelectLevel(m_playerProfile.playerProfileData.characterSaveData.lastLevelIndex))
             {

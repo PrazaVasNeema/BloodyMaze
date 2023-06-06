@@ -24,7 +24,7 @@ namespace BloodyMaze.Components
         private void Activate()
         {
 
-            List<GlobalEventsData> eventsData = GameController.playerProfile.playerProfileData.globalEventsData;
+            List<GlobalEventsData> eventsData = GameController.instance.playerProfile.playerProfileData.globalEventsData;
             bool requirementsSatisfied = true;
             foreach (string flagKey in m_keysOfFlagsThatShouldBeChecked)
             {

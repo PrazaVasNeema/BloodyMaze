@@ -20,7 +20,7 @@ namespace BloodyMaze.Controllers
         public void Init()
         {
             GameEvents.OnInitLevelComplete += CheckEnableFlag;
-            m_globalEventsData = GameController.playerProfile.playerProfileData.globalEventsData;
+            m_globalEventsData = GameController.instance.playerProfile.playerProfileData.globalEventsData;
 
             // InitActivaters();
             // InitAgents();
@@ -135,7 +135,7 @@ namespace BloodyMaze.Controllers
         public void InitAgents()
         {
             Debug.Log("InitAgents");
-            if (!string.IsNullOrEmpty(m_eventFlagShouldBeCheckedToSpawnEnemies) && !GameController.playerProfile.playerProfileData.globalEventsData.Find((x) =>
+            if (!string.IsNullOrEmpty(m_eventFlagShouldBeCheckedToSpawnEnemies) && !GameController.instance.playerProfile.playerProfileData.globalEventsData.Find((x) =>
             x.eventKey == m_eventFlagShouldBeCheckedToSpawnEnemies).flag)
             {
                 Debug.Log("InitAgents false");
@@ -144,7 +144,7 @@ namespace BloodyMaze.Controllers
                 return;
             }
             Debug.Log("InitAgents2");
-            var temp = GameController.playerProfile.playerProfileData.roomsData.Find((x) => x.roomKey == m_roomKey);
+            var temp = GameController.instance.playerProfile.playerProfileData.roomsData.Find((x) => x.roomKey == m_roomKey);
             List<AgentRoomStatus> agentsToSpawnIDs = new();
             if (temp != null)
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;

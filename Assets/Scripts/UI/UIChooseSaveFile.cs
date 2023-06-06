@@ -14,7 +14,7 @@ namespace BloodyMaze.UI
         {
             for (int i = 0; i < 3; i++)
             {
-                PlayerProfileData playerProfileData = GameController.allPlayerProfilesData[i];
+                PlayerProfileData playerProfileData = GameController.instance.allPlayerProfilesData[i];
                 int progressPercent = new();
                 int totalEventsTrue = 0;
                 if (playerProfileData != null)
@@ -24,7 +24,7 @@ namespace BloodyMaze.UI
                 }
                 m_saveSlotsLayoutGroup.transform.GetChild(i).GetChild(1).GetComponent<TMP_Text>().text = playerProfileData
                 == null ? "Пустой слот" : $"Прогресс: {Mathf.Round(totalEventsTrue * 1f / (progressPercent * 1f) * 100f * 1f)}%";
-                if (GameController.shouldStartNewGame == false && playerProfileData == null)
+                if (GameController.instance.shouldStartNewGame == false && playerProfileData == null)
                     m_saveSlotsLayoutGroup.transform.GetChild(i).GetComponent<Button>().interactable = false;
                 else
                     m_saveSlotsLayoutGroup.transform.GetChild(i).GetComponent<Button>().interactable = true;

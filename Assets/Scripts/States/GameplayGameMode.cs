@@ -85,13 +85,13 @@ namespace BloodyMaze.States
 
         public void GotoMainMenu()
         {
-            GameController.LoadScene("MainMenu");
+            GameController.instance.LoadScene("MainMenu");
         }
 
         public void ReloadLevel()
         {
 
-            GameController.LoadScene("LevelPreLoader", isReloaded: true);
+            GameController.instance.LoadScene("LevelPreLoader", isReloaded: true);
         }
     }
 }

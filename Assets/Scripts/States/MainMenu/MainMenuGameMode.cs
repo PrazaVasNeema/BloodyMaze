@@ -32,7 +32,7 @@ namespace BloodyMaze.States
 
         private void InitOptions()
         {
-            GameOptionsData gameOptionsData = GameController.gameOptions.GameOptionsData;
+            GameOptionsData gameOptionsData = GameController.instance.gameOptions.GameOptionsData;
             m_optionsLanguageDropdown.value = gameOptionsData.language;
             m_optionsMusicSlider.value = gameOptionsData.volumeMusic;
             m_optionsSFXSlider.value = gameOptionsData.volumeSFX;
@@ -60,7 +60,7 @@ namespace BloodyMaze.States
 
         public void GotoChooseSaveFileState(bool shouldStartNewGame)
         {
-            GameController.shouldStartNewGame = shouldStartNewGame;
+            GameController.instance.shouldStartNewGame = shouldStartNewGame;
             ChangeState<ChooseSaveFileState>();
         }
 
@@ -72,8 +72,8 @@ namespace BloodyMaze.States
 
         public void LoadLevel(int choosenProfileIndex)
         {
-            var levelInfo = GameController.levelsInfo.GetLevel(GameController.playerProfile.playerProfileData.characterSaveData.lastLevelIndex);
-            GameController.LoadScene(levelInfo.sceneName, choosenProfileIndex);
+            var levelInfo = GameController.instance.levelsInfo.GetLevel(GameController.instance.playerProfile.playerProfileData.characterSaveData.lastLevelIndex);
+            GameController.instance.LoadScene(levelInfo.sceneName, choosenProfileIndex);
         }
 
         public void OnExitGame()

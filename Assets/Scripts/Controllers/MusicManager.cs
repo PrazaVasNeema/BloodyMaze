@@ -50,7 +50,7 @@ namespace BloodyMaze.Controllers
                 current.StartCoroutine(FadeMixerGroup.StartFade(current.m_audioMixer, current.m_exposureParams[current.m_currentParamIndex], 2f, -80f));
             }
             m_currentParamIndex = (m_exposureParams.Count + ++m_currentParamIndex) % m_exposureParams.Count;
-            MusicGroup musicGroup = GameController.musicGroups.GetGroup(audioGroupName);
+            MusicGroup musicGroup = GameController.instance.musicGroups.GetGroup(audioGroupName);
             m_audioSources[m_currentParamIndex].Stop();
             current.m_audioMixer.SetFloat(current.m_exposureParams[m_currentParamIndex], 0f);
             current.m_currentJam = current.StartCoroutine(current.CurrentJamCo(musicGroup));

@@ -26,7 +26,7 @@ namespace BloodyMaze.Components
             GameEvents.OnHideMessage?.Invoke();
             Debug.Log("Check2");
             if (!string.IsNullOrEmpty(m_eventFlagToCheck))
-                GameController.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
+                GameController.instance.playerProfile.playerProfileData.globalEventsData.Find((x) => x.eventKey == m_eventFlagToCheck).flag = true;
             Debug.Log("Check3");
             var activateOnInteract = GetComponent<ActivateOnInteract>();
             if (activateOnInteract)

@@ -34,7 +34,7 @@ namespace BloodyMaze.UI
         {
             m_subLevel.SetActive(true);
 
-            m_messageTMPText.SetText(GameController.locData.GetMessage(key));
+            m_messageTMPText.SetText(GameController.instance.locData.GetMessage(key));
         }
 
         private void HideMessage()

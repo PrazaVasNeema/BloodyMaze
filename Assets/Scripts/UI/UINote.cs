@@ -40,12 +40,12 @@ namespace BloodyMaze.UI
 
         private void FillNote(string key, Sprite background)
         {
-            LocNotesText noteData = GameController.locData.GetNoteData(key);
+            LocNotesText noteData = GameController.instance.locData.GetNoteData(key);
             m_noteText.font = noteData.fontNum < m_fonts.Length && noteData.fontNum >= 0 ? m_fonts[noteData.fontNum] : m_defaultFont;
             m_noteText.fontSize = noteData.fontSize != 0f ? noteData.fontSize : m_defaultFontSize;
             m_noteText.lineSpacing = noteData.spacingLine != 0f ? noteData.spacingLine : m_defaultLineSpacing;
             m_noteText.GetComponent<RectTransform>().localPosition = new Vector2(m_noteText.GetComponent<RectTransform>().localPosition.x, noteData.posYOffset != 0 ? noteData.posYOffset : m_defaultRectPosYOffset);
-            m_noteText.text = GameController.locData.GetNoteText(key);
+            m_noteText.text = GameController.instance.locData.GetNoteText(key);
             if (background)
                 m_noteImage.sprite = background;
         }

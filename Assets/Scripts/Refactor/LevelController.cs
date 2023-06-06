@@ -35,9 +35,9 @@ namespace BloodyMaze.Controllers
 
         public void Init()
         {
-            PlayerProfileSO playerProfileSO = GameController.playerProfile;
+            PlayerProfileSO playerProfileSO = GameController.instance.playerProfile;
 
-            m_activeRoom = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
+            m_activeRoom = GameController.instance.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
                         "safe_zone" : "outsides";
             foreach (RoomController rc in m_rooms)
             {
@@ -59,7 +59,7 @@ namespace BloodyMaze.Controllers
 
         private CharacterComponent SpawnPlayer()
         {
-            Transform spawnPoint = GameController.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
+            Transform spawnPoint = GameController.instance.playerProfile.GetGlobalEventFlag("sat_at_desk") ?
             m_spawnPoints[1] : m_spawnPoints[0];
             return Instantiate(m_playerPrefab, spawnPoint.position, spawnPoint.rotation);
         }

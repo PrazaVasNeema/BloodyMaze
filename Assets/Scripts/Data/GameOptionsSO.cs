@@ -17,22 +17,16 @@ namespace BloodyMaze
         {
             if (string.IsNullOrEmpty(json))
             {
-                GameOptionsData currentData = new GameOptionsData();
+                // GameOptionsData currentData = new GameOptionsData();
 
-                currentData = m_defaultGameOptionsData;
-                var data = JsonUtility.FromJson<GameOptionsData>(JsonUtility.ToJson(currentData));
-                GameOptionsData = data;
+                // currentData = m_defaultGameOptionsData;
+                // var data = JsonUtility.FromJson<GameOptionsData>(JsonUtility.ToJson(currentData));
+                GameOptionsData = m_defaultGameOptionsData;
             }
             else
             {
-                if (!string.IsNullOrEmpty(json))
-                {
-                    var data = JsonUtility.FromJson<GameOptionsData>(json);
-                    if (data != null)
-                    {
-                        GameOptionsData = data;
-                    }
-                }
+                var data = JsonUtility.FromJson<GameOptionsData>(json);
+                GameOptionsData = data;
             }
         }
 
