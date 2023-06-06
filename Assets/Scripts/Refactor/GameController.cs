@@ -267,13 +267,13 @@ namespace BloodyMaze
             CheckEvent($"DayIsBehind_{playerProfile.playerProfileData.characterSaveData.dayNum}");
             playerProfile.playerProfileData.characterSaveData.dayNum++;
             SaveData(false);
-            SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
             {
                 yield return new WaitForSecondsRealtime(timeToWait - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
+            SetPlayerProfileSOData();
             m_UILoadingAnimator.SetBool("IsLoading", false);
             m_levelController = FindObjectOfType<LevelControllerRe>();
             m_levelController.Init();
@@ -285,8 +285,6 @@ namespace BloodyMaze
             }
             m_loader.SetActive(false);
             uiRootAnimationsController.UnfadeScreen();
-            yield return new WaitForSecondsRealtime(2f);
-            // GameEvents.OnCallGotoFunction("gameplay");
         }
 
         public void SetGameShouldStart()

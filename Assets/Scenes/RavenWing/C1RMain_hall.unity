@@ -19514,7 +19514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -21357,7 +21357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -23385,7 +23385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -24020,7 +24020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -24676,7 +24676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536498855496668811, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9b281786c32b4aab2d6473ec5fcab, type: 3}
@@ -32631,6 +32631,7 @@ MonoBehaviour:
   - {fileID: 2040746561}
   - {fileID: 1780579881}
   - {fileID: 1284236109}
+  m_cameraBoundaries: {fileID: 0}
 --- !u!4 &2121446248
 Transform:
   m_ObjectHideFlags: 0
