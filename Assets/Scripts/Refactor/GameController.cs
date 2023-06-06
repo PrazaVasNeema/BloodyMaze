@@ -27,8 +27,6 @@ namespace BloodyMaze
         public static PlayerProfileSO playerProfile => instance.m_playerProfile;
         [SerializeField] private LevelsInfoSO m_levelsInfo;
         public static LevelsInfoSO levelsInfo => instance.m_levelsInfo;
-
-
         [SerializeField] private List<PlayerProfileData> m_allPlayerProfilesData = new();
         public static List<PlayerProfileData> allPlayerProfilesData => instance.m_allPlayerProfilesData;
 
@@ -133,7 +131,7 @@ namespace BloodyMaze
                     instance.m_allPlayerProfilesData.Add(JsonUtility.FromJson<PlayerProfileData>(json));
             }
 #if UNITY_EDITOR
-            if (SceneManager.GetActiveScene().name.Contains("MainMenu"))
+            if (SceneManager.GetActiveScene().name.Contains("MainMenu") || SceneManager.GetActiveScene().name.Contains("GameLoader"))
             {
                 MusicManager.current.SetJam("MainMenu");
             }

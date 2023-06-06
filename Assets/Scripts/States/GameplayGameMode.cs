@@ -90,7 +90,7 @@ namespace BloodyMaze.States
 
         public void ReloadLevel()
         {
-            var scene = SceneManager.GetActiveScene();
+
             GameController.LoadScene("LevelPreLoader", isReloaded: true);
         }
     }
