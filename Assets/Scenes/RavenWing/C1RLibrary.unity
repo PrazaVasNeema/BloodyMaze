@@ -7172,6 +7172,7 @@ MonoBehaviour:
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
   m_roomSpawnPoints:
   - {fileID: 1024659004}
+  m_cameraBoundaries: {fileID: 0}
 --- !u!4 &2006195900
 Transform:
   m_ObjectHideFlags: 0
@@ -70736,6 +70737,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655043703136361
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72116,7 +72118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336655044142123766}
   m_LocalRotation: {x: -0, y: -0.26799318, z: 0.96342087, w: 0}
-  m_LocalPosition: {x: -0.023087747, y: -0.016537597, z: -0.0008422482}
+  m_LocalPosition: {x: -0.023087747, y: -0.016737, z: -0.000989}
   m_LocalScale: {x: 0.001683501, y: 0.0016835018, z: 0.0016835013}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103647,6 +103649,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &4667696046390764049
 Transform:
   m_ObjectHideFlags: 0
