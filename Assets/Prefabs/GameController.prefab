@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UILoadingAnimator: {fileID: 7133214709150104865}
   m_loader: {fileID: 2494103161065296157}
-  m_shouldInitNewData: 0
+  m_shouldInitNewData: 1
   m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
   m_musicGroups: {fileID: 11400000, guid: 31de9b3599eeea347bdae8c8d7783340, type: 2}
   m_TMP_Text: {fileID: 2494103161525922202}

@@ -9,7 +9,7 @@ namespace BloodyMaze.Components
     {
         [SerializeField] private List<int> m_agentsToAffect;
         [SerializeField] private bool m_shouldShow;
-        [SerializeField] private RoomController m_roomController;
+        [SerializeField] private RoomControllerRe m_roomController;
 
         public void ShowOrHide()
         {
