@@ -230,5 +230,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2836276589354044013, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750315812160195550, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035024883160799854, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055699201282286965, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055699201282286965, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077314559323927617, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176342262394523385, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600636371447138390, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600636371447138390, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8600636371447138390, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f132ce62128ba2847bf7f10bdae5e6b0, type: 3}
