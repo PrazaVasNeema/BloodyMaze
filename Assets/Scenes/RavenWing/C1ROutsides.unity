@@ -405,8 +405,8 @@ LightProbeGroup:
   - {x: -4.44759, y: -1.5654373, z: 2.7068176}
   - {x: -4.44759, y: 0.43456268, z: 2.7068176}
   - {x: -4.44759, y: -1.5654373, z: 2.7068176}
-  - {x: 3.2504425, y: 0.43456268, z: 17.249832}
-  - {x: 3.2504425, y: -1.5654373, z: 17.249832}
+  - {x: 6.4328613, y: 0.43456268, z: 14.136215}
+  - {x: 6.4328613, y: -1.5654373, z: 14.136215}
   - {x: 1.0193825, y: 0.43456268, z: 19.572968}
   - {x: 1.0193825, y: -1.5654373, z: 19.572968}
   - {x: 0.036491394, y: 0.43456268, z: 16.460663}
@@ -417,6 +417,8 @@ LightProbeGroup:
   - {x: -1.7705765, y: -1.5654373, z: 12.997574}
   - {x: -3.445118, y: 0.43456268, z: 14.862854}
   - {x: -3.445118, y: -1.5654373, z: 14.862854}
+  - {x: 3.2504425, y: 0.43456268, z: 17.249832}
+  - {x: 3.2504425, y: -1.5654373, z: 17.249832}
   m_Dering: 1
 --- !u!4 &149128577
 Transform:
@@ -425,13 +427,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149128575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.036964, y: -2.81, z: -167.69972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.4085426, y: -33.87604, z: 20.19516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1857317157}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &234461422
 GameObject:
@@ -463,8 +465,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.003078}
+  m_Center: {x: 0, y: 0, z: -0.001542659}
 --- !u!23 &234461424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -725,13 +727,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444578566}
-  m_LocalRotation: {x: 0.63681674, y: -0.26170135, z: 0.15682131, w: 0.7080848}
-  m_LocalPosition: {x: -37.91, y: -1.28182, z: -169.19}
+  m_LocalRotation: {x: 0.6368167, y: -0.26170132, z: 0.1568213, w: 0.70808476}
+  m_LocalPosition: {x: 3.5355072, y: -32.347862, z: 18.70488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1857317157}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 79.712, y: -73.089, z: -38.517}
 --- !u!1 &562416131
 GameObject:
@@ -5893,6 +5895,7 @@ MonoBehaviour:
   m_roomSpawnPoints:
   - {fileID: 1750391670}
   - {fileID: 1641502386}
+  m_cameraBoundaries: {fileID: 234461423}
 --- !u!4 &1510527903
 Transform:
   m_ObjectHideFlags: 0
@@ -6326,6 +6329,8 @@ Transform:
   - {fileID: 7972479}
   - {fileID: 103434817}
   - {fileID: 364247646}
+  - {fileID: 444578568}
+  - {fileID: 149128577}
   m_Father: {fileID: 1510527903}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6587,6 +6592,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655042343632675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6797,6 +6803,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655042427405950
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6901,6 +6908,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2336655042478289874
 GameObject:
   m_ObjectHideFlags: 0
@@ -13120,6 +13128,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655042689856081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13224,6 +13233,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655042698607036
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13378,6 +13388,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2336655042755432847
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13496,6 +13507,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2336655042784040452
 GameObject:
   m_ObjectHideFlags: 0
@@ -13939,6 +13951,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655042863511966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14043,6 +14056,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2336655042884599440
 Transform:
   m_ObjectHideFlags: 0
@@ -14533,6 +14547,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655042976874180
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15173,6 +15188,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2336655043024550666
 GameObject:
   m_ObjectHideFlags: 0
@@ -15835,6 +15851,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655043216775896
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16203,6 +16220,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!193 &2336655043247318004
 Tree:
   m_ObjectHideFlags: 0
@@ -16400,6 +16418,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!193 &2336655043331993188
 Tree:
   m_ObjectHideFlags: 0
@@ -16729,6 +16748,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!193 &2336655043403401433
 Tree:
   m_ObjectHideFlags: 0
@@ -16927,6 +16947,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655043526756070
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22743,6 +22764,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!193 &2336655043745444619
 Tree:
   m_ObjectHideFlags: 0
@@ -23309,6 +23331,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655043820014781
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24338,6 +24361,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655044038024739
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24634,6 +24658,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &2336655044210576192
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25127,6 +25152,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655044314719445
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25273,6 +25299,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2336655044326448725
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ namespace BloodyMaze.Controllers
         [SerializeField] private CheckIfObjectShouldSpawn[] m_roomActivaters;
         [SerializeField] private string m_eventFlagShouldBeCheckedToSpawnEnemies;
         [SerializeField] private Transform[] m_roomSpawnPoints;
+        [SerializeField] private BoxCollider m_cameraBoundaries;
+        public BoxCollider cameraBoundaries => m_cameraBoundaries;
         private List<GlobalEventsData> m_globalEventsData;
         private bool m_enabledFlag;
 
