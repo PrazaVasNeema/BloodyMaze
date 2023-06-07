@@ -18,7 +18,7 @@ namespace BloodyMaze.UI
         [SerializeField] private AudioClip m_ObjectTrackingSound;
         private List<GlobalEventsData> m_globalEventsData;
         private int m_currentEventFlagIndex;
-        private bool m_shouldPlayObjectTrackingSound;
+        private bool m_initIsComplete;
         //
         private int m_currentPageIndex;
 
@@ -94,14 +94,15 @@ namespace BloodyMaze.UI
             GameEvents.OnCallGotoFunction("gameplay");
         }
 
+
         public void InitObjectiveTracking()
         {
             m_globalEventsData = GameController.instance.playerProfile.playerProfileData.globalEventsData;
             m_currentEventFlagIndex = -1;
-            m_shouldPlayObjectTrackingSound = false;
+            m_initIsComplete = false;
             FillAllObjectives();
             GameEvents.OnEventFlagCheck += FillObjective;
-            m_shouldPlayObjectTrackingSound = true;
+            m_initIsComplete = true;
         }
 
         public void DeInitObjectiveTracking()
@@ -142,6 +143,8 @@ namespace BloodyMaze.UI
             Debug.Log(correspondingEventKey);
             if (m_globalEventsData[m_currentEventFlagIndex].eventKey != correspondingEventKey)
                 return;
+            if (m_initIsComplete)
+                m_currentEventFlagIndex++;
             while (string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveText))
             {
                 m_currentEventFlagIndex++;
@@ -152,13 +155,26 @@ namespace BloodyMaze.UI
                 }
                 continue;
             }
-            UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+            if (m_initIsComplete)
+                CoroutinesInDemandHub.instance.WaitForExploringState(this, m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+            else
+                UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+
+        }
+
+        IEnumerator WaitForExploringState(string newObjectiveText = null)
+        {
+            while (ActionStatesManager.state != ActionStates.EXPLORING)
+            {
+                yield return new WaitForSecondsRealtime(0.1f);
+            }
+            UpdateObjective(newObjectiveText);
         }
 
         /// <summary>
         /// Leave param empty to clear all fields
         /// </summary>
-        private void UpdateObjective(string newObjectiveText = null)
+        public void UpdateObjective(string newObjectiveText = null)
         {
             if (string.IsNullOrEmpty(newObjectiveText))
             {
@@ -175,9 +191,9 @@ namespace BloodyMaze.UI
                     newObjectivesScrollviewText += $"\n{part}";
                 m_objectivesScrollviewTextField.text = newObjectivesScrollviewText;
             }
-            if (m_shouldPlayObjectTrackingSound)
+            if (m_initIsComplete)
             {
-                GameEvents.OnShowMiniMessage?.Invoke(GameController.instance.locData.GetMiniMessage("new_diary_entry"));
+                GameEvents.OnShowMiniMessage?.Invoke("new_diary_entry");
                 m_audioSource.clip = m_ObjectTrackingSound;
                 m_audioSource.Play();
             }
