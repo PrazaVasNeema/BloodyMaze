@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7358530450019001015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4809733445791163149}
+  - component: {fileID: 7800174658389675052}
+  m_Layer: 0
+  m_Name: CoroutinesInDemandHub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4809733445791163149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358530450019001015}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.86584, y: 6.681802, z: 10.492043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5613358585222758655}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7800174658389675052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358530450019001015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b78b48c0ee5b848bdcddcbddf52572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8043599196766439242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 4762651481542391964, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_Size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762651481542391964, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6305930871474759641, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_IsActive
@@ -305,6 +353,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &5613358585222758655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2469728783028324277, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+  m_PrefabInstance: {fileID: 8043599196766439242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5678482747234047989 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2409037824485511359, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
