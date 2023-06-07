@@ -9,13 +9,16 @@ namespace BloodyMaze.Controllers
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private UIJournal m_uiJournal;
-        private ObjectivesTrackingManager m_objectivesTrackingManager;
 
-        private void Awake()
+        private void Start()
         {
             Debug.Log("AwakeUIRoot");
-            if (TryGetComponent<ObjectivesTrackingManager>(out m_objectivesTrackingManager))
-                m_objectivesTrackingManager.Init(m_uiJournal);
+            if (GameController.instance.playerProfile.playerProfileData.profileSpecificGameOptionsData.shouldShowObjectiveTracking)
+            {
+                Debug.Log("AwakeUIRoot2");
+                m_uiJournal.InitObjectiveTracking();
+                Debug.Log("AwakeUIRoot3");
+            }
         }
 
         public void FadeScreen()

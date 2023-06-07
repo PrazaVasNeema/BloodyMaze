@@ -12,8 +12,16 @@ namespace BloodyMaze.UI
         [SerializeField] private Animator m_animator;
         [SerializeField] private TMP_Text m_currentObjectiveTextField;
         [SerializeField] private TMP_Text m_objectivesScrollviewTextField;
+        [SerializeField] private AudioSource m_audioSource;
 
+        // Objective tracking system
+        [SerializeField] private AudioClip m_ObjectTrackingSound;
+        private List<GlobalEventsData> m_globalEventsData;
+        private int m_currentEventFlagIndex;
+        private bool m_shouldPlayObjectTrackingSound;
+        //
         private int m_currentPageIndex;
+
         private void Awake()
         {
             foreach (GameObject page in m_pages)
@@ -86,15 +94,93 @@ namespace BloodyMaze.UI
             GameEvents.OnCallGotoFunction("gameplay");
         }
 
-        public void UpdateObjectives(string newObjectiveText)
+        public void InitObjectiveTracking()
         {
-            m_currentObjectiveTextField.text = newObjectiveText;
-            List<string> objectivesScrollviewTextParts = new(m_objectivesScrollviewTextField.text.Split('\n'));
-            objectivesScrollviewTextParts[0] = $"<s>{objectivesScrollviewTextParts[0]}</s>";
-            string newObjectivesScrollviewText = $"{newObjectiveText}\n";
-            foreach (string part in objectivesScrollviewTextParts)
-                newObjectivesScrollviewText += $"\n{part}";
-            m_objectivesScrollviewTextField.text = newObjectivesScrollviewText;
+            m_globalEventsData = GameController.instance.playerProfile.playerProfileData.globalEventsData;
+            m_currentEventFlagIndex = -1;
+            m_shouldPlayObjectTrackingSound = false;
+            FillAllObjectives();
+            GameEvents.OnEventFlagCheck += FillObjective;
+            m_shouldPlayObjectTrackingSound = true;
+        }
+
+        public void DeInitObjectiveTracking()
+        {
+            GameEvents.OnEventFlagCheck -= FillObjective;
+            UpdateObjective();
+        }
+
+        private void FillAllObjectives()
+        {
+            Debug.Log("FillFields");
+            bool endReached = false;
+            for (; m_currentEventFlagIndex < m_globalEventsData.Count;)
+            {
+                if (endReached)
+                {
+                    break;
+                }
+                m_currentEventFlagIndex++;
+                if (!m_globalEventsData[m_currentEventFlagIndex].flag)
+                {
+                    endReached = true;
+                }
+                if (m_currentEventFlagIndex >= m_globalEventsData.Count)
+                {
+                    Debug.LogError("Events set up is now right: the end is reached");
+                    break;
+                }
+                FillObjective(m_globalEventsData[m_currentEventFlagIndex].eventKey);
+
+            }
+        }
+
+
+        private void FillObjective(string correspondingEventKey)
+        {
+            Debug.Log(m_globalEventsData[m_currentEventFlagIndex].eventKey);
+            Debug.Log(correspondingEventKey);
+            if (m_globalEventsData[m_currentEventFlagIndex].eventKey != correspondingEventKey)
+                return;
+            while (string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveText))
+            {
+                m_currentEventFlagIndex++;
+                if (m_currentEventFlagIndex >= m_globalEventsData.Count)
+                {
+                    Debug.LogError("Events set up is now right: the end is reached");
+                    break;
+                }
+                continue;
+            }
+            UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+        }
+
+        /// <summary>
+        /// Leave param empty to clear all fields
+        /// </summary>
+        private void UpdateObjective(string newObjectiveText = null)
+        {
+            if (string.IsNullOrEmpty(newObjectiveText))
+            {
+                m_currentObjectiveTextField.text = "";
+                m_objectivesScrollviewTextField.text = "";
+            }
+            else
+            {
+                m_currentObjectiveTextField.text = newObjectiveText;
+                List<string> objectivesScrollviewTextParts = new(m_objectivesScrollviewTextField.text.Split('\n'));
+                objectivesScrollviewTextParts[0] = $"<s>{objectivesScrollviewTextParts[0]}</s>";
+                string newObjectivesScrollviewText = $"{newObjectiveText}\n";
+                foreach (string part in objectivesScrollviewTextParts)
+                    newObjectivesScrollviewText += $"\n{part}";
+                m_objectivesScrollviewTextField.text = newObjectivesScrollviewText;
+            }
+            if (m_shouldPlayObjectTrackingSound)
+            {
+                GameEvents.OnShowMiniMessage?.Invoke(GameController.instance.locData.GetMiniMessage("new_diary_entry"));
+                m_audioSource.clip = m_ObjectTrackingSound;
+                m_audioSource.Play();
+            }
         }
     }
 }

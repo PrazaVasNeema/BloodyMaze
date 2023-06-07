@@ -50,10 +50,12 @@ namespace BloodyMaze
                 currentData.characterSaveData = m_default.characterSaveData;
                 currentData.globalEventsData = m_default.globalEventsData;
                 currentData.roomsData = m_default.roomsData;
+                currentData.profileSpecificGameOptionsData = m_default.profileSpecificGameOptionsData;
                 var data = JsonUtility.FromJson<PlayerProfileData>(JsonUtility.ToJson(currentData));
                 playerProfileData.characterSaveData = data.characterSaveData;
                 playerProfileData.globalEventsData = data.globalEventsData;
                 playerProfileData.roomsData = data.roomsData;
+                playerProfileData.profileSpecificGameOptionsData = data.profileSpecificGameOptionsData;
             }
             else
             {
@@ -88,13 +90,15 @@ namespace BloodyMaze
         public CharacterSaveData characterSaveData = new();
         public List<GlobalEventsData> globalEventsData = new();
         public List<RoomsData> roomsData = new();
+        public ProfileSpecificGameOptionsData profileSpecificGameOptionsData = new();
 
         public PlayerProfileData Clone() => new PlayerProfileData
         {
 
             characterSaveData = this.characterSaveData,
             globalEventsData = this.globalEventsData,
-            roomsData = this.roomsData
+            roomsData = this.roomsData,
+            profileSpecificGameOptionsData = this.profileSpecificGameOptionsData
         };
     }
 
@@ -142,5 +146,11 @@ namespace BloodyMaze
     {
         public int itemID;
         public bool shouldntSpawn;
+    }
+
+    [System.Serializable]
+    public class ProfileSpecificGameOptionsData
+    {
+        public bool shouldShowObjectiveTracking;
     }
 }
