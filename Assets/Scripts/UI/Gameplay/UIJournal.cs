@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.States;
+using TMPro;
 
 namespace BloodyMaze.UI
 {
@@ -8,6 +10,8 @@ namespace BloodyMaze.UI
     {
         [SerializeField] private GameObject[] m_pages;
         [SerializeField] private Animator m_animator;
+        [SerializeField] private TMP_Text m_currentObjectiveTextField;
+        [SerializeField] private TMP_Text m_objectivesScrollviewTextField;
 
         private int m_currentPageIndex;
         private void Awake()
@@ -80,6 +84,17 @@ namespace BloodyMaze.UI
                 yield return new WaitForSecondsRealtime(1f);
             }
             GameEvents.OnCallGotoFunction("gameplay");
+        }
+
+        public void UpdateObjectives(string newObjectiveText)
+        {
+            m_currentObjectiveTextField.text = newObjectiveText;
+            List<string> objectivesScrollviewTextParts = new(m_objectivesScrollviewTextField.text.Split('\n'));
+            objectivesScrollviewTextParts[0] = $"<s>{objectivesScrollviewTextParts[0]}</s>";
+            string newObjectivesScrollviewText = $"{newObjectiveText}\n";
+            foreach (string part in objectivesScrollviewTextParts)
+                newObjectivesScrollviewText += $"\n{part}";
+            m_objectivesScrollviewTextField.text = newObjectivesScrollviewText;
         }
     }
 }

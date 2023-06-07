@@ -119,6 +119,7 @@ namespace BloodyMaze
     {
         public string eventKey;
         public bool flag;
+        public string objectiveText;
     }
 
     [System.Serializable]

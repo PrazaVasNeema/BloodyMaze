@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BloodyMaze.UI;
 
 namespace BloodyMaze.Controllers
 {
     public class UIRootAnimationsController : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
+        [SerializeField] private UIJournal m_uiJournal;
+        private ObjectivesTrackingManager m_objectivesTrackingManager;
+
+        private void Awake()
+        {
+            Debug.Log("AwakeUIRoot");
+            if (TryGetComponent<ObjectivesTrackingManager>(out m_objectivesTrackingManager))
+                m_objectivesTrackingManager.Init(m_uiJournal);
+        }
 
         public void FadeScreen()
         {
