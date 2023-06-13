@@ -122,6 +122,9 @@ MonoBehaviour:
     - eventKey: safe_zone_note
       flag: 0
       objectiveText: 
+    - eventKey: entered_safe_zone_first_time
+      flag: 0
+      objectiveText: "\u041D\u0430\u0439\u0442\u0438"
     roomsData:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
@@ -552,7 +555,7 @@ MonoBehaviour:
       objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043A\u043E\u043C\u043D\u0430\u0442\u0443
         \u043E\u0442\u0434\u044B\u0445\u0430"
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
       objectiveText: "\u041E\u0441\u0432\u0435\u0436\u0438\u0442\u044C\u0441\u044F
         \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
     - eventKey: talked_to_girl
@@ -631,7 +634,7 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: safe_zone_note
-      flag: 0
+      flag: 1
       objectiveText: 
     roomsData:
     - roomKey: C1ROutsides

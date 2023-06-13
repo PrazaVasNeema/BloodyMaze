@@ -7,7 +7,6 @@ namespace BloodyMaze
     {
         private void Start()
         {
-            Application.targetFrameRate = 60;
             GameController.instance.LoadScene("MainMenu");
         }
     }

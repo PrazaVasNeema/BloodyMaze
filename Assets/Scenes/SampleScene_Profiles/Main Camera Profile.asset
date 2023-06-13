@@ -21,13 +21,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.627
+    value: 0.316
   size:
     overrideState: 1
-    value: 1.75
+    value: 1.08
   lumContrib:
     overrideState: 1
-    value: 0.601
+    value: 0.513
 --- !u!114 &-7101891102342370805
 MonoBehaviour:
   m_ObjectHideFlags: 3

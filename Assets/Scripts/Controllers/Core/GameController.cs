@@ -153,13 +153,14 @@ namespace BloodyMaze
 
         //GameOptionsZone START
 
-        public void SetDataGameOptions(int language, float music, float sfx)
+        public void SetDataGameOptions(int language, float music, float sfx, int fpsLock)
         {
             GameOptionsData newOptionsData = new();
             newOptionsData.language = language;
             Debug.Log($"set: {newOptionsData.language}");
             newOptionsData.volumeMusic = music;
             newOptionsData.volumeSFX = sfx;
+            newOptionsData.fpsLockValue = fpsLock;
             gameOptions.GameOptionsData = newOptionsData;
             Debug.Log($"set2: {gameOptions.GameOptionsData.language}");
             SaveDataGameOptions();
@@ -181,6 +182,7 @@ namespace BloodyMaze
             m_gameOptions.LoadFromJsonGameOptions(json);
             m_musicMixer.SetFloat("Master", m_gameOptions.GameOptionsData.volumeMusic == 0f ? -80f : m_gameOptions.GameOptionsData.volumeMusic * 30f - 25f);
             m_SFXMixer.SetFloat("Master", m_gameOptions.GameOptionsData.volumeSFX == 0f ? -80f : m_gameOptions.GameOptionsData.volumeSFX * 30f - 25f);
+            Application.targetFrameRate = m_gameOptions.GameOptionsData.fpsLockValue;
             OnLoadingDataGameOptionsComplete?.Invoke();
         }
 

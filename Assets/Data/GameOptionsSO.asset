@@ -16,7 +16,9 @@ MonoBehaviour:
     language: 0
     volumeMusic: 0.65
     volumeSFX: 0.65
+    fpsLockValue: 60
   GameOptionsData:
     language: 0
     volumeMusic: 0
     volumeSFX: 0.6835851
+    fpsLockValue: 0

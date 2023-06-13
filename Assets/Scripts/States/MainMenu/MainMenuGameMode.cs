@@ -12,12 +12,14 @@ namespace BloodyMaze.States
         [SerializeField] private TMP_Dropdown m_optionsLanguageDropdown;
         [SerializeField] private Slider m_optionsMusicSlider;
         [SerializeField] private Slider m_optionsSFXSlider;
+        [SerializeField] private Slider m_optionsFpsLockSlider;
         [SerializeField] private InitMainMenuLocData m_initMainMenuLocData;
+
 
 
         public void ApplyOptionsData()
         {
-            GameController.instance.SetDataGameOptions(m_optionsLanguageDropdown.value, m_optionsMusicSlider.value, m_optionsSFXSlider.value);
+            GameController.instance.SetDataGameOptions(m_optionsLanguageDropdown.value, m_optionsMusicSlider.value, m_optionsSFXSlider.value, ((int)m_optionsFpsLockSlider.value));
         }
         private void OnEnable()
         {

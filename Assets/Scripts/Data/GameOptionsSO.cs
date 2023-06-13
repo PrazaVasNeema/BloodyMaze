@@ -46,6 +46,7 @@ namespace BloodyMaze
         public int language;
         public float volumeMusic;
         public float volumeSFX;
+        public int fpsLockValue;
     }
 
 
