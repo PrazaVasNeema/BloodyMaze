@@ -13,8 +13,8 @@ namespace BloodyMaze
         public List<LocInterfaceText> locInterfaceTexts;
         public List<LocMessagesText> locMessagesText;
         public List<LocMiniMessagesText> locMiniMessagesText;
-        public List<LocJournalNotesText> locJournalNotesText;
         public List<PersonData> locPersonsData;
+        public List<LocJournalEntryText> locJournalEntry;
 
         public List<List<string>> GetPeopleNamesSortByLivingStatus()
         {
@@ -84,6 +84,12 @@ namespace BloodyMaze
             return string.IsNullOrEmpty(temp) ? key : temp;
 
         }
+        public string GetJournalEntryText(string key)
+        {
+            var temp = locJournalEntry.Find((x) => x.key == key).text[GameController.instance.gameOptions.GameOptionsData.language];
+            return string.IsNullOrEmpty(temp) ? key : temp;
+
+        }
     }
 
 
@@ -121,13 +127,6 @@ namespace BloodyMaze
     }
 
     [System.Serializable]
-    public class LocJournalNotesText
-    {
-        public string key;
-        public string[] text;
-    }
-
-    [System.Serializable]
     public class LocMiniMessagesText
     {
         public string key;
@@ -139,5 +138,12 @@ namespace BloodyMaze
     {
         public string correspondingEventKey;
         public string name;
+    }
+
+    [System.Serializable]
+    public class LocJournalEntryText
+    {
+        public string key;
+        public string[] text;
     }
 }
