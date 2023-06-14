@@ -145,7 +145,7 @@ namespace BloodyMaze.UI
                 return;
             if (m_initIsComplete)
                 m_currentEventFlagIndex++;
-            while (string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveText))
+            while (string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveJournalEntryTextKey))
             {
                 m_currentEventFlagIndex++;
                 if (m_currentEventFlagIndex >= m_globalEventsData.Count)
@@ -156,9 +156,9 @@ namespace BloodyMaze.UI
                 continue;
             }
             if (m_initIsComplete)
-                CoroutinesInDemandHub.instance.WaitForExploringState(this, m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+                CoroutinesInDemandHub.instance.WaitForExploringState(this, m_globalEventsData[m_currentEventFlagIndex].objectiveJournalEntryTextKey);
             else
-                UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveText);
+                UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveJournalEntryTextKey);
 
         }
 
