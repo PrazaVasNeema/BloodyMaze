@@ -4,6 +4,7 @@ using UnityEngine;
 using BloodyMaze.Components;
 using UnityEngine.UI;
 using TMPro;
+using BloodyMaze.Controllers;
 
 namespace BloodyMaze.UI
 {
@@ -20,6 +21,7 @@ namespace BloodyMaze.UI
         [SerializeField] private float m_miniMessageDisplayTime = 3f;
         [Header("Other")]
         [SerializeField] private GameObject m_showcase;
+        [SerializeField] private UIRootAnimationsController m_uiRootAnimationsController;
 
 
         private GameObject m_UIPanel;
@@ -166,21 +168,10 @@ namespace BloodyMaze.UI
         private void ShowMiniMessage(string miniMessageKey)
         {
             m_miniMessage.text = GameController.instance.locData.GetMiniMessage(miniMessageKey);
-            m_animator.SetBool("MiniMessageShouldBeShown", true);
-            StopCoroutine(HideMiniMessage());
-            StartCoroutine(HideMiniMessage());
+            m_uiRootAnimationsController.ShowMiniMessageAnim(miniMessageKey);
         }
 
-        IEnumerator HideMiniMessage()
-        {
-            bool doOnce = true;
-            while (doOnce)
-            {
-                doOnce = false;
-                yield return new WaitForSecondsRealtime(m_miniMessageDisplayTime);
-            }
-            m_animator.SetBool("MiniMessageShouldBeShown", false);
-        }
+
 
         private void RefreshMedsCount(MedsType medsCommon)
         {

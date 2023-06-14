@@ -9,6 +9,7 @@ namespace BloodyMaze.Controllers
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private UIJournal m_uiJournal;
+        [SerializeField] private float m_miniMessageDisplayTime = 3f;
 
         private void Start()
         {
@@ -19,6 +20,25 @@ namespace BloodyMaze.Controllers
                 m_uiJournal.InitObjectiveTracking();
                 Debug.Log("AwakeUIRoot3");
             }
+        }
+
+        public void ShowMiniMessageAnim(string miniMessageKey)
+        {
+            Debug.Log("MiniMessage");
+            m_animator.SetBool("MiniMessageShouldBeShown", true);
+            StopCoroutine(HideMiniMessage());
+            StartCoroutine(HideMiniMessage());
+        }
+
+        IEnumerator HideMiniMessage()
+        {
+            bool doOnce = true;
+            while (doOnce)
+            {
+                doOnce = false;
+                yield return new WaitForSecondsRealtime(m_miniMessageDisplayTime);
+            }
+            m_animator.SetBool("MiniMessageShouldBeShown", false);
         }
 
         public void FadeScreen()
