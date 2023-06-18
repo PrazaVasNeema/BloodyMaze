@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,7 +380,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 104756872}
-  - component: {fileID: 104756873}
   m_Layer: 5
   m_Name: MainMenuPanel
   m_TagString: Untagged
@@ -410,18 +409,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &104756873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104756871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b80ab8ad332a5b4399adbd237c16ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &109925975
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u0443\u0437\u044B\u043A\u0430"
+  m_text: UILoc_optionsMusicKey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
   m_sharedMaterial: {fileID: 1455479793669392037, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
@@ -6626,7 +6613,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521f1e66264017849a5c0e5d7c99406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_localizableTextFields: []
+  m_localizableTextFields:
+  - textField: {fileID: 1555324015}
+    interfaceLocKey: IntroTextKey
+  - textField: {fileID: 1663532831}
+    interfaceLocKey: mainButtonPlayKey
+  - textField: {fileID: 231467066}
+    interfaceLocKey: optionsMusicKey
+  - textField: {fileID: 1457348775}
+    interfaceLocKey: mainOptionsKey
+  - textField: {fileID: 349226972}
+    interfaceLocKey: mainExitKey
+  - textField: {fileID: 391317069}
+    interfaceLocKey: optionsLanguageKey
+  - textField: {fileID: 1247682731}
+    interfaceLocKey: optionsSFXKey
+  - textField: {fileID: 813384154}
+    interfaceLocKey: optionsBackKey
   m_states:
   - {fileID: 818368500}
   - {fileID: 167410938}

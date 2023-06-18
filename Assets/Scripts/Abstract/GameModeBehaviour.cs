@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 namespace BloodyMaze.States
 {
@@ -8,12 +10,14 @@ namespace BloodyMaze.States
     {
         [SerializeField] private List<LocalizableTextField> m_localizableTextFields;
         [SerializeField] private List<GameStateBehavior> m_states;
+        private TMP_Text[] m_interfaceTextFields;
         private StateMachine m_stateMachine;
 
         private void Awake()
         {
             InitGameController();
             InitStates();
+            m_interfaceTextFields = Resources.FindObjectsOfTypeAll(typeof(TMP_Text)) as TMP_Text[];
             InitInterfaceLocalization();
         }
 
@@ -65,9 +69,13 @@ namespace BloodyMaze.States
         }
         protected void InitInterfaceLocalization()
         {
-            foreach (LocalizableTextField textField in m_localizableTextFields)
+            foreach (TMP_Text textField in m_interfaceTextFields)
             {
-                textField.LocalizeTextField();
+                if (textField.text.Contains("UILoc_"))
+                {
+                    Debug.Log("InitInterfaceLocalization");
+                    textField.text = GameController.instance.locData.GetInterfaceText(textField.text);
+                }
             }
         }
     }
