@@ -197,7 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762651481542391964, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169343317205469014, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_text
+      value: UILoc_to_main_menu
       objectReference: {fileID: 0}
     - target: {fileID: 6282892109034643817, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_uiRootAnimationsController

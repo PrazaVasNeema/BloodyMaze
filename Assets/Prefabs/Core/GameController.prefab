@@ -814,7 +814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0435\u043D\u044C: 1"
+  m_text: UILoc_ui_loading_to_gameplay_re_2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
   m_sharedMaterial: {fileID: 3045635992686565919, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
@@ -1333,8 +1333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0440\u0435\u043C\u044F \u0438\u0433\u0440\u0430\u0435\u0442 \u0440\u0435\u0448\u0430\u044E\u0449\u0443\u044E
-    \u0440\u043E\u043B\u044C"
+  m_text: UILoc_ui_loading_to_gameplay_re_1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
   m_sharedMaterial: {fileID: 3045635992686565919, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
@@ -1812,9 +1811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u044D\u043A\u0440\u0430\u043D\u0430,
-    \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C
-    \u043F\u0443\u0442\u044C"
+  m_text: UILoc_ui_loading_common_loading_complete_tip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
   m_sharedMaterial: {fileID: 3045635992686565919, guid: 3967d97eca859eb458f5baed054b6a7e, type: 2}
