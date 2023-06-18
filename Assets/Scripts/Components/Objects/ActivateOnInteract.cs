@@ -14,6 +14,10 @@ namespace BloodyMaze.Components
 
         private InteractComponent m_interactComponent;
         public InteractComponent interactComponent => m_interactComponent;
+        private void OnEnable()
+        {
+            GameEvents.OnEnterGameplayState += CheckIfTeleportedInside;
+        }
 
         // private void OnEnable()
         // {
@@ -35,6 +39,7 @@ namespace BloodyMaze.Components
         {
             if (m_interactComponent != null)
                 m_interactComponent.OnInteract -= Activate;
+            GameEvents.OnEnterGameplayState -= CheckIfTeleportedInside;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -70,6 +75,21 @@ namespace BloodyMaze.Components
         public void Activate()
         {
             onActivate?.Invoke();
+        }
+
+        public void CheckIfTeleportedInside()
+        {
+            BoxCollider collider = GetComponent<BoxCollider>();
+            Collider[] colliders = Physics.OverlapBox(collider.transform.TransformPoint(collider.center), GetComponent<BoxCollider>().transform.TransformVector(collider.size * 0.5f), collider.transform.rotation, LayerMask.GetMask("Player"));
+            if (colliders.Length > 0)
+            {
+                m_interactComponent = colliders[0].gameObject.GetComponentInParent<InteractComponent>();
+                if (m_interactComponent && ActionStatesManager.state == ActionStates.EXPLORING)
+                {
+                    m_interactComponent.OnInteract += Activate;
+                }
+            }
+
         }
     }
 }
