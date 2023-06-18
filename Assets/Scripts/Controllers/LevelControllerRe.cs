@@ -91,7 +91,8 @@ namespace BloodyMaze.Controllers
             yield return SceneManager.LoadSceneAsync(sceneName);
             // GameTransitionSystem.ScreenFade();
             FindObjectOfType<RoomControllerRe>().Init();
-            m_uiRootAnimationsController.UnfadeScreenExtra();
+            if (GameController.instance.gameShouldStart)
+                m_uiRootAnimationsController.UnfadeScreenExtra();
         }
     }
 

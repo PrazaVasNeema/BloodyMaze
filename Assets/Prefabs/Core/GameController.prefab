@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UILoadingAnimator: {fileID: 7133214709150104865}
   m_loader: {fileID: 2494103161065296157}
+  m_reloadDayTextField: {fileID: 4058905488324859091}
   m_shouldInitNewData: 1
   m_locData: {fileID: 11400000, guid: e384ae10f41db044797370e27bccbced, type: 2}
   m_musicGroups: {fileID: 11400000, guid: 31de9b3599eeea347bdae8c8d7783340, type: 2}
@@ -269,16 +270,6 @@ MonoBehaviour:
   m_levelsInfo: {fileID: 11400000, guid: d65991dbe60dfc049be75a936b3daed9, type: 2}
   m_allPlayerProfilesData: []
   m_shouldUseTestDefault: 1
-  m_UILoaderTextsLocKeys:
-  - ui_loading_to_main_menu
-  - ui_loading_to_gameplay_re_1
-  - ui_loading_to_gameplay_re_2
-  - ui_loading_common_loading_complete_tip
-  - ui_loading_common_loading_complete_tip_re
-  m_UIToMainMenuText: {fileID: 2494103161525922202}
-  m_UIToGameplayReText_1: {fileID: 4974113244998662306}
-  m_UIToGameplayReText_2: {fileID: 4058905488324859091}
-  m_UICommonLoadingCompleteTipText: {fileID: 5011678640438270194}
   m_gameOptions: {fileID: 11400000, guid: 4c159817fd7aa8c44b8bcfef2750951f, type: 2}
   m_musicMixer: {fileID: 24100000, guid: 3fdb4a5c895e1274e9356d9861ede46a, type: 2}
   m_SFXMixer: {fileID: 24100000, guid: de115390bbede5d4381b063622abe371, type: 2}

@@ -85,6 +85,7 @@ namespace BloodyMaze.Controllers
                 ActivateModulePickUpItem activateModulePickUpItem = null;
                 if (m_roomActivaters[i].transform.childCount > 0 && m_roomActivaters[i].transform.GetChild(0).TryGetComponent<ActivateModulePickUpItem>(out activateModulePickUpItem) && !flag)
                 {
+                    Debug.Log(activateModulePickUpItem.item.item.name);
                     var globalEventsEvent = m_globalEventsData.Find((x) => x.eventKey == activateModulePickUpItem.eventKeyShouldBeUncheckedForItemToBeAdded);
                     if (globalEventsEvent != null && globalEventsEvent.flag == false)
                         GameInventory.current.AddItem(activateModulePickUpItem.item.item);

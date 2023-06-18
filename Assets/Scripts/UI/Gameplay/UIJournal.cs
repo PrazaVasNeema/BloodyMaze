@@ -97,12 +97,15 @@ namespace BloodyMaze.UI
 
         public void InitObjectiveTracking()
         {
+            if (m_initIsComplete)
+                return;
             m_globalEventsData = GameController.instance.playerProfile.playerProfileData.globalEventsData;
             m_currentEventFlagIndex = -1;
             m_initIsComplete = false;
             FillAllObjectives();
             GameEvents.OnEventFlagCheck += FillObjective;
             m_initIsComplete = true;
+            Debug.Log("test");
         }
 
         public void DeInitObjectiveTracking()
@@ -139,8 +142,6 @@ namespace BloodyMaze.UI
 
         private void FillObjective(string correspondingEventKey)
         {
-            Debug.Log(m_globalEventsData[m_currentEventFlagIndex].eventKey);
-            Debug.Log(correspondingEventKey);
             if (m_globalEventsData[m_currentEventFlagIndex].eventKey != correspondingEventKey)
                 return;
             if (m_initIsComplete)

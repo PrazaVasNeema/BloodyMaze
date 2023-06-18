@@ -17,6 +17,7 @@ namespace BloodyMaze
 
         [SerializeField] private Animator m_UILoadingAnimator;
         [SerializeField] private GameObject m_loader;
+        [SerializeField] private TMP_Text m_reloadDayTextField;
         [SerializeField] private bool m_shouldInitNewData;
         [SerializeField] private LocDataSO m_locData;
         public LocDataSO locData => m_locData;
@@ -30,11 +31,6 @@ namespace BloodyMaze
         [SerializeField] private List<PlayerProfileData> m_allPlayerProfilesData = new();
         public List<PlayerProfileData> allPlayerProfilesData => m_allPlayerProfilesData;
         [SerializeField] private bool m_shouldUseTestDefault;
-        [SerializeField] private string[] m_UILoaderTextsLocKeys = new string[4];
-        [SerializeField] private TMP_Text m_UIToMainMenuText;
-        [SerializeField] private TMP_Text m_UIToGameplayReText_1;
-        [SerializeField] private TMP_Text m_UIToGameplayReText_2;
-        [SerializeField] private TMP_Text m_UICommonLoadingCompleteTipText;
         [SerializeField] private GameOptionsSO m_gameOptions;
         public GameOptionsSO gameOptions => m_gameOptions;
         [SerializeField] private AudioMixer m_musicMixer;
@@ -49,6 +45,7 @@ namespace BloodyMaze
         private int m_choosenProfileIndex = 0;
         public int choosenProfileIndex => m_choosenProfileIndex;
         private bool m_gameShouldStart;
+        public bool gameShouldStart => m_gameShouldStart;
 
         private void Awake()
         {
@@ -78,14 +75,6 @@ namespace BloodyMaze
         {
             LoadPlayerProfileGameplayData();
             LoadDataGameOptions();
-        }
-
-        public void InitInterfaceLocLoadingScreen()
-        {
-            m_UIToMainMenuText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[0]);
-            m_UIToGameplayReText_1.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[1]);
-            m_UIToGameplayReText_2.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[2]);
-            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
         }
 
         private void CheckEvent(string eventKey)
@@ -214,7 +203,6 @@ namespace BloodyMaze
                 SceneManager.MoveGameObjectToScene(FindAnyObjectByType<LevelControllerRe>().gameObject, SceneManager.GetActiveScene());
             yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
-            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[3]);
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
             var timeToWait = 2f;
@@ -244,6 +232,7 @@ namespace BloodyMaze
                 }
             }
             m_loader.SetActive(false);
+            FindAnyObjectByType<UIRootAnimationsController>().UnfadeScreenExtra();
             // if (sceneName != "MainMenu")
             //     GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);
@@ -261,8 +250,7 @@ namespace BloodyMaze
             yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
 
-            m_UIToGameplayReText_2.text = $"{locData.GetInterfaceText(m_UILoaderTextsLocKeys[2])} {playerProfile.playerProfileData.characterSaveData.dayNum + 1}";
-            m_UICommonLoadingCompleteTipText.text = locData.GetInterfaceText(m_UILoaderTextsLocKeys[4]);
+            m_reloadDayTextField.text = $"{locData.GetInterfaceText("UILoc_ui_loading_to_gameplay_re_2")} {playerProfile.playerProfileData.characterSaveData.dayNum + 2}";
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
@@ -289,7 +277,8 @@ namespace BloodyMaze
                 yield return new();
             }
             m_loader.SetActive(false);
-            uiRootAnimationsController.UnfadeScreen();
+            uiRootAnimationsController.UnfadeScreenExtra();
+
         }
 
         public void SetGameShouldStart()
