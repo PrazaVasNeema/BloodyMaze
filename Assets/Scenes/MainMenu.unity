@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5816,8 +5816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u044D\u043A\u0440\u0430\u043D\u0430,
-    \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C"
+  m_text: UILoc_IntroTextKey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
   m_sharedMaterial: {fileID: 1455479793669392037, guid: 0aa23a9d8572a3341b55836a28765662, type: 2}
@@ -6042,7 +6041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905720453152898002, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_text
-      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+      value: UILoc_mainOptionsKey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
@@ -6613,23 +6612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521f1e66264017849a5c0e5d7c99406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_localizableTextFields:
-  - textField: {fileID: 1555324015}
-    interfaceLocKey: IntroTextKey
-  - textField: {fileID: 1663532831}
-    interfaceLocKey: mainButtonPlayKey
-  - textField: {fileID: 231467066}
-    interfaceLocKey: optionsMusicKey
-  - textField: {fileID: 1457348775}
-    interfaceLocKey: mainOptionsKey
-  - textField: {fileID: 349226972}
-    interfaceLocKey: mainExitKey
-  - textField: {fileID: 391317069}
-    interfaceLocKey: optionsLanguageKey
-  - textField: {fileID: 1247682731}
-    interfaceLocKey: optionsSFXKey
-  - textField: {fileID: 813384154}
-    interfaceLocKey: optionsBackKey
+  m_localizableTextFields: []
   m_states:
   - {fileID: 818368500}
   - {fileID: 167410938}
@@ -7508,7 +7491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905720453152898002, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_text
-      value: "\u0418\u0433\u0440\u0430\u0442\u044C"
+      value: UILoc_mainButtonPlayKey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
@@ -7683,7 +7666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905720453152898002, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}
       propertyPath: m_text
-      value: "\u0412\u044B\u0439\u0442\u0438"
+      value: UILoc_mainExitKey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58795d25f3e74584eac811baa8377fc1, type: 3}

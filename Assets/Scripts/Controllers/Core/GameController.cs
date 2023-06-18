@@ -155,6 +155,7 @@ namespace BloodyMaze
 
         public void SetDataGameOptions(int language, float music, float sfx, int fpsLock)
         {
+            var prevLanguageID = gameOptions.GameOptionsData.language;
             GameOptionsData newOptionsData = new();
             newOptionsData.language = language;
             Debug.Log($"set: {newOptionsData.language}");
@@ -165,6 +166,8 @@ namespace BloodyMaze
             Debug.Log($"set2: {gameOptions.GameOptionsData.language}");
             SaveDataGameOptions();
             LoadDataGameOptions();
+            if (prevLanguageID != language)
+                LoadScene("MainMenu");
         }
 
         public void SaveDataGameOptions()

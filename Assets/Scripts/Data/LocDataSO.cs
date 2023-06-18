@@ -80,8 +80,8 @@ namespace BloodyMaze
 
         public string GetInterfaceText(string key)
         {
-            var temp = locInterfaceTexts.Find((x) => x.key == key).text[GameController.instance.gameOptions.GameOptionsData.language];
-            return string.IsNullOrEmpty(temp) ? key : temp;
+            var requiredLocInterfaceText = locInterfaceTexts.Find((x) => x.key == key);
+            return requiredLocInterfaceText == null ? key : requiredLocInterfaceText.text[GameController.instance.gameOptions.GameOptionsData.language];
 
         }
     }
