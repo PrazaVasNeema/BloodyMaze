@@ -121,6 +121,7 @@ namespace BloodyMaze
                 m_levelController.Init();
                 MusicManager.current.SetJam("Gameplay");
                 shouldStartNewGame = m_shouldInitNewData;
+                m_gameShouldStart = true;
             }
 #endif
         }
@@ -230,9 +231,10 @@ namespace BloodyMaze
                 {
                     yield return new();
                 }
+                FindAnyObjectByType<UIRootAnimationsController>().UnfadeScreenExtra();
             }
             m_loader.SetActive(false);
-            FindAnyObjectByType<UIRootAnimationsController>().UnfadeScreenExtra();
+
             // if (sceneName != "MainMenu")
             //     GameTransitionSystem.ScreenUnfade();
             yield return new WaitForSecondsRealtime(2f);

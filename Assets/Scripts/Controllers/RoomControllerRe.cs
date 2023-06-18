@@ -177,6 +177,7 @@ namespace BloodyMaze.Controllers
                 agentsToSpawnIDs = temp.agentsToSpawnIDs;
             for (int i = 0; i < agentsToSpawnIDs.Count; i++)
             {
+                Debug.Log("InitAgents2_5");
                 var temp2 = agentsToSpawnIDs.Find((x) => x.agentID == m_roomAgents[i].agentID);
                 if (temp2 != null && m_roomAgents[i] != null)
                 {

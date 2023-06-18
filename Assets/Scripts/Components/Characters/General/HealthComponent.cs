@@ -36,7 +36,7 @@ namespace BloodyMaze.Components
             {
                 if (m_objectToSetUnactiveOnDeath != null)
                     m_objectToSetUnactiveOnDeath.SetActive(false);
-                onDead.Invoke();
+                onDead?.Invoke();
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();
                 OnChangeTargetLockStatus.Invoke(false);

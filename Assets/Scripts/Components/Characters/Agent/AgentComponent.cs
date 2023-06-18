@@ -17,6 +17,7 @@ namespace BloodyMaze.Components
         public UnityEvent OnAlert;
 
 
+
         private void Awake()
         {
             m_previousSeenAtTransform = Instantiate(m_previousSeenAtTransform, transform.position, transform.rotation);
@@ -33,6 +34,7 @@ namespace BloodyMaze.Components
         {
             GetComponent<HealthComponent>().onTakeDamage.RemoveListener(SetStaggeredStatus);
             GetComponent<AbilitiesManager>().onUseAbility.RemoveListener(onAttack.Invoke);
+
         }
 
         private void SetStaggeredStatus()

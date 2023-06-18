@@ -1011,6 +1011,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1214988959}
     m_Modifications:
+    - target: {fileID: -5518087777115928849, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
+      propertyPath: m_eventsShouldBeUnchecked.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5518087777115928849, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
+      propertyPath: m_eventsShouldBeUnchecked.Array.data[0]
+      value: pick_up_key_last
+      objectReference: {fileID: 0}
     - target: {fileID: 209316481828270612, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
       propertyPath: m_item.name
       value: key_four
@@ -1022,6 +1030,10 @@ PrefabInstance:
     - target: {fileID: 5379188627866188928, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
       propertyPath: m_messageTextKey
       value: pick_up_key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670713599902078554, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
+      propertyPath: m_eventFlagToCheck
+      value: pick_up_key_last
       objectReference: {fileID: 0}
     - target: {fileID: 6773578663337241132, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
       propertyPath: m_RootOrder
@@ -1098,6 +1110,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9041168741116719474, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
   m_PrefabInstance: {fileID: 1065458609}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1065458611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5518087777115928849, guid: 0676f97f1de93dc43a1d31a434f95d94, type: 3}
+  m_PrefabInstance: {fileID: 1065458609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1096183713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,15 +1259,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205646786194491981, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: m_keysOfFlagsThatShouldBeChecked.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: m_keysOfFlagsThatShouldBeChecked.Array.data[0]
-      value: opened_bathroom_secret
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.size
@@ -1315,6 +1338,10 @@ PrefabInstance:
       value: BloodyMaze.Components.SetObjectsActiveComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
+      propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939181126987804031, guid: 12200d0fb04e9734e9a8cce42f4aa6b2, type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1351,6 +1378,21 @@ MonoBehaviour:
   m_shouldSetActiveFalseSelf: 1
   m_objectToSetActivate:
   - {fileID: 1539250244}
+--- !u!114 &1169238817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169238804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked:
+  - killed_ghoul
 --- !u!1 &1195959343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,6 +2398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartDialogue_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8773164460460532265, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8773164460460532270, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
       propertyPath: m_dialogueKey
       value: 5
@@ -2391,6 +2437,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903ef1afc4a305e4180b44956e306165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1967982677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636216518837374801, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
+  m_PrefabInstance: {fileID: 1967982668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401975327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1967982681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401975327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eventsShouldBeChecked: []
+  m_eventsShouldBeUnchecked:
+  - killed_ghoul
 --- !u!1 &2006195898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,15 +2492,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: inner_house_room_2
+  m_roomKey: C1RInnerHouseRoom_2
   m_roomItems: []
-  m_roomAgents: []
+  m_roomAgents:
+  - {fileID: 6923821977963670594}
   m_roomActivaters:
   - {fileID: 208483496}
   - {fileID: 788590694}
   - {fileID: 2139952006}
   - {fileID: 1339259430}
   - {fileID: 2139612180}
+  - {fileID: 1065458611}
+  - {fileID: 1169238817}
+  - {fileID: 1967982677}
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
   m_roomSpawnPoints:
   - {fileID: 1015647478}
@@ -13678,6 +13754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dbeb5ef123ca846980a836ab3a29bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_eventToCheckOnDeath: killed_ghoul
   agentID: 0
   OnDead:
     m_PersistentCalls:
@@ -13841,8 +13918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ffddf14de60cc498f8f340aa2b0ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentHealth: 500
-  m_maxHealth: 500
+  m_currentHealth: 100
+  m_maxHealth: 100
   m_objectToSetUnactiveOnDeath: {fileID: 0}
   onDead:
     m_PersistentCalls:

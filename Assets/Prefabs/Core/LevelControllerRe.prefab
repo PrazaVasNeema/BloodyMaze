@@ -67,6 +67,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[0]
+      value: UILoc_end_game_sentence_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[1]
+      value: UILoc_end_game_sentence_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[2]
+      value: UILoc_end_game_sentence_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[3]
+      value: UILoc_end_game_to_main_menu_button_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[4]
+      value: UILoc_end_game_continue_button_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[5]
+      value: UILoc_end_game_special_thanks_friends_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469728782368226009, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_sentencesOpenTextFieldsLocKeys.Array.data[6]
+      value: UILoc_end_game_special_thanks_player_text
+      objectReference: {fileID: 0}
     - target: {fileID: 2469728782948676035, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

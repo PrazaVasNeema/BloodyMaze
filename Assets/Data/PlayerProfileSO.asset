@@ -103,16 +103,16 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_1
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_2
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_3
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_4
       flag: 0
@@ -129,6 +129,12 @@ MonoBehaviour:
     - eventKey: end_this
       flag: 0
       objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
+    - eventKey: killed_ghoul
+      flag: 1
+      objectiveText: 
+    - eventKey: pick_up_key_last
+      flag: 0
+      objectiveText: 
     roomsData:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
@@ -184,15 +190,17 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
-      agentsToSpawnIDs: []
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     profileSpecificGameOptionsData:
-      shouldShowObjectiveTracking: 1
+      shouldShowObjectiveTracking: 0
   m_defaultTest:
   - characterSaveData:
       currentHealth: 100
@@ -284,7 +292,7 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_1
       flag: 0
@@ -392,7 +400,7 @@ MonoBehaviour:
         maxAmount: 4
         currentAmount: 2
       lastLevelIndex: 0
-      dayNum: 0
+      dayNum: 1
     globalEventsData:
     - eventKey: opened_main_door
       flag: 1
@@ -464,7 +472,7 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_1
       flag: 0
@@ -645,16 +653,16 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_1
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_2
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_3
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: DayIsBehind_4
       flag: 0
@@ -671,6 +679,12 @@ MonoBehaviour:
     - eventKey: end_this
       flag: 0
       objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
+    - eventKey: killed_ghoul
+      flag: 1
+      objectiveText: 
+    - eventKey: pick_up_key_last
+      flag: 1
+      objectiveText: 
     roomsData:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
@@ -731,7 +745,9 @@ MonoBehaviour:
         shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
-      agentsToSpawnIDs: []
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     profileSpecificGameOptionsData:
-      shouldShowObjectiveTracking: 1
+      shouldShowObjectiveTracking: 0

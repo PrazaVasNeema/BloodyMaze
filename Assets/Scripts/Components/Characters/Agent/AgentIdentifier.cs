@@ -7,6 +7,7 @@ namespace BloodyMaze.Components
 {
     public class AgentIdentifier : MonoBehaviour
     {
+        [SerializeField] private string m_eventToCheckOnDeath;
         public int agentID;
         public UnityEvent<int> OnDead;
 
@@ -15,8 +16,14 @@ namespace BloodyMaze.Components
             GetComponent<HealthComponent>().onDead.AddListener(CallOnDead);
         }
 
+        private void OnDisable()
+        {
+            GetComponent<HealthComponent>().onDead.RemoveListener(CallOnDead);
+        }
+
         private void CallOnDead()
         {
+            GameEvents.OnEventFlagCheck?.Invoke(m_eventToCheckOnDeath);
             Debug.Log("Lghgfhghfg");
             OnDead?.Invoke(agentID);
         }
