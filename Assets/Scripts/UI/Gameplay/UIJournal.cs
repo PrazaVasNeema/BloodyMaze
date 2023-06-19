@@ -21,6 +21,7 @@ namespace BloodyMaze.UI
         private bool m_initIsComplete;
         //
         private int m_currentPageIndex;
+        private bool endReached;
 
         private void Awake()
         {
@@ -117,7 +118,7 @@ namespace BloodyMaze.UI
         private void FillAllObjectives()
         {
             Debug.Log("FillFields");
-            bool endReached = false;
+            endReached = false;
             for (; m_currentEventFlagIndex < m_globalEventsData.Count;)
             {
                 if (endReached)
@@ -125,7 +126,8 @@ namespace BloodyMaze.UI
                     break;
                 }
                 m_currentEventFlagIndex++;
-                if (!m_globalEventsData[m_currentEventFlagIndex].flag)
+                if (!m_globalEventsData[m_currentEventFlagIndex].flag
+                || !m_globalEventsData[m_currentEventFlagIndex].flag && string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveText))
                 {
                     endReached = true;
                 }
@@ -150,12 +152,15 @@ namespace BloodyMaze.UI
             while (string.IsNullOrEmpty(m_globalEventsData[m_currentEventFlagIndex].objectiveText))
             {
                 m_currentEventFlagIndex++;
+                if (!m_globalEventsData[m_currentEventFlagIndex].flag)
+                {
+                    endReached = true;
+                }
                 if (m_currentEventFlagIndex >= m_globalEventsData.Count)
                 {
                     Debug.LogError("Events set up is now right: the end is reached");
                     break;
                 }
-                continue;
             }
             if (m_initIsComplete)
                 CoroutinesInDemandHub.instance.WaitForExploringState(this, m_globalEventsData[m_currentEventFlagIndex].objectiveText);

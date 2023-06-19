@@ -13,6 +13,7 @@ namespace BloodyMaze.Components
 
         public void Activate()
         {
+            Debug.Log("dfggf");
             foreach (GameObject objectToSetActivate in m_objectToSetActivate)
                 objectToSetActivate.SetActive(m_shouldSetActive);
             if (m_shouldSetActiveFalseSelf)
@@ -23,6 +24,7 @@ namespace BloodyMaze.Components
                     activateOnInteract.interactComponent.OnInteract -= activateOnInteract.Activate;
                     GameEvents.OnHideMessage?.Invoke();
                 }
+                Debug.Log("dfggf2");
                 gameObject.SetActive(false);
             }
         }

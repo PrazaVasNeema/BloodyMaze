@@ -74,13 +74,13 @@ MonoBehaviour:
       flag: 1
       objectiveText: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443"
     - eventKey: opened_library_secret
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: talked_to_girl_in_library_secret
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: pick_up_key_three
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: opened_bathroom_secret
       flag: 0
@@ -156,9 +156,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []
@@ -642,10 +642,10 @@ MonoBehaviour:
       flag: 1
       objectiveText: 
     - eventKey: talked_to_girl_in_library_secret
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: pick_up_key_three
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: opened_bathroom_secret
       flag: 0
@@ -721,9 +721,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []
