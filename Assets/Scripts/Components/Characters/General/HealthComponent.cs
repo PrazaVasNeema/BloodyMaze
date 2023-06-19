@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 namespace BloodyMaze.Components
 {
@@ -40,6 +41,7 @@ namespace BloodyMaze.Components
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();
                 OnChangeTargetLockStatus.Invoke(false);
+                GetComponent<NavMeshAgent>().enabled = false;
                 Destroy(this);
                 // Destroy(gameObject);
             }

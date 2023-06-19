@@ -59,19 +59,34 @@ MonoBehaviour:
   - rid: 7064259373672169487
   - rid: 7064259373672169488
   - rid: 7064259373672169489
+  - rid: 214050066801623040
   treeState: 0
   blackboard:
     target: {fileID: 0}
     targetPreviousSeenAt: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     lostTarget: 0
-  viewPosition: {x: 1114, y: 439, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  viewPosition: {x: 1732, y: 224, z: 0}
+  viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 214050066801623040
+      type: {class: SinkUnder, ns: BloodyMaze.AI, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: ad1c5306f07215f4b84bb9ec91ae3ae9
+        position: {x: -1715.0004, y: 583.00006}
+        blackboard:
+          target: {fileID: 0}
+          targetPreviousSeenAt: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          lostTarget: 0
+        description: 
+        drawGizmos: 0
     - rid: 7064258886690930688
       type: {class: AIisActive, ns: , asm: Assembly-CSharp}
       data:
@@ -489,6 +504,7 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 8670659163155857413
+        - rid: 214050066801623040
         - rid: 8670659163155857414
         - rid: 8670659163155857415
     - rid: 8670659163155857413
@@ -497,7 +513,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 8625a7c93d8d7664498c71dc20b1618d
-        position: {x: -1760.0547, y: 583}
+        position: {x: -1889.1508, y: 583}
         blackboard:
           target: {fileID: 0}
           targetPreviousSeenAt: {fileID: 0}

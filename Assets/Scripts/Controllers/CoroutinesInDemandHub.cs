@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.UI;
+using BloodyMaze.AI;
 
 namespace BloodyMaze
 {

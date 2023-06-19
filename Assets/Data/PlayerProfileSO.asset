@@ -190,9 +190,9 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
       agentsToSpawnIDs:
