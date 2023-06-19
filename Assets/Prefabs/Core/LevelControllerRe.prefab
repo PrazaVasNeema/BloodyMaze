@@ -340,6 +340,10 @@ PrefabInstance:
       value: 0.0009175279
       objectReference: {fileID: 0}
     - target: {fileID: 8239676759549545729, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_Horizontal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239676759549545729, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_VerticalScrollbarVisibility
       value: 0
       objectReference: {fileID: 0}
