@@ -34,33 +34,33 @@ MonoBehaviour:
       dayNum: 0
     globalEventsData:
     - eventKey: opened_main_door
-      flag: 1
+      flag: 0
       objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u0434\u043E\u043C"
     - eventKey: sat_at_desk
-      flag: 1
+      flag: 0
       objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043A\u043E\u043C\u043D\u0430\u0442\u0443
         \u043E\u0442\u0434\u044B\u0445\u0430 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C
         \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043D\u0430
         \u0441\u0442\u043E\u043B\u0435"
     - eventKey: tried_to_open_bathroom_secret
-      flag: 1
+      flag: 0
       objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
         \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
     - eventKey: talked_to_girl
-      flag: 1
+      flag: 0
       objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0448\u0443\u043C
         \u0432 \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
       objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u044B\u0439
         \u043A\u043B\u044E\u0447 \u0443 \u0441\u0442\u0430\u0442\u0443\u044E \u0432
         \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0430"
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
       objectiveText: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
         \u043A\u043B\u044E\u0447"
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: placed_mirror
       flag: 0
@@ -103,16 +103,16 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_1
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_2
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_3
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_4
       flag: 0
@@ -130,10 +130,10 @@ MonoBehaviour:
       flag: 0
       objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
     - eventKey: killed_ghoul
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: pick_up_key_last
-      flag: 1
+      flag: 0
       objectiveText: 
     roomsData:
     - roomKey: C1ROutsides
@@ -190,17 +190,17 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     profileSpecificGameOptionsData:
-      shouldShowObjectiveTracking: 0
+      shouldShowObjectiveTracking: 1
   m_defaultTest:
   - characterSaveData:
       currentHealth: 100
@@ -245,32 +245,32 @@ MonoBehaviour:
         \u043A\u043B\u044E\u0447 \u0443 \u0441\u0442\u0430\u0442\u0443\u044E \u0432
         \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0430"
     - eventKey: opened_piano_door
-      flag: 0
+      flag: 1
       objectiveText: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
         \u043A\u043B\u044E\u0447"
     - eventKey: pick_up_mirror
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: placed_mirror
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: solved_puzzle
-      flag: 0
+      flag: 1
       objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u043F\u043E\u0434\u0441\u043E\u0431\u043A\u0443"
     - eventKey: pick_up_key_two
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: opened_library_door
-      flag: 0
+      flag: 1
       objectiveText: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443"
     - eventKey: opened_library_secret
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: talked_to_girl_in_library_secret
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: pick_up_key_three
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: opened_bathroom_secret
       flag: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_1
       flag: 0
@@ -318,6 +318,12 @@ MonoBehaviour:
     - eventKey: end_this
       flag: 0
       objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
+    - eventKey: killed_ghoul
+      flag: 0
+      objectiveText: 
+    - eventKey: pick_up_key_last
+      flag: 0
+      objectiveText: 
     roomsData:
     - roomKey: C1ROutsides
       agentsToSpawnIDs:
@@ -373,197 +379,18 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_2
-      agentsToSpawnIDs: []
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     profileSpecificGameOptionsData:
       shouldShowObjectiveTracking: 1
   - characterSaveData:
-      currentHealth: 100
-      maxHealth: 100
-      currentMana: 100
-      maxMana: 100
-      manaRestoringRate: 10
-      moveSpeed: 5
-      holyAmmoType:
-        maxAmmo: 42
-        currentAmmo: 23
-        roundSize: 6
-        currentRoundAmmo: 0
-      commonMeds:
-        name: common
-        hpToHeal: 30
-        maxAmount: 4
-        currentAmount: 2
-      lastLevelIndex: 0
-      dayNum: 1
-    globalEventsData:
-    - eventKey: opened_main_door
-      flag: 1
-      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u0434\u043E\u043C"
-    - eventKey: sat_at_desk
-      flag: 1
-      objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043A\u043E\u043C\u043D\u0430\u0442\u0443
-        \u043E\u0442\u0434\u044B\u0445\u0430 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C
-        \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043D\u0430
-        \u0441\u0442\u043E\u043B\u0435"
-    - eventKey: tried_to_open_bathroom_secret
-      flag: 1
-      objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
-        \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
-    - eventKey: talked_to_girl
-      flag: 1
-      objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0448\u0443\u043C
-        \u0432 \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
-    - eventKey: pick_up_key_one
-      flag: 1
-      objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u044B\u0439
-        \u043A\u043B\u044E\u0447 \u0443 \u0441\u0442\u0430\u0442\u0443\u044E \u0432
-        \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0430"
-    - eventKey: opened_piano_door
-      flag: 1
-      objectiveText: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
-        \u043A\u043B\u044E\u0447"
-    - eventKey: pick_up_mirror
-      flag: 1
-      objectiveText: 
-    - eventKey: placed_mirror
-      flag: 0
-      objectiveText: 
-    - eventKey: solved_puzzle
-      flag: 0
-      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u043F\u043E\u0434\u0441\u043E\u0431\u043A\u0443"
-    - eventKey: pick_up_key_two
-      flag: 0
-      objectiveText: 
-    - eventKey: opened_library_door
-      flag: 0
-      objectiveText: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443"
-    - eventKey: opened_library_secret
-      flag: 0
-      objectiveText: 
-    - eventKey: talked_to_girl_in_library_secret
-      flag: 0
-      objectiveText: 
-    - eventKey: pick_up_key_three
-      flag: 0
-      objectiveText: 
-    - eventKey: opened_bathroom_secret
-      flag: 0
-      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u0437\u0430\u043A\u0440\u044B\u0442\u0443\u044E
-        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
-    - eventKey: outsides_note_1
-      flag: 0
-      objectiveText: 
-    - eventKey: dining_note_1
-      flag: 0
-      objectiveText: 
-    - eventKey: piano_note_1
-      flag: 0
-      objectiveText: 
-    - eventKey: library_note_1
-      flag: 0
-      objectiveText: 
-    - eventKey: library_secret_note_1
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_0
-      flag: 1
-      objectiveText: 
-    - eventKey: DayIsBehind_1
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_2
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_3
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_4
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_5
-      flag: 0
-      objectiveText: 
-    - eventKey: DayIsBehind_6
-      flag: 0
-      objectiveText: 
-    - eventKey: safe_zone_note
-      flag: 0
-      objectiveText: 
-    - eventKey: end_this
-      flag: 0
-      objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
-    roomsData:
-    - roomKey: C1ROutsides
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 0
-      - agentID: 1
-        shouldntSpawn: 0
-      - agentID: 2
-        shouldntSpawn: 0
-      itemsToSpawnIDs: []
-    - roomKey: C1RBathroom
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomKey: C1RBathroom_secret
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomKey: C1RDining_room
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomKey: C1RLibrary
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 0
-      - agentID: 1
-        shouldntSpawn: 0
-      itemsToSpawnIDs: []
-    - roomKey: C1RLocked_room
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomKey: C1RMain_hall
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 0
-      - agentID: 1
-        shouldntSpawn: 0
-      - agentID: 2
-        shouldntSpawn: 0
-      - agentID: 3
-        shouldntSpawn: 0
-      - agentID: 4
-        shouldntSpawn: 0
-      itemsToSpawnIDs: []
-    - roomKey: C1RSafe_zone
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    - roomKey: C1RPiano_room
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 0
-      - agentID: 1
-        shouldntSpawn: 0
-      itemsToSpawnIDs: []
-    - roomKey: C1RInnerHouseRoom_1
-      agentsToSpawnIDs:
-      - agentID: 0
-        shouldntSpawn: 1
-      - agentID: 1
-        shouldntSpawn: 1
-      itemsToSpawnIDs: []
-    - roomKey: C1RInnerHouseRoom_2
-      agentsToSpawnIDs: []
-      itemsToSpawnIDs: []
-    profileSpecificGameOptionsData:
-      shouldShowObjectiveTracking: 1
-  playerProfileData:
-    characterSaveData:
       currentHealth: 100
       maxHealth: 100
       currentMana: 100
@@ -601,16 +428,16 @@ MonoBehaviour:
       objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0448\u0443\u043C
         \u0432 \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
     - eventKey: pick_up_key_one
-      flag: 1
+      flag: 0
       objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u044B\u0439
         \u043A\u043B\u044E\u0447 \u0443 \u0441\u0442\u0430\u0442\u0443\u044E \u0432
         \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0430"
     - eventKey: opened_piano_door
-      flag: 1
+      flag: 0
       objectiveText: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
         \u043A\u043B\u044E\u0447"
     - eventKey: pick_up_mirror
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: placed_mirror
       flag: 0
@@ -653,16 +480,16 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_0
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_1
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_2
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_3
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: DayIsBehind_4
       flag: 0
@@ -680,10 +507,199 @@ MonoBehaviour:
       flag: 0
       objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
     - eventKey: killed_ghoul
-      flag: 1
+      flag: 0
       objectiveText: 
     - eventKey: pick_up_key_last
-      flag: 1
+      flag: 0
+      objectiveText: 
+    roomsData:
+    - roomKey: C1ROutsides
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      - agentID: 2
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: C1RBathroom
+      agentsToSpawnIDs: []
+      itemsToSpawnIDs: []
+    - roomKey: C1RBathroom_secret
+      agentsToSpawnIDs: []
+      itemsToSpawnIDs: []
+    - roomKey: C1RDining_room
+      agentsToSpawnIDs: []
+      itemsToSpawnIDs: []
+    - roomKey: C1RLibrary
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: C1RLocked_room
+      agentsToSpawnIDs: []
+      itemsToSpawnIDs: []
+    - roomKey: C1RMain_hall
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      - agentID: 2
+        shouldntSpawn: 0
+      - agentID: 3
+        shouldntSpawn: 0
+      - agentID: 4
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: C1RSafe_zone
+      agentsToSpawnIDs: []
+      itemsToSpawnIDs: []
+    - roomKey: C1RPiano_room
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: C1RInnerHouseRoom_1
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      - agentID: 1
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    - roomKey: C1RInnerHouseRoom_2
+      agentsToSpawnIDs:
+      - agentID: 0
+        shouldntSpawn: 0
+      itemsToSpawnIDs: []
+    profileSpecificGameOptionsData:
+      shouldShowObjectiveTracking: 1
+  playerProfileData:
+    characterSaveData:
+      currentHealth: 100
+      maxHealth: 100
+      currentMana: 100
+      maxMana: 100
+      manaRestoringRate: 10
+      moveSpeed: 5
+      holyAmmoType:
+        maxAmmo: 42
+        currentAmmo: 23
+        roundSize: 6
+        currentRoundAmmo: 0
+      commonMeds:
+        name: common
+        hpToHeal: 30
+        maxAmount: 4
+        currentAmount: 2
+      lastLevelIndex: 0
+      dayNum: 0
+    globalEventsData:
+    - eventKey: opened_main_door
+      flag: 0
+      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u0434\u043E\u043C"
+    - eventKey: sat_at_desk
+      flag: 0
+      objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043A\u043E\u043C\u043D\u0430\u0442\u0443
+        \u043E\u0442\u0434\u044B\u0445\u0430 \u0438 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C
+        \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043D\u0430
+        \u0441\u0442\u043E\u043B\u0435"
+    - eventKey: tried_to_open_bathroom_secret
+      flag: 0
+      objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
+        \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
+    - eventKey: talked_to_girl
+      flag: 0
+      objectiveText: "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0448\u0443\u043C
+        \u0432 \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
+    - eventKey: pick_up_key_one
+      flag: 0
+      objectiveText: "\u041D\u0430\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u044B\u0439
+        \u043A\u043B\u044E\u0447 \u0443 \u0441\u0442\u0430\u0442\u0443\u044E \u0432
+        \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0440\u0438\u0434\u043E\u0440\u0430"
+    - eventKey: opened_piano_door
+      flag: 0
+      objectiveText: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
+        \u043A\u043B\u044E\u0447"
+    - eventKey: pick_up_mirror
+      flag: 0
+      objectiveText: 
+    - eventKey: placed_mirror
+      flag: 0
+      objectiveText: 
+    - eventKey: solved_puzzle
+      flag: 0
+      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u043F\u043E\u0434\u0441\u043E\u0431\u043A\u0443"
+    - eventKey: pick_up_key_two
+      flag: 0
+      objectiveText: 
+    - eventKey: opened_library_door
+      flag: 0
+      objectiveText: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443"
+    - eventKey: opened_library_secret
+      flag: 0
+      objectiveText: 
+    - eventKey: talked_to_girl_in_library_secret
+      flag: 0
+      objectiveText: 
+    - eventKey: pick_up_key_three
+      flag: 0
+      objectiveText: 
+    - eventKey: opened_bathroom_secret
+      flag: 0
+      objectiveText: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432 \u0437\u0430\u043A\u0440\u044B\u0442\u0443\u044E
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u0432 \u0432\u0430\u043D\u043D\u043E\u0439"
+    - eventKey: outsides_note_1
+      flag: 0
+      objectiveText: 
+    - eventKey: dining_note_1
+      flag: 0
+      objectiveText: 
+    - eventKey: piano_note_1
+      flag: 0
+      objectiveText: 
+    - eventKey: library_note_1
+      flag: 0
+      objectiveText: 
+    - eventKey: library_secret_note_1
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_0
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_1
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_2
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_3
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_4
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_5
+      flag: 0
+      objectiveText: 
+    - eventKey: DayIsBehind_6
+      flag: 0
+      objectiveText: 
+    - eventKey: safe_zone_note
+      flag: 0
+      objectiveText: 
+    - eventKey: end_this
+      flag: 0
+      objectiveText: "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0434\u0435\u043B\u043E"
+    - eventKey: killed_ghoul
+      flag: 0
+      objectiveText: 
+    - eventKey: pick_up_key_last
+      flag: 0
       objectiveText: 
     roomsData:
     - roomKey: C1ROutsides
@@ -747,7 +763,7 @@ MonoBehaviour:
     - roomKey: C1RInnerHouseRoom_2
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     profileSpecificGameOptionsData:
-      shouldShowObjectiveTracking: 0
+      shouldShowObjectiveTracking: 1

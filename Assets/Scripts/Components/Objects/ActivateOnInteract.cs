@@ -16,7 +16,7 @@ namespace BloodyMaze.Components
         public InteractComponent interactComponent => m_interactComponent;
         private void OnEnable()
         {
-            GameEvents.OnEnterGameplayState += CheckIfTeleportedInside;
+            // GameEvents.OnEnterGameplayState += CheckIfTeleportedInside;
         }
 
         // private void OnEnable()
@@ -39,7 +39,7 @@ namespace BloodyMaze.Components
         {
             if (m_interactComponent != null)
                 m_interactComponent.OnInteract -= Activate;
-            GameEvents.OnEnterGameplayState -= CheckIfTeleportedInside;
+            // GameEvents.OnEnterGameplayState -= CheckIfTeleportedInside;
         }
 
         private void OnTriggerEnter(Collider other)

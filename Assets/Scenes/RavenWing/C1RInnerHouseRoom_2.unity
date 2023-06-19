@@ -2420,6 +2420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8773164460460532271, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
+    - {fileID: 1636216518837374801, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
 --- !u!4 &1967982669 stripped
 Transform:
@@ -2447,17 +2448,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 903ef1afc4a305e4180b44956e306165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1967982677 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1636216518837374801, guid: ba3b6cdf8b6bf3245873e6bce4dc7a7e, type: 3}
-  m_PrefabInstance: {fileID: 1967982668}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401975327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21674c65912a93644890f22385509311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1967982681
@@ -2516,7 +2506,7 @@ MonoBehaviour:
   - {fileID: 2139612180}
   - {fileID: 1065458611}
   - {fileID: 1169238817}
-  - {fileID: 1967982677}
+  - {fileID: 1967982681}
   m_eventFlagShouldBeCheckedToSpawnEnemies: 
   m_roomSpawnPoints:
   - {fileID: 1015647478}

@@ -11,7 +11,7 @@ namespace BloodyMaze.Components
         public override void ActivateModule()
         {
             m_flag = false;
-            ActionStatesManager.ChangeState();
+            ActionStatesManager.SetState(ActionStates.INTERACTING);
             GameEvents.OnCallGotoFunction?.Invoke("dialogue");
 
             GameEvents.OnStartDialogue?.Invoke(m_dialogueKey, m_eventFlagToCheck);
