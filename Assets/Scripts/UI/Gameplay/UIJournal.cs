@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BloodyMaze.States;
 using TMPro;
+using UnityEngine.UI;
 
 namespace BloodyMaze.UI
 {
@@ -13,6 +14,9 @@ namespace BloodyMaze.UI
         [SerializeField] private TMP_Text m_currentObjectiveTextField;
         [SerializeField] private TMP_Text m_objectivesScrollviewTextField;
         [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private ScrollRect m_objectivesScrollRect;
+        [SerializeField] private RectTransform m_objectivesScrollRectRectTransform;
+
 
         // Objective tracking system
         [SerializeField] private AudioClip m_ObjectTrackingSound;

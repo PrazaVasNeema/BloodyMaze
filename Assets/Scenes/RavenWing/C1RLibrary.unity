@@ -115416,7 +115416,7 @@ PrefabInstance:
       objectReference: {fileID: 4020258447441980810}
     - target: {fileID: 3092603685962737681, guid: 728c0c1188fc55448b7bd47df5776861, type: 3}
       propertyPath: m_messageTextKey
-      value: interact
+      value: pull
       objectReference: {fileID: 0}
     - target: {fileID: 3092603685962737681, guid: 728c0c1188fc55448b7bd47df5776861, type: 3}
       propertyPath: onActivate.m_PersistentCalls.m_Calls.Array.size

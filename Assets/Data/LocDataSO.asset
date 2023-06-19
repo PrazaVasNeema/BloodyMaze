@@ -772,6 +772,10 @@ MonoBehaviour:
     text:
     - "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0448\u0442\u044B\u0440\u044C"
     - Iron placement
+  - key: pull
+    text:
+    - "\u041F\u043E\u0442\u044F\u043D\u0443\u0442\u044C"
+    - Pull
   locMiniMessagesText:
   - key: closed
     text:
