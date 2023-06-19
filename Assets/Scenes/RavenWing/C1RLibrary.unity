@@ -711,7 +711,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428302655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6690,7 +6690,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh161572
+  m_Name: pb_Mesh52976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7238,7 +7238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ac4717fa0623c41bdba67d65464ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roomKey: library
+  m_roomKey: C1RLibrary
   m_roomItems: []
   m_roomAgents:
   - {fileID: 915734198}
@@ -103544,6 +103544,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1370060160}
     m_Modifications:
+    - target: {fileID: 1365928422841049992, guid: d66c0e054b85b9d478f1fe8c023f7b5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221722824624159837, guid: d66c0e054b85b9d478f1fe8c023f7b5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.834
+      objectReference: {fileID: 0}
     - target: {fileID: 4444243429015725827, guid: d66c0e054b85b9d478f1fe8c023f7b5d, type: 3}
       propertyPath: m_RootOrder
       value: 0

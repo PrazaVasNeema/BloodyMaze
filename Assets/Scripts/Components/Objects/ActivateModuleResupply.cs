@@ -12,6 +12,7 @@ namespace BloodyMaze.Components
             CharacterComponent characterComponent = FindObjectOfType<CharacterComponent>();
             characterComponent.ammunitionComponent.AddAmmo();
             characterComponent.medsComponent.FullUpMeds();
+            GameEvents.OnShowMiniMessage?.Invoke("ressuplied");
         }
     }
 }

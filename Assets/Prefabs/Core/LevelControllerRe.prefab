@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5053454445257084207, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
+      propertyPath: m_text
+      value: 4/4
+      objectReference: {fileID: 0}
     - target: {fileID: 6169343317205469014, guid: 895adc9d13dda7949bfafbbce80cc951, type: 3}
       propertyPath: m_text
       value: UILoc_to_main_menu

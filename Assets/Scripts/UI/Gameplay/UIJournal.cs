@@ -142,6 +142,7 @@ namespace BloodyMaze.UI
 
         private void FillObjective(string correspondingEventKey)
         {
+            Debug.Log("FillObjective");
             if (m_globalEventsData[m_currentEventFlagIndex].eventKey != correspondingEventKey)
                 return;
             if (m_initIsComplete)

@@ -41,7 +41,8 @@ namespace BloodyMaze.Components
                 if (GetComponent<CharacterComponent>())
                     GameEvents.OnPCDeath?.Invoke();
                 OnChangeTargetLockStatus.Invoke(false);
-                GetComponent<NavMeshAgent>().enabled = false;
+                if (gameObject.layer != LayerMask.NameToLayer("Player"))
+                    GetComponent<NavMeshAgent>().enabled = false;
                 Destroy(this);
                 // Destroy(gameObject);
             }

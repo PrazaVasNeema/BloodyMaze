@@ -129,6 +129,7 @@ namespace BloodyMaze
         private void SetPlayerProfileSOData()
         {
             m_playerProfile.LoadFromJson(JsonUtility.ToJson(m_allPlayerProfilesData[m_choosenProfileIndex]), shouldStartNewGame);
+            shouldStartNewGame = false;
         }
 
         public void SaveData(bool shouldCallOnSave = true)
@@ -252,7 +253,7 @@ namespace BloodyMaze
             yield return new WaitForSecondsRealtime(2f);
             yield return SceneManager.LoadSceneAsync("Empty");
 
-            m_reloadDayTextField.text = $"{locData.GetInterfaceText("UILoc_ui_loading_to_gameplay_re_2")} {playerProfile.playerProfileData.characterSaveData.dayNum + 2}";
+            m_reloadDayTextField.text = $"{locData.GetInterfaceText("UILoc_ui_loading_to_gameplay_re_2")} {playerProfile.playerProfileData.characterSaveData.dayNum + 1}";
 
             System.GC.Collect();
             Resources.UnloadUnusedAssets();
@@ -262,13 +263,13 @@ namespace BloodyMaze
             CheckEvent($"DayIsBehind_{playerProfile.playerProfileData.characterSaveData.dayNum}");
             playerProfile.playerProfileData.characterSaveData.dayNum++;
             SaveData(false);
+            SetPlayerProfileSOData();
             var dif = Time.unscaledTime - timer;
             if (dif < timeToWait)
             {
                 yield return new WaitForSecondsRealtime(timeToWait - dif);
             }
             yield return SceneManager.LoadSceneAsync(sceneName);
-            SetPlayerProfileSOData();
             m_UILoadingAnimator.SetBool("IsLoading", false);
             m_levelController = FindObjectOfType<LevelControllerRe>();
             m_levelController.Init();

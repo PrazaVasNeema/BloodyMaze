@@ -11,6 +11,7 @@ namespace BloodyMaze.Components
         {
             GameEvents.OnEventFlagCheck?.Invoke(m_eventFlagToCheck);
             GameController.instance.SaveData();
+            GameEvents.OnShowMiniMessage?.Invoke("game_saved");
         }
     }
 }
