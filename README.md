@@ -16,6 +16,7 @@
 Для работы ИИ использовалась библиотека KiwiCoder: [thekiwicoder0: Behaviour Tree Editor for Unity built with UIToolkit (github.com)](https://github.com/thekiwicoder0/UnityBehaviourTreeEditor)
 
 ## EN
+(You can change the localization in the settings (images will be still in russian))
 A simple video game developed with Unity engine for Android platforms
 
 Credits:
