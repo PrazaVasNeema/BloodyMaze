@@ -1,5 +1,5 @@
 # BloodyMaze
----
+
 ![Picture1](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/66d94ae3-5153-4ad4-b5c9-33be7977d7f7)
 ![Picture2](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/3851b3ec-7457-4e31-a6ee-c8dfef3c10ae)
 ![Picture3](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/a2923917-3c19-44aa-8868-2a276bd1d490)
@@ -12,6 +12,8 @@
 - Панферова Виктория: 2D-художник (фон главного меню, журнал) - [https://www.artstation.com/victoria_santienn](https://vk.com/away.php?to=https%3A%2F%2Fwww.artstation.com%2Fvictoria_santienn&cc_key=)
 - Мелников Алексей: 3D-моделлер (противники) -
 
+Для работы ИИ использовалась библиотека: [thekiwicoder0/UnityBehaviourTreeEditor: Behaviour Tree Editor for Unity built with UIToolkit (github.com)](https://github.com/thekiwicoder0/UnityBehaviourTreeEditor)
+
 ## EN
 A simple video game developed with Unity engine for Android platforms
 
@@ -21,3 +23,5 @@ Credits:
 - Kakaulin Dmitry: C# programming - [PrazaVasNeema (github.com)](https://github.com/PrazaVasNeema)
 - Panferova Victoria: 2D artist (main menu background, journal assets) - [https://www.artstation.com/victoria_santienn](https://vk.com/away.php?to=https%3A%2F%2Fwww.artstation.com%2Fvictoria_santienn&cc_key=)
 - Melnikov Alexey: 3D artist (enemies assets) -
+
+For AI realisation a library was used: [thekiwicoder0/UnityBehaviourTreeEditor: Behaviour Tree Editor for Unity built with UIToolkit (github.com)](https://github.com/thekiwicoder0/UnityBehaviourTreeEditor)
