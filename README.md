@@ -3,6 +3,8 @@
 ![Picture1](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/b3dbada7-c4b0-4ec9-9614-a47ef6bcff3e)
 ![Picture2](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/f6e5aca9-e6fc-489e-b06b-a818424fe81f)
 ![Picture3](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/02370b0d-70c7-446c-a636-2cdc2bb02ec2)
+![Picture5](https://github.com/PrazaVasNeema/BloodyMaze/assets/117831147/7acee3a4-3950-4576-905f-f72519c41145)
+
 
 ## RU
 Видеоигра на движке Unity для платформы Android.
