@@ -17,6 +17,7 @@
 
 ## EN
 (You can change the localization in the settings (images will be still in russian))
+
 A simple video game developed with Unity engine for Android platforms
 
 Credits:
