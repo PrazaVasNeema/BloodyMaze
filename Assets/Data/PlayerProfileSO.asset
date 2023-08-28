@@ -156,9 +156,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []
@@ -182,9 +182,9 @@ MonoBehaviour:
     - roomKey: C1RPiano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
@@ -656,7 +656,7 @@ MonoBehaviour:
       flag: 0
       objectiveText: 
     - eventKey: piano_note_1
-      flag: 0
+      flag: 1
       objectiveText: 
     - eventKey: library_note_1
       flag: 0
@@ -719,9 +719,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []
@@ -729,15 +729,15 @@ MonoBehaviour:
     - roomKey: C1RMain_hall
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 2
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 3
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 4
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RSafe_zone
       agentsToSpawnIDs: []
@@ -745,9 +745,9 @@ MonoBehaviour:
     - roomKey: C1RPiano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       - agentID: 1
-        shouldntSpawn: 0
+        shouldntSpawn: 1
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:

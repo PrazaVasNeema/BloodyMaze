@@ -12,6 +12,8 @@ namespace BloodyMaze.UI
         [SerializeField] private TMP_Text m_noteText;
         [SerializeField] private Sprite m_defaultBackground;
         [SerializeField] private TMP_FontAsset[] m_fonts;
+        [SerializeField] private ScrollRect m_scrollRect;
+        [SerializeField] private GameObject m_item;
 
         private TMP_FontAsset m_defaultFont;
         private float m_defaultFontSize;
@@ -48,6 +50,15 @@ namespace BloodyMaze.UI
             m_noteText.text = GameController.instance.locData.GetNoteText(key);
             if (background)
                 m_noteImage.sprite = background;
+            Canvas.ForceUpdateCanvases();
+
+            // item.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+            //m_item.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+
+           // m_scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+            m_scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+
+            m_scrollRect.verticalNormalizedPosition = 1;
         }
 
     }

@@ -16,6 +16,8 @@ namespace BloodyMaze.UI
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private ScrollRect m_objectivesScrollRect;
         [SerializeField] private RectTransform m_objectivesScrollRectRectTransform;
+        [SerializeField] private ScrollRect m_scrollRect;
+        [SerializeField] private GameObject m_item;
 
 
         // Objective tracking system
@@ -83,6 +85,9 @@ namespace BloodyMaze.UI
             }
             m_currentPageIndex += shouldBeNext ? 1 : -1;
             m_pages[m_currentPageIndex].SetActive(true);
+            m_scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+
+            m_scrollRect.verticalNormalizedPosition = 1;
         }
 
         IEnumerator CloseCo()
@@ -171,6 +176,8 @@ namespace BloodyMaze.UI
             else
                 UpdateObjective(m_globalEventsData[m_currentEventFlagIndex].objectiveText);
 
+
+
         }
 
         IEnumerator WaitForExploringState(string newObjectiveText = null)
@@ -208,6 +215,7 @@ namespace BloodyMaze.UI
                 m_audioSource.clip = m_ObjectTrackingSound;
                 m_audioSource.Play();
             }
+
         }
     }
 }
