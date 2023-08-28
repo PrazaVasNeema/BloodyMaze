@@ -156,9 +156,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []
@@ -182,9 +182,9 @@ MonoBehaviour:
     - roomKey: C1RPiano_room
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RInnerHouseRoom_1
       agentsToSpawnIDs:
@@ -719,9 +719,9 @@ MonoBehaviour:
     - roomKey: C1RLibrary
       agentsToSpawnIDs:
       - agentID: 0
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       - agentID: 1
-        shouldntSpawn: 1
+        shouldntSpawn: 0
       itemsToSpawnIDs: []
     - roomKey: C1RLocked_room
       agentsToSpawnIDs: []

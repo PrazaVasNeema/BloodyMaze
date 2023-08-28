@@ -86,7 +86,7 @@ MonoBehaviour:
       your arrival."
   - key: dining_1
     fontNum: 0
-    fontSize: 30
+    fontSize: 40
     spacingLine: 53
     posYOffset: 13
     text:
@@ -160,7 +160,7 @@ MonoBehaviour:
       possible."
   - key: library
     fontNum: 0
-    fontSize: 31
+    fontSize: 40
     spacingLine: 52
     posYOffset: 13
     text:
